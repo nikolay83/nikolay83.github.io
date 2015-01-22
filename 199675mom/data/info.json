@@ -1,0 +1,46 @@
+{
+	"info": [
+		{
+			"title": "Business Name",
+			"describe": "John Doe",
+			"public": true,
+			"type": "input"
+		},
+		{
+			"title": "Business Addresss",
+			"describe": "johndoe@loremipsum.com",
+			"public": false,
+			"type": "input"
+		},
+		{
+			"title": "Business Type",
+			"describe": "Lorem ipsum",
+			"public": false,
+			"type": "input"
+		},
+		{
+			"title": "Logo/ Image",
+			"describe": "image.jpg",
+			"public": true,
+			"type": "file"
+		},
+		{
+			"title": "Description",
+			"describe": "Business description",
+			"public": true,
+			"type": "textarea"
+		},
+		{
+			"title": "Hours Open",
+			"describe": "00:00 - 00:00",
+			"public": true,
+			"type": "input"
+		},
+		{
+			"title": "Website URL",
+			"describe": "www.businessname.com",
+			"public": true,
+			"type": "input"
+		}
+	]	
+}
