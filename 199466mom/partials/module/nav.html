@@ -1,0 +1,18 @@
+<ul data-ng-class="{ul:hadLogin}">
+	<li data-ng-click="select.item = $index" data-ng-class="{'active' : select.item == $index, 'remove' : hadLogin == true}" data-ng-repeat="item in Menu.listItem">
+		<a data-ng-href="{{item.link}}" data-ng-bind="item.li"></a>
+		<a class="img" data-ng-href="{{item.link}}">
+			<img data-ng-src="{{Header.iconHome}}" alt="Logo Company" src="#">
+		</a>
+		<input type="text" placeholder="Search" data-ng-model="search.name">
+		<a data-ng-href="{{item.link}}">
+			<span data-ng-class="{logOut : hadLogin == true}"></span>
+		</a>
+		<p><strong data-ng-bind="Header.numberCart"></strong></p>
+	</li>
+	<li data-ng-show="hadLogin" data-ng-click="select.item = $index">
+		<a href="#MyProfile">
+			<span></span>
+		</a>
+	</li>
+</ul>  <!-- end of .container nav -->

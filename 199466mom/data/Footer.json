@@ -1,0 +1,16 @@
+{
+  "img":"i/logo-footer.png",
+  "alt":"Logo Company",
+  "listItem":[
+  	{
+  		"li":"PRIVACY POLICY"
+  	},
+  	{
+  		"li":"TERMS OF USE"
+  	},
+  	{
+  		"li":"COPYRIGHT"
+  	}
+  ],
+  "share":"Connect with us"
+}

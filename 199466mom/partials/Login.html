@@ -1,0 +1,53 @@
+<!-- header-->
+<header id="header" class="pad-header" data-ng-include="'partials/module/header.html'"></header>
+<!-- end header-->
+
+<!-- nav-->
+<nav id="nav" data-ng-include="'partials/module/nav.html'" data-sticky></nav>
+<!-- end nav-->
+
+<!-- content -->
+<article class="myCart" data-ng-controller="homeCtrl">
+	<div class="login" data-ng-init="loginError=false">
+		<div class="content">
+			<p>Login</p>
+			<form>
+				<input type="text" value="" placeholder="Username">
+				<input type="text" value="" placeholder="Password">
+				<p class="remember-forgot">
+					<span class="remember">
+						<input id="remember" type="checkbox">
+						<label for="remember"></label>
+						<i>Remember me</i>
+					</span>
+					<span class="forgot-pass"><a href="javascript:;">Forgot Password?</a></span>
+				</p>
+				<p class="login-error" data-ng-if="loginError">* Invalid username / password,  please try again.</p>
+				<input type="button" value="Continue" data-ng-init="mocKUp=false" data-ng-click="mockUp=!mockUp">
+				<!-- mock up role -->
+				<ul class="mock-up" data-ng-show="mockUp">
+					<li><a href="javascript:;" data-ng-click="login('champion')">Login as Champion</a></li>
+					<li><a href="javascript:;" data-ng-click="login('founder')">Login as Founder</a></li>
+					<li><a href="javascript:;" data-ng-click="login('employee')">Login as Platform Employee</a></li>
+					<li><a href="javascript:;" data-ng-click="loginError=true; mockUp=false">Login Error</a></li>
+				</ul>
+				<!-- end mock up role -->
+				<p>Don't have an account? <a href="javascript:;">Sign up now</a></p>
+			</form>
+			<span>or</span>
+		</div>
+		<div class="social">
+			<a href="javascript:;" class="face"><span class="icon-face"></span>Use My Facebook Account</a>
+			<a href="javascript:;" class="twitter"><span class="icon-twitter"></span>Use My Twitter Account</a>
+			<a href="javascript:;" class="linkedin"><span class="icon-linkedin"></span>Use My Linkedin Account</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+</article>
+<!-- end content -->
+
+<!-- footer -->
+<footer id="footer" data-ng-include="'partials/module/footer.html'">
+</footer>
+<!-- end footer -->

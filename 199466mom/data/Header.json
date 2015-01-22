@@ -1,0 +1,10 @@
+{
+  "logoImg":"i/logo.png",
+  "iconHome":"i/icon-home.png",
+  "feedback":"Feedback",  
+  "myProfile":"My Profile",  
+  "cart":"My Cart",  
+  "numberCart":"3",  
+  "logIn":"Log In",
+  "logOut": "Log Out"
+}

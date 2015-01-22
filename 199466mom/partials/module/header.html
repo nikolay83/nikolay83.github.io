@@ -1,0 +1,9 @@
+<div><img class="logo left" data-ng-src="{{Header.logoImg}}" alt="Logo Company" src="#"></div>
+<div class="right">
+	<ul>
+		<li><span></span><p data-ng-bind="Header.feedback"></p></li>
+		<li data-ng-click="select.item = $index"><a href="#ShoppingCard"><span></span><p data-ng-bind="Header.cart"></p><p><strong data-ng-bind="Header.numberCart"></strong></p></a></li>
+		<li data-ng-show="hadLogin"><a href="#MyProfile"><span></span><p data-ng-bind="Header.myProfile"></p></a></li>
+		<li data-ng-click="select.item = $index"><a href="#Login"><span data-ng-class="{logOut : hadLogin == true}"></span><p data-ng-if="!hadLogin" data-ng-bind="Header.logIn"></p></a><p data-ng-if="hadLogin" data-ng-bind="Header.logOut" data-ng-click="authorization()"></p></li>
+	</ul>
+</div>  <!-- end of .container header -->
