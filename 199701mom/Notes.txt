@@ -1,0 +1,52 @@
+1.
+Validate HTML
+1)
+There is 0 errors  in index.html.
+2)
+There are 1 errors & 3 warning in Login.html
+The errors are caused  by angular ng-view partial.
+3)
+There are 1 errors & 2 warning in Business-home.html
+The errors are caused  by angular ng-view partial.
+
+4)
+There are 2 errors & 2 warning in Business-step-1.html
+The errors are caused  by angular ng-view partial.
+5)
+There are 1 errors & 3 warning in Business-step-2.html
+The errors are caused  by angular ng-view partial.
+6)
+There are 1 errors & 3 warning in Sign-up-choose-account-type.html
+The errors are caused  by angular ng-view partial.
+7)
+There are 1 errors & 3 warning in Sign-up-champion.html
+The errors are caused  by angular ng-view partial.
+8)
+There are 1 errors & 2 warning in Sign-up-founder.html
+the errors are caused  by angular ng-view partial.
+9)
+There are 1 errors & 2 warning in Reset-Password-step-1.html
+the errors are caused  by angular ng-view partial.
+
+10)
+There are 1 errors & 2 warning in Reset-Password-step-2.html
+the errors are caused  by angular ng-view partial.
+
+
+2.
+Validate CSS
+1)
+There are 1 errors warnings in icons-sprites.css.
+The warnings are caused by -moz- or -webkit-.
+Please ignore them.
+2)
+There are 4 errors & 34 warnings in icons-sprites.css.
+The errors are caused by blur, blur.svg, opacity and pointer-events.
+The warnings are caused by -moz- or -webkit- .
+
+Please ignore them.
+
+3.
+The correct credential:
+Intranet ID: admin
+Password: 123456
