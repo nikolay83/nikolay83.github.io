@@ -1,0 +1,111 @@
+/* icon sprites */
+.sprite { background: url('../i/icons.png') no-repeat top left;  }
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+    .sprite {
+        background-image: url('../i/icons-x2.png');
+        background-size: 934px 585px;
+    }
+}
+
+.sprite-blue-tick {
+    width: 12px;
+    height: 9px;
+    background-position: 0 0;
+}
+
+.sprite-champion {
+    width: 53px;
+    height: 80px;
+    background-position: -12px -9px;
+}
+
+.sprite-confirm {
+    width: 77px;
+    height: 35px;
+    background-position: -65px -89px;
+}
+
+.sprite-enter-receipt-total {
+    width: 77px;
+    height: 35px;
+    background-position: -142px -124px;
+}
+
+.sprite-facebook {
+    width: 41px;
+    height: 40px;
+    background-position: -219px -159px;
+}
+
+.sprite-facebook-grey {
+    width: 41px;
+    height: 40px;
+    background-position: -260px -199px;
+}
+
+.sprite-founder {
+    width: 54px;
+    height: 81px;
+    background-position: -301px -239px;
+}
+
+.sprite-grey-person {
+    width: 10px;
+    height: 15px;
+    background-position: -355px -320px;
+}
+
+.sprite-hamburger-menu {
+    width: 19px;
+    height: 19px;
+    background-position: -365px -335px;
+}
+
+.sprite-linkedin {
+    width: 40px;
+    height: 39px;
+    background-position: -384px -354px;
+}
+
+.sprite-linkedin-grey {
+    width: 40px;
+    height: 39px;
+    background-position: -424px -393px;
+}
+
+.sprite-lock {
+    width: 10px;
+    height: 15px;
+    background-position: -464px -432px;
+}
+
+.sprite-scan-qr-code {
+    width: 66px;
+    height: 40px;
+    background-position: -474px -447px;
+}
+
+.sprite-shadow-hspliter {
+    width: 300px;
+    height: 8px;
+    background-position: -540px -487px;
+}
+
+.sprite-twitter {
+    width: 41px;
+    height: 40px;
+    background-position: -840px -495px;
+}
+
+.sprite-twitter-grey {
+    width: 41px;
+    height: 40px;
+    background-position: -881px -535px;
+}
+
+.sprite-white-tick {
+    width: 12px;
+    height: 10px;
+    background-position: -922px -575px;
+}
