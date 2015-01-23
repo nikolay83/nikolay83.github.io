@@ -1,0 +1,16 @@
+<div id="search">
+    <div class="search" data-ng-controller="search">
+        <!-- search query -->
+        <div class="search-query">
+            {{query}}
+        </div>
+        <!-- end search query -->
+    </div>
+    <!-- business items -->
+    <div class="container">
+        <ul class="businesses">
+            <li data-ng-repeat="business in businesses" data-ng-include="'partials/businessEntry.html'"></li>
+        </ul>
+    </div>
+    <!-- end business items -->
+</div>

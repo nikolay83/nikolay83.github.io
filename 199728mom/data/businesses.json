@@ -1,0 +1,70 @@
+{
+  "businesses": [
+    {
+      "id": 123,
+      "name": "Business Name 1",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-1.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 100
+    },
+    {
+      "id": 124,
+      "name": "Business Name 2",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-2.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 200
+    },
+    {
+      "id": 125,
+      "name": "Business Name 3",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-3.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 20
+    },
+    {
+      "id": 125,
+      "name": "Business Name 4",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-4.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 150
+    },
+    {
+      "id": 126,
+      "name": "Business Name 5",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-1.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 220
+    },
+    {
+      "id": 127,
+      "name": "Test Search",
+      "activation": 1419318000000,
+      "logo": "i/business-logo-2.png",
+      "redeem": {
+        "value": 100,
+        "discount": 20
+      },
+      "amount": 300
+    }
+  ]
+}

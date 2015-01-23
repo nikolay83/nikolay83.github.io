@@ -1,0 +1,10 @@
+{
+  "kind": "champion",
+  "name": "John Doe",
+  "avatar": "i/avatar.png",
+  "gift": {
+    "cards": 25,
+    "amount": 2000
+  },
+  "redeemed": 40
+}

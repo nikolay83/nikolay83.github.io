@@ -1,0 +1,27 @@
+[
+  {
+    "title": "HomeChampion-NoCards",
+    "href": "home",
+    "class": "home"
+  },
+  {
+    "title": "Privacy",
+    "href": "privacy",
+    "class": "privacy"
+  },
+  {
+    "title": "Terms & Condition",
+    "href": "terms",
+    "class": "terms"
+  },
+  {
+    "title": "Report Abuse",
+    "href": "abuse",
+    "class": "abuse"
+  },
+  {
+    "title": "Logout",
+    "href": "login",
+    "class": "logout"
+  }
+]
