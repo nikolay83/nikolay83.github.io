@@ -1,0 +1,52 @@
+{
+	"logo":"Business Logo",  
+	 "name":"Business Name",
+	"history":"My History",
+	"info":"Employees",
+
+	"listItem":[
+		{
+		  "name":"John Doe",  
+		  "password":"LoremIpsum",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		},
+		{
+		  "name":"John Doe",  
+		  "password":"LoremIpsum",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		},
+		{
+		  "name":"John Doe",  
+		  "password":"LoremIpsum",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		},
+		{
+		  "name":"John Doe",  
+		  "password":"LoremIpsum",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		},
+		{
+		  "name":"John Doe",  
+		  "password":"LoremIpsum",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		}
+	],
+	"clone":{
+		  "name":"",  
+		  "password":"",
+		  "Modify":"Modify",
+		  "Save":"Save",
+		  "Delete":"Delete"
+		}
+	
+}
