@@ -171,6 +171,7 @@ textarea {
 	box-shadow: none;
 	font-family: Arial, Helvetica, sans-serif;
 	-webkit-appearance:none;
+	overflow: auto;
 	resize: none;
 	}
 	
@@ -270,6 +271,7 @@ textarea {
 	}
  
 .iphone-toggle-buttons input[type="checkbox"] {
+	display: none;
 	opacity: 0;
 	}
  
@@ -746,6 +748,7 @@ aside {
 		background-color: #e5e5e5;
 		border-radius: 50%;
 		height: 114px;
+		overflow: hidden;
 		margin: 0 auto;
 		width: 114px;
 		}
@@ -885,6 +888,7 @@ aside {
 		}
 		
 	.employees th:last-child {
+		padding: 0 30px 0 8px;
 		text-align: center;
 		}
 		
@@ -957,6 +961,7 @@ aside {
 	.abuse .form-group>label {
 		color: #888;
 		float: left;
+		font-size: 16px;
 		font-weight: bold;
 		line-height: 29px;
 		padding: 0 0 0 38px;
@@ -1048,6 +1053,7 @@ aside {
 	.payment .form-group>label {
 		color: #888;
 		float: left;
+		font-size: 16px;
 		font-weight: bold;
 		line-height: 29px;
 		padding: 0 0 0 38px;
@@ -1169,7 +1175,7 @@ aside {
 	}
 	
 .info .main {
-	padding-bottom: 12px;
+	padding-bottom: 8px;
 	}
 
 .info .bar {
@@ -1178,6 +1184,12 @@ aside {
 	margin-bottom: 8px;
 	padding: 0 32px;
 	position: relative;
+	}
+	
+.info .bar.last {
+	height: 61px;
+	padding-top: 1px;
+	padding-bottom: 4px;
 	}
 	
 	.info .bar h3 {
@@ -1722,7 +1734,7 @@ aside {
 	/* Button Group */	
 	.posting .main .button-group {
 		position: absolute;
-		right: 0;
+		right: 7px;
 		top: 56px;
 		}
 		
@@ -1732,6 +1744,10 @@ aside {
 		
 	.posting .main .button-group .btn-primary {
 		width: 91px;
+		}
+		
+	.posting .main .button-group .btn-save {
+		margin-right: 5px;
 		}
 		
 	/* Form */
@@ -1797,7 +1813,7 @@ aside {
 	.posting .tip.info .inner:before {
 		background-position: -80px -40px;
 		left: 75px;
-		bottom: -35px;
+		bottom: -34px;
 		height: 25px;
 		width: 16px;
 		}
@@ -1844,6 +1860,16 @@ aside {
 		width: 357px;
 		}
 		
+	.posting .tip.info .wrap-dd-select:after {
+		background-color: rgba(204,204,204,1);
+		background-position: -269px -66px;
+		height: 33px;
+		margin: 0;
+		top: 0;
+		right: 0;
+		width: 36px;
+		}
+		
 	.posting .tip.info .wrap-dd-select>span {
 		color: #2a94d6;
 		font-size: 18px;
@@ -1866,6 +1892,7 @@ aside {
 		
 	/* Discount Tip */	
 	.posting .tip.discount {
+		border-radius: 4px;
 		padding: 14px 13px 19px 13px;
 		top: 318px;
 		left: 84px;
@@ -1911,7 +1938,7 @@ aside {
 	.posting .tip.post-date .inner:before {
 		background-position: -160px -40px;
 		top: 44px;
-		right: -41px;
+		right: -40px;
 		height: 12px;
 		width: 23px;
 		}
@@ -1948,6 +1975,7 @@ aside {
 		
 	/* Activation Date */
 	.posting .tip.activation-date {
+		border-radius: 4px;
 		padding: 2px 0 9px 35px;
 		top: 322px;
 		left: 588px;
@@ -2208,7 +2236,7 @@ aside {
 		font-size: 14px;
 		line-height: 1em;
 		position: absolute;
-		top: 10px;
+		top: 8px;
 		}
 		
 	.business-info .date {
@@ -2354,12 +2382,14 @@ aside {
 		font-size: 12px;
 		font-weight: bold;
 		line-height: 32px;
-		padding: 0 0 0 32px;
+		padding: 0 0 0 30px;
+		text-align: left;
 		width: 245px;
 		}
 		
 	.modal-post .bar dt {
 		padding: 0 0 0 92px;
+		text-align: center;
 		width: 158px;
 		}
 		
@@ -2475,6 +2505,10 @@ aside {
 		margin-top: 18px;
 		}
 		
+	.modal-register .form .form-group.first {
+		padding-bottom: 9px;
+		}
+		
 	.modal-register .form .form-group:before,
 	.modal-register .form .form-group:after {
 		content: '';
@@ -2503,7 +2537,8 @@ aside {
 		width: 328px;
 		}
 		
-	.modal-register .form input.ng-dirty.ng-invalid {
+	.modal-register .form input.ng-dirty.ng-invalid,
+	.modal-register .form input.error {
 		background-color: #ffedee;
 		border-color: #fc9b9e;
 		}
@@ -2528,9 +2563,9 @@ aside {
 		background-color: rgba(204,204,204,1);
 		background-position: -271px -67px;
 		border-radius: 1px;
-		height: 30px;
+		height: 31px;
 		top: 4px;
-		right: 0;
+		right: -1px;
 		width: 30px;
 		}
 		
@@ -2573,6 +2608,7 @@ aside {
 		display: block;
 		height: 19px;
 		position: absolute;
+		top: -1px;
 		left: 0;
 		width: 19px;
 		}
@@ -2681,4 +2717,34 @@ aside {
 		
 	.modal-forgot .form .btn {
 		margin: 32px 0 0 257px;
+		}
+		
+/* Note */
+.note {
+	color: #888;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 26px;
+	margin: 36px 0 0 28px;
+	padding-left: 32px;
+	position: absolute;
+	text-decoration: underline;
+	}
+	
+.note:hover {
+	text-decoration: none;
+	}
+	
+	.note:before {
+		background-image: url(../i/icon.png);
+		background-position: -29px -115px;
+		background-repeat: no-repeat;
+		background-color: #9a0000;
+		border-radius: 50%;
+		content: '';
+		display: block;
+		height: 26px;
+		left: 0;
+		position: absolute;
+		width: 26px;
 		}

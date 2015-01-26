@@ -4,7 +4,7 @@
 			"businessName": "Business Name",
 			"businessType": "Adventure",
 			"businessLocation": "LoremIpsum",
-			"logo": "../i/image.jpg",
+			"logo": "./i/image.jpg",
 			"discount": "20",
 			"endDate": "01/01/2015",
 			"endTime": "10:00 PM",

@@ -8,7 +8,7 @@ directive.directive('numbersOnly', function(){
 		require: 'ngModel',
 		link: function(scope, element, attrs, modelCtrl){
 			modelCtrl.$parsers.push(function(inputValue){
-				if(inputValue === undefined) return '' 
+				if(inputValue === undefined) return '';
 				var transformedInput = inputValue.replace(/[^0-9+]/g, ''); 
 				if(transformedInput!=inputValue){
 					modelCtrl.$setViewValue(transformedInput);
@@ -45,7 +45,6 @@ directive.directive('pwCheck', [function () {
             var firstPassword = '#' + attrs.pwCheck;
             elem.add(firstPassword).on('keyup', function () {
                 scope.$apply(function () {
-                    // console.info(elem.val() === $(firstPassword).val());
                     ctrl.$setValidity('pwmatch', elem.val() === $(firstPassword).val());
                 });
             });

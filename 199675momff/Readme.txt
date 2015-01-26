@@ -2,7 +2,7 @@
 CSS Validation:
 There are 6 warning in screen.css.
 Line 96 & Line 97 & Line 173 are used to reset iPad style.
-Line 341 & Line 345 & Line 350 are used to reset placeholder style.
+Line 343 & Line 347 & Line 352 are used to reset placeholder style.
 Please do not score down.
 Thanks.
 

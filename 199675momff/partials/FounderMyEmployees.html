@@ -2,7 +2,7 @@
 
 	<aside>
   	<div class="profile">
-    	<div class="thumb"></div>
+    	<div class="thumb"><img src="./i/thumb.png" alt="Thumb" /></div>
     </div>
     <ul>
     	<li><a href="javascript:;">My Info</a></li>
@@ -10,6 +10,7 @@
       <li><a href="#/FounderMyHistory">My History</a></li>
       <li><a class="active" href="javascript:;">Employees</a></li>
     </ul>
+    <a href="#/Payment" class="note" data-ng-show="role ==='Founder'">Not a Verified Business</a>
   </aside>
   <!-- End Aside -->
   <div class="main">
@@ -36,7 +37,7 @@
               </td>
               <td>
                 <span data-ng-hide="employee.flag">{{employee.password}}</span>
-                <input type="text" data-ng-model="employee.password" data-ng-show="employee.flag" data-ng-class="{'error':employee.passwordEmpty}" />
+                <input type="password" data-ng-model="employee.password" data-ng-show="employee.flag" data-ng-class="{'error':employee.passwordEmpty}" />
               </td>
               <td>
                 <a href="javascript:;" class="btn btn-secondary" data-ng-hide="employee.flag" data-ng-click="modify($index)">Modify</a>

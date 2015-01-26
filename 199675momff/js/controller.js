@@ -232,9 +232,6 @@ controllers.controller("platEmployeeMyInfoCtrl",function($scope,infoList,passwor
 		$scope.infoList = data.info;
 		
 		$scope.edit = function(){
-			if($scope.uploader.flow[3].files.length){
-				$scope.infoList[3].describe = $scope.uploader.flow[3].files[0].name	
-			}
 			$scope._infoList = angular.copy($scope.infoList);
 			$scope.switch = true;
 		}
@@ -244,6 +241,9 @@ controllers.controller("platEmployeeMyInfoCtrl",function($scope,infoList,passwor
 		}
 		$scope.save = function(){
 			if($scope.infoForm.$valid){
+				if($scope.uploader.flow.files[0]){
+					$scope.infoList[3].describe = $scope.uploader.flow.files[0].name;
+				}
 				$scope.switch = false;
 			}
 		}
@@ -343,6 +343,7 @@ controllers.controller("founderStatusCtrl",function($scope,founderList,$rootScop
 	var promise = founderList.query();
 	promise.then(function(data){
 		$scope.founderList = data.founder;
+		$scope.founderList[0].active = true;
 		$scope.active = function(idx){
 			for(var i=0;i<$scope.founderList.length;i++){
 				$scope.founderList[i].active = false;	
@@ -384,10 +385,6 @@ controllers.controller("founderF$PostingCtrl",function($scope,postList,$rootScop
 			{
 				name: 'Flying',
 				value: 'Flying'
-			},
-			{
-				name: '...',
-				value: '...'
 			}
 		];
 		$scope.business_type = {
@@ -437,6 +434,9 @@ controllers.controller("registerCtrl",function($scope,$rootScope){
 		value: $scope.myOptions[0].value
 	}
 	$scope.register = function(){
+		if($scope.accept){
+			$scope.submitted = true;
+		}
 		if($scope.form.$valid && $scope.accept) {
 			$rootScope.role = $scope.account_type.name;
 			$rootScope.modal = false;	

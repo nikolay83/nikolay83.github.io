@@ -3,7 +3,7 @@
   <div class="main no-background">
   	<h2>Founder$hare Posting</h2>
     <div class="button-group">
-    	<a href="javascript:;" class="btn btn-secondary" data-ng-click="save()">Save</a>
+    	<a href="javascript:;" class="btn btn-secondary btn-save" data-ng-click="save()">Save</a>
       <a href="#/Founder$hares" class="btn btn-primary">Cancel</a>
     </div>
     <!-- End .button-group -->
@@ -12,7 +12,7 @@
       	flow-init="{singleFile:true}" 
     		flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
         <div class="business-info">
-          <div class="logo"><img src="../i/image.jpg" data-ng-src="{{post[0].logo}}" alt="Pic" flow-img="$flow.files[0]" /></div>
+          <div class="logo"><img src="./i/image.jpg" data-ng-src="{{post[0].logo}}" alt="Pic" flow-img="$flow.files[0]" /></div>
           <!-- End .logo -->
           <a href="javascript:;" class="link">{{post[0].businessName}}</a>
           <div class="activation">Activation : {{post[0].activationDate + ' ' + post[0].activationTime}}</div>

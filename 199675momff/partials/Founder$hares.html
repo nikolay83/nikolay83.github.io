@@ -2,7 +2,7 @@
 
 	<aside>
   	<div class="profile">
-    	<div class="thumb"></div>
+    	<div class="thumb"><img src="./i/thumb.png" alt="Thumb" /></div>
     </div>
     <ul>
     	<li><a href="javascript:;">My Info</a></li>
@@ -10,6 +10,7 @@
       <li><a href="#/FounderMyHistory">My History</a></li>
       <li><a href="#/FounderMyEmployees">Employees</a></li>
     </ul>
+    <a href="#/Payment" class="note" data-ng-show="role ==='Founder'">Not a Verified Business</a>
   </aside>
   <!-- End Aside -->
   <div class="main">
@@ -42,7 +43,7 @@
     	<ul>
       	<li>
           <div class="business-info">
-            <div class="logo"><img src="../i/image.jpg" data-ng-src="{{founder$hares[0].currentPosting[0].logo}}" alt="Pic" /></div>
+            <div class="logo"><img src="./i/image.jpg" data-ng-src="{{founder$hares[0].currentPosting[0].logo}}" alt="Pic" /></div>
             <!-- End .logo -->
             <a href="javascript:;" class="link">{{founder$hares[0].currentPosting[0].name}}</a>
             <div class="activation">Activation : {{founder$hares[0].currentPosting[0].activation}}</div>
