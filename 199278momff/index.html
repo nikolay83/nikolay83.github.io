@@ -26,12 +26,12 @@
         <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}"></a>
 
         <div class="menu-toggle" data-ng-click="global.menuOpened = !global.menuOpened"></div>
-        <div class="title">{{global.title}}</div>
+        <h1 class="title">{{global.title}}</h1>
     </header>
     <!-- end page header-->
 
     <!-- main menu -->
-    <div class="menu" data-ng-include="'partials/menu.html'" data-ng-controller="menu"></div>
+    <aside class="menu" data-ng-include="'partials/menu.html'" data-ng-controller="menu"></aside>
     <!-- end main menu -->
 
     <div class="menu-shadow"></div>

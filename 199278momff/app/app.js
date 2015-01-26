@@ -24,7 +24,7 @@ var app = angular
                 templateUrl: 'views/details.html',
                 controller: 'detailsPage'
             })
-            .when('/redeem/:id', {
+            .when('/redeem/:id/:redeemId', {
                 templateUrl: 'views/redeem.html',
                 controller: 'redeemPage'
             })
@@ -48,9 +48,9 @@ var app = angular
                 templateUrl: 'views/confirm.html',
                 controller: 'confirmPage'
             })
-            .when('/blank', {
-                templateUrl: 'views/blank.html',
-                controller: 'blankPage'
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'loginPage'
             })
             .otherwise({redirectTo: '/blank'});
     }])

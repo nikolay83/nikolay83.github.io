@@ -39,14 +39,16 @@
     </div>
 </div>
 
-<ul class="menu-items">
-    <!-- menu item -->
-    <li data-ng-repeat="item in menu">
-        <a class="menu-item {{item.class}}" href="javascript:;"
-           data-ng-href="#/{{item.href}}"
-           data-ng-click="menuClicked()">
-            {{item.title}}
-        </a>
-    </li>
-    <!-- end menu item -->
-</ul>
+<nav class="menu-items">
+    <ul>
+        <!-- menu item -->
+        <li data-ng-repeat="item in menu">
+            <a class="menu-item {{item.class}}" href="javascript:;"
+               data-ng-href="#/{{item.href}}"
+               data-ng-click="menuClicked()">
+                {{item.title}}
+            </a>
+        </li>
+        <!-- end menu item -->
+    </ul>
+</nav>

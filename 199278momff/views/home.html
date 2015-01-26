@@ -22,11 +22,12 @@
         <!-- end order selector -->
         <!-- search input -->
         <div class="searching" data-ng-show="mode == 'searching'">
+            <button class="btn btn-success btn-small cancel-search" data-ng-click="setMode('order')">cancel</button>
             <label class="input">
+                <span class="do-search" data-ng-click="doSearch()"></span>
                 <input data-ng-model="search" placeholder="Type your keyword" data-ng-keyup="checkEnter($event)"/>
                 <span class="clear" data-ng-click="search=''"></span>
             </label>
-            <button class="btn btn-success btn-small cancel-search" data-ng-click="setMode('order')">cancel</button>
         </div>
         <!-- end search input -->
     </div>

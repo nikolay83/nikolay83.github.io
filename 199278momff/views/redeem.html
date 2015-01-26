@@ -4,7 +4,7 @@
         <div class="info">
             <div class="business-title">{{business.name}}</div>
             <div class="business-qr">
-                <img alt="QR Code" src="i/empty.gif" data-ng-src="{{business.redeem.qr}}"/>
+                <img alt="QR Code" src="i/empty.gif" data-ng-src="{{redeem.qr}}"/>
             </div>
         </div>
         <!-- end business info -->
@@ -13,13 +13,13 @@
                 <!-- redeem value -->
                 <div class="value-group">
                     <div class="title">value</div>
-                    <span class="value">${{business.redeem.value}}</span><br/>
+                    <span class="value">${{redeem.value}}</span><br/>
                 </div>
                 <!-- end redeem value -->
                 <!-- redeem discount -->
                 <div class="discount-group">
                     <div class="title">discount</div>
-                    <span class="discount">{{business.redeem.discount}}%</span>
+                    <span class="discount">{{redeem.discount}}%</span>
                     <span class="discount-label">off</span>
                 </div>
                 <!-- end redeem discount -->

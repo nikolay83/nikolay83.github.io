@@ -96,10 +96,21 @@ appControllers.controller('search', ['$scope', '$location', function ($scope, $l
     $scope.setMode = function(mode) {
         $scope.mode = mode;
         $scope.search = '';
+        if (mode === 'searching') {
+            setTimeout(function () {
+                $('.search .input').focus();
+            }, 0);
+        }
     };
 
     $scope.checkEnter = function($event) {
-        if ($event.keyCode === 13 && $scope.search) {
+        if ($event.keyCode === 13) {
+            $scope.doSearch();
+        }
+    };
+
+    $scope.doSearch = function () {
+        if ($scope.search) {
             $location.path('/search/' + $scope.search);
         }
     };
@@ -117,7 +128,7 @@ appControllers.controller('searchPage', ['$scope', '$http', '$routeParams', func
     $http.get('data/businesses.json').success(function (data) {
         var query = ($scope.query || '').toLowerCase();
         $scope.businesses = data.businesses.filter(function (business) {
-            return business.name.toLowerCase().indexOf(query) === 0;
+            return business.name.toLowerCase().indexOf(query) >= 0;
         });
     });
 }]);
@@ -125,7 +136,7 @@ appControllers.controller('searchPage', ['$scope', '$http', '$routeParams', func
 
 
 // Details page controller
-appControllers.controller('detailsPage', ['$scope', '$http', function ($scope, $http) {
+appControllers.controller('detailsPage', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
     $scope.resetGlobal();
 
     function initMaps() {
@@ -148,7 +159,6 @@ appControllers.controller('detailsPage', ['$scope', '$http', function ($scope, $
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initializeGoogleMaps';
         document.body.appendChild(script);
     }
-    initMaps();
 
     function loadMap () {
         var lat = 0,
@@ -166,6 +176,7 @@ appControllers.controller('detailsPage', ['$scope', '$http', function ($scope, $
             zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         var map = new google.maps.Map(mapCanvas, mapOptions);
         var marker = new google.maps.Marker({
             position: mapPosition,
@@ -177,20 +188,33 @@ appControllers.controller('detailsPage', ['$scope', '$http', function ($scope, $
     $scope.global.title = 'Details';
     $scope.global.back = 'home';
 
-    $http.get('data/business.json').success(function (data) {
-        $scope.business = data;
+    $http.get('data/businesses.json').success(function (data) {
+        data.businesses.some(function (business) {
+            if (business.id.toString() === $routeParams.id) {
+                $scope.business = business;
+                return true;
+            }
+        });
+
+        initMaps();
     });
 }]);
 
 
 // Redeem page controller
-appControllers.controller('redeemPage', ['$scope', '$http', function ($scope, $http) {
+appControllers.controller('redeemPage', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
     $scope.resetGlobal();
     $scope.global.title = 'Display QR';
     $scope.global.back = 'home';
 
-    $http.get('data/business.json').success(function (data) {
-        $scope.business = data;
+    $http.get('data/businesses.json').success(function (data) {
+        data.businesses.some(function (business) {
+            if (business.id.toString() === $routeParams.id) {
+                $scope.business = business;
+                $scope.redeem = business.redeem[$routeParams.redeemId] || business.redeem[0];
+                return true;
+            }
+        });
     });
 }]);
 
@@ -264,7 +288,7 @@ appControllers.controller('qrScanPage', ['$scope', '$interval', '$http', '$locat
                 // position video element in viewport
                 setTimeout(function () {
                     $(video).css({'margin-top': (180 - $(video).height()) / 2});
-                    timer = $interval(scan, 500);
+                    timer = $interval(scan, 200);
                 }, 100);
 
             } catch (e) {
@@ -279,7 +303,7 @@ appControllers.controller('qrScanPage', ['$scope', '$interval', '$http', '$locat
 
         // scan qr code
         function scan() {
-            context.drawImage(video, 0, 0, 307, 250);
+            context.drawImage(video, 0, 0, 320, 360);
             try {
                 qrcode.decode();
             } catch(e) {}
@@ -387,8 +411,8 @@ appControllers.controller('modalCtrl', function ($scope, $modalInstance, text) {
 });
 
 
-// Blank page controller - shall be removed after merge
-appControllers.controller('blankPage', ['$scope', function ($scope) {
+// Login page controller - shall be replaced after merge
+appControllers.controller('loginPage', ['$scope', function ($scope) {
     $scope.resetGlobal();
-    $scope.global.title = 'Blank Page';
+    $scope.global.title = 'Login';
 }]);

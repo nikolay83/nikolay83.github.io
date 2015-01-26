@@ -134,6 +134,7 @@ body {
 .container {
     padding-left: 10px;
     padding-right: 10px;
+    width: auto;
 }
 
 .main-content {
@@ -158,12 +159,17 @@ header {
     right: 0;
     padding: 0 10px;
     height: 40px;
-    line-height: 40px;
     background: #007035;
     text-align: center;
-    color: #ffffff;
     font-size: 18px;
 }
+
+    header .title {
+        font-size: 18px;
+        color: #ffffff;
+        margin: 0;
+        line-height: 40px;
+    }
 
     header .back {
         position: absolute;
@@ -212,8 +218,8 @@ header {
     }
 
     .menu .menu-items {
-        border-top: 1px solid #b7b7b7;
-        border-bottom: 1px solid #b7b7b7;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
     }
 
     .menu .menu-item {
@@ -223,8 +229,8 @@ header {
         padding-left: 60px;
         font-size: 16px;
         background: #ffffff url('../i/menu-items.png') no-repeat;
-        color: #000000;
-        box-shadow: inset 0 1px #b7b7b7, inset 0 -1px #b7b7b7;
+        color: #333333;
+        box-shadow: inset 0 1px #dddddd, inset 0 -1px #dddddd;
     }
 
     .menu .menu-item:focus,
@@ -233,7 +239,7 @@ header {
     }
 
 .menu .menu-item:active {
-    box-shadow: inset 5px 0 #4b8f00, inset 0 1px #b7b7b7, inset 0 -1px #b7b7b7;
+    box-shadow: inset 5px 0 #4b8f00, inset 0 1px #dddddd, inset 0 -1px #dddddd;
     background-color: #f2f2f2;
     text-decoration: none;
 }
@@ -432,10 +438,18 @@ body.menu-opened .menu-shadow {
 
     .search .input {
         position: relative;
-        display: inline-block;
+        display: block;
         padding: 5px 25px 5px 35px;
-        width: 225px;
+        margin-right: 75px;
         font-weight: normal;
+    }
+
+    .search .do-search {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 35px;
+        height: 30px;
         background: url('../i/glass.png') 10px -55px no-repeat;
     }
 
@@ -511,6 +525,11 @@ body.menu-opened .menu-shadow {
         line-height: 64px;
     }
 
+    .business-entry .business-logo img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
     .business-entry .business-title {
         margin-left: 75px;
     }
@@ -539,10 +558,13 @@ body.menu-opened .menu-shadow {
 
     .business-entry .entry-detail {
         display: none;
-        height: 60px;
-        padding: 10px;
         background: #007035;
         color: #ffffff;
+    }
+
+    .business-entry .redeem-entry {
+        height: 60px;
+        padding: 10px;
     }
 
     .business-entry.expanded .entry-detail {
@@ -553,7 +575,7 @@ body.menu-opened .menu-shadow {
 
     .business-entry .redeem {
         float: left;
-        width: 75px;
+        width: 80px;
         padding-right: 10px;
         text-align: center;
         margin-top: -4px;
@@ -619,7 +641,7 @@ body.menu-opened .menu-shadow {
         bottom: 0;
         height: 50px;
         padding: 10px 15px;
-        background: rgba(75, 111, 0, 0.6);
+        background: rgba(74, 145, 0, 0.6);
         color: #ffffff;
     }
 
@@ -890,16 +912,16 @@ body.menu-opened .menu-shadow {
 
     #qr-scan .qr-reader {
         margin: 0 -10px;
-        height: 180px;
         overflow: hidden;
     }
 
     #qr-reader-showcast {
         width: 100%;
+        display: none;
     }
 
     #qr-canvas {
-        display: none;
+        display: block;
         width: 100%;
         height: 180px;
     }
@@ -974,7 +996,13 @@ body.menu-opened .menu-shadow {
 /* modal dialog */
 .modal-dialog {
     width: 200px;
-    margin: 145px auto 0;
+    margin: 145px auto 20px;
+}
+
+@media (max-height: 400px) {
+    .modal-dialog {
+        margin: 60px auto 10px;
+    }
 }
 
     .modal-content {
