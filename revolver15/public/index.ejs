@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ODCR</title>
+    <link rel="stylesheet"href="bootstrap-3.0.0/css/bootstrap.min.css" />
+    <link href="bootstrap-3.0.0/css/signin.css" rel="stylesheet" />
+    <script src="jquery/jquery-2.0.3.min.js"></script>
+    <script src="bootstrap-3.0.0/js/bootstrap.js"></script>
+
+</head>
+<body id="html_body">
+	<div class="container">
+	<div class="row">
+	<div class="center-block">
+            <form id="login_form" class="form-signin">
+            <h2 class="form-signin-heading">ODCR Admin Login</h2>
+                <div id="errormsg" style="color: red"></div>
+                <table>
+                    <td>
+                        <label for="username">User Name</label>
+                        <input type="text"
+                               class="form-control" placeholder="User Name" name="username"
+                               id="username" value="cable\topcoder"><br>
+                    </td>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                            <input type="password"
+                                   class="form-control" placeholder="Password" name="password"
+                                   id="password" value="password"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" name="Add" class="btn btn-lg btn-primary btn-block" id="button_submit">Login</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+            </div>
+     </div>
+    </div>
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+		
+        $("#button_submit").click(function () {
+			console.log('login');
+            $.ajax({type: 'POST',
+                url: "/login",
+                data: $('#login_form').serialize(),
+                success: function (responseData) {
+					console.log(responseData);
+                    if ("AUTHENTICATION_ERROR" == responseData) {
+                        $("#errormsg").text("Please enter valid login credentials");
+                        $("#password").val('');
+                        $("#username").val('');
+                    } else {
+						window.location = '/odcr';
+                    }
+                }
+            })
+        });
+    });
+</script>

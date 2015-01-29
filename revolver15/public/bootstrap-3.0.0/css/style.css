@@ -1,0 +1,42 @@
+
+.resizedTextbox {
+	width: 400px;
+	height: 30px;
+	padding: 1px
+}
+
+.span3 {
+    height: 400px !important;
+    overflow: auto;
+}
+
+#field {
+    margin-bottom:5px;
+}
+
+input {
+    width: 360px;
+}
+
+.remove-me {
+    margin: 3px;
+}
+
+.log-text-area {
+    resize: none !important;
+    margin-left: 10px !important;
+    cursor: text !important;
+}
+
+#build_vod_browser {
+    margin-left: 10px;
+}
+
+#log-area  {
+	background-color: #EEE;
+}
+
+#log-area div {
+	background-color: #EEE;
+	font-size:11px;
+}
