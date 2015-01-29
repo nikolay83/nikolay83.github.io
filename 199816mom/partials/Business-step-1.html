@@ -1,0 +1,106 @@
+<div id="business-step-1" class="business-home">
+
+    <!-- when modal show, blur div -->
+    <div class="wrapper" data-ng-class="{blur:modal}">
+        <header class="vertical-align-subs">
+            <div></div>
+            <!-- menu title -->
+            <div class="menu-title">
+                Redeem Founder$hare
+            </div>
+            <div>
+                <div class="icon sprite sprite-hamburger-menu" data-ng-click="showRightSlideMenu()"></div>
+            </div>
+        </header>
+        <!-- End header -->
+
+        <div class="main-container">
+            <!-- flex wrapper is used for screen get wider -->
+            <div class="flex-wrapper">
+                <div class="content-wrapper">
+                    <!-- flow graph at the top -->
+                    <div class="flow-graph vertical-align-subs">
+                        <!-- step 1, active -->
+                        <div class="step-seq">
+                            <div class="circle">
+                                <span>1</span>
+                            </div>
+                        </div>
+                        <!-- step 2 , inactive -->
+                        <div class="inactive step-seq">
+                            <div class="circle">
+                                <span>2</span>
+                            </div>
+                        </div>
+                        <!-- step 3 , inactive -->
+                        <div class="inactive step-seq">
+                            <div class="circle">
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <!-- background connector -->
+                        <div class="connector"></div>
+                    </div>
+                    <form novalidate name="stepOneForm">
+                        <h2>Enter Receipt Total</h2>
+
+                        <div class="info">Please enter the amount to be redeemed from the Founder$hare</div>
+                        <div class="form-group">$<input data-ng-model="redeemAmount" name="redeemAmount"
+                                  data-ng-focus="focusInput()"    data-ng-class="" type="number" placeholder="00.00"/></div>
+
+                        <!-- validate error message -->
+                        <div class="error-info" data-ng-show="showError">
+                            <span>{{validateErrorMsg}}</span>
+                        </div>
+
+                        <div class="btn-group">
+                            <a href="javascript:;" class="btn btn-cancel" data-ng-click="showModal();">Cancel</a>
+                            <a data-ng-click="continueToNext();" class="btn">Continue</a>
+                        </div>
+                    </form>
+                    <!-- set white margin after button -->
+                    <div class="footer-clear"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End .main-container -->
+    </div>
+
+    <!-- fix the white edge problem using CSS3 filter when the blur pixel is more than 2 pixel -->
+    <div class="modal-back-ground">
+        <header></header>
+        <div class="main-container"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" data-ng-show="modal" data-ng-class="{in:modal}">
+        <!-- back overlap for modal , when click the overlap, it will close the dialog -->
+        <div class="modal-backdrop fade" data-ng-show="modal" data-ng-class="{in:modal}"
+             data-ng-click="closeModal()"></div>
+        <!-- modal dialog -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- ? icon at the top -->
+                <div class="modal-icon">
+                    <div>
+                        ?
+                    </div>
+                </div>
+                <!-- modal body -->
+                <div class="modal-body">
+                    <p>Are you sure you want to cancel this process?</p>
+                </div>
+                <!-- modal button group -->
+                <div class="modal-footer">
+                    <!-- button NO -->
+                    <a href="javascript:;" class="btn btn-cancel" data-ng-click="closeModal();">NO</a>
+                    <!-- splitter between tow buttons -->
+                    <a class="splitter"></a>
+                    <!-- button YES -->
+                    <a href="#/business-home" class="btn">YES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
