@@ -1,5 +1,0 @@
-FILE DELETED
-
-Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
-File name: "winmail.dat->OdcrApplication.zip->jquery-2.1.1.min.js"
-Filter name: "FILE FILTER= Blocked File Types: *.js"
