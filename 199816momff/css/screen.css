@@ -170,6 +170,27 @@ body {
     filter: url(blur.svg#blur);
 }
 
+/* reset the orange border in chrome mobile and shadow in safari mobile */
+textarea:focus, textarea, input, input:focus{
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* reset style for safari mobile */
+input:disabled
+{
+    opacity: 1;
+}
+
+/* reset for safari */
+input
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
 /***** common style for buttons *****/
 /* common button */
 .btn
@@ -182,7 +203,7 @@ body {
     font-size: 18px;
     color: rgb(255, 255, 255);
     text-align: center;
-    line-height: 50px;
+    line-height: 47.5px;
     vertical-align: middle;
 }
 
@@ -203,7 +224,7 @@ body {
     font-size: 18px;
     color: rgb(255, 255, 255);
     text-align: center;
-    line-height: 50px;
+    line-height: 47.5px;
     vertical-align: middle;
 }
 
@@ -263,7 +284,7 @@ body > div
     background-color: #ffffff; /* for old browser*/
     background: -webkit-linear-gradient(to bottom, #ffffff 0%,#f2f2f2 100%);
     background: -moz-linear-gradient(to bottom, #ffffff 0%,#f2f2f2 100%);  /* FF3.6+ */
-    background: -webkit-linear-gradient(to bottom, #ffffff 0%,#f2f2f2 100%); ; /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(to bottom, #ffffff 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
     background: linear-gradient(to bottom, #ffffff 0%,#f2f2f2 100%); /* W3C */
     padding-bottom: 17px;
     }
@@ -302,7 +323,7 @@ body > div
     /* set the form of login */
     #login form
     {
-        width: 258px;
+        width: 80.63%;
         margin:  0 auto;
         text-align: center;
     }
@@ -367,13 +388,16 @@ body > div
     {
         border: 0;
         background-color: transparent;
-        margin-left: 10px;
+        margin-left: 9px;
         font-size: 16px;
         line-height: 20px;
         height: 20px;
         vertical-align: middle;
         color: #333333;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
+
 
     /***** setting for placeholder for input element *****/
     /* WebKit browsers */
@@ -403,7 +427,7 @@ body > div
    /* login button */
     .btn-login
     {
-        width: 261px;
+        width: 101.16%;
     }
 
     /* button group in login page */
@@ -595,7 +619,7 @@ body > div
      /* set content wrapper */
      .content-wrapper
      {
-         width: 300px;
+         width: 100%;
          background-color: #fff;
      
          border-radius: 5px;
@@ -605,14 +629,15 @@ body > div
      /* set the title of content wrapper */
      #business-home .content-wrapper h2
      {
-         padding-top: 16px;
+         padding-top: 10px;
          margin: 0 auto 18px auto;
          color:  #333333;
          font-size: 16px;
          font-weight: bold;
          text-align: center;
          width: 175px;
-     }
+         line-height: 20px;
+}
 
      /* set the arrow down group */
      .content-wrapper .arrow-group
@@ -694,7 +719,9 @@ body > div
     .step-icon-with-text > div:first-child
     {
         margin: 0 auto;
-    }
+    
+        margin-top: 2px;
+}
 
     /* set text in step icon group */
     .step-icon-with-text .icon-label
@@ -703,9 +730,11 @@ body > div
         font-size: 14px;
         font-weight: bold;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 8px;
         position: relative;
-    }
+    
+        line-height: 16px;
+}
 
     /* set step group */
     .step-seq-group
@@ -746,16 +775,20 @@ body > div
     /* set step 1 group position */
     .content-wrapper .step-1
     {
-        left: 130px;
-        top: 24px;
-    }
+        left: 50%;
+        top: 22px;
+    
+        -webkit-transform: translateX(-20px);
+}
 
     /* second step 3 group position */
     .content-wrapper .step-2
     {
-        right: 130px;
-        top: 134px;
-    }
+        right: 50%;
+        top: 132.5px;
+    
+        -webkit-transform: translateX(20px);
+}
 
     /* connector for step2, it is on the left */
     #business-home .content-wrapper .step-2 .connector
@@ -769,21 +802,36 @@ body > div
     .content-wrapper .step-2 .step-icon-with-text
     {
         width: 128px;
+    
+        top: -1px;
+}
+
+    /* set step-2 label text */
+    .content-wrapper .step-2 .icon-label
+    {
+        margin-top: 2px;
     }
 
     /* set step 3 group position */
     .content-wrapper .step-3
     {
-        left: 130px;
-        top: 244px;
-    }
+        left: 50%;
+        top: 242px;
+    
+        -webkit-transform: translateX(-20px);
+}
 
+    .content-wrapper .step-3 .step-icon-with-text
+    {
+        margin-top: 0px;
+    }
+    
     /* redeem founder share button */
     .btn-redeem-founder-share
     {
         display: block;
         margin: 0 auto;
-        width: 261px;
+        width: 87%;
     }
 
     /* footer clear */
@@ -795,7 +843,7 @@ body > div
     /* flex wrapper */
     .flex-wrapper
     {
-        min-height: 300px;
+        min-height: 93.75%;
         border-radius: 5px;
         min-width: 300px;
         margin: 10px;
@@ -808,15 +856,17 @@ body > div
 {
     height: 60px;
     font-size: 0;
-    padding: 10px 0;
+    padding: 3.33% 0;
     position: relative;
     text-align: center;
-    }
+    width: 300px;
+    margin: 0 auto;
+}
 
     /* step sequence in flow graph */
     #business-step-1 .flow-graph .step-seq
     {
-        margin-left: 85px;
+        margin-left: 28.33%;
         display: inline-block;
     }
 
@@ -829,13 +879,15 @@ body > div
     /* connector in flow graph */
     .flow-graph .connector
     {
-        width: 260px;
+        width: 86.67%;
         position: absolute;
         z-index: 0;
         left: 0;
         right: 0;
-        margin: 0 auto;
-    }
+        margin: 0 6.67%;
+    
+        height: 8px;
+}
 
     /* business step 1 title */
     #business-step-1 h2
@@ -846,7 +898,7 @@ body > div
         font-weight: bold;
         text-align: center;
         border-bottom: 1px solid #d7d7d7;
-        width: 280px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -854,15 +906,18 @@ body > div
     #business-step-1 .info
     {
         width: 278px;
-        margin: 30px auto 0 auto;
+        margin: 29px auto 0px auto;
         text-align: center;
         height: 56px;
-    }
+    
+        line-height: 15px;
+}
 
     /* form in business step 1 */
     #business-step-1  form
     {
-        padding: 0 10px;
+        margin-top: -1px;
+        padding: 0px 3.33%;
     }
 
     /* business step 1 form group */
@@ -877,7 +932,7 @@ body > div
     /* input in business step 1 form group */
     #business-step-1 .form-group input
     {
-        width: 162px;
+        width: 57.86%;
         height: 33px;
         border:  1px solid #c2c2c2;
         -webkit-border-radius: 2px;
@@ -887,7 +942,9 @@ body > div
         margin-left: 5px;
     
         background-color: #f2f2f2;
-    }
+    
+        font-size: 16px;
+}
 
     /* setp sequence that are inactive */
     .step-seq.inactive  .circle
@@ -898,7 +955,7 @@ body > div
     /* button group for business step 1*/
     #business-step-1  .btn-group
     {
-        margin-top: 89px;
+        margin-top: 90px;
         text-align: justify;
         font-size: 0;
     }
@@ -908,7 +965,7 @@ body > div
     {
         display: inline-block;
         height: 50px;
-        width: 111px;
+        width: 39.64%;
     }
 
     /* for button justify */
@@ -1045,7 +1102,7 @@ body > div
         width: 179px;
         text-align: center;
         color:#ffffff;
-        margin: 46px auto 0px auto;
+        margin: 40px auto 0px auto;
 
         line-height: 20px;
     }
@@ -1053,11 +1110,12 @@ body > div
     /* footer for modal box */
     .modal-footer
     {
-        margin-bottom: 1px;
         margin-top: 13px;
         font-size: 0;
-        position: relative;
-    }
+        position: absolute;
+    
+        bottom: 1px;
+}
 
     /* button in modal footer */
      .modal-footer .btn
@@ -1144,7 +1202,9 @@ body > div
     {
         margin-top: 14px;
         margin-bottom: 0;
-    }
+    
+        width: 100%;
+}
 
     /* fix for sign up founder page */
     .sign-up-founder .modal.alert .modal-footer .btn
@@ -1207,6 +1267,12 @@ a:active
         box-shadow: inset 0px 5px 0px 0px rgba(0, 0, 0, 0.3);
     }
 
+    /* change icon label at the same time when circle is active*/
+    .account-type-icon-with-label .circle:active + .icon-label
+    {
+        color: rgb(75, 143, 0);
+    }
+
     /* set person icon in circle be center */
     .account-type-icon-with-label .circle > div
     {
@@ -1243,7 +1309,7 @@ a:active
     {
         height: 34px;
         border-bottom: 1px solid #c2c2c2;
-        width: 280px;
+        width: 87.5%;
         margin: 0 auto;
         line-height: 34px;
         vertical-align: middle;
@@ -1252,7 +1318,7 @@ a:active
     /* form in sign up page */
     .sign-up form
     {
-        width: 280px;
+        width: 87.5%;
         padding-left: 10px;
         margin: 0 auto;
     }
@@ -1268,7 +1334,7 @@ a:active
     /* form group in sign up page */
     .sign-up .form-group
     {
-        width: 260px;
+        width: 95.56%;
         margin-top: 9px;
         font-size: 0;
         color: #333333;
@@ -1284,20 +1350,27 @@ a:active
         background-color: rgb(242, 242, 242);
         height: 37px;
         padding-left: 8px;
+        font-size: 14px;
         width: 100%;
     }
 
     /* set first Name text field */
     .sign-up .form-group  #firstName
     {
-        width: 141px;
+        width: 54.62%;
     }
 
     /* last name text field */
     .sign-up .form-group  #lastName
     {
-        width: 106px;
-        margin-left: 9px;
+        width: 41.92%;
+        margin-left: 3.46%;
+    }
+
+    /* reset password placeholder */
+    .sign-up .form-group #password::-webkit-input-placeholder
+    {
+        font-style: italic;
     }
 
     /* select box in form group */
@@ -1307,12 +1380,18 @@ a:active
         -webkit-appearance: none;
         height: 37px;
         border: 1px solid  rgb(194, 194, 194) ;
-        border-radius: 2px;
+        border-radius: 3px;
         background-color: transparent;
         position: relative;
-    
-        padding-left: 8px;
+        padding-left: 9px;
         z-index: 1;
+        font-size: 14px;
+    }
+
+    /* when it is select box is tapped, set the background to active style.*/
+    .sign-up .form-group select:active + .select-box-back-ground
+    {
+        box-shadow: none;
     }
 
     /*  form group in sign up page */
@@ -1325,14 +1404,14 @@ a:active
     /* select box back ground */
     .sign-up .form-group .select-box-back-ground
     {
-        background-color: rgb(18, 85, 121);
+        background-color: #125579;
         box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.3);
         position: absolute;
         width: 39px;
         height: 36px;
-        -webkit-border-radius: 0 2px 2px 0;
-        -moz-border-radius: 0 2px 2px 0;
-        border-radius: 0 2px 2px 0;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
         text-align: center;
         vertical-align: middle;
         position: absolute;
@@ -1341,6 +1420,14 @@ a:active
         z-index: 0;
     }
 
+    /* set select box background color */
+    .sign-up .check-form-group
+    {
+        background-color: #fff;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
     /* triangle down */
     .sign-up .form-group .select-box-back-ground > div
     {
@@ -1356,9 +1443,11 @@ a:active
     /* upload file text field, be shown to user, but disable */
     .sign-up #uploadFile
     {
-        width: 151px;
+        width: 58.08%;
         height: 37px;
+        color: #333333;
     }
+
 
     /* upload file input field hidden */
     .fileUpload input.upload {
@@ -1373,17 +1462,26 @@ a:active
         filter: alpha(opacity=0);
     }
 
+    /* upload file button */
+    .fileUpload
+    {
+        width: 41.15%;
+    
+        font-weight: normal;
+        font-size: 16px;
+}
+
     /* button be inactive */
     .btn-inactive
     {
         border-radius: 2px;
         box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.3);
-        width: 107px;
         height: 35px;
         line-height: 35px;
-        top:-5px;
+        top:-6px;
         position: relative;
-    }
+    
+}
 
     /* term information */
     .term-info
@@ -1402,9 +1500,9 @@ a:active
     /* accept terms and conditions */
     .accept-terms-group
     {
-        height: 37px;
+        height: 45px;
         margin-top: 0;
-        padding-left: 30px;
+        padding-left: 11.17%;
         vertical-align: middle;
         font-size: 0;
         position: relative;
@@ -1419,14 +1517,18 @@ a:active
     /* margin top */
     .sign-up form .btn-group
     {
-        margin-top: 7px;
+        margin-top: -1px;
     }
 
     /* button in sign up form button group */
     .sign-up form .btn-group .btn
     {
-        width: 261px;
-    }
+        width: 96.67%;
+        height: 40px;
+        line-height: 37px;
+    
+        vertical-align: middle;
+}
 
     a.btn:active
     {
@@ -1443,17 +1545,11 @@ a:active
         margin-top: 7px;
     }
 
-    .sign-up.sign-up-founder .btn
-    {
-        height: 40px;
-        line-height: 40px;
-    }
-
     .btn-disable
     {
         border-radius: 5px;
         background-color: #82a3b5;
-        box-shadow: inset 0px -5px 0px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0px -5px 0px 0px #7f96A3;
         pointer-events: none;
     }
 
@@ -1476,7 +1572,7 @@ a:active
     .confirm-password-group   .circle > div
     {
         position: absolute;
-        top:50%;
+        top: 61%;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -1484,21 +1580,36 @@ a:active
 
     #bizFirstName
     {
-        width: 121px;
+        width: 46.9%;
     }
 
 
     #bizLastName
     {
-        width: 129px;
-        margin-left: 8px;
+        width: 50%;
+        margin-left: 3.1%;
+    }
+
+    .sign-up-champion .accept-terms-group
+    {
+        height: 55px;
+    }
+
+    /* term information link */
+    .sign-up-champion  .term-info > a
+    {
+        display: inline-block;
+        margin-left: -3px;
     }
 
 /******************* reset password ********************************/
 /* information in reset password form */
 .reset-password form .info
 {
-    margin-bottom: 37px;
+    width: 99.35%;
+    margin: 34.5px 0px 35.8px 3.5%;
+    line-height: 16.4px;
+    height: 33px;
     }
 
     /* form group in reset password step 1*/
@@ -1520,13 +1631,17 @@ a:active
     {
         margin-bottom: 0;
         position: relative;
-    }
+    
+        padding-left: 7px;
+}
 
     /* input group in reset password step 1 */
     #login.reset-password-step1 form .form-group input
     {
-        margin-left: 7px;
-    }
+        margin-left: 6.5px;
+    
+        font-size: 14px;
+}
 
     /* cancel button in reset password step 1 */
     .reset-password-step1 form .btn-cancel
@@ -1540,11 +1655,22 @@ a:active
         margin-top: 36px;
     }
 
+    /* fix truncate message issue for modal dialog */
+    #login.reset-password-step1 .modal-dialog
+    {
+        height: 180px;
+    }
+
+    #login.reset-password-step1 .modal.alert .modal-footer
+    {
+        margin-top: 33px;
+    }
+
     /* reset password button  and reset password step 1 cancel button */
     .reset-password .btn-reset-password,
     .reset-password-step1 .btn-cancel
     {
-        width: 261px;
+        width: 101.16%;
     }
 
     /* green circle for confirm password check pass in reset password step 2 */
@@ -1554,10 +1680,22 @@ a:active
         top: 50%;
     }
 
-    /* button group in reset -password step2*/
+    /* button group in reset password step2*/
     #login.reset-password-step2 .btn-group
     {
-        margin-top: 31px;
+        margin-top: 39px;
+    }
+
+    /* input field in reset password step 2 */
+    #login.reset-password-step2  input
+    {
+        font-size: 14px;
+    }
+
+    /* form group in reset password step 2 */
+    #login.reset-password-step2  .form-group
+    {
+        margin-bottom: 8px;
     }
 
     /****** set error message **************/
@@ -1572,6 +1710,13 @@ a:active
     {
         position: absolute;
         margin-top: 5px;
+    }
+
+    /* information in reset password step1*/
+    .reset-password-step1.reset-password form .info
+    {
+        margin-left: 2.95%;
+        line-height: 16.9px;
     }
 
 
@@ -1647,5 +1792,37 @@ a:active
     .modal-dialog
     {
         top: 25.88%;
+    }
+}
+
+/* fix issue when device width is more than 667px, the min-height of body  not work */
+@media screen and (min-device-width: 667px ) {
+    body
+    {
+        height: 100%;
+    }
+
+    body > div {
+        height: 100%;
+    }
+}
+
+/* fix for business home fluid */
+@media screen and (max-device-width:375px )
+{
+    .content-wrapper .step-1
+    {
+        left: 130px;
+        -webkit-transform:none;
+    }
+
+    .content-wrapper .step-2 {
+        right: 130px;
+        -webkit-transform:none;
+    }
+
+    .content-wrapper .step-3 {
+        left: 130px;
+        -webkit-transform:none;
     }
 }

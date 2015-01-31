@@ -54,6 +54,9 @@ app.config(["$routeProvider",
                 templateUrl: "partials/Reset-Password-step-2.html",
                 controller:'resetPasswordStepTwoCtrl'
             })
+            .when("/terms-and-conditions",{
+                templateUrl: "partials/Terms-and-conditions.html"
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -32,6 +32,27 @@ controllers.controller("mainCtrl", function ($scope, $rootScope) {
 
     // enable touch event for safari
     document.addEventListener("touchstart", function(){}, true);
+
+    // fix for safari mobile height 100% issue.
+
+    // First check to see if the platform is an iPhone or iPod
+    if(/iP/.test(navigator.platform) && /Safari/i.test(navigator.userAgent)){
+        var mobileSafari = "Safari";
+    }
+
+    // Set the div height
+    function setHeight($rightSidebar) {
+        var new_height = $(this).height();
+        // if mobileSafari add +60px
+        if (typeof mobileSafari === 'string'){ new_height += 60 };
+        $rightSidebar.css('height', new_height);
+    }
+
+    setHeight($('body'));
+    $(window).resize(function() {
+        setHeight.call(this, $('body'));
+    });
+
 });
 
 //Login Controller
@@ -134,12 +155,17 @@ function signUpUtil($scope, $location, $rootScope) {
         document.getElementById("uploadFile").value = fileName;
     };
 
-    // return whether accept term is not checked.
+    // return whether accept term is checked and .
     $scope.isAcceptTermUnCheck = function () {
-        return !$scope.isAcceptTerms;
+        return  !$scope.isAcceptTerms;
     };
 
+
     checkConfirmPassword($scope);
+    // return whether  disable register button.
+    $scope.isDisableRegister = function () {
+        return  !$scope.isAcceptTerms || $scope.signUpForm.$invalid || !$scope.checkConfirmPassword();
+    };
 
     $scope.validateErrorMsg = "";
 
