@@ -1,0 +1,181 @@
+<div class="container info">
+
+	<aside>
+  	<div class="profile">
+    	<div class="thumb"><img src="./i/thumb.png" alt="Thumb" /></div>
+    </div>
+    <ul>
+    	<li><a href="#/ChampionMyInfo" class="active">My Info</a></li>
+    	<li><a href="#/ChampionMyFounder$hares">My Founder$hares</a></li>
+      <li><a href="#/ChampionMyHistory">My History</a></li>
+    </ul>
+  </aside>
+  <!-- End Aside -->
+  <div class="main">
+  	<h2>My Info</h2>
+    <div class="bar">
+    	<h3>BUSINESS INFORMATION</h3>
+      <div class="button-group" data-ng-show="switch === true;">
+      	<a href="javascript:;" class="btn btn-secondary" data-ng-click="save()">Save Info</a>
+        <a href="javascript:;" class="btn btn-primary" data-ng-click="cancel()">Cancel</a>
+      </div>
+      <a href="javascript:;" class="link link-edit" data-ng-hide="switch === true;" data-ng-click="edit()">Edit</a>
+      <span class="small">Is Public Info?</span>
+    </div>
+    <!-- End .well -->
+    <div class="data info-data" data-ng-form name="infoForm">
+      <table>
+        <tr>
+          <th>Business Name</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[0].describe}}</span>
+            <input type="text" data-ng-model="infoList[0].describe" data-ng-show="switch" required="required" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[0].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Business Addresss</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[1].describe}}</span>
+            <input type="text" data-ng-model="infoList[1].describe" data-ng-show="switch" required="required"
+            	data-ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[1].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Business Type</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[2].describe}}</span>
+            <input type="text" data-ng-model="infoList[2].describe" data-ng-show="switch" required="required" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[2].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Logo/ Image</th>
+          <td class="details"
+          	flow-init="{singleFile:true}" 
+            flow-name="uploader.flow"
+    				flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+            <span data-ng-show="!switch">{{infoList[3].describe}}</span>
+            <div class="file" 
+            	data-ng-show="switch">
+              <input type="text" class="file" readonly="readonly" data-ng-show="!$flow.files.length" data-ng-model="infoList[3].describe" />
+              <input type="text" class="file" readonly="readonly" data-ng-show="$flow.files.length" data-ng-model="$flow.files[0].name" />
+              <a href="javascript:;" class="btn btn-secondary" 
+              	flow-attrs="{accept:'image/*'}" 
+                flow-btn>Browse</a>
+            </div>
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[3].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr class="describ">
+          <th>Description</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[4].describe}}</span>
+            <textarea data-ng-model="infoList[4].describe" data-ng-show="switch" required="required"></textarea>
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[4].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Hours Open</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[5].describe}}</span>
+            <input type="text" data-ng-model="infoList[5].describe" data-ng-show="switch" required="required"
+            data-ng-pattern="/^(((2[0-3])|[01][0-9]):[0-5][0-9])\s*\-\s*(((2[0-3])|[01][0-9]):[0-5][0-9])$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[5].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Website URL</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[6].describe}}</span>
+            <input type="text" data-ng-model="infoList[6].describe" data-ng-show="switch" required="required" 
+            	data-ng-pattern="/^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[6].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- End .data -->
+    <div class="bar last">
+    	<h3>ACCOUNT PASSWORD</h3>
+      <div class="button-group" data-ng-show="switchPassword === true;">
+      	<a href="javascript:;" class="btn btn-secondary" data-ng-click="savePassword()">Save Password</a>
+        <a href="javascript:;" class="btn btn-primary" data-ng-click="cancelPassword()">Cancel</a>
+      </div>
+      <a href="javascript:;" class="link link-change" data-ng-hide="switchPassword === true;" data-ng-click="editPassword()">Change Password</a>
+    </div>
+    <!-- End .well -->
+    <div class="data password-data" data-ng-form name="passwordForm">
+    	<table>
+      	<tr>
+        	<th>Current Password</th>
+          <td class="details">
+          	<span data-ng-hide="switchPassword">{{password[0].password}}</span>
+            <input type="password" id="password[0].password" name="password[0].password" 
+            	data-ng-model="password[0].password" 
+              data-ng-show="switchPassword"
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password[0].password.$invalid]"
+              required="required" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+        	<th>New Password</th>
+          <td class="details">
+          	<span data-ng-hide="switchPassword">{{password[0].new.value}}</span>
+            <input type="password" id="password_new" name="password_new" 
+            	data-ng-model="password[0].new.value" 
+              data-ng-show="switchPassword"
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password_new.$invalid]"
+              required="required" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+        	<th>Confirm Password</th>
+          <td class="details">
+          	<span data-ng-hide="switchPassword">{{password[0].confirm.value}}</span>
+            <input type="password" id="password_confirm" name="password_confirm" 
+            	data-ng-show="switchPassword" 
+              data-ng-model="password[0].confirm.value" 
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password_confirm.$invalid]"
+              pw-check="password_new" 
+              required="required" /></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- End .main -->
+  
+</div>
+<!-- End .container -->

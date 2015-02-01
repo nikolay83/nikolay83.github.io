@@ -1,0 +1,325 @@
+<div class="container" data-ng-class="{'info': user.item == 0, 'founder': user.item == 1 || user.item == 2, 'history': user.item == 3, 'employees': user.item == 4}">
+  <aside>
+  	<div class="profile">
+    	<div class="thumb"><img src="./i/thumb.png" alt="Thumb" /></div>
+    </div>
+    <ul>
+      <li data-ng-repeat="item in MyCart.user" data-ng-if="isVisible(item.role)" data-ng-click="user.item = $index">
+        <a href="javascript:;" data-ng-class="{'active' : user.item == $index}"><p data-ng-bind="item.li"></p></a>
+      </li>
+    </ul>
+
+    <a href="#/Payment" class="note" data-ng-show="role ==='Founder'">Not a Verified Business</a>
+  </aside>
+  <div class="main" data-ng-if="user.item == 0" data-ng-controller="platEmployeeMyInfoCtrl">
+    <h2>My Info</h2>
+    <div class="bar">
+      <h3>BUSINESS INFORMATION</h3>
+      <div class="button-group" data-ng-show="switch === true;">
+        <a href="javascript:;" class="btn btn-secondary" data-ng-click="save()">Save Info</a>
+        <a href="javascript:;" class="btn btn-primary" data-ng-click="cancel()">Cancel</a>
+      </div>
+      <a href="javascript:;" class="link link-edit" data-ng-hide="switch === true;" data-ng-click="edit()">Edit</a>
+      <span class="small">Is Public Info?</span>
+    </div>
+    <!-- End .well -->
+    <div class="data info-data" data-ng-form name="infoForm">
+      <table>
+        <tr>
+          <th>Business Name</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[0].describe}}</span>
+            <input type="text" data-ng-model="infoList[0].describe" data-ng-show="switch" required="required" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[0].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Business Addresss</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[1].describe}}</span>
+            <input type="text" data-ng-model="infoList[1].describe" data-ng-show="switch" required="required"
+              data-ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[1].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Business Type</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[2].describe}}</span>
+            <input type="text" data-ng-model="infoList[2].describe" data-ng-show="switch" required="required" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[2].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Logo/ Image</th>
+          <td class="details"
+            flow-init="{singleFile:true}" 
+            flow-name="uploader.flow"
+            flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+            <span data-ng-show="!switch">{{infoList[3].describe}}</span>
+            <div class="file" 
+              data-ng-show="switch">
+              <input type="text" class="file" readonly="readonly" data-ng-show="!$flow.files.length" data-ng-model="infoList[3].describe" />
+              <input type="text" class="file" readonly="readonly" data-ng-show="$flow.files.length" data-ng-model="$flow.files[0].name" />
+              <a href="javascript:;" class="btn btn-secondary" 
+                flow-attrs="{accept:'image/*'}" 
+                flow-btn>Browse</a>
+            </div>
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[3].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr class="describ">
+          <th>Description</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[4].describe}}</span>
+            <textarea data-ng-model="infoList[4].describe" data-ng-show="switch" required="required"></textarea>
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[4].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Hours Open</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[5].describe}}</span>
+            <input type="text" data-ng-model="infoList[5].describe" data-ng-show="switch" required="required"
+            data-ng-pattern="/^(((2[0-3])|[01][0-9]):[0-5][0-9])\s*\-\s*(((2[0-3])|[01][0-9]):[0-5][0-9])$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[5].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Website URL</th>
+          <td class="details">
+            <span data-ng-show="!switch">{{infoList[6].describe}}</span>
+            <input type="text" data-ng-model="infoList[6].describe" data-ng-show="switch" required="required" 
+              data-ng-pattern="/^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$/" />
+          </td>
+          <td>
+            <div class="iphone-toggle-buttons">
+              <label><input type="checkbox" data-ng-model="infoList[6].public" /><span>checkbox 0</span></label>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- End .data -->
+    <div class="bar last">
+      <h3>ACCOUNT PASSWORD</h3>
+      <div class="button-group" data-ng-show="switchPassword === true;">
+        <a href="javascript:;" class="btn btn-secondary" data-ng-click="savePassword()">Save Password</a>
+        <a href="javascript:;" class="btn btn-primary" data-ng-click="cancelPassword()">Cancel</a>
+      </div>
+      <a href="javascript:;" class="link link-change" data-ng-hide="switchPassword === true;" data-ng-click="editPassword()">Change Password</a>
+    </div>
+    <!-- End .well -->
+    <div class="data password-data" data-ng-form name="passwordForm">
+      <table>
+        <tr>
+          <th>Current Password</th>
+          <td class="details">
+            <span data-ng-hide="switchPassword">{{password[0].password}}</span>
+            <input type="password" id="password[0].password" name="password[0].password" 
+              data-ng-model="password[0].password" 
+              data-ng-show="switchPassword"
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password[0].password.$invalid]"
+              required="required" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>New Password</th>
+          <td class="details">
+            <span data-ng-hide="switchPassword">{{password[0].new.value}}</span>
+            <input type="password" id="password_new" name="password_new" 
+              data-ng-model="password[0].new.value" 
+              data-ng-show="switchPassword"
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password_new.$invalid]"
+              required="required" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Confirm Password</th>
+          <td class="details">
+            <span data-ng-hide="switchPassword">{{password[0].confirm.value}}</span>
+            <input type="password" id="password_confirm" name="password_confirm" 
+              data-ng-show="switchPassword" 
+              data-ng-model="password[0].confirm.value" 
+              data-ng-class="{true: 'error'}[submitted && passwordForm.password_confirm.$invalid]"
+              pw-check="password_new" 
+              required="required" /></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="main" data-ng-if="user.item == 1" data-ng-controller="founder$haresCtrl">
+    <h2>My Founder$hares</h2>
+    <div class="bar">
+      <dl>
+        <dt>Total amount Sold</dt>
+        <dd>{{founder$hares[0].amountSold}}</dd>
+      </dl>
+      <dl>
+        <dt>Total F$’s</dt>
+        <dd>{{founder$hares[0].F$}}</dd>
+      </dl>
+      <dl>
+        <dt>Total amount Redeemed</dt>
+        <dd>{{founder$hares[0].amountRedeemed}}</dd>
+      </dl>
+    </div>
+    <!-- End .bar -->
+    <div class="well">
+      <ul>
+        <li>Current Posting</li>
+        <li><a href="#/FounderF$Posting" class="btn btn-secondary">Create</a></li>
+        <li>Status</li>
+        <li>Options</li>
+      </ul>
+    </div>
+    <!-- End .well -->
+    <div class="data">
+      <ul>
+        <li>
+          <business-info business='founder$hares[0].currentPosting[0]'></business-info>
+          <!-- End .business-info -->
+        </li>
+        <li>
+          <dl>
+            <dt>Time remaining:</dt>
+            <dd>{{founder$hares[0].status[0].timeRemaining}}</dd>
+            <dt>Goal amount:</dt>
+            <dd>{{founder$hares[0].status[0].goalAmount}}</dd>
+            <dt>Goal reached:</dt>
+            <dd>{{founder$hares[0].status[0].goalAeached}}</dd>
+            <dt>Champions:</dt>
+            <dd>{{founder$hares[0].status[0].champions}}</dd>
+            <dt>Amount redeemed:</dt>
+            <dd>{{founder$hares[0].status[0].amountRedeemed}}</dd>
+          </dl>
+        </li>
+        <li>
+          <a href="javascript:;" class="btn btn-secondary">See Champions</a>
+          <a href="javascript:;" class="btn btn-primary">Cancel Posting</a>
+        </li>
+      </ul>
+    </div>
+    <!-- End .data -->
+  </div>
+  <div class="main status" data-ng-if="user.item == 2" data-ng-controller="founderStatusCtrl">
+    <h2>Founder Status</h2>
+    <table>
+      <thead>
+        <tr>
+          <th class="business">Business</th>
+          <th class="step">Step 1</th>
+          <th class="step">Step 2</th>
+          <th class="step">Step 3</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="founder in founderList">
+          <td>
+            <img src="./i/logo-business.png" data-ng-src="./i/{{founder.icon}}" alt="Business" />
+            {{founder.name}}
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" data-ng-model="founder.step1st" />
+              <span></span>
+            </label>
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" data-ng-model="founder.step2rd" />
+              <span></span>
+            </label>
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" data-ng-model="founder.step3rd" />
+              <span></span>
+            </label>
+          </td>
+          <td>
+            <a href="javascript:;" class="btn btn-primary btn-pay" data-ng-class="{'active':founder.active}" data-ng-click="active($index)">Activity</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="main" data-ng-if="user.item == 3" data-ng-controller="founderMyHistoryCtrl">
+    <h2>My History</h2>
+    <ul class="header">
+      <li class="action">Action Type</li>
+      <li>Details</li>
+    </ul>
+    <ul data-ng-repeat="history in historyList">
+      <li class="action"><strong>{{history.type}}</strong></li>
+      <li>{{history.details}}</li>
+    </ul>
+  </div>
+  <div class="main" data-ng-if="user.item == 4" data-ng-controller="MyEmployeesCtrl">
+    <h2>My Employees</h2>
+    <div class="bar">
+      View All Employees  <a href="javascript:;" class="btn btn-secondary" data-ng-click="add();">Add Employee</a>
+    </div>
+    <!-- End .bar -->
+    <div class="data">
+      <form name="employeeForm" data-ng-submit="save()">
+        <table>
+          <thead>
+            <tr>
+              <th class="name">Name</th>
+              <th class="password">Password</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="employee in employeesList">
+              <td>
+                <span data-ng-hide="employee.flag">{{employee.name}}</span>
+                <input type="text" data-ng-model="employee.name" data-ng-show="employee.flag" data-ng-class="{'error':employee.nameEmpty}" />
+              </td>
+              <td>
+                <span data-ng-hide="employee.flag">{{employee.password}}</span>
+                <input type="password" data-ng-model="employee.password" data-ng-show="employee.flag" data-ng-class="{'error':employee.passwordEmpty}" />
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-hide="employee.flag" data-ng-click="modify($index)">Modify</a>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-show="employee.flag" data-ng-click="save($index)">Save</a>
+                <a href="javascript:;" class="btn btn-primary" data-ng-click="remove($index)">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  
+  <!-- End .main -->
+</div>
