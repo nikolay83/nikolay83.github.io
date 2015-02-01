@@ -1,0 +1,8 @@
+<h1><a href="javascript:;"><img src="i/logo-header.png" alt="Believe in the furture" /></a></h1>
+<ul>
+    <li data-ng-click="router('0')"><a href="#/ProvideFeedback" class="feedback">Feedback</a></li>
+    <li data-ng-click="router('0')"><a href="#/ShoppingCart" class="mycart">My Cart<span class="badge">3</span></a></li>
+    <li data-ng-click="router('0')" data-ng-show="hadLogin"><a href="#/MyProfile" class="myprofile">My Profile</a></li>
+    <li data-ng-click="router('0')"><a data-ng-if="!hadLogin" href="#/Login" class="login-link">Log In</a>
+        <a data-ng-if="hadLogin" href="javascript:;" class="logout-link"><p data-ng-click="authorization()">Log Out</p></a></li>
+</ul>

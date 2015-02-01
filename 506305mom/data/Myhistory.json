@@ -1,0 +1,27 @@
+{
+    "info" : "My History",
+    "histories" : [{
+			"type": "Buy",
+            "date": "10/12/2014",
+            "amount": "$30",
+			"details": "username has bought F$ #1111 2222 3333"
+		},
+		{
+			"type": "Trade",
+            "date": "4/14/2014",
+            "amount": "$20",
+			"details": "lorem ipsum"
+		},
+		{
+			"type": "Redeem",
+            "date": "1/12/2014",
+            "amount": "$310",
+			"details": "$200 has been redeemed from F$ #1111 2222 3333"
+		},
+		{
+			"type": "Trade",
+            "date": "10/16/2014",
+            "amount": "$980",
+			"details": "lorem ipsum"
+		}]
+}

@@ -1,0 +1,137 @@
+<!-- content -->
+<div class="PostCards" data-ng-controller="PostCardsCtrl">
+	<div class="mypostcard">
+		<p class="text" data-ng-bind="PostCards.info"></p>
+		<div class="btn-postcard">
+			<p class="btnCancelPostCart" data-ng-click="login('champion')">
+					<a class="color-ca mar" href="javascript:;" >Cancel</a>
+			</p>
+		</div>
+	</div>
+	<dl >
+		<dt></dt>	
+		<dd>
+			<div class="ct-postcard">
+				<div class="gift-amount">
+					<span>Founder$hare Discount</span>
+					<input type="text" data-ng-model="PostCards.CardAmount" value=""/>
+					<span class="mar-tla">% Off</span>
+					<p class="arrow"></p>
+				</div>
+				<div class="item color shop-card-top">
+					<a href="javascript:;"><p><span class="title-shopping line-height-15" data-ng-bind="PostCards.logo" ></span></p></a>
+					<p class="name-shopping " data-ng-bind="PostCards.name"></p>
+					<span class="activation-shopping" data-ng-bind="PostCards.activation"></span>
+					<span data-ng-bind="PostCards.data"></span>
+					<span data-ng-bind="PostCards.time"></span>
+					<div class="clearfix"></div>
+					<div class="info-shopping">
+						<div class="left margin-shop-card">
+							<label class="sale-shopping margin-bottom-6" data-ng-bind="(PostCards.CardAmount) + '%'"></label>
+							<span class="onOff-shopping" data-ng-bind="PostCards.onOff"></span>
+							<hr/>
+							<label class="expiration-shopping" data-ng-bind="PostCards.expiration"></label>
+						</div>
+						<div class="left radial-progress margin-shop-card" data-progress="{{PostCards.progess}}">
+							<div class="circle">
+								<div class="shadow"></div>
+								<div class="mask full">
+									<div class="fill" ></div>
+								</div>
+								<div class="mask half">
+									<div class="fill" ></div>
+									<div class="fill fix"></div>
+								</div>
+							</div>
+							<div class="inset">
+								<div class="percentage">
+									<p><span>$</span><span class="progress">{{PostCards.progess}}</span></p>
+									<p>remain</p>
+								</div>
+							</div>
+						</div>							
+						<div class="clearfix"></div>					
+					</div>
+				</div>
+				<div class="gift-quantity">
+					<p class="arrow"></p>
+					<p>
+						<span>Max Quantity Available </span>
+						<span class="s500" data-ng-bind="PostCards.price"></span>
+					</p>
+					<span>My Quantity</span>
+					<span class="sym-s">$</span>
+					<input class="s500" type="text" data-ng-model="PostCards.quantity" />
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="post-resale"> 
+				<div class="chkResale">
+					<div class="roundedOne">
+                        <input data-ng-model="PostCards.viewOnly" type="radio"
+                               name="addFunction1" id="Resale"
+                               value="yes">
+                        <label for="Resale">
+                        </label>
+                    </div>
+                    <span class="font11">For Resale</span> 
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="gift-description">
+				<div class="text-offer">
+					<div class="center">
+						<p class="arrow fix"></p>
+					</div>
+					<p class="mar-text">Offer Description</p>
+					<div class="mar-bo padding-bottom15 margin-top15">
+						<textarea>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. 
+						</textarea>
+					</div>
+				</div>
+				
+			</div>
+		<div class="details-card" data-ng-if="display">
+			<dl>
+				<dt></dt>
+				<dd>	
+					
+					<div class="view-postcard">
+						<p>Your Founder$hare Posting is Now Active</p>
+
+						<div class="share">
+							<p class="share-color mar">
+									<span class="post-card-share">Share</span>
+							
+									<span class="color-1">f</span>
+									<span class="color-2">t</span>
+									<span class="color-3">g</span>
+									<span class="color-4">in</span>
+
+							</p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="add-postcard">
+							<p class="done" data-ng-click="login('champion')">Done</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+				</dd>
+			</dl>
+			<div class="clearfix"></div>
+		</div>
+			<div class="clearfix"></div>
+			<div class="post-card-l" >
+				<p class="save-account post" data-ng-click="showInfo(item)">
+					<a class="color-a post" href="javascript:;">Post Now</a>
+					<span class="icon"></span>
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</dd>
+	</dl>
+</div>
+<!-- end content -->

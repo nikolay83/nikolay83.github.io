@@ -1,0 +1,713 @@
+<!-- content -->
+<div class="myCart founders founderShares row" data-ng-controller="myCartCtrl">
+    <div class="col-3">
+        <div class="item right">
+            <a href="javascript:;"><p><span data-ng-bind="item.logo"></span></p></a>
+            <ul class="user">
+                <li data-ng-repeat="item in MyCart.user" data-ng-if="isVisible(item.role)" data-ng-click="user.item = $index">
+                    <a href="javascript:;"><p data-ng-class="{'color' : user.item == $index}" data-ng-bind="item.li"></p></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <a href="#/VerifyAccount" class="note" data-ng-show="role ==='founder'">Not a Verified Business</a>
+    </div>
+    <div class="col-9">
+        <dl class="left" data-ng-if="user.item == 0 && role=='champion'">
+            <dt data-ng-bind="Myinfo.info"></dt>
+            <dd>
+                <div>
+                    <div class="no-bg">
+                        <div class="myinfo row">
+                            <span class="col-3"><span class="padding-20">Contact Infomation</span></span>
+                            <div class="col-6">
+                                <a href="javascript:;" data-ng-click="Edit=!Edit" class="mlu320 right" data-ng-hide="Edit"><span ></span>Edit</a>
+                                <div data-ng-show="Edit">
+                                    <a class="color-c ul-11 right" href="javascript:;" data-ng-click="Edit=false" >
+                                        <p class="cancel-info cancel ad">Cancel</p>
+                                    </a>
+                                    <a class="color ul-10 right" href="javascript:;" data-ng-click="Edit=false">
+                                        <p class="save-info save ad">Save Info</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <span class="right">Is Public Info?</span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-info">
+                            <p>
+                                <strong>Name</strong>
+                                <span class="width-pname" data-ng-bind="Myinfo.name" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.name" data-ng-if="Edit"/>
+                            </p>
+                            <div class="clearfix"></div>
+                            <p>
+                                <strong>Email</strong>
+                                <span class="width-email" data-ng-bind="Myinfo.email2" data-ng-hide="Edit"></span>
+                                <input data-ng-model="Myinfo.email2" type="text" data-ng-if="Edit" />
+                            </p>
+                            <div class="clearfix"></div>
+                            <p>
+                                <strong>Location</strong>
+                                <span class="width-location" data-ng-bind="Myinfo.location" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.location" data-ng-if="Edit" />
+                            </p>
+                            <div class="clearfix"></div>
+                            <p class="">
+                                <strong>Photo/ Image</strong>
+                                <span class="width-pho" data-ng-bind="Myinfo.photo" data-ng-hide="Edit"></span>
+                                <input type="text" class="width-img" data-ng-model="Myinfo.photo" data-ng-if="Edit" />
+                            </p>
+                            <div class="" data-ng-if="Edit">
+                                <div class="color-b">
+                                    <p class="browse bro a font-style-none">
+                                        <span class="btn-browse">Browse</span>
+                                        <input type="file" class="upload" data-file-input="">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-bg">
+                        <div class="myinfo">
+                            <span class="con-info utl-12">Account Password</span>
+                            <a class="w-bold"><span class="icon font-style-none s"></span>Change Password</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-info">
+                            <p>
+                                <strong>Current Password</strong>
+                                <span class="w-pw" data-ng-bind="Myinfo.cupass" data-ng-hide="Edit"></span>
+                                <input type="text" class="current" data-ng-if="Edit" data-ng-model="Myinfo.cupass"/>
+                            </p>
+                            <p>
+                                <strong>New Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="new" data-ng-if="Edit" data-ng-model="Myinfo.newpass" />
+                            </p>
+                            <p class="last">
+                                <strong>Confirm Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="confirm" data-ng-if="Edit" data-ng-model="Myinfo.conpass"/>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="left" data-ng-if="user.item == 0 && role==='founder'">
+            <dt data-ng-bind="Myinfo.info"></dt>
+            <dd>
+                <div>
+                    <div class="no-bg">
+                        <div class="myinfo row">
+                            <span class="col-3"><span class="padding-20">Business Infomation</span></span>
+                            <div class="col-6">
+                                <a href="javascript:;" data-ng-click="Edit=!Edit" class="mlu320 right" data-ng-hide="Edit"><span ></span>Edit</a>
+                                <div data-ng-show="Edit">
+                                    <a class="color-c ul-11 right" href="javascript:;" data-ng-click="Edit=false" >
+                                        <p class="cancel-info cancel ad">Cancel</p>
+                                    </a>
+                                    <a class="color ul-10 right" href="javascript:;" data-ng-click="Edit=false">
+                                        <p class="save-info save ad">Save Info</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <span class="right">Is Public Info?</span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-info">
+                            <p>
+                                <strong>Business Name</strong>
+                                <span class="width-name" data-ng-bind="Myinfo.name" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.name" data-ng-if="Edit"/>
+                            </p>
+                            <div  class="slideThree yes switch" data-ng-class="{checked1 : click , trueCH :click==true ,falseCh :click==false}">	
+                                <input  value="None" id="slideThree8" name="check" type="checkbox" data-ng-model="Myinfo.slideThree1" >
+                                <label for="slideThree8" class="toggle" data-ng-click="click =! click"></label >
+                            </div>
+                            <p>
+                                <strong>Business Address</strong>
+                                <span class="width-mail" data-ng-bind="Myinfo.address" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.address" data-ng-if="Edit"/>
+                            </p>
+                            <div class="slideThree no checked switch" data-ng-class="{active : click1, activetrueCH :click1==true ,activefalseCh :click1==false}">	
+                                <input value="no" id="slideThree9" name="check" type="checkbox" data-ng-model="Myinfo.slideThree2">
+                                <label for="slideThree9" class="toggle" data-ng-click="click1 =! click1"></label>
+                            </div>
+                            <p>
+                                <strong>Business Type</strong>
+                                <span class="width-loca" data-ng-bind="Myinfo.location" data-ng-hide="Edit"></span>
+                                <span class="inline-dropdown" dropdown-select="business_types" dropdown-model="business_type" dropdown-item-label="name" data-ng-if="Edit"></span>
+                            </p>
+                            <div class="slideThree no checked switch" data-ng-class="{active : click2, activetrueCH :click2==true ,activefalseCh :click2==false}">	
+                                <input value="None" id="slideThree10" name="check" type="checkbox" data-ng-model="Myinfo.slideThree3"/>
+                                <label for="slideThree10" class="toggle" data-ng-click="click2 =! click2"></label>
+                            </div>
+                            <p>
+                                <strong>Business Telephone</strong>
+                                <span class="width-tele" data-ng-bind="Myinfo.phone" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.phone" data-ng-if="Edit" />
+                            </p>
+                            <div class="slideThree no checked switch" data-ng-class="{active : click8, activetrueCH :click8==true ,activefalseCh :click8==false}">	
+                                <input value="None" id="slideThree15" name="check" type="checkbox" data-ng-model="Myinfo.slideThree8"/>
+                                <label for="slideThree15" class="toggle" data-ng-click="click8 =! click8"></label>
+                            </div>
+                            <div class="clearfix"></div>
+                            <p class="">
+                                <strong>Logo/ Image</strong>
+                                <span class="width-pho" data-ng-bind="Myinfo.photo" data-ng-hide="Edit"></span>
+                                <input type="text" class="width-img" data-ng-model="Myinfo.photo" data-ng-if="Edit" />
+                            </p>
+                            <div class="" data-ng-if="Edit">
+                                <div class="color-b">
+                                    <p class="browse bro a font-style-none">
+                                        <span class="btn-browse">Browse</span>
+                                        <input type="file" class="upload" data-file-input="">
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div  class="slideThree yes switch mrt-40" data-ng-class="{checked1 : click3 , trueCH :click3==true ,falseCh :click3==false}">	
+                                <input class="mar-top" value="No" id="slideThree11" name="check" type="checkbox" data-ng-model="Myinfo.slideThree4">
+                                <label for="slideThree11" class="toggle" data-ng-click="click3 =! click3"></label>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="des-h">
+                                <strong>Description</strong>
+                                <span class="width-description" data-ng-bind="Myinfo.description" data-ng-hide="Edit"></span>
+                                <textarea class="textarea-ul" type="text" data-ng-model="Myinfo.description" data-ng-if="Edit" rows="5" cols=""></textarea>
+                                <div  class="slideThree yes switch des-h" data-ng-class="{checked1 : click5 , trueCH :click5==true ,falseCh :click5==false}">	
+                                    <input  value="None" id="slideThree12" name="check" type="checkbox" data-ng-model="Myinfo.slideThree5" >
+                                    <label for="slideThree12" class="toggle" data-ng-click="click5 =! click5"></label >
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <p>
+                                <strong>Hours Open</strong>
+                                <span class="width-hoursopen" data-ng-bind="Myinfo.hoursopen" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.hoursopen" data-ng-if="Edit"/>
+                            </p>
+                            <div class="slideThree yes switch" data-ng-class="{checked1 : click6 , trueCH :click6==true ,falseCh :click6==false}">	
+                                <input  value="None" id="slideThree13" name="check" type="checkbox" data-ng-model="Myinfo.slideThree6" >
+                                <label for="slideThree13" class="toggle" data-ng-click="click6 =! click6"></label >
+                            </div>
+                            <p>
+                                <strong>Website URL</strong>
+                                <span class="width-website" data-ng-bind="Myinfo.website" data-ng-hide="Edit"></span>
+                                <input type="text" data-ng-model="Myinfo.website" data-ng-if="Edit"/>
+                            </p>
+                            <div  class="slideThree yes switch" data-ng-class="{checked1 : click7 , trueCH :click7==true ,falseCh :click7==false}">	
+                                <input  value="None" id="slideThree14" name="check" type="checkbox" data-ng-model="Myinfo.slideThree7" >
+                                <label for="slideThree14" class="toggle" data-ng-click="click7 =! click7"></label >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-bg">
+                        <div class="myinfo">
+                            <span class="con-info utl-12">Account Password</span>
+                            <a class="w-bold"><span class="icon font-style-none s"></span>Change Password</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-info">
+                            <p>
+                                <strong>Current Password</strong>
+                                <span class="w-pw" data-ng-bind="Myinfo.cupass" data-ng-hide="Edit"></span>
+                                <input type="text" class="current" data-ng-if="Edit" data-ng-model="Myinfo.cupass"/>
+                            </p>
+                            <p>
+                                <strong>New Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="new" data-ng-if="Edit" data-ng-model="Myinfo.newpass" />
+                            </p>
+                            <p class="last">
+                                <strong>Confirm Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="confirm" data-ng-if="Edit" data-ng-model="Myinfo.conpass"/>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div>
+                            <div class="myinfo tih-mar">
+                                <span class="con-info utl-12">Account Payment Information</span>
+                                <a class="lut145 right" href="javascript:;" data-ng-click="Edit1=!Edit1" data-ng-hide="Edit1"><span></span>Edit</a>
+                                <div data-ng-show="Edit1">
+                                    <a class="color ul-10 p" href="javascript:;" data-ng-click="Edit1=false">
+                                        <p class="save-info save ad">Save Info</p>
+                                    </a>
+                                </div>
+                                <div class="tih-mar" data-ng-show="Edit1">
+                                    <a class="color-c ag" href="javascript:;" data-ng-click="Edit1=false" >
+                                        <p class="cancel-info cancel ad">Cancel</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="contact-info w-hiw click">
+                                <p>
+                                    <strong>Owner’s First Name</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.name1" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-if="Edit1" data-ng-model="Myinfo.name1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Owner’s Last Name</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.name2" data-ng-hide="Edit1"></span>
+                                    <input data-ng-model="Myinfo.name2" type="text" data-ng-if="Edit1"  />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Email</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.email" data-ng-hide="Edit1"></span>
+                                    <input data-ng-model="Myinfo.email" type="text" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Date of Birth</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.datebirth" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.datebirth" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Home Street Address</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.address" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.address" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>City</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.city" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.city" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>State</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.state" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.state" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Zip Code</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.zipcode" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.zipcode" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <span class="utl-12">funding</span>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Descriptor</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.descriptor" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.descriptor" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Destination</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.destination" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.destination" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Email</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.email2" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.email2" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Mobile Phone</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.mobilephone" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.mobilephone" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Accounting H18Number</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.accounting" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.accounting" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Routing Number</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.routing" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.routing" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <span class="utl-12">ENTER ADDITIONAL INFO BELOW IF YOU ARE A REGISTERED BUSINESS</span>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Legal Name</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.descriptor" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.descriptor" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>DBA Name</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.descriptor" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.descriptor" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Tax ID/SSN</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.taxid" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.taxid" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Street Address</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.address2" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.address2" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>City</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.city2" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.city2" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>State</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.state" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.state" data-ng-if="Edit1" />
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>
+                                    <strong>Zip Code</strong>
+                                    <span class="w-pw" data-ng-bind="Myinfo.zipcode" data-ng-hide="Edit1"></span>
+                                    <input type="text" data-ng-model="Myinfo.zipcode" data-ng-if="Edit1" />
+                                </p>
+                                <hr class="hr-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="left" data-ng-if="user.item == 0 && role=='employee'">
+            <dt data-ng-bind="Myinfo.info"></dt>
+            <dd>
+                <div>
+                    <div class="no-bg">
+                        <div class="myinfo">
+                            <span class="con-info utl-12">Account Password</span>
+                            <a class="w-bold" data-ng-click="Edit=!Edit" data-ng-hide="Edit"><span class="icon font-style-none s"></span>Change Password</a>
+                            <div data-ng-show="Edit">
+                                <a class="color-c ul-11 right margin-right20" href="javascript:;" data-ng-click="Edit=false" >
+                                    <p class="cancel-info cancel ad">Cancel</p>
+                                </a>
+                                <a class="color ul-10 right" href="javascript:;" data-ng-click="Edit=false">
+                                    <p class="save-info save ad">Save Info</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-info">
+                            <p>
+                                <strong>Current Password</strong>
+                                <span class="w-pw" data-ng-bind="Myinfo.cupass" data-ng-hide="Edit"></span>
+                                <input type="text" class="current" data-ng-if="Edit" data-ng-model="Myinfo.cupass"/>
+                            </p>
+                            <p>
+                                <strong>New Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="new" data-ng-if="Edit" data-ng-model="Myinfo.newpass" />
+                            </p>
+                            <p class="last">
+                                <strong>Confirm Password</strong>
+                                <span data-ng-hide="Edit"></span>
+                                <input type="text" class="confirm" data-ng-if="Edit" data-ng-model="Myinfo.conpass"/>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="left founderShares" data-ng-if="user.item == 1 && role=='founder'">
+            <dt data-ng-bind="FounderShares.title"></dt>
+            <dd class="main">
+                <div class="bar">
+                    <div class="dl">
+                        <div class="dt">Total amount Sold</div>
+                        <div class="dd">{{FounderShares.founder$hares[0].amountSold}}</div>
+                    </div>
+                    <div class="dl">
+                        <div class="dt">Total F$’s</div>
+                        <div class="dd">{{FounderShares.founder$hares[0].F$}}</div>
+                    </div>
+                    <div class="dl">
+                        <div class="dt">Total amount Redeemed</div>
+                        <div class="dd">{{FounderShares.founder$hares[0].amountRedeemed}}</div>
+                    </div>
+                </div>
+                <!-- End .bar -->
+                <div class="well">
+                    <ul>
+                        <li>Current Posting</li>
+                        <li><a href="#/Founderposting" class="btn btn-secondary">Create</a></li>
+                        <li>Status</li>
+                        <li>Options</li>
+                      </ul>
+                </div>
+                <!-- End .well -->
+                <div class="data">
+                    <ul>
+                        <li>
+                            <div class="business-info">
+                              <div class="logo"><img src="./i/image.jpg" data-ng-src="{{FounderShares.founder$hares[0].currentPosting[0].logo}}" alt="Pic" /></div>
+                              <!-- End .logo -->
+                              <a href="javascript:;" class="link">{{FounderShares.founder$hares[0].currentPosting[0].name}}</a>
+                              <div class="activation-info">Activation : {{FounderShares.founder$hares[0].currentPosting[0].activation}}</div>
+                              <div class="info-bottom">
+                                <div class="discount">
+                                  {{FounderShares.founder$hares[0].currentPosting[0].discount*100}}%<span>off</span>
+                                </div>
+                                <div class="date">{{FounderShares.founder$hares[0].currentPosting[0].date}}</div>
+                                <div class="percent">${{FounderShares.founder$hares[0].currentPosting[0].available}}<small>remain</small></div>
+                              </div>
+                            </div>
+                            <!-- End .business-info -->
+                        </li>
+                        <li>
+                            <div class="dl">
+                                <div class="dt">Time remaining:</div>
+                                <div class="dd">{{FounderShares.founder$hares[0].status[0].timeRemaining}}</div>
+                                <div class="dt">Goal amount:</div>
+                                <div class="dd">{{FounderShares.founder$hares[0].status[0].goalAmount}}</div>
+                                <div class="dt">Goal reached:</div>
+                                <div class="dd">{{FounderShares.founder$hares[0].status[0].goalAeached}}</div>
+                                <div class="dt">Champions:</div>
+                                <div class="dd">{{FounderShares.founder$hares[0].status[0].champions}}</div>
+                                <div class="dt">Amount redeemed:</div>
+                                <div class="dd">{{FounderShares.founder$hares[0].status[0].amountRedeemed}}</div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="btn btn-secondary">See Champions</a>
+                          <a href="javascript:;" class="btn btn-secondary">Cancel Posting</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End .data -->
+            </dd>
+        </dl>
+        <dl class="left cart founder" data-ng-if="user.item == 2">
+            <dt data-ng-bind="Founders.title"></dt>
+            <dd class="main">
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="business">Business</th>
+                        <th class="step">Step 1</th>
+                        <th class="step">Step 2</th>
+                        <th class="step">Step 3</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="founder in Founders.listItem">
+                        <td>
+                            <img src="./i/logo-business.png" data-ng-src="./i/{{founder.icon}}" alt="Business" />
+                            {{founder.name}}
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" data-ng-model="founder.step1st" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" data-ng-model="founder.step2rd" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" data-ng-model="founder.step3rd" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="javascript:;" class="btn btn-primary btn-pay" data-ng-class="{'active':founder.active}" data-ng-click="active($index)">Activity</a>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </dd>
+        </dl>
+        <dl class="left cart" data-ng-if="user.item == 1 && role=='champion'" data-infinite-scroll="loadMore()">
+            <dt class="padding-header-profile" data-ng-bind="MyCart.giftcards"></dt>
+            <dd>
+                <div class="left col">
+                    <label data-ng-bind="MyCart.totalSold"></label>
+                    <p data-ng-bind="MyCart.NumberSold"></p>
+                </div>
+                <div class="right col">
+                    <label data-ng-bind="MyCart.totalRedeemed"></label>
+                    <p data-ng-bind="MyCart.NumberRedeemed"></p>
+                </div>
+                <p class="clearfix"></p>
+                <div class="table-responsive table-my-founder">
+                    <table class="table table-bordered ">
+                        <thead>
+                          <tr>
+                            <th  data-ng-bind="MyCart.li1"></th>
+                            <th  data-ng-bind="MyCart.li2"></th>
+                            <th  data-ng-bind="MyCart.li3"></th>
+                            <th class="width40"  data-ng-bind="MyCart.li4"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-ng-repeat="item in MyCart.listItem">
+                            <td class="business-name">
+                                    <a href="javascript:;">
+                                        <p class="margin-top50">
+                                            <span data-ng-bind="item.company"></span>
+                                        </p>
+                                    </a>
+                                    <p class="nameCart font-11" data-ng-bind="item.name"></p>
+                            </td>
+                            <td>
+                                <label class="line-height139 color-555" data-ng-bind="item.numberCart"></label>
+                            </td>
+                            <td>
+                                <div class=" status">
+                                    <div class="border-bottom1 height68" data-ng-hide="item.numberCart == '1'">
+                                        <div class="amount">
+                                            <p>{{item.money1}}</p>
+                                        </div>
+                                    </div>
+                                    <div data-ng-class="{row1 : item.numberCart == '1'}">
+                                        <div class="amount">
+                                            <p data-ng-class="{'line-height139' : item.numberCart != '1'}">{{item.money1}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="status-ctrl height68 border-bottom1" data-ng-hide="item.numberCart == '1'">
+                                    <span class="margin-left10" data-ng-bind="item.forResale"></span>
+                                    <a class="margin-left25" href="javascript:;">
+                                        <span data-ng-bind="item.cancel1"></span>
+                                    </a>
+                                </div>
+                                <div class="status-ctrl">
+                                    <a href="#PostCards">
+                                        <span class="green" data-ng-bind="item.resale" data-ng-class="{color:item.numberCart == '2', normal:item.resale=='For Resale'}"></span>
+                                    </a>
+                                    <a>
+                                        <span data-ng-bind="item.cancel2"></span>
+                                    </a>
+
+                                </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+
+                <div data-ng-if="pause" class="load-more">
+                    <div id="bowl-ring">
+                        <div class="ball-holder">
+                            <div class="ball">
+                            </div>
+                        </div>
+                    </div>
+                    <span>Loading more 5 gift cards [from 30]</span>
+                </div>
+            </dd>
+        </dl>
+        <dl class="left cart history" data-ng-if="user.item == 3 && role=='founder'">
+            <dt data-ng-bind="Myhistory.info"></dt>
+            <dd class="main">
+                <ul class="header">
+                    <li>Type of Activity</li>
+                    <li>Day of Activity</li>
+                    <li>Amount</li>
+                </ul>
+                <ul data-ng-repeat="history in Myhistory.histories">
+                    <li><strong data-ng-bind="history.type"></strong></li>
+                    <li data-ng-bind="history.date"></li>
+                    <li data-ng-bind="history.amount"></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="left cart history" data-ng-if="user.item == 3 && role=='champion'">
+            <dt data-ng-bind="Myhistory.info"></dt>
+            <dd class="main">
+                <ul class="header">
+                    <li>Type of Activity</li>
+                    <li>Day of Activity</li>
+                    <li>Amount</li>
+                </ul>
+                <ul data-ng-repeat="history in Myhistory.histories">
+                    <li><strong data-ng-bind="history.type"></strong></li>
+                    <li data-ng-bind="history.date"></li>
+                    <li data-ng-bind="history.amount"></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="left cart history" data-ng-if="user.item == 3 && role=='employee'">
+            <dt data-ng-bind="Myhistory.info"></dt>
+            <dd class="main">
+                <ul class="header">
+                    <li>Type of Activity</li>
+                    <li>Day of Activity</li>
+                    <li>Amount</li>
+                </ul>
+                <ul data-ng-repeat="history in Myhistory.histories">
+                    <li><strong data-ng-bind="history.type"></strong></li>
+                    <li data-ng-bind="history.date"></li>
+                    <li data-ng-bind="history.amount"></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="left employees" data-ng-if="user.item == 4">
+            <dt data-ng-bind="PlatformEmployee.info"></dt>
+            <dd class="main">
+                <div class="bar">
+                    View All Employees	<a href="javascript:;" class="btn btn-secondary" data-ng-click="add();">Add Employee</a>
+                </div>
+                <!-- End .bar -->
+                <div class="data">
+                    <form name="employeeForm" data-ng-submit="save()">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th class="name">Name</th>
+                          <th class="password">Password</th>
+                          <th>Options</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-ng-repeat="employee in PlatformEmployee.listItem">
+                          <td>
+                            <span data-ng-hide="employee.flag">{{employee.name}}</span>
+                            <input type="text" data-ng-model="employee.name" data-ng-show="employee.flag" data-ng-class="{'error':employee.nameEmpty}" />
+                          </td>
+                          <td>
+                            <span data-ng-hide="employee.flag">{{employee.password}}</span>
+                            <input type="password" data-ng-model="employee.password" data-ng-show="employee.flag" data-ng-class="{'error':employee.passwordEmpty}" />
+                          </td>
+                          <td>
+                            <a href="javascript:;" class="btn btn-secondary" data-ng-hide="employee.flag" data-ng-click="modify($index)">Modify</a>
+                            <a href="javascript:;" class="btn btn-secondary" data-ng-show="employee.flag" data-ng-click="save($index)">Save</a>
+                            <a href="javascript:;" class="btn btn-primary" data-ng-click="remove($index)">Delete</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+            </dd>
+            <!-- End .main -->
+        </dl>
+    </div>
+	<div class="clearfix"></div>
+</div>
+<!-- end content -->
