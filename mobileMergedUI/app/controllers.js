@@ -258,16 +258,8 @@ appControllers.controller('abusePage', ['$scope', '$modal', '$location', functio
 
         var modalInstance = $scope.showInformation('Your report has been sent. \nYou\'ll be notified by email when this is solved.');
 
-        //var modalInstance = $modal.open({
-        //    templateUrl: 'partials/modal.html',
-        //    controller: 'modalCtrl',
-        //    resolve: {
-        //        text: function () { return 'Your report has been sent. \nYou\'ll be notified by email when this is solved.'; }
-        //    }
-        //});
-
         modalInstance.result.then(function () {
-            $location.path('/home');
+            $location.path($scope.getHome());
         });
     };
 }]);
@@ -288,14 +280,6 @@ appControllers.controller("businessStep1Page", function ($scope, $location, $roo
     });
 
     $scope.global.redeemAmount = 0;
-
-    // reset modal
-    $scope.cancelRedeem = function () {
-        $rootScope.showConfirmation('Are you sure you want to cancel this process?')
-            .result.then(function () {
-                $location.path('/business-home');
-            });
-    };
 
     // continue
     $scope.continueToNext = function () {
@@ -430,12 +414,6 @@ appControllers.controller('businessStep2Page', ['$rootScope', '$scope', '$interv
         }
     };
 
-    $scope.cancelRedeem = function () {
-        $rootScope.showConfirmation('Are you sure you want to cancel this process?')
-            .result.then(function () {
-                $location.path('/business-home');
-            });
-    };
 }]);
 
 
@@ -460,6 +438,7 @@ appControllers.controller('businessStep3Page', ['$scope', '$modal', '$location',
             $location.path('/business-home');
         });
     };
+
 }]);
 
 
@@ -487,7 +466,6 @@ appControllers.controller("loginCtrl", function ($scope, $location, $rootScope) 
         userProfile: 'unauthorized.json'
     });
 
-    $rootScope.login = true;
     $scope.validate = function () {
         if (!$scope.username || !$scope.password) {
             $scope.validation = false;
@@ -495,6 +473,7 @@ appControllers.controller("loginCtrl", function ($scope, $location, $rootScope) 
             $scope.validation = ($scope.username && $scope.password === '123456');
         }
         if ($scope.validation) {
+            $rootScope.login = $scope.username === 'buz' ? 'employee.json' : 'user.json';
             $location.path($scope.username === 'buz' ? '/business-home' : '/individual-home');
         } else {
             $scope.showError = true;
@@ -544,7 +523,7 @@ function signUpUtil($scope, $location, $rootScope) {
     var requiredFields = $scope.requiredFields;
     // toggle accept terms and conditions
     $scope.toggleAcceptTerms = function () {
-        if($scope.isAcceptTerms) {
+        if ($scope.isAcceptTerms) {
             $scope.isAcceptTerms = false;
         }
         else {
@@ -643,7 +622,7 @@ function signUpUtil($scope, $location, $rootScope) {
             $scope.validateErrorMsg = "";
             $scope.afterClickRegister = false;
             // clear all warning border
-            $("input").removeClass('invalid')
+            $("input").removeClass('invalid');
         }
     };
 
@@ -669,11 +648,11 @@ function signUpUtil($scope, $location, $rootScope) {
             if ($scope.signUpForm.mail.$dirty && $scope.signUpForm.mail.$invalid) {
                 $scope.showError = true;
                 $scope.validateErrorMsg = "Email address is invalid";
-                $("input[name='mail']").addClass('invalid')
+                $("input[name='mail']").addClass('invalid');
             }
             // if mail has valid input value remove error style.
             else if ($scope.signUpForm.mail.$valid) {
-                $("input[name='mail']").removeClass('invalid')
+                $("input[name='mail']").removeClass('invalid');
             }
         }
     };
@@ -719,7 +698,7 @@ appControllers.controller("signUpChampionCtrl", function ($scope, $location, $ro
     signUpUtil($scope, $location, $rootScope);
     $scope.validate = $scope.validateUtil;
     $scope.looseFocus = $scope.looseFocusUtil;
-
+    $scope.global.user.home = '/sign-up-champion';
 });
 
 //sign up founder Controller
@@ -755,6 +734,7 @@ appControllers.controller("signUpFounderCtrl", function ($scope, $location, $roo
     signUpUtil($scope, $location, $rootScope);
     $scope.validate = $scope.validateUtil;
     $scope.looseFocus = $scope.looseFocusUtil;
+    $scope.global.user.home = '/sign-up-founder';
 });
 
 // resetPasswordCtrl
@@ -770,7 +750,7 @@ appControllers.controller("resetPasswordCtrl", function ($scope, $location, $roo
     $scope.validate = function () {
         // clear error message
         $scope.validateErrorMsg = "";
-        if ($scope.resetPasswordForm[ "mail" ] && $scope.resetPasswordForm[ "mail" ].$error.required) {
+        if ($scope.resetPasswordForm["mail" ] && $scope.resetPasswordForm["mail"].$error.required) {
             $(".form-group").addClass('invalid');
             $scope.validateErrorMsg += 'Email is required.';
         }

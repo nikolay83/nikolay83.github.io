@@ -21,12 +21,13 @@
 </head>
 <body data-ng-class="{'menu-opened': global.menuOpened, 'headless': global.headless }"
       data-ng-swipe-right="global.menuOpened = false">
-
     <!-- page header -->
     <header data-ng-class="{'display-header': !global.headless}">
         <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}"></a>
 
-        <div class="menu-toggle" data-ng-click="global.menuOpened = !global.menuOpened"></div>
+        <div class="menu-toggle"
+             data-ng-click="global.menuOpened = !global.menuOpened"
+             data-ng-show="login"></div>
         <h1 class="title">{{global.title}}</h1>
     </header>
     <!-- end page header-->

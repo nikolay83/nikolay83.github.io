@@ -20,7 +20,9 @@
             <!-- controls -->
             <div class="controls">
                 <a href="#/home" data-ng-href="#{{getHome()}}" class="btn btn-large">Cancel</a>
-                <button class="btn btn-primary btn-large send" data-ng-click="sendIssue()">Send</button>
+                <button class="btn btn-primary btn-large send"
+                        data-ng-click="sendIssue()"
+                        data-ng-disabled="!issue">Send</button>
             </div>
             <!-- end controls -->
         </div>

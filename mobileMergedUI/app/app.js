@@ -104,7 +104,7 @@ app.run(['$rootScope', '$location', '$window', function ($rootScope, $location, 
 
 
 // Global page controller
-app.controller('page', ['$rootScope', '$scope', '$http', '$modal', function ($rootScope, $scope,  $http, $modal) {
+app.controller('page', ['$rootScope', '$scope', '$http', '$modal', '$location', function ($rootScope, $scope,  $http, $modal, $location) {
     document.body.setAttribute('ontouchstart', '');
     $scope.global = {
         title: 'Mom & Pop Project',
@@ -112,8 +112,18 @@ app.controller('page', ['$rootScope', '$scope', '$http', '$modal', function ($ro
         headless: true
     };
 
+    $scope.loggedIn = function (userProfile) {
+        return (userProfile === 'unauthorized.json') || !userProfile ||
+            ($rootScope.login && !(userProfile && $rootScope.login !== userProfile));
+    };
+
     $scope.resetGlobal = function (options) {
         options = options || {};
+        if (!$scope.loggedIn(options.userProfile)) {
+            $location.path('/');
+            return;
+        }
+
         $scope.global.headless = options.headless || false;
         $scope.global.showHeader = !$scope.global.headless;
         $scope.global.back = options.back || '';
@@ -140,7 +150,7 @@ app.controller('page', ['$rootScope', '$scope', '$http', '$modal', function ($ro
     };
 
     $scope.openMenu = function () {
-        if (!$scope.global.headless) {
+        if (!$scope.global.headless && $rootScope.login) {
             $scope.global.menuOpened = true;
         }
     };
@@ -180,6 +190,13 @@ app.controller('page', ['$rootScope', '$scope', '$http', '$modal', function ($ro
         return modalInstance;
     };
 
+    // reset modal
+    $scope.cancelRedeem = function () {
+        $rootScope.showConfirmation('Are you sure you want to cancel this process?')
+            .result.then(function () {
+                $location.path('/business-home');
+            });
+    };
 
     // fix for safari mobile height 100% issue.
     // First check to see if the platform is an iPhone or iPod
