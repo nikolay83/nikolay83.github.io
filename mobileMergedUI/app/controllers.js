@@ -770,7 +770,7 @@ appControllers.controller("resetPasswordCtrl", function ($scope, $location, $roo
     $scope.submitValidate = function () {
         $scope.validate();
         if ($scope.resetPasswordForm.$valid) {
-            $rootScope.showInformation('Password reset link has been sent to your mail.\nKindly follow URL link to reset password.')
+            $rootScope.showInformation('Password reset link has been sent to your email.\nKindly follow URL link to reset password.')
                 .result.then(
                     function () { $location.path('/'); },
                     function () { $location.path('/'); }
