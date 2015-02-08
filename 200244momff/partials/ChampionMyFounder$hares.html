@@ -1,0 +1,111 @@
+<div class="container info">
+
+	<aside>
+  	<div class="profile">
+    	<div class="thumb"><img src="./i/thumb.png" alt="Thumb" /></div>
+    </div>
+    <ul>
+    	<li><a href="#/ChampionMyInfo">My Info</a></li>
+    	<li><a href="#/ChampionMyFounder$hares" class="active">My Founder$hares</a></li>
+      <li><a href="#/ChampionMyHistory">My History</a></li>
+    </ul>
+    <a href="#/Payment" class="note" data-ng-show="role ==='Founder'">Not a Verified Business</a>
+  </aside>
+  <!-- End Aside -->
+  <div class="main">
+  	<h2 data-ng-bind="MyCart.giftcards"></h2>
+    
+    <dl class="cart tab-my-info" data-infinite-scroll="loadMore()">
+    	<dt class="hide"></dt>
+		<dd>
+        	<div class="table-bar clearfix">
+                <div class="left col">
+                    <label data-ng-bind="MyCart.totalSold"></label>
+                    <p data-ng-bind="MyCart.NumberSold"></p>
+                </div>
+                <div class="right col">
+                    <label data-ng-bind="MyCart.totalRedeemed"></label>
+                    <p data-ng-bind="MyCart.NumberRedeemed"></p>
+                </div>
+            </div>
+			<div class="table-responsive table-my-founder">
+				<table class="table table-bordered ">
+			        <thead>
+			          <tr>
+			            <th  data-ng-bind="MyCart.li1"></th>
+						<th  data-ng-bind="MyCart.li2"></th>
+						<th  data-ng-bind="MyCart.li3"></th>
+						<th class="width40"  data-ng-bind="MyCart.li4"></th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr data-ng-repeat="item in MyCart.listItem">
+			            <td class="business-name">
+								<a href="javascript:;">
+									<p class="margin-top50">
+										<span data-ng-bind="item.company"></span>
+									</p>
+								</a>
+								<p class="nameCart font-11" data-ng-bind="item.name"></p>
+			            </td>
+			            <td>
+			            	<label class="line-height139 color-555" data-ng-bind="item.numberCart"></label>
+			            </td>
+			            <td>
+			            	<div class=" status">
+							
+
+								<div class="border-bottom1 height68" data-ng-hide="item.numberCart == '1'">
+									<div class="amount">
+										<p>{{item.money1}}</p>
+									</div>
+									
+								</div>
+								<div data-ng-class="{row1 : item.numberCart == '1'}">
+									<div class="amount">
+										<p data-ng-class="{'line-height139' : item.numberCart != '1'}">{{item.money1}}</p>
+									</div>
+									
+								</div>
+ 							</div>
+			            </td>
+			            <td>
+			            	<div class="status-ctrl height68 border-bottom1" data-ng-hide="item.numberCart == '1'">
+								<span class="margin-left10" data-ng-bind="item.forResale"></span>
+								<a class="margin-left25" href="javascript:;">
+									<span data-ng-bind="item.cancel1"></span>
+								</a>
+							</div>
+							<div class="status-ctrl">
+								<a href="#/PostCards" data-ng-if="item.resale!=='For Resale'">
+									<span class="green" data-ng-bind="item.resale" data-ng-class="{color:item.numberCart == '2', normal:item.resale=='For Resale'}"></span>
+								</a>
+								<span data-ng-if="item.resale ==='For Resale'" class="text-field normal" data-ng-bind="item.resale"></span>
+								<a href="javascript:;">
+									<span data-ng-bind="item.cancel2"></span>
+								</a>
+									
+							</div>
+			            </td>
+			          </tr>
+			        </tbody>
+			      </table>
+		      </div>
+			
+			<div data-ng-if="pause" class="load-more">
+				<div id="bowl-ring">
+					<div class="ball-holder">
+						<div class="ball">
+						</div>
+					</div>
+				</div>
+				<span>Loading more 5 gift cards [from 30]</span>
+			</div>
+		</dd>
+	</dl>
+
+  </div>
+  <!-- End .main -->
+  
+</div>
+<!-- End .container -->
