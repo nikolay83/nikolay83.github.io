@@ -1,0 +1,77 @@
+{
+	"name" :{
+        "title": "Name",
+        "describe": "John Doe",
+        "public": true,
+        "type": "input"
+    },
+    "email" :{
+        "title": "Email",
+        "describe": "JohnDoe@loremipsum.com",
+        "public": false,
+        "type": "input"
+    },
+    "location" :{
+        "title": "Location",
+        "describe": "Lorem Ipsum",
+        "public": true,
+        "type": "input"
+    },
+    "photo": {
+        "title": "Photo/ Image",
+        "describe": "image.jpg",
+        "public": true,
+        "type": "file"
+    },
+	"business_name": {
+        "title": "Business Name",
+        "describe": "John Doe",
+        "public": true,
+        "type": "input"
+    },
+    "business_addr": {
+        "title": "Business Addresss",
+        "describe": "Business Addresss",
+        "public": false,
+        "type": "input"
+    },
+	"business_type": {
+        "title": "Business Type",
+        "describe": {
+            "name": "Champion",
+            "value":"Champion"
+        },
+        "public": false,
+        "type": "input"
+    },
+	"logo": {
+        "title": "Logo/ Image",
+        "describe": "image.jpg",
+        "public": true,
+        "type": "file"
+    },
+	"description": {
+        "title": "Description",
+        "describe": "Business description",
+        "public": true,
+        "type": "textarea"
+    },
+	"hours_open": {
+        "title": "Hours Open",
+        "describe": "00:00 - 00:00",
+        "public": true,
+        "type": "input"
+    },
+	"website" :{
+        "title": "Website URL",
+        "describe": "www.businessname.com",
+        "public": true,
+        "type": "input"
+    },
+	"business_tel": {
+        "title": "Business Telephone",
+        "describe": "123-1234",
+        "public": true,
+        "type": "input"
+    }
+}
