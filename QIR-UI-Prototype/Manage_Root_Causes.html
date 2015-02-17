@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Manage Root Causes</title>
+            
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.theme.css">
+        <!--[if IE 8]>
+            <link rel="stylesheet" href="css/style-ie8.css">
+        <![endif]-->
+            
+        <!-- External JS -->
+            
+        <!-- jQuery library -->
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+            
+        <!-- Main JS -->
+        <script src="js/script.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div class="container" id="page-manage-root-cause">
+            <div id="header" class='clearfix'>
+                <div class="left logo">
+                    <a href='Business_and_System_Admin_Home.html'><img src="i/logo.png" alt="logo" class='left'></a>
+                    <a href='Business_and_System_Admin_Home.html'>Quality Incident Reporting System</a>
+                </div>
+                <div class="right user-info">
+                    <div class="welcome">
+                        Welcome, User's Name
+                    </div>
+                    <div class='user-position'>
+                        Business Administrator
+                    </div>
+                </div>
+                <!-- temp link to switch user -->
+                <a href='Regular_User_Home.html' class='switch'>switch user</a>
+            </div>
+            <div id='main-nav' class='clearfix'>
+                <ul>
+                    <li class='tab-qir first'><a href='Business_and_System_Admin_Home.html'>QIR</a></li>
+                    <li class='tab-cause active'><a href='javascript:;'>Root Cause</a></li>
+                    <li class='tab-codes'><a href='Manage_Codes.html'>Codes</a></li>
+                    <li class='tab-dept-regions'><a href='Manage_Dept_Regions.html'>Dept Regions</a></li>
+                    <li class='tab-dept-lists'><a href='Manage_Dept_Notification_Lists.html'>Dept Notification Lists</a></li>
+                    <li class='tab-email-template'><a href='Manage_Email_Templates.html'>Email Templates</a></li>
+                    <li class='tab-app-log last'><a href='Application_Log.html'>Application Log</a></li>
+                </ul>
+            </div>
+            <div id='breadcrumb'>
+                <span>Manage Root Cause Classifications</span>
+            </div>
+            <div id='main-content'>
+                <div class='expand-collapse-all clearfix'>
+                    <a href='javascript:;' class='collapse-all right'>
+                       <span class='collapse-all-icon left'></span>
+                       <span>Collapse All</span>
+                    </a>
+                    <a href='javascript:;' class='expand-all right'>
+                       <span class='expand-all-icon left'></span>
+                       <span>Expand All</span>
+                    </a>
+                </div>
+                <div class="manage-root-cause-content">
+                    <ul class="sortable">
+                        <li class="level1 expanded">
+                            <div class="root-node">
+                                <span class="level-icon"></span>
+                                <span class="node-name">Equipment Defects</span>
+                            </div>
+                            <ul class="sortable">
+                                <li class="level2">
+                                    <div class="root-node">
+                                        <span class="level-icon"></span>
+                                        <span class="node-name">Mechanical Failure</span>
+                                    </div>
+                                    <ul class="sortable">
+                                        <li class="level3 hide">
+                                            <div class="base-node">
+                                                <span class="node-name">Design Defect</span>
+                                            </div>
+                                        </li>
+                                        <li class="level3 hide">
+                                            <div class="base-node">
+                                                <span class="node-name">Manufacturing Defect</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="level2">
+                                    <div class="root-node">
+                                        <span class="level-icon"></span>
+                                        <span class="node-name">Electrical Failure</span>
+                                    </div>
+                                    <ul class="sortable">
+                                        <li class="level3 hide">
+                                            <div class="base-node">
+                                                <span class="node-name">Design Defect</span>
+                                            </div>
+                                        </li>
+                                        <li class="level3 hide">
+                                            <div class="base-node">
+                                                <span class="node-name">No PM or expected failure</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="level2 expanded">
+                                    <div class="root-node">
+                                        <span class="level-icon"></span>
+                                        <span class="node-name">Control System Failure</span>
+                                    </div>
+                                    <ul class="sortable">
+                                        <li class="level3">
+                                            <div class="base-node">
+                                                <span class="node-name">Design Defect</span>
+                                            </div>
+                                        </li>  
+                                        <li class="level3">
+                                            <div class="base-node">
+                                                <span class="node-name">Manufacturing Defect</span>
+                                            </div>
+                                        </li>
+                                        <li class="level3">
+                                            <div class="base-node">
+                                                <span class="node-name">Other</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="level1">
+                            <div class="root-node">
+                                <span class="level-icon"></span>
+                                <span class="node-name">Human Error</span>
+                            </div>
+                            <ul class="sortable">
+                                <li class="level2 hide">
+                                    <div class="base-node">
+                                        <span class="node-name">Pipeline Purity Excursion</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="level1">
+                            <div class="root-node">
+                                <span class="level-icon"></span>
+                                <span class="node-name">Resource Shortage</span>
+                            </div>
+                            <ul class="sortable">
+                                <li class="level2 hide">
+                                    <div class="base-node">
+                                        <span class="node-name">Other</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="level1">
+                            <div class="root-node">
+                                <span class="level-icon"></span>
+                                <span class="node-name">Non-conforming Product</span>
+                            </div>
+                            <ul class="sortable">
+                                <li class="level2 hide">
+                                    <div class="base-node">
+                                        <span class="node-name">Other</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <ul id="manage-node-popup">
+            <li><a href='javascript:;' class='duplicate-node'>Duplicate Node</a></li>
+            <li><a href='javascript:;' class='duplicate-branch'>Duplicate Branch</a></li>
+            <li><a href='javascript:;' class='move-up'>Move Up</a></li>
+            <li><a href='javascript:;' class='move-down'>Move Down</a></li>
+            <li><a href='javascript:;' class='indent'>Indent</a></li>
+            <li><a href='javascript:;' class='outdent'>Outdent</a></li>
+            <li><a href='javascript:;' class='add-child'>Add Child</a></li>
+            <li><a href='javascript:;' class='add-sibling'>Add Sibling</a></li>
+            <li><a href='javascript:;' class='edit-node'>Edit</a></li>
+            <li><a href='javascript:;' class='delete-node'>Delete</a></li>
+        </ul>
+        
+        <!-- sort filter popup -->
+        <div id="sort-filter">
+            <div class="filter-options right">
+                <div class="small-to-large">
+                    Sort Smallest to Largest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="large-to-small">
+                    Sort Largest to Smallest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="filter-checks">
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                </div>
+                <div class="buttons-row">
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn left ok-filter-btn'>
+                        <span class='btn-text'>OK</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+            <div class="left-section">
+                <div class="small-to-large-icon"></div>
+                <div class="large-to-small-icon"></div>
+                <div class="check-all-icon select-all"></div>
+            </div>
+        </div>
+    </body>
+</html>

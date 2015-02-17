@@ -1,0 +1,682 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Business and System Admin Home</title>
+            
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.theme.css">
+        <!--[if IE 8]>
+            <link rel="stylesheet" href="css/style-ie8.css">
+        <![endif]-->
+            
+        <!-- External JS -->
+            
+        <!-- jQuery library -->
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+            
+        <!-- Main JS -->
+        <script src="js/script.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div class="container" id="page-admin-user-home">
+            <div id="header" class='clearfix'>
+                <div class="left logo">
+                    <a href='javascript:;'><img src="i/logo.png" alt="logo" class='left'></a>
+                    <a href='javascript:;'>Quality Incident Reporting System</a>
+                </div>
+                <div class="right user-info">
+                    <div class="welcome">
+                        Welcome, User's Name
+                    </div>
+                    <div class='user-position'>
+                        Business Administrator
+                    </div>
+                </div>
+                <!-- temp link to switch user -->
+                <a href='Regular_User_Home.html' class='switch'>switch user</a>
+            </div>
+            <div id='main-nav' class='clearfix'>
+                <ul>
+                    <li class='tab-qir first active'><a href='javascript:;'>QIR</a></li>
+                    <li class='tab-cause'><a href='Manage_Root_Causes.html'>Root Cause</a></li>
+                    <li class='tab-codes'><a href='Manage_Codes.html'>Codes</a></li>
+                    <li class='tab-dept-regions'><a href='Manage_Dept_Regions.html'>Dept Regions</a></li>
+                    <li class='tab-dept-lists'><a href='Manage_Dept_Notification_Lists.html'>Dept Notification Lists</a></li>
+                    <li class='tab-email-template'><a href='Manage_Email_Templates.html'>Email Templates</a></li>
+                    <li class='tab-app-log last'><a href='Application_Log.html'>Application Log</a></li>
+                </ul>
+            </div>
+            <div id='breadcrumb'>
+                <span>Quality Incident Reports</span>
+            </div>
+            <div id='main-content'>
+                <div class='search-qir'>
+                    <div class='collapsable-row collapsed'>
+                        <span class='icon-exp-coll'></span>
+                        <span>Search</span>
+                    </div>
+                    <div class='collapsable-content'>
+                        <div class='search-qir-content'>
+                            <div class='detail-col1'>
+                                <div class='inci-num-input'>
+                                    <div class='lbl'>Incident Number</div>
+                                    <input type='text'>
+                                </div>
+                                <div class='praxair-input'>
+                                    <div class='lbl'>Praxair #</div>
+                                    <input type='text'>
+                                </div>
+                                <div class='inci-date-range'>
+                                    <div class='lbl'>Incident Date Between</div>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <span class='sep'>-</span>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                </div>
+                                <div class='disc-date-range'>
+                                    <div class='lbl'>Discovery Date Between</div>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <span class='sep'>-</span>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class='detail-col2'>
+                                <div class='dept-select'>
+                                    <div class='lbl'>Department</div>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text ">All</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>All</li>
+                                                <li>Department Name</li>
+                                                <li>Department Name</li>
+                                                <li>Department Name</li>
+                                                <li>Department Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='location-select'>
+                                    <div class='lbl'>Location</div>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text ">All</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>All</li>
+                                                <li>Location Name</li>
+                                                <li>Location Name</li>
+                                                <li>Location Name</li>
+                                                <li>Location Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='state-select'>
+                                    <div class='lbl'>State / Province</div>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text ">All</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>All</li>
+                                                <li>State/Province Name</li>
+                                                <li>State/Province Name</li>
+                                                <li>State/Province Name</li>
+                                                <li>State/Province Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='city-input'>
+                                    <div class='lbl'>City</div>
+                                    <input type='text'>
+                                </div>
+                            </div>
+                            <div class='detail-col3'>
+                                <div class='author-input'>
+                                    <div class='lbl'>Author</div>
+                                    <input type='text'>
+                                </div>
+                                <div class='owner-input'>
+                                    <div class='lbl'>Owner</div>
+                                    <input type='text'>
+                                </div>
+                                <div class='reporter-input'>
+                                    <div class='lbl'>Reporter</div>
+                                    <input type='text'>
+                                </div>
+                                <div class='customer-input'>
+                                    <div class='lbl'>Customer</div>
+                                    <input type='text'>
+                                </div>
+                            </div>
+                            <div class='detail-col4'>
+                                <div class='inci-status-check'>
+                                    <div class='lbl'>Incident Status</div>
+                                    <div class='check-option ticked'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Draft</span>
+                                    </div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Open</span>
+                                    </div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Waiting Approval</span>
+                                    </div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Close</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class='investi-status-check'>
+                                    <div class='lbl'>Investigation Status</div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>None</span>
+                                    </div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Under Investigation</span>
+                                    </div>
+                                    <div class='check-option'>
+                                        <span class="check-icon"></span>
+                                        <span class='check-lbl'>Investigation Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='search-qir-buttons clearfix'>
+                            <a href='javascript:;' class='btn right search-btn'>
+                                <span class='btn-text'>Search</span>
+                                <span class='btn-icon right'></span>
+                            </a>
+                            <a href='javascript:;' class='btn right clear-btn'>
+                                <span class='btn-text'>Clear</span>
+                                <span class='btn-icon right'></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='qir-section'>
+                    <div class='tabs clearfix'>
+                        <ul>
+                            <li class='active'>ALL QIRS (99)</li>
+                            <li>MY WORKING QIRS (99)</li>
+                        </ul>
+                    </div>
+                    <div class='qir-content'>
+                        <div class='table-container clearfix'>
+                            <div class='top-pagination clearfix'>
+                                <div class='left pagination'>
+                                    <div class='select-num'>
+                                        <span>Show</span>
+                                        <select>
+                                            <option>5</option>
+                                            <option selected>10</option>
+                                            <option>25</option>
+                                            <option>50</option>
+                                            <option>All</option>
+                                        </select>
+                                        <span>per page</span>
+                                    </div>
+                                    <div class='reult-stats'>
+                                        <span class='start-num'>1</span>
+                                        <span> - </span>
+                                        <span class='end-num'>10</span>
+                                        <span> of </span>
+                                        <span class='total-num'>50</span>
+                                        <span> Results</span>
+                                    </div>
+                                    <div class='prev-link disabled'>
+                                        <a href='javascript:;'>
+                                            <span class='prev-icon'></span>
+                                            <span>Prev</span>
+                                        </a>
+                                    </div>
+                                    <div class='next-link'>
+                                        <a href='javascript:;'>
+                                            <span>Next</span>
+                                            <span class='next-icon'></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href='javascript:;' class='btn right new-qir-btn'>
+                                    <span class='btn-text'>New QIR</span>
+                                    <span class='btn-icon right'></span>
+                                </a>
+                            </div>
+                            <div class="extended-table clearfix">
+                                <div class='left-fixed-table'>
+                                    <table>
+                                        <colgroup>
+                                            <col class='width105'>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class='multi-line'>
+                                                    <span class='dib-middle'>
+                                                        <span>Incident</span>
+                                                        <span>Number</span>
+                                                    </span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='javascript:;' class="report-detail-link">0000</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class='right-scrollable'>
+                                    <table>
+                                        <colgroup>
+                                            <col class='width148'>
+                                            <col class='width109'>
+                                            <col class='width109'>
+                                            <col class='width154'>
+                                            <col class='width110'>
+                                            <col class='width125'>
+                                            <col class='width120'>
+                                            <col class='width123'>
+                                            <col class='width113'>
+                                            <col class='width151'>
+                                            <col class='width78'>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <span>Incident Date</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Time</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Praxair#</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Department</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Location</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Customer</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Owner</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Author</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th class='multi-line'>
+                                                    <span class='dib-middle'>
+                                                        <span>Incident</span>
+                                                        <span>Status</span>
+                                                    </span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Investigation Status</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th class='last'>
+                                                    
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Close</td>
+                                                <td>Investigation Complete</td>
+                                                <td class='last'>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Close</td>
+                                                <td>Investigation Complete</td>
+                                                <td class='last'>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Awaiting Approval</td>
+                                                <td>Under Investigation</td>
+                                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>00/00/0000</td>
+                                                <td>00:00 AM</td>
+                                                <td>000000</td>
+                                                <td>Department Name</td>
+                                                <td>Location</td>
+                                                <td>Customer Name</td>
+                                                <td>Owner Name</td>
+                                                <td>Author Name</td>
+                                                <td>Close</td>
+                                                <td>Investigation Complete</td>
+                                                <td class='last'>--</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class='bottom-pagination clearfix'>
+                                <div class='left pagination'>
+                                    <div class='select-num'>
+                                        <span>Show</span>
+                                        <select>
+                                            <option>5</option>
+                                            <option selected>10</option>
+                                            <option>25</option>
+                                            <option>50</option>
+                                            <option>All</option>
+                                        </select>
+                                        <span>per page</span>
+                                    </div>
+                                    <div class='reult-stats'>
+                                        <span class='start-num'>1</span>
+                                        <span> - </span>
+                                        <span class='end-num'>10</span>
+                                        <span> of </span>
+                                        <span class='total-num'>50</span>
+                                        <span> Results</span>
+                                    </div>
+                                    <div class='prev-link disabled'>
+                                        <a href='javascript:;'>
+                                            <span class='prev-icon'></span>
+                                            <span>Prev</span>
+                                        </a>
+                                    </div>
+                                    <div class='next-link'>
+                                        <a href='javascript:;'>
+                                            <span>Next</span>
+                                            <span class='next-icon'></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href='javascript:;' class='btn right new-qir-btn'>
+                                    <span class='btn-text'>New QIR</span>
+                                    <span class='btn-icon right'></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- modal windows -->
+        <!-- delete QIR confirmation modal -->
+        <div class="modal confirm-modal" id="delete-qir-confirmation-modal">
+            <div class="modal-header">
+                <h1 class="left">Delete QIR</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content">
+                <p>Are you sure you want to delete the QIR "000" ?</p>
+            </div>
+            <div class="modal-foot-btns clearfix">
+                <a href='javascript:;' class='btn right no-btn'>
+                    <span class='btn-text'>No</span>
+                    <span class='btn-icon right'></span>
+                </a>
+                <a href='javascript:;' class='btn right yes-btn'>
+                    <span class='btn-text'>Yes</span>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- sort filter popup -->
+        <div id="sort-filter">
+            <div class="filter-options right">
+                <div class="small-to-large">
+                    Sort Smallest to Largest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="large-to-small">
+                    Sort Largest to Smallest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="filter-checks">
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                </div>
+                <div class="buttons-row">
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn left ok-filter-btn'>
+                        <span class='btn-text'>OK</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+            <div class="left-section">
+                <div class="small-to-large-icon"></div>
+                <div class="large-to-small-icon"></div>
+                <div class="check-all-icon select-all"></div>
+            </div>
+        </div>
+        
+        <!-- report detail demo links popup -->
+        <ul id="report-detail-demo-links">
+            <li><a href="QIR-Awaiting_Approval.html">QIR with Incident Status as Awaiting Approval</a></li>
+            <li><a href="QIR-Closed.html">QIR with Incident Status as Closed</a></li>
+        </ul>
+    </body>
+</html>

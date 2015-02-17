@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Manage Email Templates</title>
+            
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.theme.css">
+        <!--[if IE 8]>
+            <link rel="stylesheet" href="css/style-ie8.css">
+        <![endif]-->
+            
+        <!-- External JS -->
+            
+        <!-- jQuery library -->
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+            
+        <!-- Main JS -->
+        <script src="js/script.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div class="container" id="page-email-templates">
+            <div id="header" class='clearfix'>
+                <div class="left logo">
+                    <a href='Business_and_System_Admin_Home.html'><img src="i/logo.png" alt="logo" class='left'></a>
+                    <a href='Business_and_System_Admin_Home.html'>Quality Incident Reporting System</a>
+                </div>
+                <div class="right user-info">
+                    <div class="welcome">
+                        Welcome, User's Name
+                    </div>
+                    <div class='user-position'>
+                        Business Administrator
+                    </div>
+                </div>
+                <!-- temp link to switch user -->
+                <a href='Regular_User_Home.html' class='switch'>switch user</a>
+            </div>
+            <div id='main-nav' class='clearfix'>
+                <ul>
+                    <li class='tab-qir first'><a href='Business_and_System_Admin_Home.html'>QIR</a></li>
+                    <li class='tab-cause'><a href='Manage_Root_Causes.html'>Root Cause</a></li>
+                    <li class='tab-codes'><a href='Manage_Codes.html'>Codes</a></li>
+                    <li class='tab-dept-regions'><a href='Manage_Dept_Regions.html'>Dept Regions</a></li>
+                    <li class='tab-dept-lists'><a href='Manage_Dept_Notification_Lists.html'>Dept Notification Lists</a></li>
+                    <li class='tab-email-template active'><a href='javascript:;'>Email Templates</a></li>
+                    <li class='tab-app-log last'><a href='Application_Log.html'>Application Log</a></li>
+                </ul>
+            </div>
+            <div id='breadcrumb'>
+                <span>Manage Email Templates</span>
+            </div>
+            <div id='main-content'>
+                <div class='table-container'>
+                    <div class='top-pagination clearfix'>
+                        <div class='left pagination'>
+                            <div class='select-num'>
+                                <span>Show</span>
+                                <select>
+                                    <option selected>5</option>
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                    <option>All</option>
+                                </select>
+                                <span>per page</span>
+                            </div>
+                            <div class='reult-stats'>
+                                <span class='start-num'>1</span>
+                                <span> - </span>
+                                <span class='end-num'>5</span>
+                                <span> of </span>
+                                <span class='total-num'>50</span>
+                                <span> Results</span>
+                            </div>
+                            <div class='prev-link disabled'>
+                                <a href='javascript:;'>
+                                    <span class='prev-icon'></span>
+                                    <span>Prev</span>
+                                </a>
+                            </div>
+                            <div class='next-link'>
+                                <a href='javascript:;'>
+                                    <span>Next</span>
+                                    <span class='next-icon'></span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href='javascript:;' class='btn right add-new-tmplt-btn'>
+                            <span class='btn-text'>Add New Template</span>
+                            <span class='btn-icon right'></span>
+                        </a>
+                    </div>
+                    <table>
+                        <colgroup>
+                            <col class='width36'>
+                            <col class='width85'>
+                            <col class='width85'>
+                            <col class='width300'>
+                            <col class='width93'>
+                            <col class='width93'>
+                            <col class='width100'>
+                            <col class='width100'>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    
+                                </th>
+                                <th>
+                                    <span>Template</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    <span>Subject</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    Body
+                                </th>
+                                <th>
+                                    <span>Created At</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    <span>Created By</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th class='multi-line'>
+                                    <span class='dib-middle'>
+                                        <span>Last</span>
+                                        <span>Modified At</span>
+                                    </span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th class='multi-line'>
+                                    <span class='dib-middle'>
+                                        <span>Last</span>
+                                        <span>Modified By</span>
+                                    </span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th class='last'>
+                                    
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href='javascript:;' class='edit-icon'></a></td>
+                                <td>Template Name</td>
+                                <td>Username</td>
+                                <td class='left-align'>
+                                    Lorem ipsum {VARIABLE NAME},<br>
+                                    consectetur {VARIABLE NAME} adipiscing elit. Aenean euismod
+                                    bibendum laoreet.<br>
+                                    Proin gravida dolor sit amet lacus {VARIABLE NAME},
+                                    {VARIABLE NAME} accumsan et viverra justo commodo.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient.
+                                </td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href='javascript:;' class='edit-icon'></a></td>
+                                <td>Template Name</td>
+                                <td>Username</td>
+                                <td class='left-align'>
+                                    Lorem ipsum {VARIABLE NAME},<br>
+                                    consectetur {VARIABLE NAME} adipiscing elit. Aenean euismod
+                                    bibendum laoreet.<br>
+                                    Proin gravida dolor sit amet lacus {VARIABLE NAME},
+                                    {VARIABLE NAME} accumsan et viverra justo commodo.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient.
+                                </td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href='javascript:;' class='edit-icon'></a></td>
+                                <td>Template Name</td>
+                                <td>Username</td>
+                                <td class='left-align'>
+                                    Lorem ipsum {VARIABLE NAME},<br>
+                                    consectetur {VARIABLE NAME} adipiscing elit. Aenean euismod
+                                    bibendum laoreet.<br>
+                                    Proin gravida dolor sit amet lacus {VARIABLE NAME},
+                                    {VARIABLE NAME} accumsan et viverra justo commodo.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient.
+                                </td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href='javascript:;' class='edit-icon'></a></td>
+                                <td>Template Name</td>
+                                <td>Username</td>
+                                <td class='left-align'>
+                                    Lorem ipsum {VARIABLE NAME},<br>
+                                    consectetur {VARIABLE NAME} adipiscing elit. Aenean euismod
+                                    bibendum laoreet.<br>
+                                    Proin gravida dolor sit amet lacus {VARIABLE NAME},
+                                    {VARIABLE NAME} accumsan et viverra justo commodo.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient.
+                                </td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href='javascript:;' class='edit-icon'></a></td>
+                                <td>Template Name</td>
+                                <td>Username</td>
+                                <td class='left-align'>
+                                    Lorem ipsum {VARIABLE NAME},<br>
+                                    consectetur {VARIABLE NAME} adipiscing elit. Aenean euismod
+                                    bibendum laoreet.<br>
+                                    Proin gravida dolor sit amet lacus {VARIABLE NAME},
+                                    {VARIABLE NAME} accumsan et viverra justo commodo.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient.
+                                </td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class="multi-line">00/00/0000</td>
+                                <td class="multi-line">Jack Black</td>
+                                <td class='last'><a href='javascript:;' class='delete-icon'></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class='bottom-pagination clearfix'>
+                        <div class='left pagination'>
+                            <div class='select-num'>
+                                <span>Show</span>
+                                <select>
+                                    <option selected>5</option>
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                    <option>All</option>
+                                </select>
+                                <span>per page</span>
+                            </div>
+                            <div class='reult-stats'>
+                                <span class='start-num'>1</span>
+                                <span> - </span>
+                                <span class='end-num'>5</span>
+                                <span> of </span>
+                                <span class='total-num'>50</span>
+                                <span> Results</span>
+                            </div>
+                            <div class='prev-link disabled'>
+                                <a href='javascript:;'>
+                                    <span class='prev-icon'></span>
+                                    <span>Prev</span>
+                                </a>
+                            </div>
+                            <div class='next-link'>
+                                <a href='javascript:;'>
+                                    <span>Next</span>
+                                    <span class='next-icon'></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- modal windows -->
+        <!-- add template modal -->
+        <div class="modal" id="add-template-modal">
+            <div class="modal-header">
+                <h1 class="left">Add New Template</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content">
+                <div class="template-name">
+                    <div class="lbl">Template Name</div>
+                    <input type="text">
+                </div>
+                <div class="subject">
+                    <div class="lbl">Subject</div>
+                    <input type="text">
+                    <div class="avlbl-vars">
+                        Available Variables {VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>
+                        {VARIABLE NAME} and {VARIABLE NAME}
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="lbl">Body</div>
+                    <textarea cols="1" rows="1"></textarea>
+                    <div class="avlbl-vars">
+                        Available Variables {VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME}, and {VARIABLE NAME}.
+                    </div>
+                </div>
+                <div class="modal-foot-btns clearfix">
+                    <a href='javascript:;' class='btn right add-tmplt-btn'>
+                        <span class='btn-text'>Add Template</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- edit template modal -->
+        <div class="modal" id="edit-template-modal">
+            <div class="modal-header">
+                <h1 class="left">Edit Template</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content">
+                <div class="template-name">
+                    <div class="lbl">Template Name</div>
+                    <input type="text" value="Template Name">
+                </div>
+                <div class="subject">
+                    <div class="lbl">Subject</div>
+                    <input type="text" value="Lorem ipsum dolor sit amet, {VARIABLE NAME}. Aenean euismod bibendum laoreet.">
+                    <div class="avlbl-vars">
+                        Available Variables {VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>
+                        {VARIABLE NAME} and {VARIABLE NAME}
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="lbl">Body</div>
+                    <textarea cols="1" rows="1">Lorem ipsum {VARIABLE NAME},
+
+Proin sodales pulvinar tempor. Cum sociis {VARIABLE NAME},{VARIABLE NAME} natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </textarea>
+                    <div class="avlbl-vars">
+                        Available Variables {VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME},<br>{VARIABLE NAME},{VARIABLE NAME},{VARIABLE NAME}, and {VARIABLE NAME}.
+                    </div>
+                </div>
+                <div class="modal-foot-btns clearfix">
+                    <a href='javascript:;' class='btn right edit-tmplt-btn'>
+                        <span class='btn-text'>Edit Template</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- sort filter popup -->
+        <div id="sort-filter">
+            <div class="filter-options right">
+                <div class="small-to-large">
+                    Sort Smallest to Largest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="large-to-small">
+                    Sort Largest to Smallest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="filter-checks">
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                </div>
+                <div class="buttons-row">
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn left ok-filter-btn'>
+                        <span class='btn-text'>OK</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+            <div class="left-section">
+                <div class="small-to-large-icon"></div>
+                <div class="large-to-small-icon"></div>
+                <div class="check-all-icon select-all"></div>
+            </div>
+        </div>
+    </body>
+</html>

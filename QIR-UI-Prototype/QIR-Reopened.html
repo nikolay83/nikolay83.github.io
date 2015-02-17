@@ -1,0 +1,1402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>QIR - Reopened</title>
+            
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.theme.css">
+        <!--[if IE 8]>
+            <link rel="stylesheet" href="css/style-ie8.css">
+        <![endif]-->
+            
+        <!-- External JS -->
+            
+        <!-- jQuery library -->
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+            
+        <!-- Main JS -->
+        <script src="js/script.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div class="container qir-pages" id="page-reopened">
+            <div class='fixed-container'>
+                <div id="header" class='clearfix'>
+                    <div class="left logo">
+                        <a href='Business_and_System_Admin_Home.html'><img src="i/logo.png" alt="logo" class='left'></a>
+                        <a href='Business_and_System_Admin_Home.html'>Quality Incident Reporting System</a>
+                    </div>
+                    <div class="right user-info">
+                        <div class="welcome">
+                            Welcome, User's Name
+                        </div>
+                        <div class='user-position'>
+                            Business Administrator
+                        </div>
+                    </div>
+                    <!-- temp link to switch user -->
+                    <a href='Regular_User_Home.html' class='switch'>switch user</a>
+                </div>
+                <div id='main-nav' class='clearfix'>
+                    <ul>
+                        <li class='tab-qir first active'><a href='Business_and_System_Admin_Home.html'>QIR</a></li>
+                        <li class='tab-cause'><a href='Manage_Root_Causes.html'>Root Cause</a></li>
+                        <li class='tab-codes'><a href='Manage_Codes.html'>Codes</a></li>
+                        <li class='tab-dept-regions'><a href='Manage_Dept_Regions.html'>Dept Regions</a></li>
+                        <li class='tab-dept-lists'><a href='Manage_Dept_Notification_Lists.html'>Dept Notification Lists</a></li>
+                        <li class='tab-email-template'><a href='Manage_Email_Templates.html'>Email Templates</a></li>
+                        <li class='tab-app-log last'><a href='Application_Log.html'>Application Log</a></li>
+                    </ul>
+                </div>
+                <div id='breadcrumb'>
+                    <a href='Regular_User_Home.html'>Quality Incident Reports</a>
+                    <span class='breadcrumb-sep'></span>
+                    <span>Quality Incident Report Detail</span>
+                </div>
+                <div class='report-info clearfix'>
+                    <div class='info-col1'>
+                        <div>
+                            <span class='left question'>Incident Number</span>
+                            <span class='ans'>000</span>
+                        </div>
+                        <div>
+                            <span class='left question'>Incident Owner</span>
+                            <span class='ans'>Jack, Black</span>
+                        </div>
+                        <div>
+                            <span class='left question'>Last Modified By</span>
+                            <span class='ans'>Jack, Black</span>
+                        </div>
+                    </div>
+                    <div class='info-col2'>
+                        <div>
+                            <span class='left question'>Created At</span>
+                            <span class='ans'>mm/dd/yyyy 00:00 AM</span>
+                        </div>
+                        <div>
+                            <span class='left question'>Incident Satus</span>
+                            <span class='ans'>Draft</span>
+                        </div>
+                        <div>
+                            <span class='left question'>Last Modified At</span>
+                            <span class='ans'>mm/dd/yyyy 00:00 AM</span>
+                        </div>
+                    </div>
+                    <div class='info-col3'>
+                        <div>
+                            <span class='left question'>Created By</span>
+                            <span class='ans'>Jack, Black</span>
+                        </div>
+                        <div>
+                            <span class='left question'>Investigation Status</span>
+                            <span class='ans'>None</span>
+                        </div>
+                    </div>
+                </div>
+                <div class='buttons-row clearfix'>
+                    <a href='Business_and_System_Admin_Home.html' class='btn right save-exit-btn'>
+                        <span class='btn-text'>Save and Exit</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right save-btn'>
+                        <span class='btn-text'>Save</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right add-to-my-qir-btn'>
+                        <span class='btn-text'>Add to My Working QIRs</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+                <div class='expand-collapse-all clearfix'>
+                    <a href='javascript:;' class='collapse-all right'>
+                        <span class='collapse-all-icon left'></span>
+                        <span>Collapse All</span>
+                    </a>
+                    <a href='javascript:;' class='expand-all right'>
+                        <span class='expand-all-icon left'></span>
+                        <span>Expand All</span>
+                    </a>
+                </div>
+                <!-- pin button -->
+                <a href='javascript:;' class='pin-unpin-btn'>Unpinned</a>
+            </div>
+             <div id='main-content'>
+                <div class='report-detail-content'>
+                    <div class='incident-overiew'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Incident Overview</span>
+                        </div>
+                        <div class='collapsable-content clearfix'>
+                            <div class='content-detail-row author'>
+                                <div class='left question'>
+                                    <span>Author<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class='search-box'>
+                                        <input type='text' value='Jack Black'>
+                                        <a href='javascript:;'></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row inci-date'>
+                                <div class='left question'>
+                                    <span>Incident Date<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans date-time'>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <div class="custom-select hour">
+                                        <div class='select-box'>
+                                            <span class="select-text ">01</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select minute">
+                                        <div class='select-box'>
+                                            <span class="select-text ">31</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li><li>13</li><li>14</li>
+                                                <li>15</li><li>16</li><li>17</li><li>18</li><li>19</li>
+                                                <li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+                                                <li>25</li><li>26</li><li>27</li><li>28</li><li>29</li>
+                                                <li>30</li><li>31</li><li>32</li><li>33</li><li>34</li>
+                                                <li>35</li><li>36</li><li>37</li><li>38</li><li>39</li>
+                                                <li>40</li><li>41</li><li>42</li><li>43</li><li>44</li>
+                                                <li>45</li><li>46</li><li>47</li><li>48</li><li>49</li>
+                                                <li>50</li><li>51</li><li>52</li><li>53</li><li>54</li>
+                                                <li>55</li><li>56</li><li>57</li><li>58</li><li>59</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select period">
+                                        <div class='select-box'>
+                                            <span class="select-text ">AM</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>AM</li>
+                                                <li>PM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row disc-date'>
+                                <div class='left question'>
+                                    <span>Discovery Date<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans date-time'>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <div class="custom-select hour">
+                                        <div class='select-box'>
+                                            <span class="select-text ">01</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select minute">
+                                        <div class='select-box'>
+                                            <span class="select-text ">31</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li><li>13</li><li>14</li>
+                                                <li>15</li><li>16</li><li>17</li><li>18</li><li>19</li>
+                                                <li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+                                                <li>25</li><li>26</li><li>27</li><li>28</li><li>29</li>
+                                                <li>30</li><li>31</li><li>32</li><li>33</li><li>34</li>
+                                                <li>35</li><li>36</li><li>37</li><li>38</li><li>39</li>
+                                                <li>40</li><li>41</li><li>42</li><li>43</li><li>44</li>
+                                                <li>45</li><li>46</li><li>47</li><li>48</li><li>49</li>
+                                                <li>50</li><li>51</li><li>52</li><li>53</li><li>54</li>
+                                                <li>55</li><li>56</li><li>57</li><li>58</li><li>59</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select period">
+                                        <div class='select-box'>
+                                            <span class="select-text ">AM</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>AM</li>
+                                                <li>PM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row delay-time'>
+                                <div class='left question'>
+                                    <span>Delay Time<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>07</div>
+                            </div>
+                            <div class='content-detail-row dapartment'>
+                                <div class='left question'>
+                                    <span>Department<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text ">Production & Distribution</span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li>
+                                                <li>Logistics</li>
+                                                <li>Production & Distribution</li>
+                                                <li>Department Name</li>
+                                                <li>Department Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row region'>
+                                <div class='left question'>
+                                    <span>Region<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text "></span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li>
+                                                <li>South</li>
+                                                <li>North</li>
+                                                <li>Region Name</li>
+                                                <li>Region Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row location'>
+                                <div class='left question'>
+                                    <span>Location<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class="custom-select">
+                                        <div class='select-box'>
+                                            <span class="select-text "></span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li>
+                                                <li>NALC, NY (USA815-2)</li>
+                                                <li>Location Name</li>
+                                                <li>Location Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row auto-height products-affected clearfix'>
+                                <div class='left question'>
+                                    <span>Products Affected<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans left'>
+                                    <div class='options-col1'>
+                                        <div class='check-option ticked'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>LO2 (Liquid Oxygen)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>GN2 (Gaseous Nitrogen)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>LCD (Liquid Carbon Dioxide)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>GCO (Gaseous Carbon Monoxide)</span>
+                                        </div>
+                                    </div>
+                                    <div class='options-col2'>
+                                        <div class='check-option ticked'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>GO2 (Gaseous Oxygen)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>LAr (Liquid Argon)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>LHY (Liquid Hydrogen)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>SDI (Dry Ice)</span>
+                                        </div>
+                                    </div>
+                                    <div class='options-col3'>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>LN2 (Liquid Nitrogen)</span>
+                                        </div>
+                                        <div class='check-option'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>GAr (Gaseous Argon)</span>
+                                        </div>
+                                        <div class='check-option ticked'>
+                                            <span class="check-icon"></span>
+                                            <span class='check-lbl'>GHY (Gaseous Hydrogen)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row inci-owner'>
+                                <div class='left question'>
+                                    <span>Incident Owner<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class='search-box'>
+                                        <input type='text'>
+                                        <a href='javascript:;'></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='content-detail-row classification'>
+                                <div class='left question'>
+                                    <span>Classification</span>
+                                </div>
+                                <div class='ans'>
+                                    <span>-None-</span>
+                                    <a href='javascript:;' class='btn right classification-btn'>
+                                        <span class='btn-text'>Enter Classification</span>
+                                        <span class='btn-icon right'></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='content-detail-row last description auto-height'>
+                                <div class='left question'>
+                                    <span>Description<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans txtarea'><textarea rows="1" cols="1"></textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='impact-on-cust'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Impact On Customers</span>
+                        </div>
+                        <div class='collapsable-content'>
+                            <div class='content-detail-row cust-impact'>
+                                <div class='left question'>
+                                    <span>Was a Customer Impacted?<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans'>
+                                    <div class='radio-selection'>
+                                        <div class='radio-option'>
+                                            <span class='radio-icon'></span>
+                                            <span class='radio-lbl'>Yes</span>
+                                        </div>
+                                        <div class='radio-option selected'>
+                                            <span class='radio-icon'></span>
+                                            <span class='radio-lbl'>No</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='selective-content'>
+                                <div class='content-detail-row reported-by'>
+                                    <div class='left question'>
+                                        <span>Reported By</span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row phone-num'>
+                                    <div class='left question'>
+                                        <span>Phone</span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text' class='code'>
+                                        <input type='text' class='code'>
+                                        <input type='text' class='number'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row impact-desc auto-height'>
+                                    <div class='left question'>
+                                        <span>Impact Description<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans txtarea'><textarea rows="1" cols="1"></textarea></div>
+                                </div>
+                                <div class='content-detail-row praxair'>
+                                    <div class='left question'>
+                                        <span>Praxair#<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <div class='lookup-box'>
+                                            <input type='text'>
+                                            <a href='javascript:;'></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row cust-name'>
+                                    <div class='left question'>
+                                        <span>Customer Name<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <div class='search-box'>
+                                            <input type='text' value='Jack Black'>
+                                            <a href='javascript:;'></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row cust-type'>
+                                    <div class='left question'>
+                                        <span>Customer Type<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row order-type'>
+                                    <div class='left question'>
+                                        <span>Order Type<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row tank-size'>
+                                    <div class='left question'>
+                                        <span>Tank Size<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row tracker-installed'>
+                                    <div class='left question'>
+                                        <span>Tracker Installed<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row use-point-sales-rep'>
+                                    <div class='left question'>
+                                        <span>Use Point Sales Rep Name<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                                <div class='content-detail-row negotiating-sales-rep last'>
+                                    <div class='left question'>
+                                        <span>Negotiating Point Sales Rep Name<span class='red-asterisk'> *</span></span>
+                                    </div>
+                                    <div class='ans'>
+                                        <input type='text'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='root-cause-determination'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Root Cause Determination</span>
+                        </div>
+                        <div class='collapsable-content'>
+                            <div class='content-detail-row root-cause'>
+                                <div class='left question'>
+                                    <span>Root Cause</span>
+                                </div>
+                                <div class='ans'>
+                                    <span>-None-</span>
+                                    <a href='javascript:;' class='btn right root-cause-btn'>
+                                        <span class='btn-text'>Enter Root Cause</span>
+                                        <span class='btn-icon right'></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='content-detail-row root-cause-det clearfix'>
+                                <div class='left question'>
+                                    <span>Root Cause Determination</span>
+                                </div>
+                                <div class='ans'>
+                                    <span>-None-</span>
+                                </div>
+                            </div>
+                            <div class='content-detail-row last root-cause-desc auto-height'>
+                                <div class='left question'>
+                                    <span>Root Cause Narrative Description<span class='red-asterisk'> *</span></span>
+                                </div>
+                                <div class='ans txtarea'><textarea rows="1" cols="1"></textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='action-items'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Action Items</span>
+                        </div>
+                        <div class='collapsable-content white-bckgrnd'>
+                            <div class="add-action-item clearfix">
+                                <div class="right-section">
+                                    <a href='javascript:;' class='btn right add-action-item-btn'>
+                                        <span class='btn-text'>Add Action Item</span>
+                                        <span class='btn-icon right'></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='noti-recipients'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Notification Recipients</span>
+                        </div>
+                        <div class='collapsable-content white-bckgrnd'>
+                            <div class="view-noti-list clearfix">
+                                <div class="left left-section">
+                                    Department Notification Recipients
+                                </div>
+                                <div class="right-section">
+                                    <a href='javascript:;' class='btn right view-noti-list-btn'>
+                                        <span class='btn-text'>View Dept Notification List</span>
+                                        <span class='btn-icon right'></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="add-noti-person clearfix">
+                                <div class="left left-section">
+                                    <table>
+                                        <colgroup>
+                                            <col class='width170'>
+                                            <col class='width137'>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <span>Role</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th>
+                                                    <span>Name</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                                <th class='last'>
+                                                    <span>Email</span>
+                                                    <span class='sort-icon'></span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Logistics Manager</td>
+                                                <td>Jack Black</td>
+                                                <td class='last'>jblack@praxair.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="right-section">
+                                    <a href='javascript:;' class='btn right add-noti-person-btn'>
+                                        <span class='btn-text'>Add Notification Person</span>
+                                        <span class='btn-icon right'></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='event-log'>
+                        <div class='collapsable-row collapsed'>
+                            <span class='icon-exp-coll'></span>
+                            <span>Event Log</span>
+                        </div>
+                        <div class='collapsable-content white-bckgrnd'>
+                            <div class="event-log-table">
+                                <table>
+                                    <colgroup>
+                                        <col class='width189'>
+                                        <col class='width161'>
+                                        <col class='width213'>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span>Event Type</span>
+                                                <span class='sort-icon'></span>
+                                            </th>
+                                            <th>
+                                                <span>Created By</span>
+                                                <span class='sort-icon'></span>
+                                            </th>
+                                            <th>
+                                                <span>Created On</span>
+                                                <span class='sort-icon'></span>
+                                            </th>
+                                            <th class='last'>
+                                                <span>Description</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Incident Created</td>
+                                            <td>Jack Black</td>
+                                            <td>00/00/0000 00:00 AM</td>
+                                            <td class='last'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='other-details-box'>
+                        <div class='content-detail-row rejection-reason'>
+                            <div class='left question'>
+                                <span>Rejection Reason</span>
+                            </div>
+                            <div class='ans'>
+                                Lorem Ipsum Doler Ismet for Rejection
+                            </div>
+                        </div>
+                        <div class='content-detail-row completed-by'>
+                            <div class='left question'>
+                                <span>Completed By</span>
+                            </div>
+                            <div class='ans'>
+                               Jack Black
+                            </div>
+                        </div>
+                        <div class='content-detail-row last completed-on'>
+                            <div class='left question'>
+                                <span>Completed On</span>
+                            </div>
+                            <div class='ans'>
+                                mm / dd / yyyy 00:00:00 AM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='buttons-row clearfix'>
+                    <a href='Business_and_System_Admin_Home.html' class='btn right save-exit-btn'>
+                        <span class='btn-text'>Save and Exit</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right save-btn'>
+                        <span class='btn-text'>Save</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn right add-to-my-qir-btn'>
+                        <span class='btn-text'>Add to My Working QIRs</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- modal windows -->
+        <!-- department notification recipient list modal -->
+        <div class="modal" id="view-noti-list-modal">
+            <div class="modal-header">
+                <h1 class="left">Department Notification Recipient</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content">
+                <div class="list-table">
+                    <table>
+                        <colgroup>
+                            <col class='width120'>
+                            <col class='width127'>
+                            <col class='width171'>
+                            <col class='width194'>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>Role Name</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    <span>Username</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    <span>Email</span>
+                                    <span class='sort-icon'></span>
+                                </th>
+                                <th>
+                                    <span>Created on / By</span>
+                                </th>
+                                <th class='last'>
+                                    <span>Last Modified on / By</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Role Name</td>
+                                <td>Username</td>
+                                <td>Lorem@email.com</td>
+                                <td>00/00/0000 by Jack Black</td>
+                                <td class='last'>00/00/0000 by Jack Black</td>
+                            </tr>
+                            <tr>
+                                <td>Role Name</td>
+                                <td>Username</td>
+                                <td>Lorem@email.com</td>
+                                <td>00/00/0000 by Jack Black</td>
+                                <td class='last'>00/00/0000 by Jack Black</td>
+                            </tr>
+                            <tr>
+                                <td>Role Name</td>
+                                <td>Username</td>
+                                <td>Lorem@email.com</td>
+                                <td>00/00/0000 by Jack Black</td>
+                                <td class='last'>00/00/0000 by Jack Black</td>
+                            </tr>
+                            <tr>
+                                <td>Role Name</td>
+                                <td>Username</td>
+                                <td>Lorem@email.com</td>
+                                <td>00/00/0000 by Jack Black</td>
+                                <td class='last'>00/00/0000 by Jack Black</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-foot-btns clearfix">
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-text'>Close</span>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- root cause modal -->
+        <div class="modal" id="root-cause-modal">
+            <div class="modal-header">
+                <h1 class="left">Root Cause</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content clearfix">
+                <div class="left filter">
+                    <div class="section-head">Root Cause Filters</div>
+                    <div class="section-content">
+                        <div class="level1-select">
+                            <div class="lbl">Level 1</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Equipment Defects</li>
+                                        <li>Human Error</li>
+                                        <li>Resource Shortage</li>
+                                        <li>Data Integrity Defects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level2-select">
+                            <div class="lbl">Level 2</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level3-select">
+                            <div class="lbl">Level 3</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level4-select">
+                            <div class="lbl">Level 4</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right master-list">
+                    <div class="section-head">Root Cause</div>
+                    <div class="section-content">
+                        <div class="search-root-cause">
+                            <div class="lbl">Search Root Cause</div>
+                            <input type="text">
+                        </div>
+                        <div class="list-box">
+                            <div class="level1">
+                                <div class="head">Equipment Defects</div>
+                                <div class="level2">
+                                    <div class="head">Mechanical Failure</div>
+                                    <div class="level3">
+                                        <ul>
+                                            <li>Design defect</li>
+                                            <li>Manufacturing defect</li>
+                                            <li>Improper maintenance or PM not performed</li>
+                                            <li>No PM or expected failure</li>
+                                            <li>Other</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="level2">
+                                    <div class="head">Electrical Failure</div>
+                                    <div class="level3">
+                                        <ul>
+                                            <li>Design defect</li>
+                                            <li>Manufacturing defect</li>
+                                            <li>Improper maintenance or PM not performed</li>
+                                            <li>No PM or expected failure</li>
+                                            <li>Other</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="level2">
+                                    <div class="head">Control System Failure</div>
+                                    <div class="level3">
+                                        <ul>
+                                            <li>Design defect</li>
+                                            <li>Manufacturing defect</li>
+                                            <li>Improper maintenance or PM not performed</li>
+                                            <li>No PM or expected failure</li>
+                                            <li>Other</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="level1">
+                                <div class="head">Lorem Ipsum</div>
+                                <div class="level2">
+                                    <div class="head">Lorem ipsum doler</div>
+                                    <div class="level3">
+                                        <ul>
+                                            <li>Design defect</li>
+                                            <li>Manufacturing defect</li>
+                                            <li>Improper maintenance or PM not performed</li>
+                                            <li>No PM or expected failure</li>
+                                            <li>Other</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-foot-btns clearfix">
+                <a href='javascript:;' class='btn right save-btn'>
+                    <span class='btn-text'>Save</span>
+                    <span class='btn-icon right'></span>
+                </a>
+                <a href='javascript:;' class='btn right cancel-btn'>
+                    <span class='btn-text'>Cancel</span>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- classification modal -->
+        <div class="modal" id="classification-modal">
+            <div class="modal-header">
+                <h1 class="left">Classification</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content clearfix">
+                <div class="left filter">
+                    <div class="section-head">Classification Filters</div>
+                    <div class="section-content">
+                        <div class="level1-select">
+                            <div class="lbl">Level 1</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Plant</li>
+                                        <li>Pipeline</li>
+                                        <li>Nonconforming Product</li>
+                                        <li>Trailor Loading</li>
+                                        <li>Customer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level2-select">
+                            <div class="lbl">Level 2</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                        <li>Level 2 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level3-select">
+                            <div class="lbl">Level 3</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                        <li>Level 3 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level4-select">
+                            <div class="lbl">Level 4</div>
+                            <div class="custom-select">
+                                <div class='select-box'>
+                                    <span class="select-text ">All</span>
+                                    <span class="select-arrow-icon right"></span>
+                                </div>
+                                <div class="select-menu">
+                                    <ul>
+                                        <li>All</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                        <li>Level 4 option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left master-list">
+                    <div class="section-head">Classification List</div>
+                    <div class="section-content">
+                        <div class="search-classification-list">
+                            <div class="lbl">Search</div>
+                            <div class='search-box'>
+                                <input type='text'>
+                                <a href='javascript:;'></a>
+                            </div>
+                        </div>
+                        <div class="list-box">
+                            <div class="level1">
+                                <div class="head">Plant</div>
+                                <div class="level2">
+                                    <ul>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level1">
+                                <div class="head">Pipeline</div>
+                                <div class="level2">
+                                    <ul>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level1">
+                                <div class="head">Nonconforming Product</div>
+                                <div class="level2">
+                                    <ul>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                        <li>lorem ipsum doler sit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right details">
+                    <div class="section-head">Classification Details</div>
+                    <div class="section-content">
+                        <div class="start-end-time-section">
+                            <div class="start-time date-time">
+                                <div class="lbl">Start Time</div>
+                                <div>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <div class="custom-select hour">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select minute">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li><li>13</li><li>14</li>
+                                                <li>15</li><li>16</li><li>17</li><li>18</li><li>19</li>
+                                                <li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+                                                <li>25</li><li>26</li><li>27</li><li>28</li><li>29</li>
+                                                <li>30</li><li>31</li><li>32</li><li>33</li><li>34</li>
+                                                <li>35</li><li>36</li><li>37</li><li>38</li><li>39</li>
+                                                <li>40</li><li>41</li><li>42</li><li>43</li><li>44</li>
+                                                <li>45</li><li>46</li><li>47</li><li>48</li><li>49</li>
+                                                <li>50</li><li>51</li><li>52</li><li>53</li><li>54</li>
+                                                <li>55</li><li>56</li><li>57</li><li>58</li><li>59</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select period">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>AM</li>
+                                                <li>PM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="end-time date-time">
+                                <div class="lbl">End Time</div>
+                                <div>
+                                    <span class="calendar">
+                                        <input type="text" readonly>
+                                        <a href="javascript:;" class="calendar-icon"></a>
+                                    </span>
+                                    <div class="custom-select hour">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select minute">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li> </li><li>01</li><li>02</li><li>03</li><li>04</li>
+                                                <li>05</li><li>06</li><li>07</li><li>08</li><li>09</li>
+                                                <li>10</li><li>11</li><li>12</li><li>13</li><li>14</li>
+                                                <li>15</li><li>16</li><li>17</li><li>18</li><li>19</li>
+                                                <li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+                                                <li>25</li><li>26</li><li>27</li><li>28</li><li>29</li>
+                                                <li>30</li><li>31</li><li>32</li><li>33</li><li>34</li>
+                                                <li>35</li><li>36</li><li>37</li><li>38</li><li>39</li>
+                                                <li>40</li><li>41</li><li>42</li><li>43</li><li>44</li>
+                                                <li>45</li><li>46</li><li>47</li><li>48</li><li>49</li>
+                                                <li>50</li><li>51</li><li>52</li><li>53</li><li>54</li>
+                                                <li>55</li><li>56</li><li>57</li><li>58</li><li>59</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-select period">
+                                        <div class='select-box'>
+                                            <span class="select-text "> </span>
+                                            <span class="select-arrow-icon right"></span>
+                                        </div>
+                                        <div class="select-menu">
+                                            <ul>
+                                                <li>AM</li>
+                                                <li>PM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="purity-readings-section">
+                            <p>Make line purity readings prior to opening tank isolation valve</p>
+                            <div class="analyize-tag">
+                                <div class="lbl">Analyze Tag Time</div>
+                                <input type="text">
+                            </div>
+                            <div class="unit-measure">
+                                <div class="lbl">Reading with Unit of Measure</div>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="batch-number-section">
+                            <div class="batch-number">
+                                <div class="lbl">Batch Number</div>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="lot-number-section">
+                            <div class="lot-number">
+                                <div class="lbl">Lot Number</div>
+                                <input type="text"> 
+                            </div>
+                            <div class='radio-selection'>
+                                <div class='radio-option selected'>
+                                    <span class='radio-icon'></span>
+                                    <span class='radio-lbl'>Pre-fill</span>
+                                </div>
+                                <div class='radio-option'>
+                                    <span class='radio-icon'></span>
+                                    <span class='radio-lbl'>Post-fill</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-foot-btns clearfix">
+                <a href='javascript:;' class='btn right save-btn'>
+                    <span class='btn-text'>Save</span>
+                    <span class='btn-icon right'></span>
+                </a>
+                <a href='javascript:;' class='btn right cancel-btn'>
+                    <span class='btn-text'>Cancel</span>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <!-- classification details options popup -->
+            <ul id="classification-details-options">
+                <li class="option1">If Classification Selected is Plant make line isolation or Plant Shutdown</li>
+                <li class="option2">If Classification Selected is Other plant related incidents like Plant process off computer control etc</li>
+                <li class="option3">If Classification Selected is Non-Conforming Product-Praxair storage tank</li>
+                <li class="option4">If Classification Selected is Nonconforming product - Shipping Container</li>
+                <li class="option5">If Classification Selected is Any Of the Other options</li>
+            </ul>
+        </div>
+        
+        <!-- add to my working QIRs modal -->
+        <div class="modal confirm-modal" id="add-to-qir-confirmation-modal">
+            <div class="modal-header">
+                <h1 class="left">Message</h1>
+                <a href='javascript:;' class='btn right close-btn'>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+            <div class="modal-content">
+                <p>The QIR has been added to the My Working QIR List.</p>
+            </div>
+            <div class="modal-foot-btns clearfix">
+                <a href='javascript:;' class='btn right ok-confirm-btn'>
+                    <span class='btn-text'>OK</span>
+                    <span class='btn-icon right'></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- sort filter popup -->
+        <div id="sort-filter">
+            <div class="filter-options right">
+                <div class="small-to-large">
+                    Sort Smallest to Largest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="large-to-small">
+                    Sort Largest to Smallest
+                    <span class="selected-icon"></span>
+                </div>
+                <div class="filter-checks">
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                    <div class='check-option ticked'>
+                        <span class="check-icon"></span>
+                        <span class='check-lbl'>Lorem ipsum doler</span>
+                    </div>
+                </div>
+                <div class="buttons-row">
+                    <a href='javascript:;' class='btn right cancel-btn'>
+                        <span class='btn-text'>Cancel</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                    <a href='javascript:;' class='btn left ok-filter-btn'>
+                        <span class='btn-text'>OK</span>
+                        <span class='btn-icon right'></span>
+                    </a>
+                </div>
+            </div>
+            <div class="left-section">
+                <div class="small-to-large-icon"></div>
+                <div class="large-to-small-icon"></div>
+                <div class="check-all-icon select-all"></div>
+            </div>
+        </div>
+    </body>
+</html>

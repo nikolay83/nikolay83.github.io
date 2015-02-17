@@ -1,0 +1,22 @@
+input[type=text] {
+    vertical-align: middle;
+}
+
+.calendar-icon {
+    top: 6px;
+}
+
+    .report-detail-content input {
+        position: relative;
+        top: -1px;
+    }
+    
+
+.report-info .info-col1 {
+    width: 270px;
+}
+    
+    
+.report-info .info-col2 {
+    width: 365px;
+}
