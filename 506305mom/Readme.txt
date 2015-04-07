@@ -1,1 +1,0 @@
-Put the whole folder under web server and then view from the browser.
