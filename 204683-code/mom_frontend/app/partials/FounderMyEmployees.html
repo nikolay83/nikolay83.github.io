@@ -1,0 +1,70 @@
+<div class="container employees">
+
+	<aside>
+  	<div class="profile">
+    	<div class="thumb"><img src="../i/thumb.png" alt="Thumb" /></div>
+    </div>
+    <ul>
+    	<li><a href="#/myInfo">My Info</a></li>
+      <li><a href="#/Founder$hares">My Founder$hares</a></li>
+      <li><a href="#/history">My History</a></li>
+      <li><a class="active" href="javascript:;">Employees</a></li>
+    </ul>
+    <a href="#/VerifyAccount" class="note">Not a Verified Business</a>
+  </aside>
+  <!-- End Aside -->
+  <div class="main">
+  	<h2>My Employees</h2>
+    <div class="bar">
+    	View All Employees	<a href="javascript:;" class="btn btn-secondary" data-ng-click="add();">Add Employee</a>
+    </div>
+    <!-- End .bar -->
+    <div class="data">
+    	<form name="employeeForm" data-ng-submit="save()">
+        <table>
+          <thead>
+            <tr>
+              <th class="name">First Name</th>
+                <th class="name">Last Name</th>
+                <th class="name">Email</th>
+              <th class="password">Password</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="employee in employeesList">
+              <td>
+                <span data-ng-hide="employee.flag">{{employee.firstName}}</span>
+                <input type="text" data-ng-model="employee.firstName" data-ng-show="employee.flag" data-ng-class="{'error':employee.nameEmpty}"
+                       maxlength="1024" data-ng-keyup="validateChange($index)" />
+              </td>
+                <td>
+                    <span data-ng-hide="employee.flag">{{employee.lastName}}</span>
+                    <input type="text" data-ng-model="employee.lastName" data-ng-show="employee.flag" data-ng-class="{'error':employee.lastNameEmpty}"
+                           maxlength="1024" data-ng-keyup="validateChange($index)"/>
+                </td>
+                <td>
+                    <span data-ng-hide="employee.flag">{{employee.email}}</span>
+                    <input type="text" data-ng-model="employee.email" data-ng-show="employee.flag" data-ng-class="{'error':employee.emailEmpty}"
+                           maxlength="254" data-ng-keyup="validateChange($index)" />
+                </td>
+              <td>
+                <span data-ng-hide="employee.flag"></span>
+                <input type="password" data-ng-model="employee.password" data-ng-show="employee.flag" data-ng-class="{'error':employee.passwordEmpty}"
+                       maxlength="1024" data-ng-keyup="validateChange($index)" />
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-hide="employee.flag" data-ng-click="modify($index)">Modify</a>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-show="employee.flag" data-ng-click="save($index)">Save</a>
+                <a href="javascript:;" class="btn btn-primary" data-ng-click="remove($index)">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  <!-- End .main -->
+  
+</div>
+<!-- End .container -->
