@@ -1,0 +1,16 @@
+<button class="btn-menu btn-notif" data-ng-click="notifCtrl.opened = !notifCtrl.opened" 
+        data-ng-class="{active: notifCtrl.opened}"><span class="badge number">{{notifCtrl.notifications.length}}</span></button>
+<div class="notifications" data-ng-show="notifCtrl.opened">
+  <div class="title">
+    You got <span class="number">{{notifCtrl.notifications.length}}</span> notifications
+  </div>
+  <div data-ng-repeat="notif in notifCtrl.notifications | limitTo: 5" class="notif {{notif.type}}" data-ng-class="{read: notif.read}">
+    <span class="notif-title">{{notif.from}}</span>
+    <span class="summary">{{notif.summary}}</span>
+    <span class="date">{{notif.date | date : 'short'}}</span>
+  </div>
+
+  <div class="view-all">
+    <a href="javascript:;">View All</a>
+  </div>
+</div>

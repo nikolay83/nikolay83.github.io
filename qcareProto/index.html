@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html data-ng-app="heritage" class="heritage {{font.size}}" data-ng-controller="mainCtrl">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>q-HMO Health Report</title>
+    <script src="lib/viewport-units-buggyfill.js"></script>
+    <!--<script>window.viewportUnitsBuggyfill.init();</script>-->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--<link rel="stylesheet/less" type="text/css" href="less/main.less">-->
+    <!--<script src="bower_components/less/dist/less.min.js"></script>-->
+  </head>
+
+  <body data-ng-class="{gradient: $state.current.data.gradient, 'has-header': $state.current.data.hasHeader, 'has-footer': $state.current.data.hasFooter}">
+    <div class="menu" data-ng-show="menu.open" data-ng-cloak>
+      <div class="row user">
+        <img class="pull-left col-xs-4 user-pic" src="i/alby.png" alt="user" title="user" />
+        <div class="pull-right col-xs-8">
+          <div class="row user-name">
+            Alby Smith
+          </div>
+          <div class="row user-desc">
+            Female | 35 y.o.
+          </div>
+          <div class="row user-id">
+            ID-998014437
+          </div>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <input type="text" class="form-control search" placeholder="Search">
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="menu-list">
+            <li><a href="#">My Cover Plan</a></li>
+            <li><a href="#">Medical Record</a></li>
+            <li><a data-ui-sref="editProfile">Edit Profile</a></li>
+            <li><a href="#">Setting</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="menu-logo" alt="logo" title="qh" src="i/logo1.png">
+        </div>
+      </div>
+      <div class="row address">
+        <div class="col-xs-12">
+          <p>q-HMO</p>
+          <p>Lorem Ipsum St., 123 Adress Name</p>
+          <p>State</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-phone green"><span class="phone">555-12345-6789</span></button>
+        </div>
+      </div>
+    </div>
+    
+    <div data-ng-class="{'shadow': menu.open, 'menu-open': menu.open}" class="main-container" >
+      <div class="content-container" data-ui-view></div>
+
+      <!--
+
+      -->
+      <nav class="navbar-hmo" role="navigation" data-ng-if="!$state.current.data.hideFooter" data-ng-cloak>
+        <div class="container-fluid">
+          <div class="row">
+            <p class="text col-xs-12 text-center">
+              Copyright q-HMO. 2014
+              <img class="footer-logo" alt="q-HMO Health Report" title="q-HMO Health Report" src="i/logo1.png" data-ng-if="$state.current.data.showFooterLogo || loc.request">
+            </p>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="bower_components/angular-camera/dist/angular-camera.min.js"></script>
+    
+    <script src="app/heritage.js"></script>
+    <script src="app/controllers/login-controller.js"></script>
+    <script src="app/controllers/notifications-controller.js"></script>
+    <script src="app/controllers/landing-controller.js"></script>
+    <script src="app/controllers/ccm-controller.js"></script>
+    <script src="app/controllers/edit-profile-controller.js"></script>
+    <script src="app/controllers/mail-controller.js"></script>
+    <script src="app/controllers/med-inter-controller.js"></script>
+    <script src="app/controllers/map-controller.js"></script>
+    <script src="app/services/ccm-service.js"></script>
+    <script src="app/directives/tooltip-directive.js"></script>
+    
+    
+    <script type="text/ng-template" id="anonymous.tpl.html">
+      <div class="container-fluid full-height hundred">
+        <ui-view name="content"></ui-view>
+        <!--<img class="logo" alt="q-HMO Health Report" title="q-HMO Health Report" src="i/logo1.png">-->
+      </div>
+    </script>
+    
+    <script type="text/ng-template" id="splashScreen.tpl.html">
+      <div class="welcome">
+        <h2 class="text-center welcome-1">Welcome to</h2>
+        <h1 class="text-center welcome-2">q-HMO Health Report</h1>
+      </div>
+      <img class="logo" alt="q-HMO Health Report" title="q-HMO Health Report" src="i/logo1.png">
+    </script>
+    
+    <script type="text/ng-template" id="searchbox.tpl.html">
+        <input type="text" placeholder="Enter Street Name, Zip" class="map-search-input">
+    </script>
+
+    
+    <script type="text/ng-template" id="map-overlay.tpl.html">
+      <div class="container-fluid urgent-care-centers-overlay">
+        <p>Requesting permission to use user's location to find the nearest urgent care center</p>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="col-xs-12 btn btn-login" data-ng-click="mapCtrl.getLocation()">Find My Location</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="col-xs-12 btn btn-register" data-ng-click="mapCtrl.noLocation()">No, Thank You</button>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+    <script type="text/ng-template" id="profile-popup.html">
+      <div class="popover profile-popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }">
+        <div class="arrow"></div>
+
+        <div class="popover-inner profile-popover-inner">
+            <a href="javascrit:#">View Profile</a>
+            <a data-ui-sref="mail({to: content})">Send Email</a>
+        </div>
+      </div>
+    </script>
+
+  </body>
+
+</html>

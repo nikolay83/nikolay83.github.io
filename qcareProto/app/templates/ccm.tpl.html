@@ -1,0 +1,178 @@
+<div class="ccm row">
+  <div data-ng-include="'app/templates/user-details.tpl.html'"></div>
+  <div class="col-xs-12">
+    <div class="row tier-row">
+      <div class="col-xs-4">
+        <span class="tier">Tier: {{ccmCtrl.member.tier}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span class="Dual">Dual: {{ccmCtrl.member.dual || 'N/A'}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span class="esrd">ESRD: {{ccmCtrl.member.esrd || 'N/A'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid sharing">
+    <div class="row">
+      <div class="col-xs-12 sharing-status">Data Sharing Status</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 sharing-label">Personal Health</div>
+      <div class="col-xs-6 sharing-value">{{ccmCtrl.member.sharing.personalHealth ? 'Opt In' : 'Opt Out'}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 sharing-label">Alcohol & Drugs</div>
+      <div class="col-xs-6 sharing-value">{{ccmCtrl.member.sharing.alocoholDrugs ? 'Opt In' : 'Opt Out'}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 sharing-label">Dual Eligible</div>
+      <div class="col-xs-6 sharing-value">{{ccmCtrl.member.sharing.dualEligible}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <accordion class="col-xs-12">
+      <accordion-group heading="Recommended Program" class="acc acc1 recPrg" data-is-open="ccmCtrl.accStatus.acc1Open" data-ng-class="{active: ccmCtrl.accStatus.acc1Open}">
+        <div class="container-fluid">
+          <div class="row title">
+            <div class="col-xs-12">{{ccmCtrl.member.recommendedProgram.name}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Enroll Date</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.recommendedProgram.enrollDate | date: 'M/d/yyyy'}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Status</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.recommendedProgram.active ? 'Active' : 'Inactive'}}</div>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="IDT Team Member Assigned" class="acc acc2 idt-members-panel" data-is-open="ccmCtrl.accStatus.acc2Open" data-ng-class="{active: ccmCtrl.accStatus.acc2Open}">
+        <div class="idt-members">
+          <div class="members-container" data-ng-style="{width: (ccmCtrl.member.assignedTeamMembers.length * 140) + 5 + 'px'}">
+            <div class="member" data-ng-repeat="teamMember in ccmCtrl.member.assignedTeamMembers">
+              <span class="title"><span class="col-xs-12">{{teamMember.title}}</span></span>
+              <span class="member-pic">
+                <span class="col-xs-12">
+                  <img class="user-pic profile" data-ng-class="{'active': popover.active}" data-ng-src="i/{{teamMember.pic}}" alt="{{teamMember.title}}" title="{{teamMember.title}}" popover-placement="top" profile-popover="{{teamMember.id}}" popover-trigger="click" popover-append-to-body="true"/>
+                </span>
+              </span>
+              <span class="name"><span class="col-xs-12"><a href="javascript:;">{{teamMember.firstName}} {{teamMember.lastName}}</a></span></span>
+              <span class="date"><span class="col-xs-12">{{teamMember.assignedDate | date: 'M/d/yyyy'}}</span></span>
+            </div>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Outstanding Tasks" class="acc acc3 tasks" data-is-open="ccmCtrl.accStatus.acc3Open" data-ng-class="{active: ccmCtrl.accStatus.acc3Open}">
+        <table class="head">
+          <thead>
+            <tr>
+              <th>IDT Member</th>
+            </tr>
+            <tr class="tasks-col">
+              <th>Task</th>
+            </tr>
+            <tr>
+              <th>Date Assigned</th>
+            </tr>
+            <tr>
+              <th>Follow Up Date</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="table-container">
+          <div class="table-wrapper">
+            <table class="body" data-ng-style="{width: (ccmCtrl.member.outstandingTasks.length * 125) + 5 + 'px'}">
+              <tbody>
+                <tr>
+                  <td data-ng-repeat="task in ccmCtrl.member.outstandingTasks">{{task.idtTeamMember.firstName}} {{task.idtTeamMember.lastName}}</td>
+                </tr>
+                <tr class="tasks-col">
+                  <td data-ng-repeat="task in ccmCtrl.member.outstandingTasks">{{task.task}}</td>
+                </tr>
+                <tr>
+                  <td data-ng-repeat="task in ccmCtrl.member.outstandingTasks">{{task.assignedDate | date: 'M/d/yyyy'}}</td>
+                </tr>
+                <tr>
+                  <td data-ng-repeat="task in ccmCtrl.member.outstandingTasks">{{task.followUpDate | date: 'M/d/yyyy'}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Clinical Profile" class="acc acc4 clinProfile" data-is-open="ccmCtrl.accStatus.acc4Open" data-ng-class="{active: ccmCtrl.accStatus.acc4Open}">
+        <div class="container-fluid">
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Total Organs Failing</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.clinicalProfile.totalOrgansFailing}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Total Medications</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.clinicalProfile.totalMedications}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Pain Management</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.clinicalProfile.painManagement}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Allergies</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.clinicalProfile.allergies.join(',')}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Mental Health</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.clinicalProfile.mentalHealth.join(',')}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row title">
+            <div class="col-xs-12">Functionnal Status</div>
+          </div>
+          <div data-ng-repeat="fs in ccmCtrl.member.clinicalProfile.functionnalStatus">
+            <div class="row recPrg-label">
+              <div class="col-xs-12">{{fs.type}}</div>
+            </div>
+            <div class="row recPrg-value">
+              <div class="col-xs-12">{{fs.desc}}</div>
+            </div>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Social & Family Profile" class="acc acc5" data-is-open="ccmCtrl.accStatus.acc5Open" data-ng-class="{active: ccmCtrl.accStatus.acc5Open}">
+
+      </accordion-group>
+      <accordion-group heading="Education History" class="acc acc6" data-is-open="ccmCtrl.accStatus.acc5Open" data-ng-class="{active: ccmCtrl.accStatus.acc5Open}">
+
+      </accordion-group>
+    </accordion>
+  </div>
+  <div class="user-login-info">
+    <div class="row headers">
+      <div class="col-xs-6 text-left">User Login</div>
+      <div class="col-xs-6 text-right">Date</div>
+    </div>
+    <div class="row values">
+      <div class="col-xs-6 text-left">{{ccmCtrl.user.email}}</div>
+      <div class="col-xs-6 text-right">{{ccmCtrl.user.date | date: 'M/d/yyyy'}}</div>
+    </div>
+  </div>
+</div>

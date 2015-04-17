@@ -1,0 +1,217 @@
+<div class="ccm row">
+  <div data-ng-include="'app/templates/user-details.tpl.html'"></div>
+  <div class="recPrg col-xs-12">
+    <div class="row tier-row">
+      <div class="col-xs-6">
+        <span class="Dual">CCM Enrolled</span>
+      </div>
+      <div class="col-xs-6 text-right">
+        <span class="Dual">{{ccmCtrl.member.carePlan.ccmEnrolled | date: 'M/d/yyyy'}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 recPrg-label ccm-enrolled-info">{{ccmCtrl.member.carePlan.ccm.join(', ')}}</div>
+    </div>
+    <div class="row tier-row">
+      <div class="col-xs-12">
+        <span class="Dual">Member Consent</span>
+      </div>
+    </div>
+    <div data-ng-repeat="consent in ccmCtrl.member.carePlan.memberConsent">
+      <div class="row recPrg-label">
+        <div class="col-xs-12">{{consent.type}}</div>
+      </div>
+      <div class="row recPrg-value">
+        <div class="col-xs-12">{{consent.value}}</div>
+      </div>
+      <div class="row sep-acc" data-ng-if="!$last"></div>
+    </div>
+  </div>
+  <div class="row clinProfile">
+    <accordion class="col-xs-12">
+      <accordion-group heading="Clinical Profile" class="acc acc1" data-is-open="ccmCtrl.accStatus.cpOpen" data-ng-class="{active: ccmCtrl.accStatus.cpOpen}">
+        <accordion  class="cn-profile">
+          <accordion-group class="cn-panel" data-is-open="ccmCtrl.accStatus.cp1Open" data-ng-class="{active: ccmCtrl.accStatus.cp1Open}">
+            <accordion-heading>
+              Most Recent Critical Event <i class="pull-right expand-collapse"></i>
+            </accordion-heading>
+            <div class="container-fluid critical-events-1">
+              <div class="row recPrg-label">
+                <div class="col-xs-12">Date</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.date | date: 'M/d/yyyy'}}</div>
+              </div>
+              <div class="row sep-acc"></div>
+              <div class="row recPrg-label">
+                <div class="col-xs-12">IDT</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.idt.type}} - <a href="#" class="mailto">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.idt.idtMember.firstName}} {{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.idt.idtMember.lastName}}</a></div>
+              </div>
+              <div class="row sep-acc"></div>
+              <div class="row recPrg-label">
+                <div class="col-xs-12">Status</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.status}}</div>
+              </div><div class="row sep-acc"></div>
+              <div class="row recPrg-label">
+                <div class="col-xs-12">Comment</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.comment}}</div>
+              </div>
+            </div>
+            <div class="container-fluid critical-events-2">
+              <div class="row recPrg-label">
+                <div class="col-xs-12">Visit Type</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.visitType}}</div>
+              </div>
+              <div class="row sep-acc"></div>
+              <div class="row recPrg-label">
+                <div class="col-xs-12">Visit Date</div>
+              </div>
+              <div class="row recPrg-value">
+                <div class="col-xs-12">{{ccmCtrl.member.carePlan.clinicalProfile.recentCriticalEvent.visitDate | date: 'M/d/yyyy'}}</div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group class="cn-panel" data-is-open="ccmCtrl.accStatus.cp2Open" data-ng-class="{active: ccmCtrl.accStatus.cp2Open}">
+            <accordion-heading>
+              Chronic Medical Conditions <i class="pull-right expand-collapse"></i>
+            </accordion-heading>
+          </accordion-group>
+          <accordion-group class="cn-panel" data-is-open="ccmCtrl.accStatus.cp3Open" data-ng-class="{active: ccmCtrl.accStatus.cp3Open}">
+            <accordion-heading>
+              Pain Management & Allergies <i class="pull-right expand-collapse"></i>
+            </accordion-heading>
+          </accordion-group>
+          <accordion-group class="cn-panel" data-is-open="ccmCtrl.accStatus.cp4Open" data-ng-class="{active: ccmCtrl.accStatus.cp4Open}">
+            <accordion-heading>
+              Pain Management <i class="pull-right expand-collapse"></i>
+            </accordion-heading>
+          </accordion-group>
+          <accordion-group class="cn-panel rec-med" data-is-open="ccmCtrl.accStatus.cp5Open" data-ng-class="{active: ccmCtrl.accStatus.cp5Open}">
+            <accordion-heading>
+              Reconciled Medications <i class="pull-right expand-collapse"></i>
+            </accordion-heading>
+            <table class="head">
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                </tr>
+                <tr>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <th>Strength</th>
+                </tr>
+                <tr>
+                  <th>NDC</th>
+                </tr>
+                <tr>
+                  <th>Route</th>
+                </tr>
+                <tr>
+                  <th>Start Date</th>
+                </tr>
+                <tr>
+                  <th>End Date</th>
+                </tr>
+                <tr>
+                  <th>Provider</th>
+                </tr>
+                <tr>
+                  <th>Source</th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-container">
+              <div class="table-wrapper">
+                <table class="body" data-ng-style="{width: (ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications * 125) + 5 + 'px'}">
+                  <tbody>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications" class="med"><span  data-ng-class="{'med1': rec.type == '1', 'med2':rec.type == '2'}"> </span>{{rec.medication}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.description}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.strength}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.ndc}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.route || '-'}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.startDate | date: 'M/d/yyyy'}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.endDate | date: 'M/d/yyyy'}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.provider}}</td>
+                    </tr>
+                    <tr>
+                      <td data-ng-repeat="rec in ccmCtrl.member.carePlan.clinicalProfile.reconciledMedications">{{rec.source}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+      </accordion-group>
+      <accordion-group heading="Functional Status and Special Needs" class="acc acc2" data-is-open="ccmCtrl.accStatus.fssnOpen" data-ng-class="{active: ccmCtrl.accStatus.fssnOpen}">
+  
+      </accordion-group>
+      <accordion-group heading="Goals and Interventions" class="acc acc3" data-is-open="ccmCtrl.accStatus.goalsIOpen" data-ng-class="{active: ccmCtrl.accStatus.goalsIOpen}">
+  
+      </accordion-group>
+      <accordion-group heading="Signature" class="acc acc4" data-is-open="ccmCtrl.accStatus.sigOpen" data-ng-class="{active: ccmCtrl.accStatus.sigOpen}">
+        <div class="container-fluid">
+          <div class="row recPrg-label">
+            <div class="col-xs-12 signature-info1">
+              I hereby acknowledge and attest that I have 
+  reconciled the patient's medication list with the
+  information provided to me.
+            </div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label signature">
+            <div class="col-xs-4">Signature</div>
+            <div class="col-xs-8 text-right"><img alt="signature" src="i/signature.png"></div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Name</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.carePlan.signature.firstName}} {{ccmCtrl.member.carePlan.signature.lastName}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Title</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.carePlan.signature.title}}</div>
+          </div>
+          <div class="row sep-acc"></div>
+          <div class="row recPrg-label">
+            <div class="col-xs-12">Date</div>
+          </div>
+          <div class="row recPrg-value">
+            <div class="col-xs-12">{{ccmCtrl.member.carePlan.signature.date | date: 'M/d/yyyy'}}</div>
+          </div>
+        </div>
+      </accordion-group>
+    </accordion>
+    
+  </div>
+  
+</div>  
