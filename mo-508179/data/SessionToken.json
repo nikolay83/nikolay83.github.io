@@ -1,0 +1,200 @@
+[
+    {
+        "userId": "55472581e287eecb0ff510e1",
+        "token": "admin_b8.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51175"
+    },
+    {
+        "userId": "55472581e287eecb0ff510e3",
+        "token": "user1_b8.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51176"
+    },
+    {
+        "userId": "55472581e287eecb0ff510e5",
+        "token": "user2_b8.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51177"
+    },
+    {
+        "userId": "55472581e287eecb0ff510e7",
+        "token": "admin_b9.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51178"
+    },
+    {
+        "userId": "55472581e287eecb0ff510e9",
+        "token": "user1_b9.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51179"
+    },
+    {
+        "userId": "55472581e287eecb0ff510eb",
+        "token": "user2_b9.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510ed",
+        "token": "admin_b10.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117b"
+    },
+    {
+        "userId": "55472581e287eecb0ff510ef",
+        "token": "user1_b10.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510f1",
+        "token": "user2_b10.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117d"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "token": "user1_domain.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117e"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "token": "user2_domain.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5117f"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b5",
+        "token": "superuser_domain.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51180"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b7",
+        "token": "admin_b1.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51181"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b9",
+        "token": "user1_b1.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51182"
+    },
+    {
+        "userId": "55472581e287eecb0ff510bb",
+        "token": "user2_b1.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51183"
+    },
+    {
+        "userId": "55472581e287eecb0ff510bd",
+        "token": "admin_b2.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51184"
+    },
+    {
+        "userId": "55472581e287eecb0ff510bf",
+        "token": "user1_b2.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51185"
+    },
+    {
+        "userId": "55472581e287eecb0ff510c1",
+        "token": "user2_b2.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51186"
+    },
+    {
+        "userId": "55472581e287eecb0ff510c3",
+        "token": "admin_b3.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51187"
+    },
+    {
+        "userId": "55472581e287eecb0ff510c5",
+        "token": "user1_b3.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51188"
+    },
+    {
+        "userId": "55472581e287eecb0ff510c7",
+        "token": "user2_b3.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51189"
+    },
+    {
+        "userId": "55472581e287eecb0ff510c9",
+        "token": "admin_b4.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510cb",
+        "token": "user1_b4.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118b"
+    },
+    {
+        "userId": "55472581e287eecb0ff510cd",
+        "token": "user2_b4.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510cf",
+        "token": "admin_b5.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118d"
+    },
+    {
+        "userId": "55472581e287eecb0ff510d1",
+        "token": "user1_b5.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118e"
+    },
+    {
+        "userId": "55472581e287eecb0ff510d3",
+        "token": "user2_b5.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff5118f"
+    },
+    {
+        "userId": "55472581e287eecb0ff510d5",
+        "token": "admin_b6.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51190"
+    },
+    {
+        "userId": "55472581e287eecb0ff510d7",
+        "token": "user1_b6.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51191"
+    },
+    {
+        "userId": "55472581e287eecb0ff510d9",
+        "token": "user2_b6.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51192"
+    },
+    {
+        "userId": "55472581e287eecb0ff510db",
+        "token": "admin_b7.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51193"
+    },
+    {
+        "userId": "55472581e287eecb0ff510dd",
+        "token": "user1_b7.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51194"
+    },
+    {
+        "userId": "55472581e287eecb0ff510df",
+        "token": "user2_b7.com",
+        "expirationDate": "2019-12-31T23:00:00.000Z",
+        "_id": "55472588e287eecb0ff51195"
+    }
+]

@@ -1,0 +1,659 @@
+[
+    {
+        "firstName": "Timothy",
+        "lastName": "Barber",
+        "email": "admin@b8.com",
+        "email_lowered": "admin@b8.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ad",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510e2"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510e1"
+    },
+    {
+        "firstName": "Josephine",
+        "lastName": "Flowers",
+        "email": "user1@b8.com",
+        "email_lowered": "user1@b8.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ad",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510e4"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510e3"
+    },
+    {
+        "firstName": "Eugenia",
+        "lastName": "Crawford",
+        "email": "user2@b8.com",
+        "email_lowered": "user2@b8.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ad",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510e6"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510e5"
+    },
+    {
+        "firstName": "Jose",
+        "lastName": "Lamb",
+        "email": "admin@b9.com",
+        "email_lowered": "admin@b9.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510af",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510e8"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510e7"
+    },
+    {
+        "firstName": "Donald",
+        "lastName": "Dennis",
+        "email": "user1@b9.com",
+        "email_lowered": "user1@b9.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510af",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510ea"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510e9"
+    },
+    {
+        "firstName": "Joel",
+        "lastName": "Gutierrez",
+        "email": "user2@b9.com",
+        "email_lowered": "user2@b9.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510af",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510ec"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510eb"
+    },
+    {
+        "firstName": "Adelaide",
+        "lastName": "Gibbs",
+        "email": "admin@b10.com",
+        "email_lowered": "admin@b10.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510b0",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510ee"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510ed"
+    },
+    {
+        "firstName": "Louise",
+        "lastName": "Stone",
+        "email": "user1@b10.com",
+        "email_lowered": "user1@b10.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510b0",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510f0"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510ef"
+    },
+    {
+        "firstName": "Lawrence",
+        "lastName": "Palmer",
+        "email": "user2@b10.com",
+        "email_lowered": "user2@b10.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510b0",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510f2"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510f1"
+    },
+    {
+        "firstName": "Amelia",
+        "lastName": "Williamson",
+        "email": "user1@domain.com",
+        "email_lowered": "user1@domain.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "role": "INDIVIDUAL_USER",
+                "id": "55472581e287eecb0ff510b2"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510b1"
+    },
+    {
+        "firstName": "Polly",
+        "lastName": "McGuire",
+        "email": "user2@domain.com",
+        "email_lowered": "user2@domain.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "role": "INDIVIDUAL_USER",
+                "id": "55472581e287eecb0ff510b4"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510b3"
+    },
+    {
+        "firstName": "Marian",
+        "lastName": "Hunt",
+        "email": "superuser@domain.com",
+        "email_lowered": "superuser@domain.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "role": "PLATFORM_EMPLOYEE",
+                "id": "55472581e287eecb0ff510b6"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510b5"
+    },
+    {
+        "firstName": "Lucy",
+        "lastName": "Strickland",
+        "email": "admin@b1.com",
+        "email_lowered": "admin@b1.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a9",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510b8"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510b7"
+    },
+    {
+        "firstName": "Amy",
+        "lastName": "Watts",
+        "email": "user1@b1.com",
+        "email_lowered": "user1@b1.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a9",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510ba"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510b9"
+    },
+    {
+        "firstName": "Mable",
+        "lastName": "Frank",
+        "email": "user2@b1.com",
+        "email_lowered": "user2@b1.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a9",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510bc"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510bb"
+    },
+    {
+        "firstName": "Hulda",
+        "lastName": "Reynolds",
+        "email": "admin@b2.com",
+        "email_lowered": "admin@b2.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a7",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510be"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510bd"
+    },
+    {
+        "firstName": "Alexander",
+        "lastName": "Huff",
+        "email": "user1@b2.com",
+        "email_lowered": "user1@b2.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a7",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510c0"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510bf"
+    },
+    {
+        "firstName": "Ollie",
+        "lastName": "Brock",
+        "email": "user2@b2.com",
+        "email_lowered": "user2@b2.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a7",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510c2"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510c1"
+    },
+    {
+        "firstName": "Augusta",
+        "lastName": "Myers",
+        "email": "admin@b3.com",
+        "email_lowered": "admin@b3.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ab",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510c4"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510c3"
+    },
+    {
+        "firstName": "Owen",
+        "lastName": "Bryan",
+        "email": "user1@b3.com",
+        "email_lowered": "user1@b3.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ab",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510c6"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510c5"
+    },
+    {
+        "firstName": "Mary",
+        "lastName": "Watson",
+        "email": "user2@b3.com",
+        "email_lowered": "user2@b3.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ab",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510c8"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510c7"
+    },
+    {
+        "firstName": "Manuel",
+        "lastName": "Steele",
+        "email": "admin@b4.com",
+        "email_lowered": "admin@b4.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510aa",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510ca"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510c9"
+    },
+    {
+        "firstName": "Mittie",
+        "lastName": "Reed",
+        "email": "user1@b4.com",
+        "email_lowered": "user1@b4.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510aa",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510cc"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510cb"
+    },
+    {
+        "firstName": "Logan",
+        "lastName": "Keller",
+        "email": "user2@b4.com",
+        "email_lowered": "user2@b4.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510aa",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510ce"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510cd"
+    },
+    {
+        "firstName": "Eleanor",
+        "lastName": "Lee",
+        "email": "admin@b5.com",
+        "email_lowered": "admin@b5.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a8",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510d0"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510cf"
+    },
+    {
+        "firstName": "Brett",
+        "lastName": "Howell",
+        "email": "user1@b5.com",
+        "email_lowered": "user1@b5.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a8",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510d2"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510d1"
+    },
+    {
+        "firstName": "Leona",
+        "lastName": "Graham",
+        "email": "user2@b5.com",
+        "email_lowered": "user2@b5.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510a8",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510d4"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510d3"
+    },
+    {
+        "firstName": "Pearl",
+        "lastName": "Keller",
+        "email": "admin@b6.com",
+        "email_lowered": "admin@b6.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ac",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510d6"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510d5"
+    },
+    {
+        "firstName": "Cecilia",
+        "lastName": "Taylor",
+        "email": "user1@b6.com",
+        "email_lowered": "user1@b6.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ac",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510d8"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510d7"
+    },
+    {
+        "firstName": "Ola",
+        "lastName": "Patterson",
+        "email": "user2@b6.com",
+        "email_lowered": "user2@b6.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ac",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510da"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510d9"
+    },
+    {
+        "firstName": "Rena",
+        "lastName": "Cobb",
+        "email": "admin@b7.com",
+        "email_lowered": "admin@b7.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ae",
+                "role": "BUSINESS_ADMIN",
+                "id": "55472581e287eecb0ff510dc"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510db"
+    },
+    {
+        "firstName": "Ann",
+        "lastName": "Hayes",
+        "email": "user1@b7.com",
+        "email_lowered": "user1@b7.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ae",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510de"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510dd"
+    },
+    {
+        "firstName": "Frances",
+        "lastName": "Ballard",
+        "email": "user2@b7.com",
+        "email_lowered": "user2@b7.com",
+        "passwordHash": "$2a$10$.i8iVzzjURVUwk/PJPnLg.a6fAEyUyhccsx9KEZ8H1PjmZifp1B7q",
+        "userRoles": [
+            {
+                "businessId": "55472581e287eecb0ff510ae",
+                "role": "BUSINESS_EMPLOYEE",
+                "id": "55472581e287eecb0ff510e0"
+            }
+        ],
+        "isPicturePublic": true,
+        "isLocationPublic": true,
+        "isEmailPublic": true,
+        "isLastNamePublic": true,
+        "isFirstNamePublic": true,
+        "_id": "55472581e287eecb0ff510df"
+    }
+]

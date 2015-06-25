@@ -1,0 +1,354 @@
+[
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$114.00",
+        "timestamp": "2015-05-04T07:53:39.297Z",
+        "_id": "55472583e287eecb0ff51120"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$24.00",
+        "timestamp": "2015-05-04T07:53:39.298Z",
+        "_id": "55472583e287eecb0ff51121"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$28.00",
+        "timestamp": "2015-05-04T07:53:39.301Z",
+        "_id": "55472583e287eecb0ff51123"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$43.00",
+        "timestamp": "2015-05-04T07:53:39.329Z",
+        "_id": "55472583e287eecb0ff51125"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$12.00",
+        "timestamp": "2015-05-04T07:53:39.331Z",
+        "_id": "55472583e287eecb0ff51126"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$8.00",
+        "timestamp": "2015-05-04T07:53:40.509Z",
+        "_id": "55472584e287eecb0ff5112a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$133.00",
+        "timestamp": "2015-05-04T07:53:40.510Z",
+        "_id": "55472584e287eecb0ff5112b"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$146.00",
+        "timestamp": "2015-05-04T07:53:40.511Z",
+        "_id": "55472584e287eecb0ff5112c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510af",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$200.00",
+        "timestamp": "2015-05-04T07:53:40.531Z",
+        "_id": "55472584e287eecb0ff5112e"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$83.00",
+        "timestamp": "2015-05-04T07:53:40.733Z",
+        "_id": "55472584e287eecb0ff51130"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$133.00",
+        "timestamp": "2015-05-04T07:53:41.683Z",
+        "_id": "55472585e287eecb0ff51132"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510af",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$23.00",
+        "timestamp": "2015-05-04T07:53:41.702Z",
+        "_id": "55472585e287eecb0ff51134"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$35.00",
+        "timestamp": "2015-05-04T07:53:41.735Z",
+        "_id": "55472585e287eecb0ff51136"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$90.00",
+        "timestamp": "2015-05-04T07:53:41.755Z",
+        "_id": "55472585e287eecb0ff51138"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$98.00",
+        "timestamp": "2015-05-04T07:53:41.916Z",
+        "_id": "55472585e287eecb0ff5113a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$156.00",
+        "timestamp": "2015-05-04T07:53:42.884Z",
+        "_id": "55472586e287eecb0ff5113c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$143.00",
+        "timestamp": "2015-05-04T07:53:42.927Z",
+        "_id": "55472586e287eecb0ff5113e"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$195.00",
+        "timestamp": "2015-05-04T07:53:42.950Z",
+        "_id": "55472586e287eecb0ff51140"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$127.00",
+        "timestamp": "2015-05-04T07:53:42.982Z",
+        "_id": "55472586e287eecb0ff51142"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$75.00",
+        "timestamp": "2015-05-04T07:53:43.142Z",
+        "_id": "55472587e287eecb0ff51144"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$43.00",
+        "timestamp": "2015-05-04T07:53:43.977Z",
+        "_id": "55472587e287eecb0ff51146"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$4.00",
+        "timestamp": "2015-05-04T07:53:44.046Z",
+        "_id": "55472588e287eecb0ff51148"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$56.00",
+        "timestamp": "2015-05-04T07:53:44.183Z",
+        "_id": "55472588e287eecb0ff5114a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_PURCHASE",
+        "details": "$103.00",
+        "timestamp": "2015-05-04T07:53:44.215Z",
+        "_id": "55472588e287eecb0ff5114c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$6.00",
+        "timestamp": "2015-05-04T07:53:44.347Z",
+        "_id": "55472588e287eecb0ff51161"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$19.00",
+        "timestamp": "2015-05-04T07:53:44.347Z",
+        "_id": "55472588e287eecb0ff51162"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$45.00",
+        "timestamp": "2015-05-04T07:53:44.348Z",
+        "_id": "55472588e287eecb0ff51163"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$93.00",
+        "timestamp": "2015-05-04T07:53:44.349Z",
+        "_id": "55472588e287eecb0ff51164"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$14.00",
+        "timestamp": "2015-05-04T07:53:44.350Z",
+        "_id": "55472588e287eecb0ff51165"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$100.00",
+        "timestamp": "2015-05-04T07:53:44.351Z",
+        "_id": "55472588e287eecb0ff51166"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$20.00",
+        "timestamp": "2015-05-04T07:53:44.352Z",
+        "_id": "55472588e287eecb0ff51167"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$73.00",
+        "timestamp": "2015-05-04T07:53:44.353Z",
+        "_id": "55472588e287eecb0ff51168"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$5.00",
+        "timestamp": "2015-05-04T07:53:44.353Z",
+        "_id": "55472588e287eecb0ff51169"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b1",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$19.00",
+        "timestamp": "2015-05-04T07:53:44.353Z",
+        "_id": "55472588e287eecb0ff5116a"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510aa",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$1.00",
+        "timestamp": "2015-05-04T07:53:44.357Z",
+        "_id": "55472588e287eecb0ff5116b"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$53.00",
+        "timestamp": "2015-05-04T07:53:44.357Z",
+        "_id": "55472588e287eecb0ff5116c"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a7",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$63.00",
+        "timestamp": "2015-05-04T07:53:44.358Z",
+        "_id": "55472588e287eecb0ff5116d"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$24.00",
+        "timestamp": "2015-05-04T07:53:44.359Z",
+        "_id": "55472588e287eecb0ff5116e"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a9",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$54.00",
+        "timestamp": "2015-05-04T07:53:44.359Z",
+        "_id": "55472588e287eecb0ff5116f"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510af",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$16.00",
+        "timestamp": "2015-05-04T07:53:44.360Z",
+        "_id": "55472588e287eecb0ff51170"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510a8",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$101.00",
+        "timestamp": "2015-05-04T07:53:44.361Z",
+        "_id": "55472588e287eecb0ff51171"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$38.00",
+        "timestamp": "2015-05-04T07:53:44.363Z",
+        "_id": "55472588e287eecb0ff51172"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ad",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$69.00",
+        "timestamp": "2015-05-04T07:53:44.376Z",
+        "_id": "55472588e287eecb0ff51173"
+    },
+    {
+        "userId": "55472581e287eecb0ff510b3",
+        "businessId": "55472581e287eecb0ff510ac",
+        "type": "GIFT_CARD_REDEMPTION",
+        "details": "$106.00",
+        "timestamp": "2015-05-04T07:53:44.377Z",
+        "_id": "55472588e287eecb0ff51174"
+    }
+]

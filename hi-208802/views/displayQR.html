@@ -1,0 +1,91 @@
+<div class="qrWrap">
+    <h2 class="busName">{{qr.businessName}}</h2>
+    <!-- /.busNmae -->
+    <figure class="qrCodeWrap">
+        <img src="i/px.png" data-ng-src="{{qr.qrCodeImage}}" alt="" />
+    </figure>
+    <div class="container-fluid">
+        <div class="info">
+            <div class="rw">
+                <div class="value gsn pull-left">
+                    <div class="inner">
+                        <div class="lbl">value</div>
+                        <div class="vl">${{qr.value}}</div>
+                    </div>
+                    <!-- /.inner -->
+                </div>
+                <!-- /.value -->
+                <div class="discount gsn pull-right">
+                    <div class="inner">
+                        <div class="lbl">discount</div>
+                        <div class="vl"><span>{{qr.discount}}%</span><sup>off</sup></div>
+                    </div>
+                    <!-- /.inner -->
+                </div>
+                <!-- /.discount -->
+                <div class="clear"></div>
+                <!-- /.clear -->
+            </div>
+            <!-- /.rw -->
+            <div class="actn">
+                <button class="btn btn-success" data-ng-click="isSuccessModal = true;">Done</button>
+            </div>
+            <!-- /.actn -->
+        </div>
+        <!-- /.info -->
+    </div>
+    <!-- /.qrWrap -->
+</div>
+<div class="modalWrap successModal" data-ng-show="isSuccessModal">
+    <div class="modal modal-{{currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading"><span class="ico ico-{{currentMessage.type}}">{{currentMessage.title}}</span></h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="shareOn">
+            <div class="inner">
+                <span class="lbl">Share on :</span>
+                <ul>
+                    <li>
+                        <a class="shareOpt fb" data-ng-click="shareOn();"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt tw" data-ng-click="shareOn();"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt gp" data-ng-click="shareOn();"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt in" data-ng-click="shareOn();"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <footer class="actn">
+            <button class="btn btn-submit" data-ng-click="isSuccessModal = false; goto('/founderShares');">Done</button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.successModal -->
+
+<div class="modalWrap successModal" data-ng-show="isShareSuccess">
+    <div class="modal modal-{{shareMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading alt"><span class="ico ico-{{shareMessage.type}}">{{shareMessage.title}}</span></h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon ah">{{shareMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn">
+            <button class="btn fluid btn-submit" data-ng-click="isShareSuccess = false;">Done</button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.successModal -->

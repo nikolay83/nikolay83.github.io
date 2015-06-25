@@ -1,0 +1,36 @@
+{
+    "id": 123,
+    "name": "Business Name",
+    "founder": "Founder's Name",
+    "creation": "05/08/2015 02:01 AM",
+    "activation": "05/08/2015 02:01 AM",
+    "logo": "i/business-logo-2.png",
+    "offer": {
+        "discount": "30",
+        "expiration": null,
+        "remain": 120,
+        "remainPercentage": 65,
+        "amountSold": 1401,
+        "daysRemaining": 23
+    },
+    "address": {
+        "address": "33 Welles Street",
+        "city": "Glastonbury",
+        "state": "CT",
+        "zip": "06033",
+        "position": {
+            "lat": 40.711614,
+            "lng": -74.012318
+        }
+    },
+    "phone": "860-633-1401",
+    "hours": {
+        "open": "Tu-Th 9-6, Fri 9-8, Sat 9-5",
+        "closed": "Sun-Mon Closed"
+    },
+    "description": "The Eyeglass Place offers high quality eyeglasses, sunglasses and contact lenses. Eye examinations are available by an independent doctor of optometry and we can fill prescriptions from any doctor. We look forward to helping you find your perfect fit!",
+    "conditions": [
+        "• A Founder$hare may only be redeemed through a smartphone.",
+        "• A Founder$hare does not have any service or inactivity fees of any type."
+    ]
+}

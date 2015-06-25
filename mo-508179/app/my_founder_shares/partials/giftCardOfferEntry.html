@@ -1,0 +1,37 @@
+<div class="business-entry">
+  <!-- title and logo -->
+  <div class="entry-content content">
+    <div class="business-logo">
+      <img alt="Business Logo" src="/assets/i/empty.gif" data-ng-src="{{giftCardOffer.businessPicture}}"/>
+    </div>
+    <div class="business-title">
+      <div class="business-title-container">
+        <div class="business-name">{{giftCardOffer.businessName}}</div>
+        <div class="business-activation">Activation : {{giftCardOffer.activationDateTime | date:longDateFormat}}</div>
+      </div>
+    </div>
+  </div>
+  <!-- end title and logo -->
+  <!-- redeem slider -->
+  <div data-slick data-infinite="false" data-center-mode="true" data-center-padding="10px" data-arrows="false" data-slides-to-show="1">
+    <div class="entry-detail-shadowed" data-ng-repeat="giftCard in giftCardOffer.giftCards">
+      <!-- discount -->
+      <div class="redeem-old">
+        <span class="value">${{giftCard.quantity}}</span><br/>
+        <span class="discount">{{giftCard.discount}}%</span>
+        <span class="discount-label">off</span>
+      </div>
+      <!-- end discount -->
+      <!-- redeem now -->
+      <div class="redeem-now-old">
+        <a class="btn btn-success btn-medium" href="javascript:void(0);" data-ui-sref="redeem({id: giftCard.id})">
+          Redeem Now
+        </a>
+      </div>
+      <!-- end redeem now -->
+      <!-- TODO: toggle icon -->
+      <div class="toggle-block" data-ng-click="showAdditionalMenu(giftCard.id)">toggle</div>
+    </div>
+  </div>
+  <!-- end of redeem slider -->
+</div>

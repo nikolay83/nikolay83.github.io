@@ -1,0 +1,23 @@
+<!-- menu navigation -->
+<div class="menu" data-ng-include="'/app/partials/menu.html'"></div>
+<!-- end menu navigation -->
+<!-- page header -->
+<header class="display-header">
+  <h1 class="title">Gifting</h1>
+  <div class="menu-toggle" data-nav-menu-toggler="#nav-menu"></div>
+</header>
+<!-- end page header-->
+<div id="my-history">
+  <div class="container">
+    <ul class="previousTransaction details">
+      <li data-ng-repeat="item in historyList">
+        <div>{{item.type}}</div>
+        <div>
+          <span class="pull-left">{{item.timestamp | date:'medium'}}</span>
+          <span class="pull-right">{{item.details}}</span>
+        </div>
+        <br/>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="menuContainer">
+    <div class="userSn">
+        <div class="userInfo">
+            <figure class="userThumb"><img src="i/px.png" data-ng-src="{{user.picture}}" class="img" alt="" /></figure>
+            <div class="info">
+                <div class="inner">
+                    <h4 class="name">{{user.name}}</h4>
+                    <div class="title">{{user.title}}</div>
+                    <!-- /.title -->
+                </div>
+                <!-- /.inner -->
+            </div>
+        </div>
+        <!-- /.userInfo -->
+        <div class="amounts">
+            <div class="esn">
+                <div class="lbl">Total Amount Purchased</div>
+                <div class="val">${{user.amount.purchased}}</div>
+            </div>
+            <div class="esn">
+                <div class="lbl">Total Amount Redeemed</div>
+                <div class="val">${{user.amount.redeemed}}</div>
+            </div>
+            <div class="clear"></div><!-- /.clear -->
+        </div>
+    </div>
+    <!-- /.userSn -->
+    <nav class="menuSn">
+        <ul class="lst">
+            <li data-ng-repeat="menu in menuList" data-ng-class="{'active': isCurrentPath(menu)}"><a class="{{menu.class}}" data-ng-href="#{{menu.href}}">{{menu.title}} <span class="count" data-ng-if="menu.count">{{menu.count}}</span></a></li>
+        </ul>
+    </nav>
+    <!-- /.menuSn -->
+</div>
+<!-- /.menuContainer -->

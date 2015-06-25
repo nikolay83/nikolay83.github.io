@@ -1,0 +1,65 @@
+<!-- search -->
+<div class="search" data-ng-controller="search">
+    <!-- order selector -->
+    <div class="order" data-ng-show="mode == 'order'">
+        Order by
+        <div class="btn-group order-dropdown" data-dropdown="">
+            <button type="button" class="btn btn-primary btn-medium order-toggle dropdown-toggle" data-dropdown-toggle="">
+                {{order.title || 'Select Order Type'}}
+                <span class="caret">&nbsp;</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+                <ul role="menu">
+                    <li class="item" data-ng-repeat="item in orders" data-ng-click="setOrder(item)">
+                        {{item.title}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="search-toggle" data-ng-click="setMode('searching')"></span>
+    </div>
+    <!-- end order selector -->
+    <!-- search input -->
+    <div class="searching" data-ng-show="mode == 'searching'">
+        <button class="btn btn-success btn-small cancel-search" data-ng-click="mode='order'; search.businessName=''">cancel</button>
+        <label class="input">
+            <span class="do-search" data-ng-click="doSearch()"></span>
+            <input data-ng-model="search.businessName" placeholder="Type your keyword" data-ng-keyup="checkEnter($event)" />
+            <span class="clear" data-ng-click="search.businessName=''"></span>
+        </label>
+    </div>
+    <!-- end search input -->
+</div>
+<!-- end search -->
+<div class="container-fluid">
+    <div class="blocksList">
+        <section class="businessBlock" data-ng-repeat="business in offers.businesses">
+            <figure class="busLogoWrap">
+                <img src="i/px.png" class="thumb" alt="" data-ng-src="{{business.logo}}" />
+            </figure>
+            <div class="infoWrap" data-ngc-tapstate="tapstate" data-ng-click="toggleState(business);">
+                <div class="info">
+                    <h3 class="name">{{business.name}}</h3>
+                    <div class="meta">Activation: {{business.activation}}</div>
+                    <!-- /.meta -->
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="more" data-ng-click="goto('/giftCardsDetails')" data-ng-show="business.isOpen"  data-ngc-tapstate="tapstate">
+                <div class="off">
+                    <div class="per"><span class="val">{{business.offer.discount}}% </span><sup>off</sup></div>
+                    <!-- /.per -->
+                    <div class="expiry"><span data-ng-if="!business.offer.expiration || business.offer.expiration===null">No expiration date</span><span data-ng-if="business.offer.expiration && business.offer.expiration!==null">{{business.offer.expiration}}</span></div>
+                </div>
+                <!-- /.off -->
+                <div class="remain gaugeWrap">
+                    <div data-ngc-gauge="ngc-gauge" class="gaugeEl" data-options="business.offer.remainPercentage"></div>
+                    <div class="gauge-label">${{business.offer.remain}}</div>
+                    <div class="gauge-caption">remain</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    </div>
+    <!-- /.blocksList -->
+</div>

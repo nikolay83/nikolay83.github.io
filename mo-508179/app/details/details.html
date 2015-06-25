@@ -1,0 +1,171 @@
+<!-- page header -->
+<header class="display-header">
+  <!-- TODO: i think back button should behave like brower back -->
+  <a href="javascript:void(0);" class="back" data-ui-sref="gift_card_offers">BACK</a>
+  <h1 class="title">Details</h1>
+  <!-- TODO: share icon -->
+  <div class="share-button" data-ng-click="openShareModal()"></div>
+</header>
+<!-- end page header-->
+<div id="details">
+	<div class="container">
+		<div class="business-entry">
+			<!-- title and logo -->
+			<div class="content entry-content">
+				<div class="business-logo">
+					<img alt="Business Logo" src="/assets/i/empty.gif" data-ng-src="{{giftCard.businessPicture}}"/>
+				</div>
+				<div class="business-title">
+					<div class="business-title-container">
+						<div class="business-name">{{giftCard.businessName}}</div>
+						<div class="business-founder">
+              Address: {{giftCard.businessStreetAddress}},<br>
+              {{giftCard.businessCity}}, {{giftCard.businessState}} {{giftCard.businessZip}}<br>
+              Phone: {{giftCard.businessTelephone}}
+            </div>
+					</div>
+          <a href="javascript:void(0);" class="btn btn-success btn-medium btn-block" data-ng-click="openLoginNowModal()">Add to Cart</a>
+				</div>
+			</div>
+			<!-- end title and logo -->
+      <!-- detail -->
+      <div class="entry-detail entry-detail-alternate">
+        <div class="redeem-entry">
+          <div class="row">
+            <!-- discount -->
+            <div class="col-xs-6 text-center">
+              <span class="discount">{{giftCard.discount}}%</span>
+              <span class="discount-label">off</span><br>
+              <span class="expiration">No expiration date</span>
+            </div>
+            <!-- end discount -->
+            <!-- redeem now -->
+            <div class="col-xs-6 text-center">
+              <!-- TODO: need to ada circular bar (jquery.circle.progress) -->
+              <span class="value">${{giftCard.quantity}}</span><br/>
+              remain
+              <div class="caret-right pull-right"></div>
+            </div>
+            <!-- end redeem now -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="group col-xs-8 col-xs-offset-1">
+            <div class="group-title pull-left">Amount Sold</div>
+            <div class="group-value pull-right">$1401</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="group col-xs-8 col-xs-offset-1">
+            <div class="group-title pull-left">Days Remaining</div>
+            <div class="group-value pull-right">23</div>
+          </div>
+        </div>
+      </div>
+      <!-- end detail -->
+      <div class="activation">
+        <div class="row">
+          <div class="group col-xs-10">
+            <div class="group-title pull-left">Creation Date</div>
+            <div class="group-value pull-right">: {{giftCard.createdOn | date:'MM/dd/yyyy hh:mm a'}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="group col-xs-10">
+            <div class="group-title pull-left">Activation Date</div>
+            <div class="group-value pull-right">: 05/08/2015 02:00 AM</div>
+          </div>
+        </div>
+      </div>
+			<!-- map -->
+			<div class="map">
+				<div class="map-canvas"></div>
+				<!-- address -->
+				<div class="address">
+					<p>{{giftCard.businessStreetAddress}}, {{giftCard.businessCity}}, {{giftCard.businessState}} {{giftCard.businessZip}}</p>
+				</div>
+				<!-- end address -->
+			</div>
+			<!-- end map -->
+			<!-- details -->
+			<div class="details-time">
+				<div class="group">
+					<div class="group-title">Hours</div>
+					<div class="group-value">Tu-Th 9-6, Fri 9-8, Sat 9-5, Sun-Mon Closed</div>
+				</div>
+			</div>
+			<!-- end details -->
+
+			<!-- auxiliary details -->
+			<div class="details-aux content">
+				<!-- description -->
+				<div class="group">
+					<div class="group-label">Description</div>
+					<p>{{giftCard.description}}</p>
+				</div>
+				<!-- end description -->
+				<!-- conditions -->
+				<div class="group">
+					<div class="group-label">Conditions</div>
+					<ul class="field conditions">
+						<li data-ng-repeat="condition in business.conditions">
+							{{condition}}
+						</li>
+					</ul>
+				</div>
+				<!-- end conditions -->
+        <!-- comments -->
+				<div class="group">
+					<div class="group-label">Comments</div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Add a comment"></textarea>
+          </div>
+				  <a href="javascript:void(0);" class="btn btn-info btn-medium">Submit Comment</a>
+        </div>
+				<!-- end comments -->
+			</div>
+			<!-- end auxiliary details -->
+		</div>
+	</div>
+</div>
+
+<!-- share modal dialog content template -->
+<script type="text/ng-template" id="shareModal.html">
+  <!-- TODO: social placeholder -->
+  <div class="container">
+    <ul class="list-inline social-media">
+      <li>Share on :</li>
+      <li class="facebook"></li>
+      <li class="twitter"></li>
+      <li class="googleplus"></li>
+      <li class="whatsapp"></li>
+    </ul>
+    <div class="form-group">
+      <label for="share-url">Link :</label>
+      <input id="share-url" class="form-control" type="text" readonly data-ng-model="shareUrl">
+      <br>
+      <input type="submit" class="btn btn-info btn-medium btn-block" value="Refer to friend" data-ng-click="share()">
+    </div>
+  </div>
+</script>
+<!-- end of share modal dialog content template -->
+<!-- login error dialog template -->
+<script type="text/ng-template" id="loginNowModal.html">
+  <div class="modal-header text-center">
+    <span class="modal-icon-error"></span> ERROR #005
+  </div>
+  <div class="modal-body">
+    <p>You need to login to add this gift card to cart. Do you want to continue?</p>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-xs-6">
+        <button class="btn btn-primary btn-lg" data-ng-click="cancel()">Cancel</button>
+      </div>
+      <div class="col-xs-6">
+        <button class="btn btn-success btn-lg" data-ng-click="login()">Login Now</button>
+      </div>
+    </div>
+  </div>
+</script>
+<!-- end of login error dialog template -->
