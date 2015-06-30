@@ -1,0 +1,45 @@
+{
+    "userDetails": {
+        "name": "John Doe",
+        "title": "CHAMPION",
+        "picture": "i/usrImg.png",
+        "amount": {
+            "purchased": 525,
+            "redeemed": 350
+        }
+    },
+    "menuList": [{
+        "title": "Gift Card Offers",
+        "href": "/giftCardsOffer",
+        "class": "mGiftCards"
+    }, {
+        "title": "My Founder$hares",
+        "href": "/founderShares",
+        "class": "mFounderShares"
+    }, {
+        "title": "My History",
+        "href": "/myHistory",
+        "class": "mHistory"
+    }, {
+        "title": "My Cart",
+        "href": "/myCart",
+        "class": "mCart",
+        "count": "0"
+    }, {
+        "title": "How It Works",
+        "href": "/howItWorks",
+        "class": "mWorks"
+    }, {
+        "title": "FAQ",
+        "href": "/faq",
+        "class": "mFAQ"
+    }, {
+        "title": "Contact Support",
+        "href": "#/contact_support",
+        "class": "mSupport"
+    }, {
+        "title": "Logout",
+        "href": "/login",
+        "class": "mLogout"
+    }]
+}

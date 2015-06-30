@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-ng-app="MomAndPop" data-ng-controller="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title data-ng-bind="global.title">Mom &amp; Pop Project</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/icons-sprites.css" />
+    <link type="text/css" rel="stylesheet" href="css/screen.css" />
+</head>
+
+<body data-ng-class="{'menu-opened': global.menuOpened, 'headless': global.headless }" data-ng-swipe-right="global.menuOpened = false">
+    <!-- page header -->
+    <header data-ng-class="{'display-header': !global.headless}">
+        <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}">BACK</a>
+
+        <a href="javascript:;" class="back" data-ng-show="!!global.cancelLink" data-ng-href="#/{{global.cancelLink}}">CANCEL</a>
+
+        <a class="menu-toggle" data-ng-if="!global.menuDisabled" data-ng-click="global.menuOpened = !global.menuOpened"></a>
+        <a class="shareLnk" data-ng-if="global.shareEnabled" data-ng-click="global.shareOpened = !global.shareOpened"></a>
+        <h1 class="title">{{global.title}}</h1>
+
+        <div class="sharePopup" data-ng-show="global.shareOpened">
+            <div class="shareRw">
+                <div class="lbl">Share on :</div>
+                <!-- /.lbl -->
+                <ul class="shareOpts">
+                    <li>
+                        <a class="fb"></a>
+                    </li>
+                    <li>
+                        <a class="tw"></a>
+                    </li>
+                    <li>
+                        <a class="gp"></a>
+                    </li>
+                    <li>
+                        <a class="in"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.shareRw -->
+            <div class="link">
+                <h6>Link :</h6>
+                <div class="rw">
+                    <input type="text" name="link" class="textCtrl" data-ng-model="global.sharelink" />
+                </div>
+                <div class="actn">
+                    <a class="btn btn-submit fluid">Refer to friend</a>
+                </div>
+            </div>
+            <span class="arrow"></span>
+        </div>
+        <!-- /.sharePopup -->
+    </header>
+    <!-- end page header-->
+
+    <!-- main menu -->
+    <aside class="menu" data-ng-include="'partials/menu.html'" data-ng-controller="menu"></aside>
+    <!-- end main menu -->
+
+    <div class="menu-shadow"></div>
+
+    <!-- main content-->
+    <div class="main-content" data-ng-swipe-left="openMenu()" data-ng-view></div>
+    <!-- end main content-->
+
+    <div class="overlay" data-ng-click="global.shareOpened=false;" data-ng-show="global.shareOpened"></div>
+    <!-- /.overlay -->
+
+    <script src="prod/lib.js"></script>
+    <script src="js/ng-slick.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

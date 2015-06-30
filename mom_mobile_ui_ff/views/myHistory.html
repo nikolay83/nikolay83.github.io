@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="historyLst">
+        <section class="hel" data-ng-repeat="history in histories">
+            <h5 class="event">
+                {{history.event}}
+            </h5><!-- /.history -->
+            <div class="meta">
+                <span class="occuredAt">{{history.occuredAt}}</span>
+                <span class="amount">${{history.amount || 0.00}}</span>
+            </div>
+        </section>
+    </div>
+    <!-- /.historyLst -->
+</div>

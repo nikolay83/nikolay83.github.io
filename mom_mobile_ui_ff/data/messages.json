@@ -1,0 +1,33 @@
+{
+    "messages": {
+        "id001": {
+            "id": "001",
+            "title": "ERROR #001",
+            "type": "alert",
+            "msgText": "We are failed to finish your payment. Please contact our support to confirm about this. Thank you!"
+        },
+        "id004": {
+            "id": "004",
+            "title": "ERROR #004",
+            "type": "alert",
+            "msgText": "We are failed to share your story to social media. Please try it later, or you can contact our support to confirm about this. Thank you!"
+        },
+        "id005": {
+            "id": "005",
+            "title": "ERROR #005",
+            "type": "alert",
+            "msgText": "You need to login to this gift card to cart. Do you want to continue?"
+        },
+        "id006": {
+            "id": "006",
+            "title": "Transaction Complete!",
+            "type": "completed"
+        },
+        "id007": {
+            "id": "007",
+            "title": "CONGRATULATION",
+            "type": "success",
+            "msgText": "You successfully shared your payment story to social media!"
+        }
+    }
+}

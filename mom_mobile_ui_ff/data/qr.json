@@ -1,0 +1,8 @@
+{
+    "qr": {
+        "businessName": "Business Name Sample",
+        "qrCodeImage": "i/qrcode.jpg",
+        "value": 100,
+        "discount": 20
+    }
+}
