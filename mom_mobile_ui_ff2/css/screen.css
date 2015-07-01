@@ -238,7 +238,8 @@ body > header .menu-toggle {
   top: 0;
   width: 29px;
   height: 40px;
-  background: url("../i/menu.png") left 10px no-repeat; }
+  background: url("../i/menu.png") left 10px no-repeat;
+  z-index: 1; }
 
 body > header .shareLnk {
   position: absolute;
@@ -303,11 +304,11 @@ body.headless > header {
 .menu-shadow {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 7;
+  z-index: 10;
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 300ms;
@@ -2200,7 +2201,12 @@ span.icon-twitter {
   color: #125579;
   font-weight: bold;
   font-size: 14px;
-  line-height: 18px; }
+  line-height: 18px;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical; }
 
 .businessBlock .meta {
   color: #aaaaaa;
@@ -2395,7 +2401,7 @@ span.icon-twitter {
     z-index: 8;
     background: #699f2d;
     text-align: left;
-    padding-left: 18px; }
+    padding-left: 17px; }
 
 .overviewDetails {
   /* older firefox browsers */

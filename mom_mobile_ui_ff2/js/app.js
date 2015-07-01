@@ -103,7 +103,7 @@ var app = angular
 
 
 // Initialize the main module
-app.run(function($rootScope, $location) {
+app.run(function($rootScope, $location, $window) {
 
 
     $rootScope.goto = function(path) {

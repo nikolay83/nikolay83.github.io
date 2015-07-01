@@ -14,7 +14,8 @@
 <body data-ng-class="{'menu-opened': global.menuOpened, 'headless': global.headless }" data-ng-swipe-right="global.menuOpened = false">
     <!-- page header -->
     <header data-ng-class="{'display-header': !global.headless}">
-        <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}">BACK</a>
+        <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}" data-ng-if="global.back !== 'back'">BACK</a>
+        <a href="javascript:;"  data-ng-if="global.back === 'back'" class="back" data-ng-show="!!global.back" data-ng-click="goto('back');">BACK</a>
 
         <a href="javascript:;" class="back" data-ng-show="!!global.cancelLink" data-ng-href="#/{{global.cancelLink}}">CANCEL</a>
 
@@ -61,7 +62,7 @@
     <aside class="menu" data-ng-include="'partials/menu.html'" data-ng-controller="menu"></aside>
     <!-- end main menu -->
 
-    <div class="menu-shadow"></div>
+    <div class="menu-shadow" data-ng-click="global.menuOpened = !global.menuOpened"></div>
 
     <!-- main content-->
     <div class="main-content" data-ng-swipe-left="openMenu()" data-ng-view></div>

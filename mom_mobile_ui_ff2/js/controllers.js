@@ -234,7 +234,7 @@ appControllers.controller('myCartCtrl',
     function($scope, common) {
         $scope.resetGlobal({
             title: 'My Cart',
-            back: 'giftCardsDetails',
+            back: 'back',
             menuDisabled: true
         });
 
