@@ -111,7 +111,7 @@
 </div>
 <!-- /.successModal -->
 
-<div class="modalWrap errModal zp" data-ng-show="isShareError">
+<div class="modalWrap errModal zp" data-ng-show="global.isShareError">
     <div class="modal modal-{{shareMessage.type}}">
         <header class="mhead">
             <h3 class="heading"><span class="ico ico-{{shareMessage.type}}">{{shareMessage.title}}</span></h3>
@@ -120,7 +120,7 @@
         <div class="mcon wider">{{shareMessage.msgText}}</div>
         <!-- /.mcon -->
         <footer class="actn ls">
-            <button class="btn btn-primary" data-ng-click="isShareError = false;">Cancel</button>
+            <button class="btn btn-primary" data-ng-click="global.isShareError = false;">Cancel</button>
             <button class="btn btn-success btn-login" data-ng-click="isShareError = false;">Contact Support</button>
             <div class="clear"></div>
         </footer>
@@ -130,7 +130,7 @@
 </div>
 <!-- /.errModal -->
 
-<div class="modalWrap successModal" data-ng-show="isShareSuccess">
+<div class="modalWrap successModal" data-ng-show="global.isShareSuccess">
     <div class="modal modal-{{shareMessage.type}}">
         <header class="mhead">
             <h3 class="heading alt"><span class="ico ico-{{shareMessage.type}}">{{shareMessage.title}}</span></h3>
@@ -139,7 +139,7 @@
         <div class="mcon ah">{{shareMessage.msgText}}</div>
         <!-- /.mcon -->
         <footer class="actn">
-            <button class="btn fluid btn-submit" data-ng-click="isShareSuccess = false;">Done</button>
+            <button class="btn fluid btn-submit" data-ng-click="global.isShareSuccess = false;">Done</button>
             <div class="clear"></div>
         </footer>
         <!-- /.actn -->
@@ -147,3 +147,4 @@
     <!-- /.modal -->
 </div>
 <!-- /.successModal -->
+

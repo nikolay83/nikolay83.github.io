@@ -106,8 +106,7 @@ body {
 .btn:hover,
 .btn:active:focus {
   outline: none;
-  color: #ffffff;
-  font-weight: normal; }
+  color: #ffffff; }
 
 .btn.btn-success {
   background-color: #4b8f00;
@@ -123,7 +122,7 @@ body {
 
 .btn.btn-submit {
   background-color: #2a94d6;
-  box-shadow: inset 0 -3px 0 #1d74ca;
+  box-shadow: inset 0 -3px 0 #1C628E;
   font-weight: bold;
   font-size: 14px; }
   .btn.btn-submit.alt {
@@ -1026,9 +1025,6 @@ input[type=number]::-webkit-outer-spin-button {
   right: 0;
   margin-left: auto;
   margin-right: auto; }
-
-a:active {
-  font-weight: bold; }
 
 /* for account type */
 .account-type-group {
@@ -2170,6 +2166,8 @@ span.icon-twitter {
   margin-top: 10px; }
   .businessBlock.shdw {
     box-shadow: 0 1px 2px rgba(33, 29, 30, 0.3); }
+  .businessBlock.ng-click-active {
+    background: #F8F8F8; }
 
 .businessBlock .busLogoWrap {
   float: left;
@@ -2181,17 +2179,18 @@ span.icon-twitter {
   height: 64px; }
 
 .businessBlock .infoWrap {
-  background: #fff;
-  border-radius: 5px 5px 0 0; }
+  border-radius: 5px 5px 0 0;
+  margin-left: 85px;
+  position: relative; }
 
 .businessBlock .infoWrap.hover {
   background: #f8f8f8; }
 
 .businessBlock .info {
-  margin-left: 85px;
   height: 84px;
-  display: table-cell;
-  vertical-align: middle; }
+  padding-right: 4px;
+  display: block;
+  padding-top: 32px; }
 
 .businessBlock .info.addCard {
   display: block;
@@ -2202,16 +2201,19 @@ span.icon-twitter {
   font-weight: bold;
   font-size: 14px;
   line-height: 18px;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical; }
+  white-space: nowrap;
+  width: 100%; }
 
 .businessBlock .meta {
   color: #aaaaaa;
   font-size: 11px;
-  line-height: 14px; }
+  line-height: 14px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .businessBlock .more {
   background: url(../i/arrow.png) right 10px top 50% no-repeat;
@@ -2276,7 +2278,8 @@ span.icon-twitter {
 .offerDetail.businessBlock .name {
   font-size: 16px; }
 .offerDetail.businessBlock .info.addCart {
-  padding-top: 12px; }
+  padding-top: 12px;
+  height: auto; }
 .offerDetail.businessBlock .address {
   margin-top: 8px; }
 .offerDetail.businessBlock .actn {
@@ -2445,6 +2448,39 @@ span.icon-twitter {
       font-weight: bold;
       font-size: 12px;
       line-height: 20px; }
+    .overviewDetails .desc .commentList {
+      background: #e6e6e6;
+      font-size: 12px;
+      padding: 6px 10px;
+      position: relative;
+      color: #8d8d8d;
+      margin-top: 6px; }
+      .overviewDetails .desc .commentList .heading {
+        font-size: 14px;
+        height: 28px;
+        line-height: 28px;
+        cursor: pointer; }
+      .overviewDetails .desc .commentList .toggleArrow {
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 16px;
+        height: 16px;
+        background: url(../i/eau.png) 50% 2px no-repeat; }
+      .overviewDetails .desc .commentList.closed .toggleArrow {
+        background: url(../i/ear.png) 50% 50% no-repeat; }
+      .overviewDetails .desc .commentList .lst {
+        border-top: 1px solid #d2d2d2;
+        padding: 10px 0; }
+        .overviewDetails .desc .commentList .lst .usr a {
+          color: #4a8a04;
+          font-weight: bold; }
+      .overviewDetails .desc .commentList.closed .lst {
+        display: none; }
+      .overviewDetails .desc .commentList .postedOn {
+        font-size: 11px; }
+      .overviewDetails .desc .commentList .comment {
+        margin-top: 5px; }
     .overviewDetails .desc .actn {
       margin-top: 8px;
       padding-bottom: 26px; }
@@ -2493,14 +2529,20 @@ span.icon-twitter {
           height: 32px;
           width: 32px;
           margin-left: 8px;
-          background: #0b6196;
-          border-radius: 50%; }
+          border-radius: 50%;
+          background-image: url("../i/social.png");
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-color: #fff;
+          background-size: 33px auto; }
+          .sharePopup .shareRw .shareOpts li a.fb {
+            background-position: 0 0; }
           .sharePopup .shareRw .shareOpts li a.tw {
-            background: #2a94d6; }
+            background-position: 0 -80px; }
           .sharePopup .shareRw .shareOpts li a.gp {
-            background: #ee2c47; }
+            background-position: 0 -120px; }
           .sharePopup .shareRw .shareOpts li a.in {
-            background: #59b147; }
+            background-position: 0 -40px; }
   .sharePopup .link {
     padding: 12px 10px 10px;
     color: #555;
@@ -2782,13 +2824,20 @@ span.icon-twitter {
         width: 32px;
         border-radius: 50%;
         background: #0b6196;
-        display: block; }
+        display: block;
+        background-image: url("../i/social.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-color: #fff;
+        background-size: 33px auto; }
+        .successModal .modal .shareOn ul li a.fb {
+          background-position: 0 0; }
         .successModal .modal .shareOn ul li a.tw {
-          background: #2a94d6; }
+          background-position: 0 -80px; }
         .successModal .modal .shareOn ul li a.gp {
-          background: #ee2c47; }
+          background-position: 0 -120px; }
         .successModal .modal .shareOn ul li a.in {
-          background: #5fb44e; }
+          background-position: 0 -40px; }
 .successModal .modal .actn {
   text-align: center;
   background: #fff;
