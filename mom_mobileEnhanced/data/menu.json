@@ -28,14 +28,22 @@
     }, {
         "title": "How It Works",
         "href": "/howItWorks",
-        "class": "mWorks"
+        "class": "mWorks"  
     }, {
         "title": "FAQ",
         "href": "/faq",
         "class": "mFAQ"
     }, {
+        "title": "Privacy",
+        "href": "/privacy",
+        "class": "privacy"
+    }, {
+        "title": "Terms and Conditions",
+        "href": "/terms",
+        "class": "terms"
+    }, {
         "title": "Contact Support",
-        "href": "/",
+        "href": "#/contact_support",
         "class": "mSupport"
     }, {
         "title": "Logout",

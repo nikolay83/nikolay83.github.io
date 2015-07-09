@@ -21,6 +21,11 @@ appControllers.controller('page', ['$rootScope', '$scope', '$http', '$modal', '$
         $scope.global.shareEnabled = options.shareEnabled || false;
         $scope.global.sharelink = options.shareLink;
         $scope.global.cancelLink = options.cancelLink || '';
+        $scope.global.isShareSuccess = false;
+        $scope.global.isShareError = false;
+        $scope.global.isSendSuccess = false;
+        $scope.global.transactionCompleted = false;
+
         if (options.title) {
             $scope.global.title = options.title;
         }
@@ -36,6 +41,34 @@ appControllers.controller('page', ['$rootScope', '$scope', '$http', '$modal', '$
     promise.then(function(data) {
         $scope.messages = data.messages;
     });
+
+
+    //shareOn
+    $scope.shareOn = function(isError) {
+        if (isError) {
+            $scope.shareMessage = $scope.messages ? $scope.messages.id004 : null;
+            $scope.global.isShareError = true;
+        } else {
+            $scope.shareMessage = $scope.messages ? $scope.messages.id007 : null;
+            $scope.global.isShareSuccess = true;
+            $scope.global.shareOpened = false;
+        }
+    };
+
+
+    //send to friend
+    $scope.sendToFriend = function() {
+        $scope.global.transactionCompleted = false;
+        $scope.global.isSendError = false;
+        if ($scope.global.email) {
+            $scope.sendSuccessMessage = $scope.messages ? $scope.messages.id008 : null;
+            $scope.global.transactionCompleted = true;
+            $scope.global.shareOpened = false;
+        } else {
+            $scope.sendSuccessMessage = $scope.messages ? $scope.messages.id009 : null;
+            $scope.global.isSendError = true;
+        }
+    };
 
 }]);
 
@@ -184,23 +217,26 @@ appControllers.controller('giftCardsDetailsCtrl',
             back: "giftCardsOffer",
             menuDisabled: true,
             shareEnabled: true,
-            shareOpened: false,
-            shareLink: 'http://www.loremipsum.com/loremipsum/3'
+            shareOpened: false
+
         });
 
         $scope.gaugestyle = {
             bgcolor: "#e0e0e0"
-        }
+        };
 
         // get offers
         var promise = common.makeRequest({
             method: 'GET',
             url: 'data/businessesOfferDetails.json'
-        })
+        });
 
         promise.then(function(data) {
             $scope.offerDetail = data;
         });
+
+
+
 
         // gauge
         $scope.getGaugeVal = function(percent) {
@@ -210,7 +246,7 @@ appControllers.controller('giftCardsDetailsCtrl',
                 y: 32 - 29 * Math.cos(2 * Math.PI * percent / 100),
                 largeFlag: percent >= 50 ? 1 : 0
             };
-        }
+        };
 
         //business
         $scope.toggleState = function(el) {
@@ -219,13 +255,14 @@ appControllers.controller('giftCardsDetailsCtrl',
             } else {
                 el.isOpen = true;
             }
-        }
+        };
 
         //addToCart
         $scope.addToCart = function() {
             $scope.currentMessage = $scope.messages ? $scope.messages.id005 : null;
             $scope.hasCartMsg = true;
-        }
+        };
+
     }
 );
 
@@ -234,7 +271,7 @@ appControllers.controller('myCartCtrl',
     function($scope, common) {
         $scope.resetGlobal({
             title: 'My Cart',
-            back: 'giftCardsDetails',
+            back: 'back',
             menuDisabled: true
         });
 
@@ -273,7 +310,7 @@ appControllers.controller('paymentCtrl',
         var promise = common.makeRequest({
             method: 'GET',
             url: 'data/payment.json'
-        })
+        });
         $scope.payment = {};
         promise.then(function(data) {
             $scope.payment = data.payment;
@@ -289,18 +326,6 @@ appControllers.controller('paymentCtrl',
             }
         }
 
-        //shareOn
-        $scope.shareOn = function(isError) {
-            $scope.isShareSuccess = false;
-            $scope.isShareError = false;
-            if (isError) {
-                $scope.shareMessage = $scope.messages ? $scope.messages.id004 : null;
-                $scope.isShareError = true;
-            } else {
-                $scope.shareMessage = $scope.messages ? $scope.messages.id007 : null;
-                $scope.isShareSuccess = true;
-            }
-        }
     }
 );
 
@@ -431,7 +456,7 @@ appControllers.controller('giftingCtrl',
     function($scope, common) {
         $scope.resetGlobal({
             title: 'Gifting',
-            cancelLink: 'myCart'
+            cancelLink: 'founderShares'
         });
 
         // get offers
@@ -473,7 +498,8 @@ appControllers.controller('giftingCtrl',
 appControllers.controller('myHistoryCtrl',
     function($scope, common) {
         $scope.resetGlobal({
-            title: 'My History'
+            title: 'My History',
+            back: 'back'
         });
 
         // get offers

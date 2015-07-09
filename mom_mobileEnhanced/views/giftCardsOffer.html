@@ -33,11 +33,11 @@
 <!-- end search -->
 <div class="container-fluid">
     <div class="blocksList">
-        <section class="businessBlock" data-ng-repeat="business in offers.businesses">
+        <section class="businessBlock" data-ngc-tapstate="tapstate" data-ng-repeat="business in offers.businesses" data-ng-click="toggleState(business);">
             <figure class="busLogoWrap">
                 <img src="i/px.png" class="thumb" alt="" data-ng-src="{{business.logo}}" />
             </figure>
-            <div class="infoWrap" data-ngc-tapstate="tapstate" data-ng-click="toggleState(business);">
+            <div class="infoWrap">
                 <div class="info">
                     <h3 class="name">{{business.name}}</h3>
                     <div class="meta">Activation: {{business.activation}}</div>

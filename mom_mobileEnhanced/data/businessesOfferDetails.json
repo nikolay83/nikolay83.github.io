@@ -1,6 +1,6 @@
 {
     "id": 123,
-    "name": "Business Name_VeryLongName_VeryLongName_VeryLongName_VeryLongName_VeryLongName”,
+    "name": "Business Name",
     "founder": "Founder's Name",
     "creation": "05/08/2015 02:01 AM",
     "activation": "05/08/2015 02:01 AM",
@@ -32,5 +32,10 @@
     "conditions": [
         "• A Founder$hare may only be redeemed through a smartphone.",
         "• A Founder$hare does not have any service or inactivity fees of any type."
-    ]
+    ],
+    "comments": [{
+        "postedBy": "monica",
+        "postedOn": "Friday 06/12/2015 - 03:09",
+        "comment": "Check us out on Facebook and on our website at sowsear1.com"
+    }]
 }

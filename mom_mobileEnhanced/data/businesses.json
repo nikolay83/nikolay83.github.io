@@ -1,7 +1,7 @@
 {
     "businesses": [{
         "id": 123,
-        "name": "Business Name_VeryLongName_VeryLongName_VeryLongName_VeryLongName_VeryLongName_VeryLongName_VeryLongName",
+        "name": "Business Name",
         "founder": "Founder's Name",
         "activation": "12/23/2014 10:00 PM",
         "logo": "i/business-logo-1.png",
@@ -27,7 +27,7 @@
     },
     {
         "id": 125,
-        "name": "Business Name_ModeratelyLongName_ModeratelyLongName",
+        "name": "Business Name",
         "founder": "Founder's Name",
         "activation": "12/23/2014 10:00 PM",
         "logo": "i/business-logo-3.png",

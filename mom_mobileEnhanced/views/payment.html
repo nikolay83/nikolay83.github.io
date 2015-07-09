@@ -1,58 +1,79 @@
-<div class="giftingWrap paymentWrap">
+<div class="paymentWrap">
     <div class="giftCards">
         <div class="container-fluid">
 
             <div class="rw">
                 <div class="lbl"><strong>Business Name Gift Cards</strong></div>
+                <div class="val"><strong>${{payment.businessNameGiftCards}}</strong></div>
                 <div class="clear"></div>
             </div>
             <!-- /.rw -->
-            <div class="total">Available ${{gifting.available}}</div>
+            <div class="total">Total Value ${{payment.totalValue}}</div>
             <!-- /.total -->
         </div>
     </div>
     <!-- /.giftCards -->
+    <div class="paymentOpts">
+        <a class="opt optPaypal">Pay<span class="alt">Pal</span></a>
+        <a class="opt optVenmo">venmo</a>
+    </div>
+    <!-- /.paymentOpts -->
 
     <section class="payWithCard">
-        <h6>Gifting Form</h6>
+        <h6>Pay with a card</h6>
 
         <form class="frmPayment">
             <div class="rw">
-                <div class="lbl">Gifting Amount</div>
+                <div class="lbl">Card Number</div>
                 <div class="val">
-                    <div class="fixLbl">$</div>
-                    <input type="text" class="textCtrl amt borderless" data-ng-model="gifting.giftingAmount" />                    
+                    <input type="text" class="textCtrl borderless" data-ng-model="payment.cardNumber" />
                 </div>
             </div>
             <div class="rw">
-                <div class="lbl">Receipt</div>
+                <div class="lbl">MM / YY</div>
                 <div class="val">
-                    <input type="text" class="textCtrl borderless" placeholder="email address or phone number" data-ng-model="gifting.receipt" />
+                    <input type="text" class="textCtrl borderless" data-ng-model="payment.mmyy" />
                 </div>
             </div>
-
-            <div class="rw fluidHt">
-                <div class="lbl">Gift Message (optional)</div>
+            <div class="rw">
+                <div class="lbl">CVV</div>
                 <div class="val">
-                    <textarea class="textCtrl ta borderless" data-ng-model="gifting.message" ></textarea>
+                    <input type="text" class="textCtrl borderless" data-ng-model="payment.cvv" />
+                </div>
+            </div>
+            <div class="rw">
+                <div class="lbl">Zip</div>
+                <div class="val">
+                    <input type="text" class="textCtrl borderless" data-ng-model="payment.zip" />
                 </div>
             </div>
         </form>
     </section>
     <!-- /.payWithCard -->
-    <div class="net">TOTAL <span class="val">
-    ${{gifting.giftingAmount || 0}}</span></div>
     <div class="actn">
-        <button class="btn btn-success" data-ng-click="isSuccessModal=true;">Gift Now</button>
-        <div class="or">OR</div>
-        <button class="btn btn-submit alt"><span class="ico tw">Send to Friend</span>
-        </button>
+        <button class="btn btn-success" data-ng-click="processPayment();">Pay Now</button>
     </div>
     <!-- /.actn -->
-    
-
 </div>
-<!-- /.giftingWrap -->
+<!-- /.paymentWrap -->
+<div class="modalWrap errModal" data-ng-show="isPaymentError">
+    <div class="modal modal-{{currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading"><span class="ico ico-{{currentMessage.type}}">{{currentMessage.title}}</span></h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon">{{currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn ls">
+            <button class="btn btn-primary" data-ng-click="isPaymentError = false;">Cancel</button>
+            <button class="btn btn-success btn-login" data-ng-click="isPaymentError = false;">Contact Support</button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.errModal -->
 
 <div class="modalWrap successModal" data-ng-show="isSuccessModal">
     <div class="modal modal-{{currentMessage.type}}">
@@ -81,7 +102,7 @@
             <!-- /.inner -->
         </div>
         <footer class="actn">
-            <button class="btn btn-submit" data-ng-click="isSuccessModal = false; goto('/founderShares');">Done</button>
+            <button class="btn btn-submit" data-ng-click="isSuccessModal = false; goto('/giftCardsOffer');">Done</button>
             <div class="clear"></div>
         </footer>
         <!-- /.actn -->
@@ -90,7 +111,7 @@
 </div>
 <!-- /.successModal -->
 
-<div class="modalWrap errModal zp" data-ng-show="isShareError">
+<div class="modalWrap errModal zp" data-ng-show="global.isShareError">
     <div class="modal modal-{{shareMessage.type}}">
         <header class="mhead">
             <h3 class="heading"><span class="ico ico-{{shareMessage.type}}">{{shareMessage.title}}</span></h3>
@@ -99,7 +120,7 @@
         <div class="mcon wider">{{shareMessage.msgText}}</div>
         <!-- /.mcon -->
         <footer class="actn ls">
-            <button class="btn btn-primary" data-ng-click="isShareError = false;">Cancel</button>
+            <button class="btn btn-primary" data-ng-click="global.isShareError = false;">Cancel</button>
             <button class="btn btn-success btn-login" data-ng-click="isShareError = false;">Contact Support</button>
             <div class="clear"></div>
         </footer>
@@ -109,7 +130,7 @@
 </div>
 <!-- /.errModal -->
 
-<div class="modalWrap successModal" data-ng-show="isShareSuccess">
+<div class="modalWrap successModal" data-ng-show="global.isShareSuccess">
     <div class="modal modal-{{shareMessage.type}}">
         <header class="mhead">
             <h3 class="heading alt"><span class="ico ico-{{shareMessage.type}}">{{shareMessage.title}}</span></h3>
@@ -118,7 +139,7 @@
         <div class="mcon ah">{{shareMessage.msgText}}</div>
         <!-- /.mcon -->
         <footer class="actn">
-            <button class="btn fluid btn-submit" data-ng-click="isShareSuccess = false;">Done</button>
+            <button class="btn fluid btn-submit" data-ng-click="global.isShareSuccess = false;">Done</button>
             <div class="clear"></div>
         </footer>
         <!-- /.actn -->
@@ -126,3 +147,4 @@
     <!-- /.modal -->
 </div>
 <!-- /.successModal -->
+

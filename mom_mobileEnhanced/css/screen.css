@@ -122,7 +122,7 @@ body {
 
 .btn.btn-submit {
   background-color: #2a94d6;
-  box-shadow: inset 0 -3px 0 #1d74ca;
+  box-shadow: inset 0 -3px 0 #1C628E;
   font-weight: bold;
   font-size: 14px; }
   .btn.btn-submit.alt {
@@ -237,7 +237,8 @@ body > header .menu-toggle {
   top: 0;
   width: 29px;
   height: 40px;
-  background: url("../i/menu.png") left 10px no-repeat; }
+  background: url("../i/menu.png") left 10px no-repeat;
+  z-index: 1; }
 
 body > header .shareLnk {
   position: absolute;
@@ -302,11 +303,11 @@ body.headless > header {
 .menu-shadow {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 7;
+  z-index: 10;
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 300ms;
@@ -589,19 +590,20 @@ a {
 /***** setting for placeholder for input element *****/
 /* WebKit browsers */
 input::-webkit-input-placeholder {
-  color: #939393; }
+  color: #ccc;
+  font-style: italic; }
 
 /* older firefox browsers */
 input:-moz-placeholder {
-  color: #939393; }
+  color: #ccc; }
 
 /* firefox browsers */
 input::-moz-placeholder {
-  color: #939393; }
+  color: #ccc; }
 
 /* IE browser */
 input:-ms-input-placeholder {
-  color: #939393; }
+  color: #ccc; }
 
 /* login button */
 .btn-login {
@@ -1023,9 +1025,6 @@ input[type=number]::-webkit-outer-spin-button {
   right: 0;
   margin-left: auto;
   margin-right: auto; }
-
-a:active {
-  font-weight: bold; }
 
 /* for account type */
 .account-type-group {
@@ -2167,6 +2166,8 @@ span.icon-twitter {
   margin-top: 10px; }
   .businessBlock.shdw {
     box-shadow: 0 1px 2px rgba(33, 29, 30, 0.3); }
+  .businessBlock.ng-click-active {
+    background: #F8F8F8; }
 
 .businessBlock .busLogoWrap {
   float: left;
@@ -2178,17 +2179,18 @@ span.icon-twitter {
   height: 64px; }
 
 .businessBlock .infoWrap {
-  background: #fff;
-  border-radius: 5px 5px 0 0; }
+  border-radius: 5px 5px 0 0;
+  margin-left: 85px;
+  position: relative; }
 
 .businessBlock .infoWrap.hover {
   background: #f8f8f8; }
 
 .businessBlock .info {
-  margin-left: 85px;
   height: 84px;
-  display: table-cell;
-  vertical-align: middle; }
+  padding-right: 4px;
+  display: block;
+  padding-top: 32px; }
 
 .businessBlock .info.addCard {
   display: block;
@@ -2198,12 +2200,20 @@ span.icon-twitter {
   color: #125579;
   font-weight: bold;
   font-size: 14px;
-  line-height: 18px; }
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%; }
 
 .businessBlock .meta {
   color: #aaaaaa;
   font-size: 11px;
-  line-height: 14px; }
+  line-height: 14px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .businessBlock .more {
   background: url(../i/arrow.png) right 10px top 50% no-repeat;
@@ -2268,7 +2278,8 @@ span.icon-twitter {
 .offerDetail.businessBlock .name {
   font-size: 16px; }
 .offerDetail.businessBlock .info.addCart {
-  padding-top: 12px; }
+  padding-top: 12px;
+  height: auto; }
 .offerDetail.businessBlock .address {
   margin-top: 8px; }
 .offerDetail.businessBlock .actn {
@@ -2390,8 +2401,10 @@ span.icon-twitter {
     text-align: center;
     height: 35px;
     line-height: 35px;
-    z-index: 10;
-    background: #699f2d; }
+    z-index: 8;
+    background: #699f2d;
+    text-align: left;
+    padding-left: 17px; }
 
 .overviewDetails {
   /* older firefox browsers */
@@ -2435,6 +2448,39 @@ span.icon-twitter {
       font-weight: bold;
       font-size: 12px;
       line-height: 20px; }
+    .overviewDetails .desc .commentList {
+      background: #e6e6e6;
+      font-size: 12px;
+      padding: 6px 10px;
+      position: relative;
+      color: #8d8d8d;
+      margin-top: 6px; }
+      .overviewDetails .desc .commentList .heading {
+        font-size: 14px;
+        height: 28px;
+        line-height: 28px;
+        cursor: pointer; }
+      .overviewDetails .desc .commentList .toggleArrow {
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 16px;
+        height: 16px;
+        background: url(../i/eau.png) 50% 2px no-repeat; }
+      .overviewDetails .desc .commentList.closed .toggleArrow {
+        background: url(../i/ear.png) 50% 50% no-repeat; }
+      .overviewDetails .desc .commentList .lst {
+        border-top: 1px solid #d2d2d2;
+        padding: 10px 0; }
+        .overviewDetails .desc .commentList .lst .usr a {
+          color: #4a8a04;
+          font-weight: bold; }
+      .overviewDetails .desc .commentList.closed .lst {
+        display: none; }
+      .overviewDetails .desc .commentList .postedOn {
+        font-size: 11px; }
+      .overviewDetails .desc .commentList .comment {
+        margin-top: 5px; }
     .overviewDetails .desc .actn {
       margin-top: 8px;
       padding-bottom: 26px; }
@@ -2483,14 +2529,20 @@ span.icon-twitter {
           height: 32px;
           width: 32px;
           margin-left: 8px;
-          background: #0b6196;
-          border-radius: 50%; }
+          border-radius: 50%;
+          background-image: url("../i/social.png");
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-color: #fff;
+          background-size: 33px auto; }
+          .sharePopup .shareRw .shareOpts li a.fb {
+            background-position: 0 0; }
           .sharePopup .shareRw .shareOpts li a.tw {
-            background: #2a94d6; }
+            background-position: 0 -80px; }
           .sharePopup .shareRw .shareOpts li a.gp {
-            background: #ee2c47; }
+            background-position: 0 -120px; }
           .sharePopup .shareRw .shareOpts li a.in {
-            background: #59b147; }
+            background-position: 0 -40px; }
   .sharePopup .link {
     padding: 12px 10px 10px;
     color: #555;
@@ -2772,13 +2824,20 @@ span.icon-twitter {
         width: 32px;
         border-radius: 50%;
         background: #0b6196;
-        display: block; }
+        display: block;
+        background-image: url("../i/social.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-color: #fff;
+        background-size: 33px auto; }
+        .successModal .modal .shareOn ul li a.fb {
+          background-position: 0 0; }
         .successModal .modal .shareOn ul li a.tw {
-          background: #2a94d6; }
+          background-position: 0 -80px; }
         .successModal .modal .shareOn ul li a.gp {
-          background: #ee2c47; }
+          background-position: 0 -120px; }
         .successModal .modal .shareOn ul li a.in {
-          background: #5fb44e; }
+          background-position: 0 -40px; }
 .successModal .modal .actn {
   text-align: center;
   background: #fff;
@@ -2880,6 +2939,10 @@ span.icon-twitter {
           background-position: 19px -387px; }
         .menuContainer .menuSn .lst li a.mFAQ {
           background-position: 19px -487px; }
+        .menuContainer .menuSn .lst li a.privacy {
+          background-position: 22px -790px; }
+        .menuContainer .menuSn .lst li a.terms {
+          background-position: 22px -890px; }
         .menuContainer .menuSn .lst li a.mSupport {
           background-position: 19px -585px; }
         .menuContainer .menuSn .lst li a.mLogout {
@@ -2907,6 +2970,9 @@ span.icon-twitter {
           background: #fff; }
 
 /* carousel */
+.founderShareList .businessBlock .carouselContainer {
+  margin: 0 10px; }
+
 .carouselContainer {
   /* Dots */ }
   .carouselContainer .slick-slider {
@@ -2920,7 +2986,7 @@ span.icon-twitter {
     -webkit-tap-highlight-color: transparent; }
   .carouselContainer .slick-list {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: block;
     margin: 0;
     padding: 0; }
@@ -3022,7 +3088,7 @@ span.icon-twitter {
     background: #fcfcfc;
     position: relative;
     height: 104px;
-    margin: 0 14px; }
+    margin: 0 4px; }
   .carouselContainer .slick-loading .slick-slide {
     visibility: hidden; }
   .carouselContainer .slick-vertical .slick-slide {
@@ -3074,7 +3140,9 @@ span.icon-twitter {
 
 /* founderShareList */
 .founderShareList {
-  margin-top: 15px; }
+  margin: 15px -10px 0;
+  padding: 0 10px;
+  overflow: hidden; }
   .founderShareList .businessBlock {
     margin-top: 15px; }
     .founderShareList .businessBlock .busLogoWrap {
@@ -3188,6 +3256,8 @@ span.icon-twitter {
 
 .optionsModal .modal {
   min-height: 101px; }
+.optionsModal .optionsLst li:first-child {
+  border-bottom: 1px solid #f2f2f2; }
 .optionsModal .optionsLst li a {
   display: block;
   color: #007035;

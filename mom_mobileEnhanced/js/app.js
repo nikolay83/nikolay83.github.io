@@ -83,8 +83,23 @@ var app = angular
             })
             .when('/sign-up-choose-account-type', {
                 templateUrl: 'views/blankPage.html',
-                controller: 'blankCtrl'
-                
+                controller: 'blankCtrl'                
+            })
+            .when('/contact_support', {
+                templateUrl: 'views/blankPage.html',
+                controller: 'blankCtrl'                
+            })
+            .when('/privacy', {
+                templateUrl: 'views/blankPage.html',
+                controller: 'blankCtrl'                
+            })
+            .when('/terms', {
+                templateUrl: 'views/blankPage.html',
+                controller: 'blankCtrl'                
+            })
+            .when('/viewDetails', {
+                templateUrl: 'views/blankPage.html',
+                controller: 'blankCtrl'                
             })
 
         .otherwise({
@@ -100,7 +115,7 @@ var app = angular
 
 
 // Initialize the main module
-app.run(function($rootScope, $location) {
+app.run(function($rootScope, $location, $window) {
 
 
     $rootScope.goto = function(path) {

@@ -37,7 +37,7 @@
             <figure class="busLogoWrap">
                 <img src="i/px.png" class="thumb" alt="" data-ng-src="{{business.logo}}" />
             </figure>
-            <div class="infoWrap" data-ngc-tapstate="tapstate" data-ng-click="toggleState(business);">
+            <div class="infoWrap" >
                 <div class="info">
                     <h3 class="name">{{business.name}}</h3>
                     <div class="meta">Activation: {{business.activation}}</div>
@@ -78,7 +78,7 @@
 <div class="modalWrap optionsModal" data-ng-show="isoptionsModal">
     <div class="modal">
     <ul class="optionsLst">
-        <li><a data-ng-click="isoptionsModal=false;" >View the Details</a></li>
+        <li><a href="#/viewDetails" data-ng-click="isoptionsModal=false;" >View the Details</a></li>
         <li><a href="#/gifting">Gift this Founder$hare</a></li>
     </ul><!-- /.optionsLst -->
     </div>

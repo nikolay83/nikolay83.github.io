@@ -28,6 +28,18 @@
             "title": "CONGRATULATION",
             "type": "success",
             "msgText": "You successfully shared your payment story to social media!"
+        },        
+        "id008": {
+            "id": "008",
+            "title": "CONGRATULATION",
+            "type": "success",
+            "msgText": "You successfully emailed your payment story!"
+        },
+        "id009": {
+            "id": "009",
+            "title": "ERROR #006",
+            "type": "alert",
+            "msgText": "We are failed to send the gift card to your friend. Please try it later, or you can contact our support to confirm about this. Thank you!"
         }
     }
 }

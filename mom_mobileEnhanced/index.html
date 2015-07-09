@@ -14,7 +14,8 @@
 <body data-ng-class="{'menu-opened': global.menuOpened, 'headless': global.headless }" data-ng-swipe-right="global.menuOpened = false">
     <!-- page header -->
     <header data-ng-class="{'display-header': !global.headless}">
-        <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}">BACK</a>
+        <a href="javascript:;" class="back" data-ng-show="!!global.back" data-ng-href="#/{{global.back}}" data-ng-if="global.back !== 'back'">BACK</a>
+        <a href="javascript:;" data-ng-if="global.back === 'back'" class="back" data-ng-show="!!global.back" data-ng-click="goto('back');">BACK</a>
 
         <a href="javascript:;" class="back" data-ng-show="!!global.cancelLink" data-ng-href="#/{{global.cancelLink}}">CANCEL</a>
 
@@ -28,27 +29,27 @@
                 <!-- /.lbl -->
                 <ul class="shareOpts">
                     <li>
-                        <a class="fb"></a>
+                        <a class="fb" data-ng-click="shareOn(true)"></a>
                     </li>
                     <li>
-                        <a class="tw"></a>
+                        <a class="tw" data-ng-click="shareOn()"></a>
                     </li>
                     <li>
-                        <a class="gp"></a>
+                        <a class="gp" data-ng-click="shareOn()"></a>
                     </li>
                     <li>
-                        <a class="in"></a>
+                        <a class="in" data-ng-click="shareOn()"></a>
                     </li>
                 </ul>
             </div>
             <!-- /.shareRw -->
             <div class="link">
-                <h6>Link :</h6>
+                <h6>Email :</h6>
                 <div class="rw">
-                    <input type="text" name="link" class="textCtrl" data-ng-model="global.sharelink" />
+                    <input type="email" name="link" class="textCtrl" data-ng-model="global.email" />
                 </div>
                 <div class="actn">
-                    <a class="btn btn-submit fluid">Refer to friend</a>
+                    <a class="btn btn-submit fluid" data-ng-click="sendToFriend();">Send to friend</a>
                 </div>
             </div>
             <span class="arrow"></span>
@@ -61,7 +62,7 @@
     <aside class="menu" data-ng-include="'partials/menu.html'" data-ng-controller="menu"></aside>
     <!-- end main menu -->
 
-    <div class="menu-shadow"></div>
+    <div class="menu-shadow" data-ng-click="global.menuOpened = !global.menuOpened"></div>
 
     <!-- main content-->
     <div class="main-content" data-ng-swipe-left="openMenu()" data-ng-view></div>
