@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="mycartWrap">
+        <section class="businessBlock sticky">
+            <figure class="busLogoWrap">
+                <img src="i/px.png" class="thumb" data-ng-src="{{mycart.logo}}" alt="" />
+            </figure>
+            <div class="infoWrap" data-ngc-tapstate="tapstate" data-ng-click="toggleState(business);">
+                <div class="info">
+                    <h3 class="name">{{mycart.name}}</h3>
+                    <div class="meta">Activation: {{mycart.activation}}</div>
+                    <!-- /.meta -->
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="more normal">
+                <div class="off">
+                    <div class="per"><span class="val">{{mycart.offer.discount}}% </span><sup>off</sup></div>
+                    <!-- /.per -->
+                    <div class="expiry"><span data-ng-if="!mycart.offer.expiration || mycart.offer.expiration===null">No expiration date</span><span data-ng-if="mycart.offer.expiration && mycart.offer.expiration!==null">{{mycart.offer.expiration}}</span></div>
+                </div>
+                <!-- /.off -->
+                <div class="remain gaugeWrap">
+                    <div data-ng-if="mycart.offer.remainPercentage" data-ngc-gauge="ngc-gauge" class="gaugeEl" data-options="mycart.offer.remainPercentage"></div>
+                    <div class="gauge-label alt">${{mycart.offer.remain}}</div>
+                    <div class="gauge-caption">remain</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        <!-- /.businessBlock -->
+        <form class="frmCart">
+            <div class="rw error" data-ng-show="isError">Invalid Total value</div>
+            <div class="rw">
+                <div class="lbl">Available </div>
+                <div class="val">
+                    <input type="text" name="Available" data-ng-model="mycart.cart.available" class="textCtrl" />
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Discount</div>
+                <div class="val">
+                    <input type="text" name="Discount" data-ng-model="mycart.cart.discount" class="textCtrl" />
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Total Value ($)</div>
+                <div class="val">
+                    <input type="text" data-numbers-only="numbers-only" data-ng-class="{'error':isError}" data-ng-change="validate();" name="Total" data-ng-model="mycart.cart.total" class="textCtrl alt" />
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Price ($)</div>
+                <div class="val">
+                    <input type="text" name="Price" data-ng-model="mycart.cart.price" class="textCtrl" />
+                </div>
+            </div>
+            <!-- /.rw -->
+        </form>
+        <!-- /.frmCart -->
+        <div class="actn">
+            <button class="btn btn-success" data-ng-class="{'disabled':isError}" data-ng-click="paynow()">Pay Now</button>
+        </div>
+        <!-- /.actn -->
+    </div>
+    <!-- /.mycartWrap -->
+</div>
