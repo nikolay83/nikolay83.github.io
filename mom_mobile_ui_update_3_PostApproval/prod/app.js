@@ -433,17 +433,26 @@ appControllers.controller('myCartCtrl',
         //price
         $scope.$watch('mycart.cart.total', function() {
             if ($scope.mycart.cart) {
-                $scope.mycart.cart.price = (parseFloat($scope.mycart.cart.total) * parseFloat($scope.mycart.cart.discount) * 0.01).toFixed(2) || 0.00;
+                $scope.mycart.cart.price = (parseFloat($scope.mycart.cart.total) * (1 - (parseFloat($scope.mycart.cart.discount)) * 0.01)).toFixed(2);
+                $scope.mycart.cart.price = ($scope.mycart.cart.price!=="NaN")?$scope.mycart.cart.price: 0.00;
             }
         })
 
-        //pay now
+        //validate
+        $scope.isError = false;
         $scope.validate = function() {
-            $scope.isValid = true;
-            if (!$scope.mycart.cart.total || $scope.mycart.cart.total > $scope.mycart.cart.available) {
-                $scope.isValid = false;
+            $scope.isError = false;
+            if (!$scope.mycart.cart.total || parseFloat($scope.mycart.cart.total) > parseFloat($scope.mycart.cart.available.replace('$',''))) {
+                $scope.isError = true;
             }
         };
+
+        //paynow 
+        $scope.paynow = function(){
+            if($scope.isValid){
+                $scope.goto('/payment');
+            }
+        }
     }
 );
 

@@ -2172,7 +2172,9 @@ span.icon-twitter {
 .businessBlock .busLogoWrap {
   float: left;
   height: 84px;
-  padding: 10px 10px 5px; }
+  padding: 10px 10px 5px;
+  width: 89px;
+  overflow: hidden; }
 
 .businessBlock .thumb {
   width: 64px;
@@ -2188,7 +2190,7 @@ span.icon-twitter {
 
 .businessBlock .info {
   height: 84px;
-  padding-right: 4px;
+  padding-right: 0;
   display: block;
   padding-top: 32px;
   width: auto; }
@@ -3162,7 +3164,7 @@ span.icon-twitter {
     .founderShareList .businessBlock .busLogoWrap {
       padding: 10px 10px 0px 15px; }
     .founderShareList .businessBlock .infoWrap {
-      margin-left: 89px; }
+      margin-left: 90px; }
   .founderShareList .more {
     background: transparent;
     border-radius: 0;

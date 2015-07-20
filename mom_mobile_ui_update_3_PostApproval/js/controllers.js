@@ -298,7 +298,7 @@ appControllers.controller('myCartCtrl',
         //price
         $scope.$watch('mycart.cart.total', function() {
             if ($scope.mycart.cart) {
-                $scope.mycart.cart.price = (parseFloat($scope.mycart.cart.total) * parseFloat($scope.mycart.cart.discount) * 0.01).toFixed(2);
+                $scope.mycart.cart.price = (parseFloat($scope.mycart.cart.total) * (1 - (parseFloat($scope.mycart.cart.discount)) * 0.01)).toFixed(2);
                 $scope.mycart.cart.price = ($scope.mycart.cart.price!=="NaN")?$scope.mycart.cart.price: 0.00;
             }
         })
