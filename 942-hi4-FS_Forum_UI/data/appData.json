@@ -1,0 +1,86 @@
+{
+    "appName": "Mediafly NC",
+    "intrestOpts": [{
+        "id":1,
+        "type": "Business"
+    }, {
+        "id":2,
+        "type": "Motivation"
+    }, {
+        "id":3,
+        "type": "Spiritual Growth"
+    }, {
+        "id":4,
+        "type": "Business"
+    }, {
+        "id":5,
+        "type": "Motivation",
+        "isSelected":true
+    }, {
+        "id":6,
+        "type": "Spiritual Growth"
+    }, {
+        "id":7,
+        "type": "Business"
+    }, {
+        "id":8,
+        "type": "Motivation"
+    }, {
+        "id":9,
+        "type": "Spiritual Growth"
+    }, {
+        "id":10,
+        "type": "Business"
+    }, {
+        "id":21,
+        "type": "Motivation"
+    }, {
+        "id":22,
+        "type": "Spiritual Growth"
+    }, {
+        "id":23,
+        "type": "Business"
+    }, {
+        "id":24,
+        "type": "Motivation"
+    }, {
+        "id":25,
+        "type": "Spiritual Growth"
+    }, {
+        "id":26,
+        "type": "Business"
+    }, {
+        "id":27,
+        "type": "Motivation"
+    }, {
+        "id":28,
+        "type": "Spiritual Growth"
+    },{
+        "id":29,
+        "type": "Business"
+    }, {
+        "id":30,
+        "type": "Motivation"
+    }, {
+        "id":31,
+        "type": "Motivation"
+    }, {
+        "id":32,
+        "type": "Spiritual Growth"
+    }, {
+        "id":33,
+        "type": "Business"
+    }, {
+        "id":34,
+        "type": "Motivation"
+    }, {
+        "id":35,
+        "type": "Spiritual Growth"
+    }, {
+        "id":36,
+        "type": "Business"
+    }, {
+        "id":37,
+        "type": "Motivation"
+    }]
+}

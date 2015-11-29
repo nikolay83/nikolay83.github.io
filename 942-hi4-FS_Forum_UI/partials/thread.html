@@ -1,0 +1,153 @@
+<!-- content -->
+<div class="containerWithAside">
+    <div class="forumSection">
+        <header class="fsh">
+            <a class="btnCreate">Post New Thread</a>
+        </header>
+        <!-- /.fsh -->
+        <div class="tableSn">
+            <div class="searchRw">
+                <div class="lt pull-left">
+                    <form class="searchTxt">
+                        <input type="search" class="searchForum" placeholder="Thread's Keyword" ng-model="searchTable" />
+                    </form>
+                </div>
+                <nav class="rt paginator pull-right">
+                    <ul>
+                        <li class="perPage">
+                            <div data-dropdown-select="perpageOpts" data-dropdown-model="perpageVal" data-dropdown-item-label="text">
+                            </div>
+                        </li>
+                        <li>
+                            <a class="first navLnk" ng-click="gotoPage('first')">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="prev navLnk" ng-click="gotoPage('prev')">
+                            </a>
+                        </li>
+                        <li ng-repeat="navLnk in activeForum.pageLinks | limitTo:activeForum.limitTo">
+                            <a class="lnk navLnk" ng-class="{'active':activeForum.index===navLnk.index}" ng-click="gotoPage(navLnk.index)">{{navLnk.label}}</a>
+                        </li>
+                        <li ng-if="activeForum.limitTo!==1000">
+                            <a class="dots navLnk" ng-click="noLimit()">...</a>
+                        </li>
+                        <li ng-if="activeForum.limitTo!==1000">
+                            <a class="lnk navLnk" ng-class="{'active':activeForum.index===activeForum.pageCount-1}" ng-click="gotoPage('last')">{{activeForum.pageCount}}</a>
+                        </li>
+                        <li>
+                            <a class="next navLnk" ng-click="gotoPage('next')"></a>
+                        </li>
+                        <li>
+                            <a class="last navLnk" ng-click="gotoPage('last')"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+                <!-- /.clear -->
+            </div>
+            <!-- /.searchRw -->
+            <div class="tableWrap">
+                <table class="forumTable">
+                    <thead>
+                        <tr>
+                            <th class="colThreadSn">Threads</th>
+                            <th class="colView">Replies</th>
+                            <th class="colView">Views</th>
+                            <th class="colLastPost">Last Post</th>
+                            <th>Last Member Posted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="post in forumData.forums | slice: activeForum.index*perpageVal.value:activeForum.index*perpageVal.value + perpageVal.value | filter:searchTable">
+                            <td class="colThreadSn"><a ng-class="{'new':post.isNew}" ng-href="#/Details:{{post.name}}">{{post.name}}</a></td>
+                            <td class="colView">{{post.replies}}</td>
+                            <td class="colView">{{post.views}}</td>
+                            <td class="colLastPost">{{post.postedDate}}</td>
+                            <td>{{post.lastMemberPosted}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.tabelWrap -->
+            <div class="searchRw noteRw">
+                <div class="lt pull-left">
+                    A forum with a bold title indicates it either has a new thread or has a thread with new postings.
+                    <br/>
+                    <a ng-click="markRead()">(Mark all as read)</a>
+                </div>
+                <nav class="rt paginator pull-right">
+                    <ul>
+                        <li class="perPage">
+                            <div data-dropdown-select="perpageOpts" data-dropdown-model="perpageVal" data-dropdown-item-label="text">
+                            </div>
+                        </li>
+                        <li>
+                            <a class="first navLnk" ng-click="gotoPage('first')">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="prev navLnk" ng-click="gotoPage('prev')">
+                            </a>
+                        </li>
+                        <li ng-repeat="navLnk in activeForum.pageLinks | limitTo:activeForum.limitTo">
+                            <a class="lnk navLnk" ng-class="{'active':activeForum.index===navLnk.index}" ng-click="gotoPage(navLnk.index)">{{navLnk.label}}</a>
+                        </li>
+                        <li ng-if="activeForum.limitTo!==1000">
+                            <a class="dots navLnk" ng-click="noLimit()">...</a>
+                        </li>
+                        <li ng-if="activeForum.limitTo!==1000">
+                            <a class="lnk navLnk" ng-class="{'active':activeForum.index===activeForum.pageCount-1}" ng-click="gotoPage('last')">{{activeForum.pageCount}}</a>
+                        </li>
+                        <li>
+                            <a class="next navLnk" ng-click="gotoPage('next')"></a>
+                        </li>
+                        <li>
+                            <a class="last navLnk" ng-click="gotoPage('last')"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+                <!-- /.clear -->
+            </div>
+            <!-- /.searchRw -->
+        </div>
+        <!-- /.tableWrap -->
+    </div>
+    <!-- /.forumSection -->
+    <div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+</div>
+<!-- end content -->
+<div class="modalWrap" ng-if="user.firstVisit">
+    <div class="modal welcomeModal">
+        <div class="bgHeader"></div>
+        <header class="modalHead">
+            <div class="ballons"></div>
+        </header>
+        <span class="thumb"></span>
+        <div class="content">
+            <h2 class="title">Yeay, Welcome to our Forums!</h2>
+            <div class="txt">We’ve launched a new forums and this is your first time visiting it. To make it easy for our system in knowing you, we suggest you to make a unique nickname for your account. We’ve put a nickname recommendation in this textbox below. If you accept it, just hit the Submit Button below, or you can type another nickname on it. FYI, You cannot change your nickname once you already submitted it from this form. So be wise on it!</div>
+            <!-- /.txt -->
+        </div>
+        <!-- /.content -->
+        <div class="frm" ng-class="{'error':  nicknameStatus!==true}">
+            <div class="rw tx">
+                <input type="text" ng-keyup="validateName($event);" name="nickname" ng-model="local.nickname" class="txtNickname" />
+                <a class="status"></a>
+                <a class="status reset"></a>
+            </div>
+            <div class="rw">
+                <div class="msg">This nickname is <span class="err" ng-if="nicknameStatus===false">not</span> available</div>
+                <div class="actn">
+                    <button type="submit" class="btnSubmit" ng-click="submitNick(local.nickname);">Submit Nickname</button>
+                </div>
+            </div>
+            <!-- /.rw -->
+        </div>
+        <!-- /.frm -->
+        <div class="bgFooter"></div>
+    </div>
+    <!-- /.modal welcomeModal -->
+</div>
+<!-- /.modalWrap -->

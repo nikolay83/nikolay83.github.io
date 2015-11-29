@@ -1,0 +1,42 @@
+{
+	"sections": [
+		{
+			"header": "Sections",
+			"property": "name"
+		},
+		{
+			"header": "Threads",
+			"property": "threadCount"
+		},
+		{
+			"header": "Last Post",
+			"property": "lastPostDate"
+		},
+		{
+			"header": "Last Member Posted",
+			"property": "lastPostAuthor"
+		}
+	],
+	"threads": [
+		{
+			"header": "Threads",
+			"property": "name"
+		},
+		{
+			"header": "Replies",
+			"property": "replyCount"
+		},
+		{
+			"header": "Views",
+			"property": "viewCount"
+		},
+		{
+			"header": "Last Post",
+			"property": "lastPostDate"
+		},
+		{
+			"header": "Last Member Posted",
+			"property": "lastPostAuthor"
+		}
+	]
+}

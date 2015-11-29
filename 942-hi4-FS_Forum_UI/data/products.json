@@ -1,0 +1,80 @@
+{
+
+    "featuredProducts": [{
+        "id": 100,
+        "name": "Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 102,
+        "name": "2 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 103,
+        "name": "3 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 104,
+        "name": "4 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 105,
+        "name": "5 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 106,
+        "name": "6 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }],
+
+    "featuredAuthors": [{
+        "id": 100,
+        "name": "Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 102,
+        "name": "2 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 103,
+        "name": "3 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 104,
+        "name": "4 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 105,
+        "name": "5 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 106,
+        "name": "6 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }],
+
+    "categories": [{
+        "id": 100,
+        "name": "Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 102,
+        "name": "2 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 103,
+        "name": "3 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 104,
+        "name": "4 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 105,
+        "name": "5 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }, {
+        "id": 106,
+        "name": "6 Creating Irresistible Indentical Lorem ipsum dolor sit amet",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+    }]
+}

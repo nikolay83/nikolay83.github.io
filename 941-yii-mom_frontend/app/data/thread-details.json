@@ -1,0 +1,46 @@
+[
+	{
+		"id":1,
+		"title":"Redeem My Founder$hare",
+		"user": {
+			"name":	"chris",
+			"type": "Business Owner",
+			"avatar": "assets/i/avatar.png",
+			"sold": 5,
+			"redeemed": 100,
+			"posts" : 17
+		},
+		"time" : "Teu, Nov 15 2015, 07:45 PM",
+		"message" : "How can I redeem my founder$hare? Please somebody tell me. Thanks"
+	},
+	{
+		"id":2,
+		"title":"Re:Redeem My Founder$hare",
+		"user": {
+			"name":	"tammy",
+			"type": "Admin",
+			"avatar": "assets/i/avatar.png",
+			"sold": 5,
+			"redeemed": 100,
+			"posts" : 1923
+		},
+		"time" : "Yesterday, 07:45 PM",
+		"message" : "Hi, riopurba! It’s easy. You only need to lorem ipsum dolor is amet.",
+		"response" : "chris"
+	},
+	{
+		"id":3,
+		"title":"Re:Redeem My Founder$hare",
+		"user": {
+			"name":	"riopurba",
+			"type": "Champion",
+			"avatar": "assets/i/avatar.png",
+			"sold": 500,
+			"redeemed": 15,
+			"posts" : 23
+		},
+		"time" : "Today, 07:45 PM",
+		"message" : "Okay, I got it. Thank you so much!",
+		"response" : "tammy"
+	}
+]

@@ -1,0 +1,77 @@
+<!-- content -->
+<div class="containerWithAside">
+	<div class="forum-list">
+		<div class="pagination-bar clearfix">
+			<div class="search-panel">
+				<input type="text" data-ng-model="searchThread" placeholder="Post’s Keyword">
+				<a href="javascript:" class="icon icon-search"></a>
+			</div>
+			<div class="pagination-panel">
+				<div class="pull-left dark" dropdown-select="pageOption" dropdown-model="vm.pageSelected" dropdown-item-label="text"></div>
+			</div>
+		</div>
+		<!-- end .pagination-bar -->
+		<div class="thread-list">
+			<div class="thread-section" data-ng-repeat="item in vm.threadDetailsList | limitTo:vm.pageSelected.value">
+				<header class="thread-header clearfix">
+					<div class="thread-header-left float-left"><span data-ng-bind="item.time"></span><span class="sep">|</span><span data-ng-bind="item.title"></span></div>
+					<div class="thread-header-right float-right">
+						<div class="float-left"><span data-ng-if="!!item.response"><span>response to post by </span><b data-ng-bind="item.response"></b><span class="sep">|</span></span>#<span data-ng-bind="item.id"></span></div>
+						<a href="javascript:" class="icon-report float-left" tooltip-placement="top" tooltip-append-to-body="true" tooltip-class="tooltips" uib-tooltip="Report This Post!"></a>
+					</div>
+				</header>
+				<div class="thread-body">
+					<div class="inner">
+						<div class="user-column">
+							<div class="avatar-wrapper"><img src="" data-ng-src="{{item.user.avatar}}" alt=""></div>
+							<p><a href="javascript:" class="link-user" popover-placement="bottom" uib-popover-template="'userDetailTemplate.html'" popover-trigger="mouseenter" popover-append-to-body="true"><b data-ng-bind="item.user.name"></b></a></p>
+							<p><a href="javascript:" class="link-post">{{item.user.posts}} posts</a></p>
+						</div><!-- end .user-column -->
+						<div class="thread-detail">
+							<div class="thread-detail-content" data-ng-bind="item.message"></div>
+							<div class="thread-detail-control" data-ng-if="vm.type==='admin'||vm.type==='member'">
+								<a href="#/Forum/Thread/Details/QuoteReplay">Quote</a><span class="sep">|</span><a href="#/Forum/Thread/Details/Replay">Reply</a><span data-ng-if="vm.type==='admin'"><span class="sep">|</span><a href="javascript:">Update</a><span class="sep">|</span><a href="javascript:">Delete</a></span>
+							</div>
+						</div><!-- end .thread-detail -->
+					</div><!-- end .inner -->
+				</div><!-- end .thread-body -->
+			</div><!-- end .thread-section -->
+		</div><!-- end.thread-list -->
+		<div class="pagination-bar clearfix">
+			<div class="thread-link">
+				<a href="javascript:">Previous Thread</a><span class="sep">|</span><a href="javascript:">Next Thread</a>
+			</div>
+			<div class="pagination-panel">
+				<div class="pull-left dark" dropdown-select="pageOption" dropdown-model="vm.pageSelected" dropdown-item-label="text"></div>
+			</div>
+		</div>
+		<!-- end .pagination-bar -->
+	</div>
+	<!-- end .forum-list -->
+	<div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+
+	<script type="text/ng-template" id="userDetailTemplate.html">
+		<div class="user-popup">
+			<div class="user-main-info clearfix">
+				<div class="avatar-wrapper"><img src="" data-ng-src="{{item.user.avatar}}" alt=""></div>
+				<!-- end .avatar-wrapper -->
+				<div class="user-info">
+					<p><a href="javascript:" class="link-user"><b data-ng-bind="item.user.name"></b></a></p>
+					<p><a href="javascript:" class="link-post">{{item.user.posts}} posts</a></p>
+					<p>{{item.user.type}}</p>
+					<a href="javascript:" class="btn-green">Send Gift</a>
+				</div><!-- end .user-info -->
+			</div>
+			<div class="total-amount clearfix">
+				<div class="total-column">
+					<p>total amount<br>Sold</p>
+					<p class="number">${{item.user.sold}}</p>
+				</div>
+				<div class="total-column">
+					<p>Total amount<br>redeemed</p>
+					<p class="number">${{item.user.redeemed}}</p>
+				</div>
+			</div>
+		</div>
+	</script>
+</div>

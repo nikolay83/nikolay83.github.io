@@ -1,0 +1,22 @@
+<!-- content -->
+<form class="containerWithAside post-editor">
+	<fieldset>
+		<label for="postSubjectField" class="post-editor-label">Subject :</label>
+		<input type="text" id="postSubjectField" class="post-editor-text-field" data-ng-model="postTitle"/>
+	</fieldset>
+	
+	<fieldset>
+		<div class="post-editor-label">Your Post :</div>
+		<summernote data-height="170" ng-model="postBody"></summernote>
+		<button type="submit" class="btn-forum-action" data-ng-click="submit()">Submit My Post</button>
+		<button type="button" class="btn-forum-action" data-ng-click="cancel()">Cancel</button>
+	</fieldset>	
+	
+	<div data-ng-if="!!originalPost" class="post-editor-original-post">
+		<div class="post-editor-label">Original Post</div>
+		<div data-ng-init="post = originalPost" data-ng-include="'Forum/partials/post.html'"></div>
+	</div>
+	
+	<div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+</form>
+<!-- end content -->

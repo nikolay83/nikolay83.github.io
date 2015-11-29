@@ -1,0 +1,62 @@
+<!-- content -->
+<div class="containerWithAside">
+	<div class="forum-control">
+		<a href="javascript:" class="btn-green">Post New Thread</a>
+	</div>
+	<!-- end .forum-control -->
+	<div class="forum-list">
+		<div class="pagination-bar clearfix">
+			<div class="search-panel">
+				<input type="text" data-ng-model="searchThread" placeholder="Thread's Keyword">
+				<a href="javascript:" class="icon icon-search"></a>
+			</div>
+			<div class="pagination-panel">
+				<div class="pull-left dark" dropdown-select="pageOption" dropdown-model="vm.pageSelected" dropdown-item-label="text"></div>
+				<uib-pagination class="pagination-custom pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+								boundary-links="true" max-size="maxSize" rotate="false" items-per-page="vm.pageSelected.value" total-items="vm.threadList.length" data-ng-model="vm.currentPage"></uib-pagination>
+			</div>
+		</div>
+		<table class="forum-table">
+			<colgroup>
+				<col class="column-1-1">
+				<col class="column-1-3">
+				<col class="column-1-5">
+				<col>
+				<col class="column-1-4">
+			</colgroup>
+			<thead>
+			<tr>
+				<th class="columns-1-1">Threads</th>
+				<th>Replies</th>
+				<th>Views</th>
+				<th>Last Post</th>
+				<th>Last Member Posted</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr data-ng-repeat="thread in vm.threadList | limitPart: vm.pageSelected.value : vm.pageSelected.value*(vm.currentPage-1)">
+				<td class="columns-1-1"><a href="javascript:" data-ng-href="#/Forum/Thread/Details" data-ng-class="{'bold':thread.new}" title="{{thread.thread}}" data-ng-bind="thread.thread|cutString:52:'...'"></a></td>
+				<td data-ng-bind="thread.replies"></td>
+				<td data-ng-bind="thread.views"></td>
+				<td data-ng-bind="thread.lastPost"></td>
+				<td data-ng-bind="thread.lastMemberPost"></td>
+			</tr>
+			</tbody>
+		</table>
+		<div class="pagination-bar clearfix">
+			<div class="make-all-panel">
+				<p>A forum with a bold title indicates it either has
+					a new thread or has a thread with new postings.
+				</p>
+				<p><a href="javascript:" data-ng-click="vm.readAll()">(Mark all as read)</a></p>
+			</div>
+			<div class="pagination-panel">
+				<div class="pull-left dark" dropdown-select="pageOption" dropdown-model="vm.pageSelected" dropdown-item-label="text"></div>
+				<uib-pagination class="pagination-custom pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+								boundary-links="true" max-size="maxSize" rotate="false" items-per-page="vm.pageSelected.value" total-items="vm.threadList.length" data-ng-model="vm.currentPage"></uib-pagination>
+			</div>
+		</div>
+	</div>
+	<!-- end .forum-list -->
+	<div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+</div>

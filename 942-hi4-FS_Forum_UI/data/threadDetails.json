@@ -1,0 +1,40 @@
+{
+    "threadDeatils": [
+
+        {
+            "date": "Tue, Nov 15 2015, 07:45 PM",
+            "title": "Redeem My Founder$hare",
+            "postedBy": {
+                "nickname": "chris",
+                "thumb":"i/userThumb.png",
+                "postCount": 17,
+                "userRole": "Business Owner"
+            },
+            "postContent": "How can I redeem my founder$hare? Please somebody tell me. Thanks"
+        }, {
+            "date": "Yesterday, 07:45 PM ",
+            "title": "Re:Redeem My Founder$hare",
+            "postedBy": {
+                "nickname": "tammy",
+                "thumb":"i/userThumb.png",
+                "postCount": 1923,
+                "userRole": "Admin"
+            },
+            "isResponse":true,
+            "responseBy": "riopurba",
+            "postContent": "Hi, riopurba! It’s easy. You only need to lorem ipsum dolor is "
+        }, {
+            "date": "Today, 07:45 PM",
+            "title": "Re:Redeem My Founder$hare",
+            "postedBy": {
+                "nickname": "riopurba",
+                "thumb":"i/userThumb.png",
+                "postCount": 7,
+                "userRole": "Champion"
+            },
+            "isResponse":true,
+            "responseBy": "riopurba",
+            "postContent": "Okay, I got it. Thank you so much!"
+        }
+    ]
+}

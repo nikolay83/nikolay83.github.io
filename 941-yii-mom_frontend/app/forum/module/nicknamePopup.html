@@ -1,0 +1,37 @@
+<div ng-controller="nicknamePopupCtrl">
+    <div class="details-card" data-ng-if="displayNickname">
+        <div class="back"></div>
+        <dl>
+            <dt class="font-size48"></dt>
+            <dd>
+                <div class="nicename-popup">
+                    <div class="user-wrapper"><img src="./assets/i/avatar-nickname.png" alt=""></div>
+                    <div class="nicename-popup-body">
+                        <h3>Yeay, Welcome to our Forums!</h3>
+                        <p>
+                            We’ve launched a new forums and this is your first time visiting it.<br>
+                            To make it easy for our system in knowing you, we suggest you<br>
+                            to make a unique nickname for your account.<br>
+                            We’ve put a nickname recommendation in this textbox below.<br>
+                            If you accept it, just hit the Submit Button below, or you can type<br>
+                            another nickname on it. FYI, You cannot change your nickname<br>
+                            once you already submitted it from this form. So be wise on it!
+                        </p>
+                        <div class="form-nickname">
+                            <div class="form-nickname-valid" data-ng-class="{true:'valid', false:'invalid'}[nicknameChecked]">
+                                <div class="nickname-group">
+                                    <input type="text" class="form-control-nickname form-control" data-ng-blur="checkValid(vm.nickname)" data-ng-model="vm.nickname" >
+                                </div>
+                                <p data-ng-bind="{true:'This nickname is available', false:'This nickname is not available'}[nicknameChecked]"></p>
+                            </div>
+                            <a href="javascript:" class="btn-green" data-ng-click="submitNickName(vm.nickname)">Submit Nickname</a>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+

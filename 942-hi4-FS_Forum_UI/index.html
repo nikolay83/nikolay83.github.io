@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" id="ng-app">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FounderShare" />
+    <meta property="og:description" content="FounderShare supports local business with founder-friendly gift cards that are automatically stored in your smart phone. Check it out!" />
+    <meta property="og:image" content="https://foundershare.com/i/social-logo.png" />
+    <title> FounderShare </title>
+    <link rel="shortcut icon" href="i/favicon.ico" type="image/x-icon" />
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet">
+</head>
+
+<body data-ng-controller="mainCtrl">
+    <div class="wrapper">
+        <!-- header-->
+        <header data-ng-include="'partials/module/header.html'"></header>
+        <!-- end header-->
+        <!-- .main-container -->
+        <div class="main-container" data-ng-class="{'has-aside': header.hasAside}">
+            <!-- breadcrumbs -->
+            <div class="breadcrumbs" data-ng-class="{'alt':crumble.compaq===true}" data-ng-if="showBreadcrumbs && crumble.trail.length > 1">
+                <ol>
+                    <li data-ng-repeat="bc in crumble.trail">
+                        <a data-ng-href="#{{bc.path}}" data-ng-if="!$last">{{bc.label}}</a>
+                        <p data-ng-if="$last">{{bc.label}}</p>
+                    </li>
+                </ol>
+            </div>
+            <!-- end breadcrumbs -->
+            <div data-ng-view data-autoscroll="true"></div>
+        </div>
+        <!-- end .main-container -->
+        <!-- footer -->
+        <footer data-ng-include="'partials/module/footer.html'"></footer>
+        <!-- end footer -->
+    </div>
+    <!-- /.wrapper -->
+    <!-- AngularJS, jQuery & other necessary js -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-touch.min.js"></script>
+    <script src="js/lib/angular-local-storage.min.js"></script>
+    <script src="js/lib/angular-sanitize.min.js"></script>
+    <script src="js/lib/angular-dropdowns.js"></script>   
+    <script src="js/lib/ckeditor/ckeditor.js"></script>  
+    <script src="js/lib/ng-ckeditor.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/controllers/forumCtrl.js"></script>
+    <script src="js/controllers/threadCtrl.js"></script>
+    <script src="js/controllers/howItWorksCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    
+    <script src="js/directive.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

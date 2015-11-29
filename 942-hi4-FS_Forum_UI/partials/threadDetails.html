@@ -1,0 +1,133 @@
+<!-- content -->
+<div class="containerWithAside">
+    <div class="forumSection">
+        <div class="tableSn">
+            <div class="searchRw" ng-if="!replying">
+                <div class="lt pull-left">
+                    <form class="searchTxt">
+                        <input type="search" class="searchForum" placeholder="Posts's Keyword" ng-model="searchPosts" />
+                    </form>
+                </div>
+                <nav class="rt paginator pull-right">
+                    <ul>
+                        <li class="perPage">
+                            <div data-dropdown-select="perpageOpts" data-dropdown-model="perpageVal" data-dropdown-item-label="text">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+                <!-- /.clear -->
+            </div>
+            <!-- /.searchRw -->
+            <div ng-if="replying" class="postedThreads replyThread">
+                <h4 class="snTitle">Subject :</h4>
+                <div class="threadTitleIpWrap">
+                    <input type="text" ng-model="newThread.title" class="threadTitleIp" />
+                </div>
+                <h4 class="snTitle">Your Post :</h4>
+                <div class="EditorSn">
+                    <div class="ckWrap">
+                        <textarea data-ckeditor="editorOptions" ng-model="newThread.postContent"></textarea>
+                    </div>
+                    <!-- /.ckWrap -->
+                    <div class="actns">
+                        <a class="btnCancel" ng-click="cancelReplyPost()">Cancel</a>
+                        <a class="btnSubmit">Submit My Post</a>
+                    </div>
+                    <!-- /.actns -->
+                </div>
+                <!-- /.EditorSn -->
+                <h4 class="snTitle">Original Post :</h4>
+                <div class="threadBox">
+                    <header class="head">
+                        <div class="lt pull-left">
+                            <span>{{currentThreadPost.date}}</span> | <span>{{currentThreadPost.title}}</span>
+                        </div>
+                        <div class="rt pull-right">
+                            <span ng-if="currentThreadPost.isResponse">response to post by <strong>{{riopurba}}</strong> |</span> <span>#{{$index+1}}</span>
+                            <a class="alert" title="Report This Post">!</a>
+                        </div>
+                        <!-- /.rt -->
+                        <div class="clear"></div>
+                        <!-- /.clear -->
+                    </header>
+                    <!-- /.head -->
+                    <div class="postCon">
+                        <div class="userDetails">
+                            <figure class="thumb">
+                                <img src="i/userThumb.png" alt="" />
+                            </figure>
+                            <div><a class="name">{{currentThreadPost.postedBy.nickname}}</a></div>
+                            <div><a class="posts">{{currentThreadPost.postedBy.postCount}} posts</a></div>
+                        </div>
+                        <!-- /.userDetails -->
+                        <div class="pDetais">
+                            <div class="pcn alt">{{currentThreadPost.postContent}}</div>
+                        </div>
+                        <!-- /.pDetais -->
+                    </div>
+                    <!-- /.postCon -->
+                </div>
+                <!-- /.threadBox -->
+            </div>
+            <!-- /.replyThread -->
+            <div class="postedThreads" ng-if="!replying">
+                <div class="threadBox" ng-repeat="post in data.threadDeatils | filter:searchPosts">
+                    <header class="head">
+                        <div class="lt pull-left">
+                            <span>{{post.date}}</span> | <span>{{post.title}}</span>
+                        </div>
+                        <div class="rt pull-right">
+                            <span ng-if="post.isResponse">response to post by <strong>{{riopurba}}</strong> |</span> <span>#{{$index+1}}</span>
+                            <a class="alert" title="Report This Post">!</a>
+                        </div>
+                        <!-- /.rt -->
+                        <div class="clear"></div>
+                        <!-- /.clear -->
+                    </header>
+                    <!-- /.head -->
+                    <div class="postCon">
+                        <div class="userDetails">
+                            <figure class="thumb">
+                                <img src="i/userThumb.png" alt="" />
+                            </figure>
+                            <div><a class="name">{{post.postedBy.nickname}}</a></div>
+                            <div><a class="posts">{{post.postedBy.postCount}} posts</a></div>
+                        </div>
+                        <!-- /.userDetails -->
+                        <div class="pDetais">
+                            <div class="pcn">{{post.postContent}}</div>
+                            <div class="actions">
+                                <a ng-click="replyPost(post)">Quote</a> <span class="sep">|</span> <a ng-click="replyPost(post)">Reply</a> <span ng-if="user.userRole==='Admin'"><span class="sep">|</span> <a>Update</a> <span class="sep">|</span> <a>Delete</a></span>
+                            </div>
+                        </div>
+                        <!-- /.pDetais -->
+                    </div>
+                    <!-- /.postCon -->
+                </div>
+            </div>
+            <!-- /.tableSn -->
+        </div>
+        <!-- /.postedThread -->
+        <div class="searchRw noteRw">
+            <div class="lt pull-left">
+                <a>Previous Thread</a> <span class="sep">|</span> <a>Next Thread</a>
+            </div>
+            <nav class="rt paginator pull-right">
+                <ul>
+                    <li class="perPage">
+                        <div data-dropdown-select="perpageOpts" data-dropdown-model="perpageVal" data-dropdown-item-label="text">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+            <!-- /.clear -->
+        </div>
+        <!-- /.searchRw -->
+        <div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+    </div>
+    <!-- end content -->
+</div>
+<!-- /.forumSection -->
