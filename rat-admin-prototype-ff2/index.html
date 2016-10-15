@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" id="ng-app" data-ng-controller="Core as vmc">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title data-ng-bind-html="title">JOHN HANCOCK</title>
+
+  <style>
+  /* This helps the ng-show/ng-hide animations start at the right place. */
+  /* Since Angular has this but needs to load, this gives us the class early. */
+  
+  .ng-hide {
+    display: none !important;
+  }
+  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/datepicker.css" />
+  <link rel="stylesheet" href="css/multiple-select.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="{{pageClass}}" data-ng-class="{'sidebar-open':isSidebar}">
+  <div class="page" data-ui-view="default"></div>
+  <!-- /.page -->
+  
+  <!-- jQuery, angular & necessary JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <script src="js/libs/bootstrap-datepicker.js"></script>
+  <script src="js/libs/multiple-select.js"></script>
+  <script src="app/core/script.js"></script>
+
+  <!-- Reusable Blocks/Modules -->
+  <script src="app/blocks/utils.js"></script>
+  
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+  <script src="bower_components/angular-dragdrop/src/angular-dragdrop.js"></script>
+  <script src="bower_components/angular-file-upload/dist/angular-file-upload.js"></script>
+
+  <script src="app/app.module.js"></script>
+
+
+  <!-- core -->
+  <script src="app/core/core.module.js"></script>
+  <script src="app/core/config.js"></script>
+  <script src="app/core/dataservice.js"></script>
+  <script src="app/core/core.controller.js"></script>
+
+
+  <!-- login -->
+  <script src="app/login/login.module.js"></script>
+  <script src="app/login/login.route.js"></script>
+  <script src="app/login/login.controller.js"></script>
+
+  <!-- owner -->
+  <script src="app/owner/owner.module.js"></script>
+  <script src="app/owner/owner.route.js"></script>
+  <script src="app/owner/owner.controller.js"></script>
+
+  <!-- approver -->
+  <script src="app/approver/approver.module.js"></script>
+  <script src="app/approver/approver.route.js"></script>
+  <script src="app/approver/approver.controller.js"></script>
+
+  <!-- admin -->
+  <script src="app/admin/admin.module.js"></script>
+  <script src="app/admin/admin.route.js"></script>
+  <script src="app/admin/admin.controller.js"></script>
+  <script src="app/admin/mapper.controller.js"></script>
+
+
+</body>
+
+</html>
