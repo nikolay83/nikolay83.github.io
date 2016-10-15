@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "KPI's / SLA's",
+    "Id": 1
+  },
+  {
+    "Name": "Functional Area Processes",
+    "Id": 2
+  },
+  {
+    "Name": "Corporate & Divisional Training",
+    "Id": 3
+  },
+  {
+    "Name": "Business Continuity & Disaster Recovery",
+    "Id": 4
+  },
+  {
+    "Name": "Records Management",
+    "Id": 5
+  },
+  {
+    "Name": "Information Security",
+    "Id": 6
+  },
+  {
+    "Name": "Data Privacy & Protection",
+    "Id": 7
+  },
+  {
+    "Name": "Category8",
+    "Id": 8
+  },
+  {
+    "Name": "Category9",
+    "Id": 9
+  },
+  {
+    "Name": "Category10",
+    "Id": 10
+  }
+]

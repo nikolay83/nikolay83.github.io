@@ -1,0 +1,304 @@
+{
+  "BusinessUnit": null,
+  "Product": null,
+  "Department": null,
+  "DepartmentHead": null,
+  "FunctionalAreaOwner": null,
+  "FunctionalArea": null,
+  "FunctionalAreaDescription": null,
+  "FunctionPerformedSites": [
+    {
+      "Site": {
+        "Name": "Site8",
+        "Id": 8
+      },
+      "Percentage": {
+        "Value": 70.0,
+        "Name": "70%",
+        "Id": 8
+      },
+      "Id": 8
+    },
+    {
+      "Site": {
+        "Name": "Site9",
+        "Id": 9
+      },
+      "Percentage": {
+        "Value": 80.0,
+        "Name": "80%",
+        "Id": 9
+      },
+      "Id": 9
+    }
+  ],
+  "AssessmentType": null,
+  "AssessmentStatus": null,
+  "AssessmentDueDate": null,
+  "PriorFunctionChanges": [
+    {
+      "ChangeType": {
+        "Name": "ChangeType8",
+        "Id": 8
+      },
+      "ChangeTime": "02/10/2016 00:00:00",
+      "ChangeDescription": "ChangeDescription8",
+      "Id": 8
+    },
+    {
+      "ChangeType": {
+        "Name": "ChangeType9",
+        "Id": 9
+      },
+      "ChangeTime": "01/31/2016 00:00:00",
+      "ChangeDescription": "ChangeDescription9",
+      "Id": 9
+    }
+  ],
+  "FutureFunctionChanges": [
+    {
+      "ChangeType": {
+        "Name": "ChangeType2",
+        "Id": 2
+      },
+      "ChangeTime": "04/10/2016 00:00:00",
+      "ChangeDescription": "ChangeDescription2",
+      "Id": 2
+    },
+    {
+      "ChangeType": {
+        "Name": "ChangeType3",
+        "Id": 3
+      },
+      "ChangeTime": "03/31/2016 00:00:00",
+      "ChangeDescription": "ChangeDescription3",
+      "Id": 3
+    }
+  ],
+  "KPISLAAssessments": [
+    {
+      "Category": {
+        "Name": "KPI's / SLA's",
+        "Id": 1
+      },
+      "KPICategory": {
+        "KPIs": [
+          {
+            "Name": "KPISLA1",
+            "Id": 1
+          },
+          {
+            "Name": "KPISLA2",
+            "Id": 2
+          },
+          {
+            "Name": "KPISLA3",
+            "Id": 3
+          }
+        ],
+        "SLAs": [
+          {
+            "Name": "SLA1",
+            "Id": 1
+          },
+          {
+            "Name": "SLA2",
+            "Id": 2
+          },
+          {
+            "Name": "SLA3",
+            "Id": 3
+          },
+          {
+            "Name": "SLA4",
+            "Id": 4
+          }
+        ],
+        "Name": "KPICategory1",
+        "Id": 1
+      },
+      "KPI": {
+        "Name": "KPISLA8",
+        "Id": 8
+      },
+      "SelectedSLA": {
+        "Name": "SLA8",
+        "Id": 8
+      },
+      "AdditionalKPICategory": null,
+      "AdditionalKPI": "AdditionalKPI8",
+      "AdditionalSLA": "AdditionalSLA8",
+      "Id": 18
+    },
+    {
+      "Category": {
+        "Name": "KPI's / SLA's",
+        "Id": 1
+      },
+      "KPICategory": {
+        "KPIs": [
+          {
+            "Name": "KPISLA1",
+            "Id": 1
+          },
+          {
+            "Name": "KPISLA2",
+            "Id": 2
+          },
+          {
+            "Name": "KPISLA3",
+            "Id": 3
+          }
+        ],
+        "SLAs": [
+          {
+            "Name": "SLA1",
+            "Id": 1
+          },
+          {
+            "Name": "SLA2",
+            "Id": 2
+          },
+          {
+            "Name": "SLA3",
+            "Id": 3
+          },
+          {
+            "Name": "SLA4",
+            "Id": 4
+          }
+        ],
+        "Name": "KPICategory1",
+        "Id": 1
+      },
+      "KPI": null,
+      "SelectedSLA": null,
+      "AdditionalKPICategory": null,
+      "AdditionalKPI": null,
+      "AdditionalSLA": null,
+      "Id": 19
+    }
+  ],
+  "FunctionalAreaProcessAssessments": [
+    {
+      "CoreProcess": null,
+      "AdditionalCoreProcess": "AdditionalCoreProcess7",
+      "SubProcessRisk": null,
+      "AdditionalSubProcess": "AdditionalSubProcess7",
+      "AdditionalRisk": "AdditionalCoreRisk7",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence2",
+        "Id": 2
+      },
+      "OtherLikelihoodOfOccurrence": null,
+      "RiskImpacts": [],
+      "RiskExposure": {
+        "Name": "RiskExposure2",
+        "Id": 2
+      },
+      "ControlAssessments": [],
+      "Category": {
+        "Name": "Functional Area Processes",
+        "Id": 2
+      },
+      "Id": 17
+    }
+  ],
+  "ProcessRiskAssessments": [
+    {
+      "ProcessRisk": {
+        "Category": {
+          "Name": "Corporate & Divisional Training",
+          "Id": 3
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType8",
+            "Id": 8
+          }
+        ],
+        "Risk": "Risk8",
+        "Name": "ProcessRisk8",
+        "Id": 8
+      },
+      "AdditionalProcess": "AdditionalProcess8",
+      "AdditionalRisk": "AdditionalRisk8",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence2",
+        "Id": 2
+      },
+      "OtherLikelihoodOfOccurrence": null,
+      "RiskImpacts": [],
+      "RiskExposure": {
+        "Name": "RiskExposure2",
+        "Id": 2
+      },
+      "ControlAssessments": [],
+      "Category": {
+        "Name": "Business Continuity & Disaster Recovery",
+        "Id": 4
+      },
+      "Id": 8
+    },
+    {
+      "ProcessRisk": {
+        "Category": {
+          "Name": "Corporate & Divisional Training",
+          "Id": 3
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType9",
+            "Id": 9
+          }
+        ],
+        "Risk": "Risk9",
+        "Name": "ProcessRisk9",
+        "Id": 9
+      },
+      "AdditionalProcess": null,
+      "AdditionalRisk": null,
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence2",
+        "Id": 2
+      },
+      "OtherLikelihoodOfOccurrence": null,
+      "RiskImpacts": [],
+      "RiskExposure": {
+        "Name": "RiskExposure3",
+        "Id": 3
+      },
+      "ControlAssessments": [],
+      "Category": {
+        "Name": "Business Continuity & Disaster Recovery",
+        "Id": 4
+      },
+      "Id": 9
+    }
+  ],
+  "OverallRiskRatingCommentary": null,
+  "ApprovalStatus": 4,
+  "BUFunctionalApproverUsername": null,
+  "BUFunctionalApprover": null,
+  "BUFunctionalApproveTime": null,
+  "BURiskManagementApproverUsername": null,
+  "BURiskManagementApprover": null,
+  "BURiskManagementApproveTime": null,
+  "DivisionalRiskManagementApproverUsername": null,
+  "DivisionalRiskManagementApprover": null,
+  "DivisionalRiskManagementApproveTime": null,
+  "RejecterUsername": null,
+  "Rejecter": null,
+  "RejectTime": null,
+  "RejectionReason": null,
+  "RejectPhase": null,
+  "SubmitterUsername": null,
+  "Submitter": null,
+  "SubmitTime": null,
+  "Title": "Title2",
+  "CreatedBy": "CreatedBy3",
+  "CreatedTime": "03/31/2016 00:00:00",
+  "LastUpdatedBy": "LastUpdatedBy3",
+  "LastUpdatedTime": "03/30/2016 00:00:00",
+  "Id": 3
+}

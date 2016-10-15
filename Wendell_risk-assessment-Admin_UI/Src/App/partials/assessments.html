@@ -1,0 +1,148 @@
+<!-- BEGIN #main-content -->
+<div id="main-content" class="row" >
+    <div class="container" ng-if="type==config.ASSESSMENT_STATUS.DRAFT">
+        <h1 class="row title dr-title">Draft Assessments ({{draftCount}})</h1>
+        <div class="loading tc row " ng-show="isSearching"><img src="i/loading.gif" width="60" alt=""/></div>
+        <table class="normal-table row wrap-table table" ng-show="isSearched">
+            <thead>
+            <tr>
+                <th data-ng-click="sort_by('Title')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'Title','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <strong><span>Assessment Title</span></strong></th>
+                <th data-ng-click="sort_by('SubmitTime')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'SubmitTime','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th data-ng-click="sort_by('ApprovalStatus')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'ApprovalStatus','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Status</span></th>
+                <th><span>Approver Name</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: criteria.pageSize' pagination-id="owner-result"
+                current-page="criteria.pageNumber" total-items="searchResult.totalRecords">
+                <td><a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.approvalStatus | approvalStatus}}</td>
+                <td>{{item | approverName}}</td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="4" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="owner-result" ng-show="isSearched"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+    <div class="container" ng-if="type==config.ASSESSMENT_STATUS.AWAITING">
+        <h1 class="row title dr-title">Awaiting Approval Assessments ({{awaitingApprovalCount}})</h1>
+        <div class="loading tc row " ng-show="isSearching"><img src="i/loading.gif" width="60" alt=""/></div>
+        <table class="normal-table row wrap-table " ng-show="isSearched">
+            <thead>
+            <tr>
+                <th data-ng-click="sort_by('Title')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'Title','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <strong><span>Assessment Title</span></strong></th>
+                <th data-ng-click="sort_by('SubmitTime')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'SubmitTime','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th data-ng-click="sort_by('ApprovalStatus')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'ApprovalStatus','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Status</span></th>
+                <th><span>Approver Name</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: criteria.pageSize' pagination-id="awaiting-result"
+                current-page="criteria.pageNumber" total-items="searchResult.totalRecords">
+                <td><a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.approvalStatus | approvalStatus}}</td>
+                <td>{{item | approverName}}</td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="4" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="awaiting-result" ng-show="isSearched"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+    <div class="container" ng-if="type==config.ASSESSMENT_STATUS.APPROVED">
+        <h1 class="row title dr-title">Approved Assessments ({{approvedCount}})</h1>
+        <div class="loading tc row " ng-show="isSearching"><img src="i/loading.gif" width="60" alt=""/></div>
+        <table class="normal-table row wrap-table " ng-show="isSearched">
+            <thead>
+            <tr>
+                <th data-ng-click="sort_by('Title')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'Title','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <strong><span>Assessment Title</span></strong></th>
+                <th data-ng-click="sort_by('SubmitTime')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'SubmitTime','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th data-ng-click="sort_by('ApprovalStatus')"  class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'ApprovalStatus','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Status</span></th>
+                <th><span>Approver Name</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: criteria.pageSize' pagination-id="awaiting-result"
+                current-page="criteria.pageNumber" total-items="searchResult.totalRecords">
+                <td><a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.approvalStatus | approvalStatus}}</td>
+                <td>{{item | approverName}}</td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="4" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="awaiting-result" ng-show="isSearched"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+    <div class="container" ng-if="type==config.ASSESSMENT_STATUS.REJECTED">
+        <h1 class="row title dr-title">Rejected Assessments ({{rejectedCount}})</h1>
+        <div class="loading tc row " ng-show="isSearching"><img src="i/loading.gif" width="60" alt=""/></div>
+        <table class="normal-table row wrap-table" ng-show="isSearched">
+            <thead>
+            <tr>
+                <th data-ng-click="sort_by('Title')" class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'Title','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <strong><span>Assessment Title</span></strong></th>
+                <th data-ng-click="sort_by('SubmitTime')" class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'SubmitTime','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th>
+                    <span>Submitter Name</span></th>
+                <th data-ng-click="sort_by('RejectionReason')" class="sortable"
+                    ng-class="{'sort':criteria.sortBy === 'RejectionReason','sort-asc':criteria.sortAscending, 'sort-desc':!criteria.sortAscending}">
+                    <span>Reason for rejection</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: criteria.pageSize' pagination-id="awaiting-result"
+                current-page="criteria.pageNumber" total-items="searchResult.totalRecords">
+                <td><a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.submitter | fullName}}</td>
+                <td>{{item.rejectionReason}}</td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="4" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="awaiting-result" ng-show="isSearched"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+</div>
+<!-- END #main-content -->
+
+
+

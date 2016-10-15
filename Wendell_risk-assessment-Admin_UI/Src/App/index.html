@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<!--
+    Copyright (C) 2016 TopCoder Inc., All Rights Reserved.
+
+    Main html page for angular app.
+    @version 1.1
+    @author LOY, veshu
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>John Hancock - Risk Assessment</title>
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/multiple-select.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body ng-app="app" ng-class="bodyClass" ng-controller="masterCtrl">
+<!-- BEGIN #wrapper -->
+<div id="wrapper">
+    <header ng-include src="'partials/shared/header.html'" data-ng-if="path !== '/login'" class="ng-cloak"></header>
+    <div data-ng-view></div>
+    <div class="clearfix"></div>
+</div>
+<!-- END #wrapper -->
+
+<!-- jQuery -->
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/multiple-select.js"></script>
+<script src="lib/bootstrap-datepicker.js"></script>
+<script src="lib/jqplot/jquery.jqplot.min.js"></script>
+<script src="lib/jqplot/jqplot.barRenderer.min.js"></script>
+<script src="lib/jqplot/jqplot.categoryAxisRenderer.min.js"></script>
+<script src="lib/jqplot/jqplot.enhancedLegendRenderer.js"></script>
+<script src="lib/jqplot/jqplot.pointLabels.min.js"></script>
+<script src="lib/jqplot/jqplot.canvasTextRenderer.min.js"></script>
+<script src="lib/jqplot/jqplot.canvasAxisTickRenderer.min.js"></script>
+<!-- other libs -->
+<script src="lib/underscore-min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-animate.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
+<script src="lib/angular/angular-sanitize.min.js"></script>
+<script src="lib/angular-file-saver.bundle.min.js"></script>
+<script src="lib/moment.min.js"></script>
+<script src="lib/angular-moment.min.js"></script>
+<script src="lib/directive.multi-select.min.js"></script>
+<script src="lib/dirPagination.js"></script>
+<script src="js/app.js"></script>
+<!-- common -->
+<script src="js/config.js"></script>
+<script src="js/helpers/common.js"></script>
+<script src="js/helpers/storage.js"></script>
+<script src="js/helpers/util.js"></script>
+<script src="js/directive.js"></script>
+<script src="js/filter.js"></script>
+<!--services-->
+<script src="js/services/LookupService.js"></script>
+<script src="js/services/SecurityService.js"></script>
+<script src="js/services/AssessmentService.js"></script>
+<!--controllers-->
+<script src="js/controllers/masterCtrl.js"></script>
+<script src="js/controllers/loginCtrl.js"></script>
+<script src="js/controllers/homeCtrl.js"></script>
+<script src="js/controllers/addAssessmentCtrl.js"></script>
+<script src="js/controllers/assessmentsCtrl.js"></script>
+<script src="js/controllers/assessmentDetailsCtrl.js"></script>
+<script src="js/controllers/editAssessmentCtrl.js"></script>
+</body>
+</html>

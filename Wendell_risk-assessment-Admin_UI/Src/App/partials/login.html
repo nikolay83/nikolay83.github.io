@@ -1,0 +1,46 @@
+<!-- BEGIN header -->
+<header class="row">
+    <a class="logo fl" href="#/login"><img src="i/logo.png" alt=""/></a>
+</header>
+<!-- END header -->
+<!-- BEGIN .banner -->
+<div class="banner row">
+    <div class="col-6 left">
+        <h1>Welcome to<br/>John Hancock<br/>Operations Process &<br/>Controls Assessment Tool</h1>
+    </div>
+    <div class="col-6 right">
+        <div class="login-container">
+            <form class="login-content" novalidate ng-submit="login()">
+                <h2>Please login</h2>
+                <div class="form-group error" ng-show="loginError">
+                    <label>&nbsp;</label>
+                    <p>{{errorMessage}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" id="username" ng-model="username" ng-change="loginError=false"
+                           ng-class="{'error':loginError}"/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" ng-model="password"
+                           ng-change="loginError=false" ng-class="{'error':loginError}"/>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <label class="has-check">
+                        <input type="checkbox" name="rememberme" ng-model="rememberMe"/>Remember Me</label>
+                </div>
+                <div class="form-group m-t-30">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END .banner -->
+<!-- BEGIN #main-content -->
+<div id="main-content" class="row"></div>
+
+<!-- END #main-content -->

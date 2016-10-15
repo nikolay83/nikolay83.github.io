@@ -1,0 +1,78 @@
+{
+  "TotalRecords": 1,
+  "TotalPages": 1,
+  "Items": [
+    {
+      "BusinessUnit": {
+        "Name": "Investments/JHSS",
+        "Id": 3
+      },
+      "Product": {
+        "BusinessUnitId": 1,
+        "Name": "Product1",
+        "Id": 1
+      },
+      "Department": {
+        "BusinessUnitId": 1,
+        "Name": "Department2",
+        "Id": 2
+      },
+      "DepartmentHead": {
+        "BusinessUnitId": 1,
+        "Name": "DepartmentHead1",
+        "Id": 1
+      },
+      "FunctionalAreaOwner": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalAreaOwner4",
+        "Id": 4
+      },
+      "FunctionalArea": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalArea3",
+        "Id": 3
+      },
+      "FunctionalAreaDescription": "FunctionalAreaDescription1",
+      "FunctionPerformedSites": [],
+      "AssessmentType": {
+        "Name": "AssessmentType4",
+        "Id": 4
+      },
+      "AssessmentStatus": {
+        "Name": "AssessmentStatus2",
+        "Id": 2
+      },
+      "AssessmentDueDate": "02/10/2016 00:00:00",
+      "PriorFunctionChanges": [],
+      "FutureFunctionChanges": [],
+      "KPISLAAssessments": [],
+      "FunctionalAreaProcessAssessments": [],
+      "ProcessRiskAssessments": [],
+      "OverallRiskRatingCommentary": "OverallRiskRatingCommentary2",
+      "ApprovalStatus": 5,
+      "BUFunctionalApproverUsername": "CoeusBUFunctionalApprover",
+      "BUFunctionalApprover": null,
+      "BUFunctionalApproveTime": "02/09/2016 00:00:00",
+      "BURiskManagementApproverUsername": "CoeusBURiskManagementApprover",
+      "BURiskManagementApprover": null,
+      "BURiskManagementApproveTime": "02/08/2016 00:00:00",
+      "DivisionalRiskManagementApproverUsername": "CoeusDivisionalRiskManagementApprover",
+      "DivisionalRiskManagementApprover": null,
+      "DivisionalRiskManagementApproveTime": "02/07/2016 00:00:00",
+      "RejecterUsername": "CoeusDivisionalRiskManagementApprover",
+      "Rejecter": null,
+      "RejectTime": "02/06/2016 00:00:00",
+      "RejectionReason": "RejectionReason8",
+      "RejectPhase": 2,
+      "SubmitterUsername": "CoeusAdmin",
+      "Submitter": null,
+      "SubmitTime": "02/05/2016 00:00:00",
+      "Title": "Title8",
+      "CreatedBy": "CreatedBy8",
+      "CreatedTime": "02/04/2016 00:00:00",
+      "LastUpdatedBy": "LastUpdatedBy8",
+      "LastUpdatedTime": "02/03/2016 00:00:00",
+      "Id": 8
+    }
+  ]
+}

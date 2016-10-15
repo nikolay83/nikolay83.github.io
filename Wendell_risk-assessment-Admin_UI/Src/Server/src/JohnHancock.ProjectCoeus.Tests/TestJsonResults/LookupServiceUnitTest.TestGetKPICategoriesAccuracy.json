@@ -1,0 +1,151 @@
+[
+  {
+    "KPIs": [
+      {
+        "Name": "KPISLA1",
+        "Id": 1
+      },
+      {
+        "Name": "KPISLA2",
+        "Id": 2
+      },
+      {
+        "Name": "KPISLA3",
+        "Id": 3
+      }
+    ],
+    "SLAs": [
+      {
+        "Name": "SLA1",
+        "Id": 1
+      },
+      {
+        "Name": "SLA2",
+        "Id": 2
+      },
+      {
+        "Name": "SLA3",
+        "Id": 3
+      },
+      {
+        "Name": "SLA4",
+        "Id": 4
+      }
+    ],
+    "Name": "KPICategory1",
+    "Id": 1
+  },
+  {
+    "KPIs": [
+      {
+        "Name": "KPISLA4",
+        "Id": 4
+      },
+      {
+        "Name": "KPISLA5",
+        "Id": 5
+      },
+      {
+        "Name": "KPISLA6",
+        "Id": 6
+      }
+    ],
+    "SLAs": [
+      {
+        "Name": "SLA5",
+        "Id": 5
+      },
+      {
+        "Name": "SLA6",
+        "Id": 6
+      },
+      {
+        "Name": "SLA7",
+        "Id": 7
+      }
+    ],
+    "Name": "KPICategory2",
+    "Id": 2
+  },
+  {
+    "KPIs": [
+      {
+        "Name": "KPISLA7",
+        "Id": 7
+      },
+      {
+        "Name": "KPISLA8",
+        "Id": 8
+      }
+    ],
+    "SLAs": [
+      {
+        "Name": "SLA8",
+        "Id": 8
+      },
+      {
+        "Name": "SLA9",
+        "Id": 9
+      }
+    ],
+    "Name": "KPICategory3",
+    "Id": 3
+  },
+  {
+    "KPIs": [
+      {
+        "Name": "KPISLA9",
+        "Id": 9
+      }
+    ],
+    "SLAs": [
+      {
+        "Name": "SLA10",
+        "Id": 10
+      }
+    ],
+    "Name": "KPICategory4",
+    "Id": 4
+  },
+  {
+    "KPIs": [
+      {
+        "Name": "KPISLA10",
+        "Id": 10
+      }
+    ],
+    "SLAs": [],
+    "Name": "KPICategory5",
+    "Id": 5
+  },
+  {
+    "KPIs": [],
+    "SLAs": [],
+    "Name": "KPICategory6",
+    "Id": 6
+  },
+  {
+    "KPIs": [],
+    "SLAs": [],
+    "Name": "KPICategory7",
+    "Id": 7
+  },
+  {
+    "KPIs": [],
+    "SLAs": [],
+    "Name": "KPICategory8",
+    "Id": 8
+  },
+  {
+    "KPIs": [],
+    "SLAs": [],
+    "Name": "KPICategory9",
+    "Id": 9
+  },
+  {
+    "KPIs": [],
+    "SLAs": [],
+    "Name": "KPICategory10",
+    "Id": 10
+  }
+]

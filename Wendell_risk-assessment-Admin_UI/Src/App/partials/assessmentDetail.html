@@ -1,0 +1,693 @@
+<div class="mask" ng-show="isProcessing" ng-hide="!isProcessing">
+    <div class="text-center">
+        <div class="progress center-block" style="width:200px;">
+            <!-- set to certain width -->
+            <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%; text-align:center">
+                <span>
+                <div class="loading tc row "><img src="i/loading.gif" width="60" alt=""/>
+                </div>
+                  <span>
+                Please wait...
+              </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main-content" class="row" ng-show="isSearched">
+    <div class="container">
+        <h1 class="row title dr-title">Details: {{assessmentDetail.title}}</h1>
+        <div class="panel row {{panelClass}}">
+            <div class="panel-content {{panelContentClass}}">
+                <div class="row">
+                    <label>Assessment Title</label>
+                    <span>{{assessmentDetail.title}}</span>
+                </div>
+                <div class="row">
+                    <label>Status</label>
+                    <span>{{assessmentDetail.approvalStatus|approvalStatus|isSelected}}</span>
+                </div>
+                <div class="row">
+                    <label>Date Submitted</label>
+                    <span>{{assessmentDetail.submitTime| date:config.DATE_FORMAT |isSelected}}</span>
+                </div>
+                <div class="row" ng-if="assessmentDetail.approvalStatus!=config.APPROVAL_STATUS.REJECTED.value">
+                    <label>Approver Name</label>
+                    <span>{{assessmentDetail |approverName |isSelected}}</span>
+                </div>
+                <div class="approve-container" ng-show="assessmentDetail.approvalStatus==config.APPROVAL_STATUS.APPROVED.value">
+                    Approved
+                </div>
+                <div class="row" ng-if="assessmentDetail.approvalStatus==config.APPROVAL_STATUS.REJECTED.value">
+                    <label>Submitter Name</label>
+                    <span>{{assessmentDetail.submitter | fullName}}</span>
+                </div>
+                <div class="row" ng-if="assessmentDetail.rejectPhase">
+                    <label>Reason for rejection</label>
+                    <span>{{assessmentDetail.rejectionReason}}</span>
+                </div>
+                <div class="reject-container" ng-show="assessmentDetail.approvalStatus==config.APPROVAL_STATUS.REJECTED.value">Rejected
+                </div>
+            </div>
+            <div id="disapprove-reason-popup" class="row disapprove-reason hide" title="Reject Assessment">
+                <label>Reason for rejection</label>
+                <textarea id="disapprove-content" ng-change="rejectionError=false" ng-model="rejectReason" maxlength="4000"></textarea>
+                <div class="incompleted" ng-show="rejectionError">
+                    <div class="incompleted content">
+                        <label>&nbsp;&nbsp;Reason for rejection is required.</label>
+                    </div>
+                </div>
+                <center class="pad-t-25">
+                    <a href="javascript:;" class="btn btn-primary" ng-click="reject()">Submit</a> &nbsp;&nbsp;&nbsp;
+                    <a href="javascript:;" close-dialog data-target-id="#disapprove-reason-popup" class="btn btn-primary" ng-click="rejectReason='';rejectionError=false">Cancel</a>
+                </center>
+            </div>
+            <div class="panel-footer">
+                <div class="left buttons" ng-class="{'sm-buttons':assessmentDetail.approvalStatus==config.APPROVAL_STATUS.DRAFT.value}">
+                    <a href="javascript:;" class="btn btn-primary" ng-click="update()" ng-if="permission.toSave">Save</a>
+                    <a href="javascript:;" class="btn btn-primary" ng-click="export()" ng-if="permission.toExport">Export</a>
+                    <a href="javascript:window.print();" class="btn btn-primary" ng-if="permission.toPrint">Print</a>
+                    <a href="javascript:;" show-dialog data-target-id="#disapprove-reason-popup" class="btn btn-white" id="disapprove-btn1" ng-if="permission.toReject">
+                        Reject</a>
+                </div>
+                <div class="right">
+                    <a href="javascript:;" class="btn btn-green" ng-click="approve()" ng-if="permission.toApprove">Approve</a>
+                    <a href="javascript:;" ng-click="submit()" class="btn btn-purple btn-review" ng-if="permission.toSubmit">Submit for
+                        Review</a>
+                </div>
+            </div>
+        </div>
+        <div class="incompleted">
+            &nbsp;
+            <div class="incompleted content" ng-show="showIncompleted.Error">
+                <label>&nbsp;&nbsp;There are some fields that have not been completed below, please complete
+                    before you submit for approval !!!</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="row expand-container m-t-25">
+        <div class="expand-head row" ng-class="{'closed': closeRiskReport}" ng-click="closeRiskReport=!closeRiskReport">
+            <i></i>Overall Risk Rating
+        </div>
+        <div class="row expand-body" ng-class="{'closed': closeRiskReport}">
+            <div class="row graphs m-t-25">
+                <div class="col">
+                    <div class="top fl">
+                        <div class="left">
+                            <h3>Likelihood of Occurrence</h3>
+                            <p>Overall: {{overallRiskRatingReport.likelihoodOfOccurrenceReport.overallRiskScore}}
+                            </p>
+                            <label>Likelihood of Occurrence: <strong>{{overallRiskRatingReport.likelihoodOfOccurrenceReport.maxRiskType}}</strong></label>
+                        </div>
+                        <div class="right inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="reportCategories.likelihoodOfOccurrenceReport" ng-options="item as item.name for item in categoriesWithAll"
+                                ng-change="updateOrRenderRiskChart('likelihoodOfOccurrenceReport')" ng-multi-select ng-multi-select-single="true"
+                                multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                ng-multi-select-width="224px">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="placeholder fl">
+                        <div class="img-wrapper" id="likelihoodOfOccurrenceReportChart">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="top fl">
+                        <div class="left">
+                            <h3>Risk Exposure</h3>
+                            <p>Overall: {{overallRiskRatingReport.riskExposureReport.overallRiskScore}}</p>
+                            </p>
+                            <label>Risk Exposure:
+                                <strong>{{overallRiskRatingReport.riskExposureReport.maxRiskType}}</strong></label>
+                        </div>
+                        <div class="right inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="reportCategories.riskExposureReport" ng-options="item as item.name for item in categoriesWithAll"
+                                ng-change="updateOrRenderRiskChart('riskExposureReport')" ng-multi-select ng-multi-select-single="true"
+                                multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                ng-multi-select-width="224px">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="placeholder fl">
+                        <div class="img-wrapper" id="riskExposureReportChart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row legend">
+            </div>
+            <div class="row graphs m-t-30">
+                <div class="container">
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Key Controls Maturity</h3>
+                                <p>Overall: {{overallRiskRatingReport.keyControlsMaturityReport.overallRiskScore}}
+                                </p>
+                                <label>Key Controls Maturity: <strong>{{overallRiskRatingReport.keyControlsMaturityReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.keyControlsMaturityReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change="updateOrRenderRiskChart('keyControlsMaturityReport')" ng-multi-select ng-multi-select-single="true"
+                                    multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                    ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="keyControlsMaturityReportChart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Residual Risk</h3>
+                                <p>Overall Residual Risk: {{overallRiskRatingReport.residualRiskReport.overallRiskScore}}
+                                </p>
+                                <label>Likelihood of Occurrence: <strong>{{overallRiskRatingReport.residualRiskReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.residualRiskReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change='updateOrRenderResidualChart()' ng-multi-select ng-multi-select-single="true" multiple="multiple"
+                                    ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false" ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="residualRiskReportChart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row commentary">
+                <div class="container">
+                    <div class="col-9" ng-init="overallDisable=true">
+                        <h3>Overall Risk Rating Commentary (Optional)</h3>
+                        <textarea id="overall-textarea" cols="150" maxlength="4000" ng-disabled="overallDisable" ng-model="assessmentDetail.overallRiskRatingCommentary"
+                            ng-show="permission.toSave"></textarea>
+                        <div ng-show="!permission.toSave"><span>{{assessmentDetail.overallRiskRatingCommentary || 'N/A'}}</span>
+                        </div>
+                        <br/><a href="javascript:;" ng-click="overallDisable=!overallDisable" class="btn btn-primary" ng-show="permission.toSave">{{overallDisable ? 'Edit':
+                        'Save'}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BEGIN Business Unit Information section -->
+    <div class="row expand-container">
+        <div class="row expand-head" ng-class="{'closed': !closeBuInfo}" ng-click="closeBuInfo=!closeBuInfo">
+            <i></i>Business Unit Information
+            <a href="javascript:;" ng-click="edit(1);$event.stopPropagation();" ng-if="permission.toSave" class="fr btn btn-primary">Edit</a>
+        </div>
+        <div class="expand-body row" ng-class="{'closed': !closeBuInfo}">
+            <div class="col-5">
+                <div class="heading">Unit</div>
+                <div class="contents">
+                    <div class="row">
+                        <label>Business Unit</label>
+                        <span ng-class="{'error':!assessmentDetail.businessUnit.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.businessUnit.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Product</label>
+                        <span ng-class="{'error':!assessmentDetail.product.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.product.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Department</label>
+                        <span ng-class="{'error':!assessmentDetail.department.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.department.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Department Lead</label>
+                        <span ng-class="{'error':!assessmentDetail.departmentHead.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.departmentHead.name | isSelected}}</span>
+                    </div>
+                </div>
+                <div class="heading m-t-20">Assessment</div>
+                <div class="contents">
+                    <div class="row">
+                        <label>Assessment Type</label>
+                        <span ng-class="{'error':!assessmentDetail.assessmentType.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.assessmentType.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Assessment Status</label>
+                        <span ng-class="{'error':!assessmentDetail.assessmentStatus.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.assessmentStatus.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Assessment Due Date</label>
+                        <span ng-class="{'error':!assessmentDetail.assessmentDueDate &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.assessmentDueDate |  date:config.DATE_FORMAT | isSelected}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="heading">Functional Area</div>
+                <div class="contents">
+                    <div class="row">
+                        <label>Functional Area Owner</label>
+                        <span ng-class="{'error':!assessmentDetail.functionalAreaOwner.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.functionalAreaOwner.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Individual Completing Assessment</label>
+                        <span ng-class="{'error':!assessmentDetail.submitter &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.submitter.firstName}} {{assessmentDetail.submitter.lastName}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Functional Area</label>
+                        <span ng-class="{'error':!assessmentDetail.functionalArea.name &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.functionalArea.name | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label>Functional Area Description</label>
+                        <span ng-class="{'error':!assessmentDetail.functionalAreaDescription &amp;&amp; showIncompleted.Error}">
+                            {{assessmentDetail.functionalAreaDescription | isSelected}}</span>
+                    </div>
+                    <div class="row">
+                        <label class="label">In what site(s) is the function performed</label>
+                        <span></span>
+                    </div>
+                    <div class="row" ng-repeat="fps in assessmentDetail.functionPerformedSites">
+                        <label class="city">{{fps.site.name}}</label>
+                        <span>{{fps.percentage.value || 0}}%</span>
+                    </div>
+                    <div class="row">
+                        <label class="city"><strong>Total</strong></label>
+                        <span id='Total-percentage' ng-if="totalPercentageSum!=100" class="error">
+                                <strong>{{totalPercentageSum}}%</strong> (The total should be 100%)
+                            </span>
+                        <span id='Total-percentage' ng-if="totalPercentageSum==100">
+                                <strong>{{totalPercentageSum}}%</strong>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Business Unit Information section -->
+    <!-- BEGIN Function Modifications Info section -->
+    <div class="row expand-container">
+        <div class="expand-head row" ng-class="{'closed': !closeFMInfo}" ng-click="closeFMInfo=!closeFMInfo">
+            <i></i>Function Modifications Info
+            <a href="javascript:;" ng-click="edit(2);$event.stopPropagation();" ng-if="permission.toSave" class="fr btn btn-primary">Edit</a>
+        </div>
+        <div class="row expand-body" ng-class="{'closed': !closeFMInfo}">
+            <div class="title">Prior Changes</div>
+            <p>Were there any changes to the function in the prior reporting period?</p>
+            <div class="non" ng-if="assessmentDetail.priorFunctionChanges.length==0">None</div>
+            <table class="normal-table row wrap-table" ng-if="assessmentDetail.priorFunctionChanges.length>0">
+                <thead>
+                    <tr>
+                        <th>Change Type</th>
+                        <th>Description of change</th>
+                        <th>When did change occur?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in assessmentDetail.priorFunctionChanges">
+                        <td ng-class="{'error':!item.changeType.name &amp;&amp; showIncompleted.Error}">
+                            {{item.changeType.name | isSelected}}
+                        </td>
+                        <td ng-class="{'error':!item.changeDescription &amp;&amp; showIncompleted.Error}">
+                            {{item.changeDescription | isSelected}}
+                        </td>
+                        <td ng-class="{'error':!item.changeTime &amp;&amp; showIncompleted.Error}">
+                            {{item.changeTime |date:config.DATE_FORMAT | isSelected}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="title">Anticipated Changes</div>
+            <p>Do you anticipate any changes to the function in the next reporting period?</p>
+            <div class="non" ng-if="assessmentDetail.futureFunctionChanges.length==0">None</div>
+            <table class="normal-table row wrap-table" ng-if="assessmentDetail.futureFunctionChanges.length>0">
+                <thead>
+                    <tr>
+                        <th>Change Type</th>
+                        <th>Description of change</th>
+                        <th>When did change occur?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in assessmentDetail.futureFunctionChanges">
+                        <td>{{item.changeType.name | isSelected}}</td>
+                        <td>{{item.changeDescription | isSelected}}</td>
+                        <td>{{item.changeTime |date:config.DATE_FORMAT | isSelected}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Function Modifications Info section -->
+    <!-- BEGIN Processes & Controls Assessment -->
+    <div class="row expand-container">
+        <div class="expand-head row" ng-class="{'closed': !closePCA}" ng-click="closePCA=!closePCA">
+            <i></i>Processes &amp; Controls Assessment
+            <a href="javascript:;" ng-click="edit(3);$event.stopPropagation();" ng-if="permission.toSave" class="fr btn btn-primary">Edit</a>
+        </div>
+        <div class="row expand-body" ng-class="{'closed': !closePCA}">
+            <div class="row tab-navigate tab-headers1" ng-init="pca.categoryType=lookups.categories[0].id">
+                <a href="javascript:;" ng-repeat="category in lookups.categories" ng-class="{'active ctKPI': pca.categoryType==category.id}"
+                    ng-click="pca.categoryType=category.id">
+                    {{category.name}}</a>
+            </div>
+            <div class="tabpane">
+                <div class="tab active">
+                    <div class="row">
+                        <table class="wrap-table custom-table" ng-show="pca.categoryType==config.KPISLA_ASSESSMENT_CATEGORY_ID">
+                            <thead>
+                                <tr>
+                                    <th custom-tool-tips ct-message="A specific classification of key performance indicators and service levels.">
+                                        Category
+                                    </th>
+                                    <th custom-tool-tips ct-message="A measurable value that demonstrates how effectively an activity is achieving key business objectives. Indication of success at meeting targets.">
+                                        Key Performance Indicators
+                                    </th>
+                                    <th custom-tool-tips ct-message="A service level agreement is a contract between a service provider (either internal or external) and the end user that defines the level of service expected from the service provider. SLA’s are output-based and gauges how well a key performance indicator is performing.">
+                                        Service Levels
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="ks in transformed.kpislaAssessments" ng-class-even="'high-bg'" ng-class-odd="'high'" ng-init='rowIndex=$index'>
+                                    <!--Category-->
+                                    <td rowspan="{{ks.KPIs.length}}" class="ct">
+                                        {{ks.KPICategory.name || ks.additionalKPICategory}}
+                                    </td>
+                                    <!--KPI-->
+                                    <td class="ct" ng-if="ks.KPIs[0].kpi!=null">{{ks.KPIs[0].kpi.name}}</td>
+                                    <td class="ct" ng-if="ks.KPIs[0].kpi==null" ng-class="{'error':!ks.KPIs[0].additionalKPI &amp;&amp; showIncompleted.Error}">
+                                        {{ks.KPIs[0].additionalKPI | isSelected}}
+                                    </td>
+                                    <!-- SLA -->
+                                    <td class="ct" ng-if="ks.KPIs[0].selectedSLA!=null">{{ks.KPIs[0].selectedSLA.name}}</td>
+                                    <td class="ct" ng-if="ks.KPIs[0].selectedSLA==null" ng-class="{'error':!ks.KPIs[0].additionalSLA &amp;&amp; showIncompleted.Error}">
+                                        {{ks.KPIs[0].additionalSLA | isSelected}}
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end ng-repeat="kpi in ks.KPIs" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                    <!--KPI-->
+                                    <td class="ct" ng-if="kpi.kpi!=null">{{kpi.kpi.name}}</td>
+                                    <td class="ct" ng-if="kpi.kpi==null" ng-class="{'error':!kpi.additionalKPI &amp;&amp; showIncompleted.Error}">
+                                        {{kpi.additionalKPI | isSelected}}
+                                    </td>
+                                    <!-- SLA -->
+                                    <td class="ct" ng-if="kpi.selectedSLA!=null">{{kpi.selectedSLA.name}}</td>
+                                    <td class="ct" ng-if="kpi.selectedSLA==null" ng-class="{'error':!kpi.additionalSLA &amp;&amp; showIncompleted.Error}">
+                                        {{kpi.additionalSLA | isSelected}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="wrap-table custom-table" ng-show="pca.categoryType==config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID">
+                            <thead>
+                                <tr>
+                                    <th width="97px" custom-tool-tips ct-message="A general category of processes assigned to the function being assessed.  Functions are usually made of many processes that are rolled up to general categories (i.e. Disbursement of funds is a general process that has several sub-processes).">
+                                        Core Process
+                                    </th>
+                                    <th width="97px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  One or multiple sub-processes are associated with one core process.  Sub-processes should be distinct enough to have attributable controls.">
+                                        Sub-processes
+                                    </th>
+                                    <th width="95px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">
+                                        Risks
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The frequency of how often sub-process is performed such as a daily, weekly, monthly, quarterly or annual basis.  An example would disbursements/withdrawals are processed on a daily basis.">
+                                        Likelihood
+                                        <br/>of Occurrence
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="Categorizing the type of risk(s) if a sub-process is not performed or performed incorrectly.  For example, a particular risk could be financial, operational, regulatory, reputational or any combination of these.">
+                                        Risk
+                                        <br/>Impact
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">
+                                        Risk Exposure
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">
+                                        Controls
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="Provides the purpose of the control and/or specific target against which to evaluate the effectiveness of controls.  Within the tool, this is a free form field for the user to elaborate on why the control is in place.">
+                                        Controls
+                                        <br/>Objective
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">
+                                        Control Frequency
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">
+                                        Control Design
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">
+                                        Testing &amp; Frequency
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The cause or reason for the control.  Some reasons could be Performance, Process, Product, Regulatory, SOC 1, SOC 2, SOX/MAR, 38a-1, etc.  Many times there could be multiple reasons.">
+                                        Control Trigger
+                                    </th>
+                                    <th width="66px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">
+                                        Key Controls
+                                        <br/>Maturity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="fas in transformed.functionalAssessments" ng-class-even="'high-bg'" ng-class-odd="'high'" ng-init='rowIndex=$index'>
+                                    <!--coreProcess-->
+                                    <td rowspan="{{getCoreProcessRowSpanValue(fas)}}" class="tc">
+                                        {{fas.coreProcess.name || fas.additionalCoreProcess}}
+                                    </td>
+                                    <!--sub Process-->
+                                    <td class="ct" rowspan="{{fas.subProcessRisks[0].controlAssessments.length +1}}" ng-if="fas.subProcessRisks[0].subProcessRisk!=null">
+                                        {{fas.subProcessRisks[0].subProcessRisk.name}}
+                                    </td>
+                                    <td class="ct" rowspan="{{fas.subProcessRisks[0].controlAssessments.length +1}}" ng-if="fas.subProcessRisks[0].subProcessRisk==null"
+                                        ng-class="{'error':!fas.subProcessRisks[0].additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0].additionalSubProcess | isSelected}}
+                                    </td>
+                                    <!--sub Risk-->
+                                    <td class="ct" ng-if="fas.subProcessRisks[0].subProcessRisk!=null">
+                                        {{fas.subProcessRisks[0].subProcessRisk.risk}}
+                                    </td>
+                                    <td class="ct" ng-if="fas.subProcessRisks[0].subProcessRisk==null" ng-class="{'error':!fas.subProcessRisks[0].additionalRisk &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0].additionalRisk | isSelected}}
+                                    </td>
+                                    <!-- likelihood of occurrence -->
+                                    <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].likelihoodOfOccurrence.name &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0] | likelihoodOfOccurrenceDetail | isSelected}}
+                                    </td>
+
+                                    <!--Risk Impact-->
+                                    <td class="ct" ng-class="{'error':fas.subProcessRisks[0].riskImpacts.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0].riskImpacts |joinByComma| isSelected}}
+                                    </td>
+
+                                    <!-- Risk exposure -->
+                                    <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0].riskExposure.name | isSelected}}
+                                    </td>
+                                    <!-- controls -->
+                                    <td class="ct" ng-class="{'error':fas.subProcessRisks[0].controlAssessments.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{fas.subProcessRisks[0].controlAssessments.length | isSelected}}
+                                    </td>
+                                    <!-- other columns-->
+                                    <td colspan="6" />
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-start="subProcessRisk in fas.subProcessRisks" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                    <!--sub Process-->
+                                    <td class="ct" rowspan="{{subProcessRisk.controlAssessments.length +1}}" ng-if="subProcessRisk.subProcessRisk!=null">{{subProcessRisk.subProcessRisk.name}}
+                                    </td>
+                                    <td class="ct" rowspan="{{subProcessRisk.controlAssessments.length +1}}" ng-if="subProcessRisk.subProcessRisk==null" ng-class="{'error':!subProcessRisk.additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk.additionalSubProcess | isSelected}}
+                                    </td>
+                                    <!--sub Risk-->
+                                    <td class="ct" ng-if="subProcessRisk.subProcessRisk!=null">
+                                        {{subProcessRisk.subProcessRisk.risk}}
+                                    </td>
+                                    <td class="ct" ng-if="subProcessRisk.subProcessRisk==null" ng-class="{'error':!subProcessRisk.additionalRisk &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk.additionalRisk | isSelected}}
+                                    </td>
+                                    <!-- likelihood of occurrence -->
+                                    <td class="ct" ng-class="{'error':!subProcessRisk.likelihoodOfOccurrence.name &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk | likelihoodOfOccurrenceDetail | isSelected}}
+                                    </td>
+
+                                    <!--Risk Impact-->
+                                    <td class="ct" ng-class="{'error':subProcessRisk.riskImpacts.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk.riskImpacts |joinByComma| isSelected}}
+                                    </td>
+                                    <!-- Risk exposure -->
+                                    <td class="ct" ng-class="{'error':!subProcessRisk.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk.riskExposure.name | isSelected}}
+                                    </td>
+                                    <!-- controls -->
+                                    <td class="ct" ng-class="{'error':subProcessRisk.controlAssessments.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{subProcessRisk.controlAssessments.length | isSelected}}
+                                    </td>
+                                    <!-- other columns-->
+                                    <td colspan="6" />
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end ng-if="subProcessRisk.controlAssessments.length>0" class="subrow" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}"
+                                    ng-repeat="ca in subProcessRisk.controlAssessments">
+                                    <td class="rt" colspan="5">
+                                        {{ca.controlType.name || ca.otherControlType}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!ca.controlObjective &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlObjective| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!ca.controlFrequency.name &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlFrequency.name | isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':ca.controlDesigns.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlDesigns |joinByComma| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':ca.testingFrequencies.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{ca | testingFrequencies| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':ca.controlTriggers.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlTriggers |joinByComma| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!ca.keyControlsMaturity.name &amp;&amp; showIncompleted.Error}">
+                                        {{ca | keyControlMaturityDetail | isSelected}}
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end="" ng-hide="true"></tr>
+                            </tbody>
+                        </table>
+                        <table class="custom-table" data-ng-repeat="category in lookups.categories | processCategories" ng-show="pca.categoryType==category.id">
+                            <thead>
+                                <tr>
+                                    <th width="160px" custom-tool-tips ct-message="The specific type of training or documentation that is often a requirement for all employees to complete.  These types of trainings are at the corporate and divisional levels. Curriculums should be distinct enough to have attributable controls."
+                                        ng-if="pca.categoryType==config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                        Curriculum
+                                    </th>
+                                    <th width="160px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  Processes should be distinct enough to have attributable controls."
+                                        ng-if="pca.categoryType!=config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                        Processes
+                                    </th>
+                                    <th width="160px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">
+                                        Risks
+                                    </th>
+                                    <th width="97px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">
+                                        Risk Exposure
+                                    </th>
+                                    <th width="106px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">
+                                        Controls
+                                    </th>
+                                    <th width="106px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">
+                                        Control Frequency
+                                    </th>
+                                    <th width="106px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">
+                                        Control Design
+                                    </th>
+                                    <th width="106px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">
+                                        Testing &amp;
+                                        <br/>Frequency
+                                    </th>
+                                    <th width="106px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">
+                                        Key Controls
+                                        <br/>Maturity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="kpi in assessmentDetail.processRiskAssessments | filter:{category:{id:pca.categoryType}}" ng-class-even="'high-bg'"
+                                    ng-class-odd="'high'" ng-init='rowIndex=$index'>
+                                    <td>{{kpi.processRisk.name ||kpi.additionalProcess}}</td>
+                                    <td ng-class="{'error':(!kpi.processRisk.risk && !kpi.additionalRisk) &amp;&amp; showIncompleted.Error}">
+                                        {{kpi.processRisk.risk || kpi.additionalRisk | isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!kpi.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                        {{kpi.riskExposure.name | isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':kpi.controlAssessments.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{kpi.controlAssessments.length| isSelected}}
+                                    </td>
+                                    <td colspan="4" />
+                                    </td>
+                                </tr>
+                                <tr ng-if="kpi.controlAssessments.length>0" ng-repeat="ca in kpi.controlAssessments" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                    <td class="rt empty" colspan="2"></td>
+                                    <td class="rt" colspan="2">
+                                        {{ca.controlType.name || ca.otherControlType}}
+                                    </td>
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!ca.controlFrequency.name &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlFrequency.name | isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':ca.controlDesigns.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{ca.controlDesigns |joinByComma| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':ca.testingFrequencies.length==0 &amp;&amp; showIncompleted.Error}">
+                                        {{ca |testingFrequencies| isSelected}}
+                                    </td>
+                                    <td class="ct" ng-class="{'error':!ca.keyControlsMaturity.name &amp;&amp; showIncompleted.Error}">
+                                        {{ca|keyControlMaturityDetail | isSelected}}
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end="" ng-hide="true"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Processes & Controls Assessment -->
+    <div class="row approver-row" ng-if="!permission.toSave">
+        Approver: {{assessmentDetail |approverName}}
+    </div>
+    <div class="container">
+        <div class="panel row {{panelClass}}" ng-if="permission.toApprove">
+            <div class="panel-content {{panelContentClass}}">
+                <div class="row">
+                    <label>Assessment Title</label>
+                    <span>{{assessmentDetail.title}}</span>
+                </div>
+                <div class="row">
+                    <label>Status</label>
+                    <span>{{assessmentDetail.approvalStatus|approvalStatus |isSelected}}</span>
+                </div>
+                <div class="row">
+                    <label>Date Submitted</label>
+                    <span>{{assessmentDetail.submitTime| date:config.DATE_FORMAT |isSelected}}</span>
+                </div>
+                <div class="row">
+                    <label>Approver Name</label>
+                    <span>{{assessmentDetail |approverName |isSelected}}</span>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="left buttons">
+                    <a href="javascript:;" show-dialog data-target-id="#disapprove-reason-popup" class="btn btn-white" ng-if="permission.toReject">
+                        Reject</a>
+                    <a href="javascript:;" class="btn btn-primary" ng-click="export()" ng-if="permission.toExport">Export</a>
+                    <a href="javascript:window.print();" class="btn btn-primary" ng-if="permission.toPrint">Print</a>
+                </div>
+                <div class="right">
+                    <a href="javascript:;" class="btn btn-green" ng-click="approve()" ng-if="permission.toApprove">Approve</a>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer special row m-t-40" ng-if="!permission.toApprove">
+            <div class="left buttons" ng-class="{'sm-buttons':assessmentDetail.approvalStatus==config.APPROVAL_STATUS.DRAFT.value}">
+                <a href="javascript:;" class="btn btn-primary" ng-click="update()" ng-if="permission.toSave">Save</a>
+                <a href="javascript:;" class="btn btn-primary" ng-click="export()" ng-if="permission.toExport">Export</a>
+                <a href="javascript:window.print();" class="btn btn-primary" ng-if="permission.toPrint">Print</a>
+            </div>
+            <div class="right">
+                <a href="javascript:;" ng-click="submit()" class="btn btn-purple btn-review" ng-if="permission.toSubmit">Submit for
+                    Review</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END #main-content -->

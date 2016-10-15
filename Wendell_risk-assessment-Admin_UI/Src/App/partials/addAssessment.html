@@ -1,0 +1,1697 @@
+<div class="mask" ng-show="isProcessing" ng-hide="!isProcessing">
+    <div class="text-center">
+        <div class="progress center-block" style="width:200px;">
+            <!-- set to certain width -->
+            <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%; text-align:center">
+                <span>
+                <div class="loading tc row "><img src="i/loading.gif" width="60" alt=""/>
+                </div>
+                  <span>
+                Please wait...
+              </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BEGIN #main-content -->
+<div id="main-content" class="row" ng-if="isLoaded">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row">
+        <a href="javascript:;" ng-class="{active:currentTab.id==1}" ng-click="currentTab.id=1">Business Unit Info</a>
+        <a href="javascript:;" ng-class="{active:currentTab.id==2}" ng-click="currentTab.id=2">Function
+            Modifications</a>
+        <a href="javascript:;" ng-class="{active:currentTab.id==3}" ng-click="currentTab.id=3">Processes &amp; Controls
+            Assessment</a>
+        <a href="javascript:;" ng-class="{active:currentTab.id==4}" ng-click="getOverallRiskRatingReport();">Overall
+            Risk Rating</a>
+    </div>
+    <div class="row m-t-25" data-page-script="">
+        <div ng-show="currentTab.id==1">
+            <!-- BEGIN  Unit section -->
+            <div class="row section">
+                <div class="section-head">Unit</div>
+                <div class="section-content row">
+                    <div class="row">
+                        <label class="label">Business Unit</label>
+                        <div class="inputs" tool-tips>
+                            <select id="select-business-input" class="multiple ultra-short" ng-model="assessmentToAdd.businessUnit" ng-options="item as item.name for item in lookups.businessUnits"
+                                ng-change="resolveBusinessUnitRelatedLookup()" ng-multi-select ng-multi-select-single="true"
+                                multiple="multiple" ng-multi-select-track="lookups.businessUnits" ng-multi-select-filter="false"
+                                ng-multi-select-placeholder="Select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Product</label>
+                        <div class="inputs" tool-tips>
+                            <select id="select-product" class="multiple ultra-short" ng-model="assessmentToAdd.product" ng-options="item as item.name for item in lookups.products"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.products"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-all-selected="Please select business unit">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Department</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.department" ng-options="item as item.name for item in lookups.departments"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.departments"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-all-selected="Please select business unit">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Department Head/Business Lead</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.departmentHead" ng-options="item as item.name for item in lookups.departmentHeads"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.departmentHeads"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-all-selected="Please select business unit">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Unit section -->
+            <!-- BEGIN Functional Modifications section -->
+            <div class="row section m-t-20">
+                <div class="section-head">Functional Area</div>
+                <div class="section-content row">
+                    <div class="row">
+                        <label class="label">Functional Area Owner</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.functionalAreaOwner" ng-options="item as item.name for item in lookups.functionalAreaOwners"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.functionalAreaOwners"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-all-selected="Please select business unit">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Functional Area</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.functionalArea" ng-options="item as item.name for item in lookups.functionalAreas"
+                                ng-change="resolveFunctionalAreaRelatedLookup()" multiple="multiple" ng-multi-select ng-multi-select-single="true"
+                                ng-multi-select-track="lookups.functionalAreas" ng-multi-select-filter="false" ng-multi-select-placeholder="Select"
+                                ng-multi-select-all-selected="Please select business unit">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Functional Area Description</label>
+                        <div class="inputs">
+                            <textarea rows="5" cols="29" maxlength="4000" ng-model="assessmentToAdd.functionalAreaDescription"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">In what site(s) is the function performed</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.selectedSites" id="site-select" ng-options="item as item.name for item in lookups.sites"
+                                ng-change="updatesSitePercentage()" ng-multi-select ng-multi-select-single="false" multiple="multiple"
+                                ng-multi-select-track="lookups.sites" ng-multi-select-filter="false" ng-multi-select-placeholder="Select"
+                                ng-multi-select-keep-open="true" ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false"
+                                data-close-drop>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="sites-info" ng-show="assessmentToAdd.selectedSites.length>0">
+                        <div class="row">
+                            <label class="label">What % of the function is processed in each site?</label>
+                        </div>
+                        <div class="row sites-element" ng-repeat="site in assessmentToAdd.selectedSites">
+                            <label class="label">{{site.name}}</label>
+                            <div class="inputs">
+                                <select class="ex-short" ng-model="site.percentage" ng-change="updatesSitePercentage()" ng-options="per as per.name for per in lookups.percentages">
+                                    <option value="" selected hidden/>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="label total"><strong>Total</strong></label>
+                            <div class="inputs">
+                                <div id='total' ng-if="totalPercentageSum!=100" class="error">
+                                    {{totalPercentageSum}}% (The total should be 100%)
+                                </div>
+                                <div id='total' ng-if="totalPercentageSum==100">
+                                    {{totalPercentageSum}}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BEGIN Function Area section -->
+            <!-- BEGIN Assessment section -->
+            <div class="section row m-t-15">
+                <div class="section-head">Assessment</div>
+                <div class="section-content row">
+                    <div class="row">
+                        <label class="label">Assessment Type</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.assessmentType" ng-options="item as item.name for item in lookups.assessmentTypes"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.assessmentTypes"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Assessment Status</label>
+                        <div class="inputs" tool-tips>
+                            <select class="multiple ultra-short" ng-model="assessmentToAdd.assessmentStatus" ng-options="item as item.name for item in lookups.assessmentStatuses"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.assessmentStatuses"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="label">Assessment Due Date</label>
+                        <div class="inputs">
+                            <div class="date-wrapper">
+                                <input type="text" class="date-input" date-picker ng-model="assessmentToAdd.dueDate" placeholder="Select" readonly/>
+                                <i class="date-icon" datepicker-input></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Assessment section -->
+        </div>
+        <div ng-show="currentTab.id==2">
+            <!-- BEGIN Prior Changes section -->
+            <div class="toggle-container row prior-changes">
+                <div class="toggle-header row">
+                    <span class="fl">Were there any changes since the prior assessment?</span>
+                    <a href="javascript:;" ng-show="functionChanges.isPriorChanges" ng-click="addFunctionChange(true)" class="btn btn-white m-l-20 fl">+ Add New</a>
+                    <div class="switch fr">
+                        <input id="cmn-toggle-1" ng-model="functionChanges.isPriorChanges" ng-checked="functionChanges.isPriorChanges" class="cmn-toggle cmn-toggle-round-flat"
+                            type="checkbox" />
+                        <label for="cmn-toggle-1" ng-class="{unchecked: !functionChanges.isPriorChanges}">
+                            <span class="yes">Yes</span>
+                            <span class="no">No</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="toggle-content row" ng-show="functionChanges.isPriorChanges">
+                    <div class="element" ng-repeat="change in functionChanges.priorChanges">
+                        <div class="row m-t-20">
+                            <span class="change-number">#{{$index +1}}</span>
+                        </div>
+                        <div class="row m-t-20">
+                            <label>Change Type</label>
+                            <div class="inputs" tool-tips>
+                                <select class="multiple middle m-t-15" ng-model="change.changeType" ng-options="item as item.name for item in lookups.changeTypes"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.changeTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="m-t-30 row">
+                            <label>When did the change take place?</label>
+                            <div class="date-wrapper">
+                                <input type="text" class="date-input" readonly date-picker ng-model="change.changeTime" />
+                                <i class="date-icon" datepicker-input></i>
+                            </div>
+                        </div>
+                        <div class="m-t-30 row">
+                            <label>Description of change</label>
+                            <textarea class="description-change-textarea" maxlength="4000" ng-model="change.changeDescription"></textarea>
+                        </div>
+                        <a href="javascript:;" class="remove-link" ng-click="functionChanges.priorChanges.splice($index,1);">
+                            <span class="icon-remove"></span> Remove</a>
+                    </div>
+                </div>
+            </div>
+            <!-- END Prior Changes section -->
+            <!-- BEGIN Anticipated Changes section -->
+            <div class="toggle-container row m-t-20 anticipated-changes">
+                <div class="toggle-header row">
+                    <span class="fl">Do you anticipate any changes in the next 12 months?</span>
+                    <a href="javascript:;" ng-show="functionChanges.isFutureChanges" ng-click="addFunctionChange(false)" class="btn btn-white m-l-20 fl">+ Add New</a>
+                    <div class="switch fr">
+                        <input id="cmn-toggle-2" ng-model="functionChanges.isFutureChanges" ng-checked="functionChanges.isFutureChanges" class="cmn-toggle cmn-toggle-round-flat"
+                            type="checkbox" />
+                        <label for="cmn-toggle-2" ng-class="{unchecked: !functionChanges.isFutureChanges}">
+                            <span class="yes">Yes</span>
+                            <span class="no">No</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="toggle-content row" ng-show="functionChanges.isFutureChanges">
+                    <div class="element" ng-repeat="change in functionChanges.futureChanges">
+                        <div class="row m-t-20">
+                            <span class="change-number">#{{$index +1}}</span>
+                        </div>
+                        <div class="row m-t-20">
+                            <label>Change Type</label>
+                            <select class="multiple middle m-t-15" ng-model="change.changeType" ng-options="item as item.name for item in lookups.changeTypes"
+                                ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.changeTypes"
+                                ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                        </div>
+                        <div class="m-t-30 row">
+                            <label>When do you anticipate the change taking place?</label>
+                            <div class="date-wrapper">
+                                <input type="text" class="date-input" readonly date-picker ng-model="change.changeTime" />
+                                <i class="date-icon" datepicker-input></i>
+                            </div>
+                        </div>
+                        <div class="m-t-30 row">
+                            <label>Description of change</label>
+                            <textarea class="description-change-textarea" maxlength="4000" ng-model="change.changeDescription"></textarea>
+                        </div>
+                        <a href="javascript:;" class="remove-link" ng-click="functionChanges.futureChanges.splice($index,1);">
+                            <span class="icon-remove"></span> Remove</a>
+                    </div>
+                </div>
+            </div>
+            <!-- END Anticipated Changes section -->
+        </div>
+        <div ng-show="currentTab.id==3">
+            <div class="row tab-headers">
+                <a href="javascript:;" ng-repeat="category in lookups.categories" ng-class="{'active current': pca.categoryType==category.id}"
+                    ng-click="pca.categoryType=category.id">
+                    {{category.name}}</a>
+            </div>
+            <div class="row">
+                <table class="custom-table core-kpi-sla" ng-show="pca.categoryType==config.KPISLA_ASSESSMENT_CATEGORY_ID">
+                    <thead>
+                        <tr>
+                            <th custom-tool-tips ct-message="A specific classification of key performance indicators and service levels.">
+                                Category
+                            </th>
+                            <th custom-tool-tips ct-message="A measurable value that demonstrates how effectively an activity is achieving key business objectives. Indication of success at meeting targets.">
+                                Key Performance Indicators</th>
+                            <th custom-tool-tips ct-message="A service level agreement is a contract between a service provider (either internal or external) and the end user that defines the level of service expected from the service provider. SLA’s are output-based and gauges how well a key performance indicator is performing.">Service Levels</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat-start="ks in assessments.kPISLAAssessments" ng-class-even="'striped'" ng-init="rowIndex = $index">
+                            <!--Category-->
+                            <td rowspan="{{ks.KPIs.length}}" class="tc">
+                                {{ks.KPICategory.name}}
+                            </td>
+                            <!--KPI-->
+                            <td class="tc" ng-if="ks.KPIs[0].name.length>0">{{ks.KPIs[0].name}}</td>
+                            <td class="tc" ng-if="ks.KPIs[0].name.length<=1">
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalKPICategoryAssessment(0, ks.KPICategory.id)"
+                                    placeholder="Additional" ng-model="ks.KPIs[0].additionalKPI"></textarea>
+                            </td>
+                            <!--SLA-->
+                            <td tool-tips class="inputs tc">
+                                <select class="multiple short" ng-model="ks.KPIs[0].selectedSLA" ng-options="item as item.name for item in ks.KPIs[0].SLAs track by item.id"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="ks.KPIs[0].SLAs"
+                                    ng-multi-select-filter="false" ng-multi-select-keep-open="true" ng-multi-select-placeholder="Select"
+                                    data-service-level-select="assessments.kPISLAAssessments[$index].KPIs[0].selectedSLA" data-close-drop>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end ng-repeat="kpi in ks.KPIs" ng-hide="$first" class="subrow" ng-class="{'striped': rowIndex%2==1}">
+                            <!--KPI-->
+                            <td class="tc" ng-if="kpi.name.length>0">{{kpi.name}}</td>
+                            <td class="tc" ng-if="kpi.name.length<=0">
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalKPICategoryAssessment($index, ks.KPICategory.id)"
+                                    placeholder="Additional" ng-model="kpi.additionalKPI"></textarea>
+                            </td>
+                            <!--SLA-->
+                            <td tool-tips class="inputs tc">
+                                <select class="multiple short" ng-model="kpi.selectedSLA" ng-options="item as item.name for item in kpi.SLAs track by item.id"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="kpi.SLAs"
+                                    ng-multi-select-filter="false" ng-multi-select-keep-open="true" ng-multi-select-placeholder="Select"
+                                    data-service-level-select="assessments.kPISLAAssessments[rowIndex].KPIs[$index].selectedSLA"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-start="ks in additional.kPISLAAssessments" ng-class="{'striped': (lookups.KPICategories.length + rowIndex) %2==1}"
+                            ng-init="rowIndex = $index">
+                            <!--Category-->
+                            <td class="tc" rowspan="{{ks.KPIs.length}}">
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalKPI($index)" placeholder="Additional"
+                                    ng-model="ks.KPIs[0].additionalKPICategory"></textarea></td>
+                            <!--KPI-->
+                            <td class="tc">
+
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalSubKPIAssessment(0, ks.KPICategory.id)"
+                                    placeholder="Additional" ng-model="ks.KPIs[0].additionalKPI"></textarea>
+                            </td>
+                            <!--SLA-->
+                            <td tool-tips class="inputs tc">
+                                <select class="multiple short" ng-model="ks.KPIs[0].selectedSLA" ng-options="item as item.name for item in ks.KPIs[0].SLAs track by item.id"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="ks.KPIs[0].SLAs"
+                                    ng-multi-select-filter="false" ng-multi-select-keep-open="true" ng-multi-select-placeholder="Select"
+                                    data-service-level-select="additional.kPISLAAssessments[rowIndex].KPIs[0].selectedSLA" data-close-drop>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end ng-repeat="kpi in ks.KPIs" ng-hide="$first" class="subrow" ng-class="{'striped': (lookups.KPICategories.length + rowIndex) %2==1}">
+                            <!--KPI-->
+                            <td class="tc">
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalSubKPIAssessment($index, ks.KPICategory.id)"
+                                    placeholder="Additional" ng-model="kpi.additionalKPI"></textarea>
+                            </td>
+                            <!--SLA-->
+                            <td tool-tips class="inputs tc">
+                                <select class="multiple short" ng-model="kpi.selectedSLA" ng-options="item as item.name for item in kpi.SLAs track by item.id"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="kpi.SLAs"
+                                    ng-multi-select-filter="false" ng-multi-select-keep-open="true" ng-multi-select-placeholder="Select"
+                                    data-service-level-select="additional.kPISLAAssessments[rowIndex].KPIs[$index].selectedSLA"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                        </tr>
+                </table>
+                <table class="custom-table controls-advanced" ng-show="pca.categoryType==config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID">
+                    <thead>
+                        <tr>
+                            <th width="97px" custom-tool-tips ct-message="A general category of processes assigned to the function being assessed.  Functions are usually made of many processes that are rolled up to general categories (i.e. Disbursement of funds is a general process that has several sub-processes).">
+                                Core Process</th>
+                            <th width="97px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  One or multiple sub-processes are associated with one core process.  Sub-processes should be distinct enough to have attributable controls.">Sub-processes</th>
+                            <th width="95px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">Risks</th>
+                            <th width="66px" custom-tool-tips ct-message="The frequency of how often sub-process is performed such as a daily, weekly, monthly, quarterly or annual basis.  An example would disbursements/withdrawals are processed on a daily basis.">Likelihood
+                                <br/>of Occurrence
+                            </th>
+                            <th width="66px" custom-tool-tips ct-message="Categorizing the type of risk(s) if a sub-process is not performed or performed incorrectly.  For example, a particular risk could be financial, operational, regulatory, reputational or any combination of these.">Risk
+                                <br/>Impact
+                            </th>
+                            <th width="81px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">Risk Exposure</th>
+                            <th width="66px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">Controls</th>
+                            <th width="66px" custom-tool-tips ct-message="Provides the purpose of the control and/or specific target against which to evaluate the effectiveness of controls.  Within the tool, this is a free form field for the user to elaborate on why the control is in place.">Controls
+                                <br/>Objective
+                            </th>
+                            <th width="66px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">Control Frequency</th>
+                            <th width="66px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">Control Design</th>
+                            <th width="66px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">Testing &amp; Frequency</th>
+                            <th width="66px" custom-tool-tips ct-message="The cause or reason for the control.  Some reasons could be Performance, Process, Product, Regulatory, SOC 1, SOC 2, SOX/MAR, 38a-1, etc.  Many times there could be multiple reasons.">Control Trigger</th>
+                            <th width="66px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">Key Controls
+                                <br/>Maturity
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat-start="fas in assessments.functionalAssessments" ng-class-even="'striped'" ng-init="rowIndex = $index">
+                            <!--coreProcess-->
+                            <td rowspan="{{getCoreProcessRowSpanValue(fas)}}" class="tc">
+                                {{fas.coreProcess.name}}
+                            </td>
+                            <!--sub Process-->
+                            <td ng-if="fas.subProcessRisks[0].name.length>0">{{fas.subProcessRisks[0].name}}</td>
+                            <td ng-if="fas.subProcessRisks[0].name.length<=1">
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalCoreProcessAssessment(0, fas.coreProcess.id)"
+                                    placeholder="Additional" ng-model="fas.subProcessRisks[0].additionalSubProcess"></textarea>
+                            </td>
+                            <!--sub Risk-->
+                            <td ng-if="fas.subProcessRisks[0].name.length>0">{{fas.subProcessRisks[0].risk}}</td>
+                            <td ng-if="fas.subProcessRisks[0].name.length<=1">
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow placeholder="Additional" ng-model="fas.subProcessRisks[0].additionalRisk"></textarea>
+                            </td>
+                            <!--likelihood of occurrence-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short likelihood-of-occurrence" ng-model="fas.subProcessRisks[0].likelihoodOfOccurrence" ng-options="item as item.name for item in lookups.likelihoodOfOccurrences"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.likelihoodOfOccurrences"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-select-all="false"
+                                    ng-change="askUserDefinedLikelihoodOfOccurrence(fas.subProcessRisks[0],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex,0,'main', 'lko')">
+                            </select>
+                                <div id="lko-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-0-main" class="row comment-popup hide"
+                                    title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="fas.subProcessRisks[0].otherLikelihoodOfOccurrence"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex, 0,'main', 'lko');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!--Risk Impact-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short risk-impact" ng-model="fas.subProcessRisks[0].riskImpacts" ng-options="item as item.name for item in lookups.riskImpacts"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.riskImpacts"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+
+                            </select>
+                            </td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures ">
+                                <input type="radio" ng-value="item"
+                                       ng-model="fas.subProcessRisks[0].riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs" data-pre-message="Please select functional area first">
+                                <select class="multiple ultra-short" ng-model="fas.subProcessRisks[0].controlTypes" ng-options="item as item.name for item in fas.subProcessRisks[0].selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="fas.subProcessRisks[0].selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-multi-select-all-selected="Please select functional area"
+                                    data-control-type-select="assessments.functionalAssessments[{{rowIndex}}].subProcessRisks[0].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- other columns-->
+                            <td colspan="6" />
+                            </td>
+                        </tr>
+                        <tr ng-repeat-start="subProcessRisk in fas.subProcessRisks" ng-if="!$first" class="subrow" ng-class="{'striped': (rowIndex)%2==1}"
+                            ng-init="subProcessRisk.mainSubProcessRiskIndex=$index">
+                            <!--sub Process-->
+                            <td ng-if="subProcessRisk.name.length>0">{{subProcessRisk.name}}</td>
+                            <td ng-if="subProcessRisk.name.length<=0">
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalCoreProcessAssessment($index, fas.coreProcess.id)"
+                                    placeholder="Additional" ng-model="subProcessRisk.additionalSubProcess"></textarea>
+                            </td>
+                            <!--sub Risk-->
+                            <td ng-if="subProcessRisk.name.length>0">{{subProcessRisk.risk}}</td>
+                            <td ng-if="subProcessRisk.name.length<=0">
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow placeholder="Additional" ng-model="subProcessRisk.additionalRisk"></textarea>
+                            </td>
+                            <!--likelihood of occurrence-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.likelihoodOfOccurrence" ng-options="item as item.name for item in lookups.likelihoodOfOccurrences"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.likelihoodOfOccurrences"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-change="askUserDefinedLikelihoodOfOccurrence(subProcessRisk,config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex,subProcessRisk.mainSubProcessRiskIndex,'main', 'lko')">
+                            </select>
+                                <div id="lko-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.mainSubProcessRiskIndex}}-main"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.otherLikelihoodOfOccurrence"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex, subProcessRisk.mainSubProcessRiskIndex,'main', 'lko');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!--Risk Impact-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.riskImpacts" ng-options="item as item.name for item in lookups.riskImpacts"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.riskImpacts"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+
+                            </select>
+                            </td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures">
+                                <input type="radio" ng-value="item"
+
+                                       name="risk-answer-{{fas.coreProcess.id}}-{{rowIndex + $parent.$index}}"
+                                       ng-model="subProcessRisk.riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs" data-pre-message="Please select functional area first">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.controlTypes" ng-options="item as item.name for item in subProcessRisk.selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="subProcessRisk.selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-multi-select-all-selected="Please select functional area"
+                                    data-control-type-select="assessments.functionalAssessments[{{rowIndex}}].subProcessRisks[{{$index}}].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- other columns-->
+                            <td colspan="6" />
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end ng-if="subProcessRisk.controlTypes.length>0" class="subrow" ng-class="{'striped': (rowIndex)%2==1}" ng-repeat="controlType in subProcessRisk.controlTypes">
+                            <td colspan="6" class="control-name" data-ng-if="checkControlTypeId(controlType.id)">{{controlType.name}}
+                            </td>
+                            <td colspan="6" class="control-name" data-ng-if="!checkControlTypeId(controlType.id)">
+                                {{subProcessRisk.otherNames[controlType.id]}}
+                            </td>
+                            <!-- Controls objective-->
+                            <td>
+                                <input type="text" class="ultra-short" ng-model="subProcessRisk.inputs[$index].controlObjective" maxlength="200" />
+                            </td>
+                            <!-- Control Frequency-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlFrequency" ng-options="item as item.name for item in lookups.controlFrequencys"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.controlFrequencys"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                            </td>
+                            <!-- Control Design -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlDesigns" ng-options="item as item.name for item in lookups.controlDesigns"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlDesigns"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- testing & frequency -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].testingFrequencies" ng-options="item as item.name for item in lookups.testingFrequencies"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.testingFrequencies"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-change="askUserDefinedTestingFrequency(subProcessRisk.inputs[$index],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex+'-'+subProcessRisk.mainSubProcessRiskIndex, $index,'main', 'tf')"
+                                    data-close-drop>
+                            </select>
+                                <div id="tf-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.mainSubProcessRiskIndex}}-{{$index}}-main"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.inputs[$index].otherTestingFrequency"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex+'-'+subProcessRisk.mainSubProcessRiskIndex, $index,'main', 'tf');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!-- Control Trigger -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlTriggers" ng-options="item as item.name for item in lookups.controlTriggers"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlTriggers"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- key controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].keyControlsMaturity" ng-options="item as item.name for item in lookups.keyControlsMaturities"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.keyControlsMaturities"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-select-all="false"
+                                    ng-change="askUserDefinedKeyControlsMaturity(subProcessRisk.inputs[$index],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex+'-'+subProcessRisk.mainSubProcessRiskIndex, $index,'main', 'kcm')">
+                            </select>
+                                <div id="kcm-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.mainSubProcessRiskIndex}}-{{$index}}-main"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.inputs[$index].otherKeyControlMaturity"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex+'-'+subProcessRisk.mainSubProcessRiskIndex, $index,'main', 'kcm');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end=""></tr>
+                        <!--additional assessment-->
+                        <tr ng-repeat-start="fas in additional.functionalAssessments" ng-class="{'striped': (assessments.functionalAssessments.length + $index) %2==1}"
+                            ng-init="rowIndex = (assessments.functionalAssessments.length + $index)">
+                            <!--coreProcess-->
+                            <td rowspan="{{getCoreProcessRowSpanValue(fas)}}" class="tc">
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalFunctionalAreaProcessAssessment($index)"
+                                    placeholder="Additional" ng-model="fas.subProcessRisks[0].additionalCoreProcess"></textarea>
+                            </td>
+                            <!--sub Process-->
+                            <td>
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalFunctionalAreaSubProcessAssessment(0, fas.coreProcess.id)"
+                                    placeholder="Additional" ng-model="fas.subProcessRisks[0].additionalSubProcess"></textarea>
+                            </td>
+                            <!--sub Risk-->
+                            <td>
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow placeholder="Additional" ng-model="fas.subProcessRisks[0].additionalRisk"></textarea>
+                            </td>
+                            <!--likelihood of occurrence-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short likelihood-of-occurrence" ng-model="fas.subProcessRisks[0].likelihoodOfOccurrence" ng-options="item as item.name for item in lookups.likelihoodOfOccurrences"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.likelihoodOfOccurrences"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-change="askUserDefinedLikelihoodOfOccurrence(fas.subProcessRisks[0],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex,0,'add', 'lko')">
+                            </select>
+                                <div id="lko-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-0-add" class="row comment-popup hide"
+                                    title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="fas.subProcessRisks[0].otherLikelihoodOfOccurrence"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex, 0,'add', 'lko');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!--Risk Impact-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short risk-impact" ng-model="fas.subProcessRisks[0].riskImpacts" ng-options="item as item.name for item in lookups.riskImpacts"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.riskImpacts"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+
+                            </select>
+                            </td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures">
+                                <input type="radio" ng-value="item"
+                                       ng-model="fas.subProcessRisks[0].riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs" data-pre-message="Please select functional area first">
+                                <select class="multiple ultra-short" ng-model="fas.subProcessRisks[0].controlTypes" ng-options="item as item.name for item in fas.subProcessRisks[0].selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="fas.subProcessRisks[0].selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-multi-select-all-selected="Please select functional area"
+                                    data-control-type-select="additional.functionalAssessments[{{rowIndex}}].subProcessRisks[0].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- other columns-->
+                            <td colspan="6" />
+                            </td>
+                        </tr>
+                        <tr ng-repeat-start="subProcessRisk in fas.subProcessRisks" ng-if="!$first" class="subrow" ng-class="{'striped': (rowIndex)%2==1}"
+                            ng-init="additionalSubProcessRiskIndex=$index">
+                            <!--sub Process-->
+                            <td>
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalFunctionalAreaSubProcessAssessment($index, fas.coreProcess.id)"
+                                    placeholder="Additional" ng-model="subProcessRisk.additionalSubProcess"></textarea>
+                            </td>
+                            <!--sub Risk-->
+                            <td>
+                                <textarea class="alittle-short ext-textarea" maxlength="200" auto-grow placeholder="Additional" ng-model="subProcessRisk.additionalRisk"></textarea>
+                            </td>
+                            <!--likelihood of occurrence-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.likelihoodOfOccurrence" ng-options="item as item.name for item in lookups.likelihoodOfOccurrences"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.likelihoodOfOccurrences"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-change="askUserDefinedLikelihoodOfOccurrence(subProcessRisk,config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex,subProcessRisk.additionalSubProcessRiskIndex,'add', 'lko')">
+                            </select>
+                                <div id="lko-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.additionalSubProcessRiskIndex}}-add"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.otherLikelihoodOfOccurrence"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex, subProcessRisk.additionalSubProcessRiskIndex,'add', 'lko');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!--Risk Impact-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.riskImpacts" ng-options="item as item.name for item in lookups.riskImpacts"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.riskImpacts"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+
+                            </select>
+                            </td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures">
+                                <input type="radio" ng-value="item"
+                                       name="risk-answer-{{fas.coreProcess.id}}-{{rowIndex+$parent.$index}}"
+                                       ng-model="subProcessRisk.riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs" data-pre-message="Please select functional area first">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.controlTypes" ng-options="item as item.name for item in subProcessRisk.selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="subProcessRisk.selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-multi-select-all-selected="Please select functional area"
+                                    data-control-type-select="additional.functionalAssessments[{{rowIndex}}].subProcessRisks[{{$index}}].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- other columns-->
+                            <td colspan="6" />
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end ng-if="subProcessRisk.controlTypes.length>0" class="subrow" ng-class="{'striped': (rowIndex)%2==1}" ng-repeat="controlType in subProcessRisk.controlTypes">
+                            <td colspan="6" class="control-name" data-ng-if="checkControlTypeId(controlType.id)">{{controlType.name}}
+                            </td>
+                            <td colspan="6" class="control-name" data-ng-if="!checkControlTypeId(controlType.id)">
+                                {{subProcessRisk.otherNames[controlType.id]}}
+                            </td>
+                            <!-- Controls objective-->
+                            <td>
+                                <input type="text" class="ultra-short" ng-model="subProcessRisk.inputs[$index].controlObjective" maxlength="200" />
+                            </td>
+                            <!-- Control Frequency-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlFrequency" ng-options="item as item.name for item in lookups.controlFrequencys"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.controlFrequencys"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                            </td>
+                            <!-- Control Design -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlDesigns" ng-options="item as item.name for item in lookups.controlDesigns"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlDesigns"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- testing & frequancy -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].testingFrequencies" ng-options="item as item.name for item in lookups.testingFrequencies"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.testingFrequencies"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-change="askUserDefinedTestingFrequency(subProcessRisk.inputs[$index],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex+'-'+subProcessRisk.additionalSubProcessRiskIndex, $index,'add', 'tf')"
+                                    data-close-drop>
+                            </select>
+                                <div id="tf-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.additionalSubProcessRiskIndex}}-{{$index}}-add"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.inputs[$index].otherTestingFrequency"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex+'-'+subProcessRisk.additionalSubProcessRiskIndex, $index,'add', 'tf');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!-- Control Trigger -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].controlTriggers" ng-options="item as item.name for item in lookups.controlTriggers"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlTriggers"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- key controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="subProcessRisk.inputs[$index].keyControlsMaturity" ng-options="item as item.name for item in lookups.keyControlsMaturities"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.keyControlsMaturities"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-select-all="false"
+                                    ng-change="askUserDefinedKeyControlsMaturity(subProcessRisk.inputs[$index],config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID,rowIndex+'-'+subProcessRisk.additionalSubProcessRiskIndex, $index,'add', 'kcm')">
+                            </select>
+                                <div id="kcm-comment-popup-{{config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID}}-{{rowIndex}}-{{subProcessRisk.additionalSubProcessRiskIndex}}-{{$index}}-add"
+                                    class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="subProcessRisk.inputs[$index].otherKeyControlMaturity"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID, rowIndex+'-'+subProcessRisk.additionalSubProcessRiskIndex, $index,'add', 'kcm');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end=""></tr>
+                    </tbody>
+                </table>
+                <table class="custom-table controlls-simple" ng-show="pca.categoryType!=config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID && pca.categoryType!=config.KPISLA_ASSESSMENT_CATEGORY_ID">
+                    <thead>
+                        <tr>
+                            <th width="160px" custom-tool-tips ct-message="The specific type of training or documentation that is often a requirement for all employees to complete.  These types of trainings are at the corporate and divisional levels. Curriculums should be distinct enough to have attributable controls."
+                                ng-if="pca.categoryType==config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                Curriculum
+                            </th>
+                            <th width="160px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  Processes should be distinct enough to have attributable controls."
+                                ng-if="pca.categoryType!=config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                Processes
+                            </th>
+                            <th width="160px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">Risks</th>
+                            <th width="97px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">Risk Exposure</th>
+                            <th width="106px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">Controls</th>
+                            <th width="106px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">Control Frequency</th>
+                            <th width="106px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">Control Design</th>
+                            <th width="106px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">Testing &amp;
+                                <br/>Frequency
+                            </th>
+                            <th width="106px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">Key Controls
+                                <br/>Maturity
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat-start="pr in assessments.processRiskAssessments[pca.categoryType].assessments" ng-class-even="'striped'" ng-init="prRowIndex=$index">
+                            <!--process name-->
+                            <td>{{pr.processRisk.name}}</td>
+                            <!--risk-->
+                            <td>{{pr.processRisk.risk}}</td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures">
+                                <input type="radio" ng-value="item"
+                                       name="risk-answer-{{pca.categoryType}}-{{$parent.$index}}"
+                                       ng-model="pr.riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="pr.controlTypes" ng-options="item as item.name for item in pr.selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="pr.selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-control-type-select="assessments.processRiskAssessments[{{pca.categoryType}}].assessments[{{$index}}].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- Controls objective-->
+                            <td colspan="4" />
+                            </td>
+                        </tr>
+                        <tr ng-if="pr.controlTypes.length>0" ng-repeat="controlType in pr.controlTypes" class="subrow" ng-class="{'striped': prRowIndex %2==1}">
+                            <td colspan="4" class="control-name" data-ng-if="checkControlTypeId(controlType.id)">{{controlType.name}}
+                            </td>
+                            <td colspan="4" class="control-name" data-ng-if="!checkControlTypeId(controlType.id)">{{pr.otherNames[controlType.id]}}
+                            </td>
+                            <!-- Control Frequency-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="pr.inputs[$index].controlFrequency" ng-options="item as item.name for item in lookups.controlFrequencys"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.controlFrequencys"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                            </td>
+                            <!-- Control Design -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="pr.inputs[$index].controlDesigns" ng-options="item as item.name for item in lookups.controlDesigns"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlDesigns"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- testing & frequancy -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="pr.inputs[$index].testingFrequencies" ng-options="item as item.name for item in lookups.testingFrequencies"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.testingFrequencies"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-change="askUserDefinedTestingFrequency(pr.inputs[$index],pca.categoryType,pr.processRisk.id, $index,'main', 'pr-tf')"
+                                    data-close-drop>
+                            </select>
+                                <div id="pr-tf-comment-popup-{{pca.categoryType}}-{{pr.processRisk.id}}-{{$index}}-main" class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="pr.inputs[$index].otherTestingFrequency"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(pca.categoryType,pr.processRisk.id, $index,'main', 'pr-tf');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!-- key controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="pr.inputs[$index].keyControlsMaturity" ng-options="item as item.name for item in lookups.keyControlsMaturities"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.keyControlsMaturities"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-select-all="false"
+                                    ng-change="askUserDefinedKeyControlsMaturity(pr.inputs[$index],pca.categoryType,pr.processRisk.id, $index,'main', 'pr-kcm')">
+                            </select>
+                                <div id="pr-kcm-comment-popup-{{pca.categoryType}}-{{pr.processRisk.id}}-{{$index}}-main" class="row comment-popup hide"
+                                    title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="pr.inputs[$index].otherKeyControlMaturity"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(pca.categoryType, pr.processRisk.id, $index,'main', 'pr-kcm');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end></tr>
+                        <tr ng-repeat-start="kpi in additional.processRiskAssessments[pca.categoryType].assessments" ng-class="{'striped': (assessments.processRiskAssessments[pca.categoryType].assessments.length + $index) %2==1}"
+                            ng-init="addKPIRowIndex=(assessments.processRiskAssessments[pca.categoryType].assessments.length + $index)">
+                            <td>
+                                <textarea class="short ext-textarea" maxlength="200" auto-grow ng-change="addAdditionalRiskAssessment($index, pca.categoryType)"
+                                    placeholder="Additional" ng-model="kpi.additionalProcess"></textarea></td>
+                            <!--risk -->
+                            <td>
+                                <textarea class="short ext-textarea" maxlength="200" ng-model="kpi.additionalRisk" auto-grow placeholder="Additional"></textarea>
+                            </td>
+                            <!-- Risk exposure -->
+                            <td>
+                                <label title="{{item.name}}" ng-repeat="item in lookups.riskExposures">
+                                <input type="radio" ng-value="item"
+                                       name="risk-answer-add-{{pca.categoryType}}-{{$parent.$index}}"
+                                       ng-model="kpi.riskExposure"/> {{item.name}}
+                            </label>
+                            </td>
+                            <!-- controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="kpi.controlTypes" ng-options="item as item.name for item in kpi.selectableControlTypes track by item.id"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="kpi.selectableControlTypes"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-control-type-select="additional.processRiskAssessments[{{pca.categoryType}}].assessments[{{$index}}].controlTypes"
+                                    data-close-drop>
+                            </select>
+                            </td>
+                            <!-- Controls objective-->
+                            <td colspan="4" />
+                            </td>
+                        </tr>
+                        <tr ng-if="kpi.controlTypes.length>0" ng-repeat="controlType in kpi.controlTypes" class="subrow" ng-class="{'striped': (assessments.processRiskAssessments[pca.categoryType].assessments.length + $index) %2==1}">
+                            <td colspan="4" class="control-name" data-ng-if="checkControlTypeId(controlType.id)">{{controlType.name}}
+                            </td>
+                            <td colspan="4" class="control-name" data-ng-if="!checkControlTypeId(controlType.id)">{{kpi.otherNames[controlType.id]}}
+                            </td>
+                            <!-- Control Frequency-->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="kpi.inputs[$index].controlFrequency" ng-options="item as item.name for item in lookups.controlFrequencys"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.controlFrequencys"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select">
+                            </select>
+                            </td>
+                            <!-- Control Design -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="kpi.inputs[$index].controlDesigns" ng-options="item as item.name for item in lookups.controlDesigns"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.controlDesigns"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" data-close-drop>
+                            </select>
+                            </td>
+                            <!-- testing & frequancy -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="kpi.inputs[$index].testingFrequencies" ng-options="item as item.name for item in lookups.testingFrequencies"
+                                    ng-multi-select ng-multi-select-single="false" multiple="multiple" ng-multi-select-track="lookups.testingFrequencies"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-keep-open="true"
+                                    ng-multi-select--minimum-count-selected="0" ng-multi-select-select-all="false" ng-change="askUserDefinedTestingFrequency(kpi.inputs[$index],pca.categoryType, addKPIRowIndex, $index,'add', 'pr-tf')"
+                                    data-close-drop>
+                            </select>
+                                <div id="pr-tf-comment-popup-{{pca.categoryType}}-{{addKPIRowIndex}}-{{$index}}-add" class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="kpi.inputs[$index].otherTestingFrequency"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(pca.categoryType, addKPIRowIndex, $index,'add', 'pr-tf');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                            <!-- key controls -->
+                            <td tool-tips class="inputs">
+                                <select class="multiple ultra-short" ng-model="kpi.inputs[$index].keyControlsMaturity" ng-options="item as item.name for item in lookups.keyControlsMaturities"
+                                    ng-multi-select ng-multi-select-single="true" multiple="multiple" ng-multi-select-track="lookups.keyControlsMaturities"
+                                    ng-multi-select-filter="false" ng-multi-select-placeholder="Select" ng-multi-select-select-all="false"
+                                    ng-change="askUserDefinedKeyControlsMaturity(kpi.inputs[$index], pca.categoryType, addKPIRowIndex, $index,'add', 'pr-kcm')">
+                            </select>
+                                <div id="pr-kcm-comment-popup-{{pca.categoryType}}-{{addKPIRowIndex}}-{{$index}}-add" class="row comment-popup hide" title="Comment">
+                                    <label>Comment for your choice</label>
+                                    <textarea maxlength="4000" data-ng-model="kpi.inputs[$index].otherKeyControlMaturity"></textarea>
+                                    <center>
+                                        <a href="javascript:;" class="btn btn-primary" data-ng-click="closeCommentBox(pca.categoryType,addKPIRowIndex, $index,'add', 'pr-kcm');">OK</a>
+                                    </center>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr ng-repeat-end></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div ng-show="currentTab.id==4" class="overall-page">
+            <div class="container">
+                <div class="row page-heading">
+                    <span class="fl">Overall Risk Rating</span>
+                    <div class="buttons fl m-l-20">
+                        <a href="javascript:;" class="btn btn-primary" ng-click="saveAsDraft()">Save</a>
+                        <a href="javascript:;" class="btn btn-primary" ng-click="export()">Export</a>
+                        <a href="javascript:window.print();" class="btn btn-primary">Print</a>
+                    </div>
+                    <a id="submit-for-review1" class="fr btn btn-purple submit-btn" href="javascript:;" ng-click="submit()">Submit for Review</a>
+                </div>
+                <div class="incompleted">
+                    &nbsp;
+                    <div class="incompleted content" ng-show="showIncompleted.Error">
+                        <label>&nbsp;&nbsp;There are some fields that have not been completed below, please complete
+                            before you submit for approval !!!</label>
+                    </div>
+                </div>
+                <div class="page-heading-bline">
+                </div>
+                <div class="row graphs m-t-25">
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Likelihood of Occurrence</h3>
+                                <p>Overall: {{overallRiskRatingReport.likelihoodOfOccurrenceReport.overallRiskScore}}
+                                </p>
+                                <label>Likelihood of Occurrence: <strong>{{overallRiskRatingReport.likelihoodOfOccurrenceReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.likelihoodOfOccurrenceReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change="updateOrRenderRiskChart('likelihoodOfOccurrenceReport')" ng-multi-select ng-multi-select-single="true"
+                                    multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                    ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="likelihoodOfOccurrenceReportChart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Risk Exposure</h3>
+                                <p>Overall: {{overallRiskRatingReport.riskExposureReport.overallRiskScore}}</p>
+                                </p>
+                                <label>Risk Exposure:
+                                    <strong>{{overallRiskRatingReport.riskExposureReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.riskExposureReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change="updateOrRenderRiskChart('riskExposureReport')" ng-multi-select ng-multi-select-single="true"
+                                    multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                    ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="riskExposureReportChart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row legend">
+                </div>
+            </div>
+            <div class="row graphs m-t-30 b-b-dbdcd5">
+                <div class="container">
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Key Controls Maturity</h3>
+                                <p>Overall: {{overallRiskRatingReport.keyControlsMaturityReport.overallRiskScore}}
+                                </p>
+                                <label>Key Controls Maturity: <strong>{{overallRiskRatingReport.keyControlsMaturityReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.keyControlsMaturityReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change="updateOrRenderRiskChart('keyControlsMaturityReport')" ng-multi-select ng-multi-select-single="true"
+                                    multiple="multiple" ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false"
+                                    ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="keyControlsMaturityReportChart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="top fl">
+                            <div class="left">
+                                <h3>Residual Risk</h3>
+                                <p>Overall Residual Risk: {{overallRiskRatingReport.residualRiskReport.overallRiskScore}}
+                                </p>
+                                <label>Likelihood of Occurrence: <strong>{{overallRiskRatingReport.residualRiskReport.maxRiskType}}</strong></label>
+                            </div>
+                            <div class="right inputs" tool-tips>
+                                <select class="multiple ultra-short" ng-model="reportCategories.residualRiskReport" ng-options="item as item.name for item in categoriesWithAll"
+                                    ng-change='updateOrRenderResidualChart()' ng-multi-select ng-multi-select-single="true" multiple="multiple"
+                                    ng-multi-select-track="categoriesWithAll" ng-multi-select-filter="false" ng-multi-select-width="224px">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="placeholder fl">
+                            <div class="img-wrapper" id="residualRiskReportChart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row commentary">
+                <div class="container">
+                    <div class="col-9" ng-init="overallDisable=true">
+                        <h3>Overall Risk Rating Commentary (Optional)</h3>
+                        <textarea id="overall-textarea" cols="150" maxlength="4000" ng-disabled="overallDisable" ng-model="assessmentToAdd.overallRiskRatingCommentary"></textarea>
+                        <br/><a href="javascript:;" ng-click="overallDisable=!overallDisable" class="btn btn-primary">{{overallDisable ? 'Edit': 'Save'}}</a>
+                    </div>
+                </div>
+            </div>
+            <!-- BEGIN Business Unit Information section -->
+            <div class="row expand-container m-t-20">
+                <div class="row expand-head" ng-class="{'closed': closeBuInfo}" ng-click="closeBuInfo=!closeBuInfo">
+                    <i></i>Business Unit Information
+                    <a href="javascript:;" ng-click="currentTab.id=1;$event.stopPropagation();" class="fr btn btn-primary">Edit</a>
+                </div>
+                <div class="expand-body row" ng-class="{'closed': closeBuInfo}">
+                    <div class="col-5">
+                        <div class="heading">Unit</div>
+                        <div class="contents">
+                            <div class="row">
+                                <label>Business Unit</label>
+                                <span ng-class="{'error':!assessmentToAdd.businessUnit[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.businessUnit[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Product</label>
+                                <span ng-class="{'error':!assessmentToAdd.product[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.product[0].name | isSelected:this}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Department</label>
+                                <span ng-class="{'error':!assessmentToAdd.department[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.department[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Department Lead</label>
+                                <span ng-class="{'error':!assessmentToAdd.departmentHead[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.departmentHead[0].name | isSelected}}</span>
+                            </div>
+                        </div>
+                        <div class="heading m-t-20">Assessment</div>
+                        <div class="contents">
+                            <div class="row">
+                                <label>Assessment Type</label>
+                                <span ng-class="{'error':!assessmentToAdd.assessmentType[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.assessmentType[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Assessment Status</label>
+                                <span ng-class="{'error':!assessmentToAdd.assessmentStatus[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.assessmentStatus[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Assessment Due Date</label>
+                                <span ng-class="{'error':!assessmentToAdd.dueDate &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.dueDate |  date:config.DATE_FORMAT | isSelected}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="heading">Functional Area</div>
+                        <div class="contents">
+                            <div class="row">
+                                <label>Functional Area Owner</label>
+                                <span ng-class="{'error':!assessmentToAdd.functionalAreaOwner[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.functionalAreaOwner[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Individual Completing Assessment</label>
+                                <span>{{user.firstName}} {{user.lastName}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Functional Area</label>
+                                <span ng-class="{'error':!assessmentToAdd.functionalArea[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.functionalArea[0].name | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Functional Area Description</label>
+                                <span ng-class="{'error':!assessmentToAdd.functionalAreaDescription &amp;&amp; showIncompleted.Error}">
+                                    {{assessmentToAdd.functionalAreaDescription | isSelected}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="label">In what site(s) is the function performed</label>
+                                <span></span>
+                            </div>
+                            <div class="row" ng-repeat="site in assessmentToAdd.selectedSites">
+                                <label class="city">{{site.name}}</label>
+                                <span>{{site.percentage.value || 0}}%</span>
+                            </div>
+                            <div class="row">
+                                <label class="city"><strong>Total</strong></label>
+                                <span id='Total-percentage' ng-if="totalPercentageSum!=100" class="error">
+                                    <strong>{{totalPercentageSum}}%</strong> (The total should be 100%)
+                                </span>
+                                <span id='Total-percentage' ng-if="totalPercentageSum==100">
+                                    <strong>{{totalPercentageSum}}%</strong>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Business Unit Information section -->
+            <!-- BEGIN Function Modifications Info section -->
+            <div class="row expand-container">
+                <div class="expand-head row" ng-class="{'closed': closeFMInfo}" ng-click="closeFMInfo=!closeFMInfo">
+                    <i></i>Function Modifications Info
+                    <a href="javascript:;" ng-click="currentTab.id=2;$event.stopPropagation();" class="fr btn btn-primary">Edit</a>
+                </div>
+                <div class="row expand-body" ng-class="{'closed': closeFMInfo}">
+                    <div class="title">Prior Changes</div>
+                    <p>Were there any changes to the function in the prior reporting period?</p>
+                    <div class="non" ng-if="!functionChanges.isPriorChanges">None</div>
+                    <table class="normal-table row wrap-table" ng-if="functionChanges.isPriorChanges">
+                        <thead>
+                            <tr>
+                                <th>Change Type</th>
+                                <th>Description of change</th>
+                                <th>When did change occur?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in functionChanges.priorChanges">
+                                <td ng-class="{'error':!item.changeType[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeType[0].name | isSelected}}
+                                </td>
+                                <td ng-class="{'error':!item.changeDescription &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeDescription | isSelected}}
+                                </td>
+                                <td ng-class="{'error':!item.changeTime &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeTime |date:config.DATE_FORMAT | isSelected}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="title">Anticipated Changes</div>
+                    <p>Do you anticipate any changes to the function in the next reporting period?</p>
+                    <div class="non" ng-if="!functionChanges.isFutureChanges">None</div>
+                    <table class="normal-table row wrap-table" ng-if="functionChanges.isFutureChanges">
+                        <thead>
+                            <tr>
+                                <th>Change Type</th>
+                                <th>Description of change</th>
+                                <th>When did change occur?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in functionChanges.futureChanges">
+                                <td ng-class="{'error':!item.changeType[0].name &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeType[0].name | isSelected}}
+                                </td>
+                                <td ng-class="{'error':!item.changeDescription &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeDescription | isSelected}}
+                                </td>
+                                <td ng-class="{'error':!item.changeTime &amp;&amp; showIncompleted.Error}">
+                                    {{item.changeTime |date:config.DATE_FORMAT | isSelected}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END Function Modifications Info section -->
+            <!-- BEGIN Processes & Controls Assessment -->
+            <div class="row expand-container">
+                <div class="expand-head row" ng-class="{'closed': closePCA}" ng-click="closePCA=!closePCA">
+                    <i></i>Processes &amp; Controls Assessment
+                    <a href="javascript:;" ng-click="currentTab.id=3;$event.stopPropagation();" class="fr btn btn-primary">Edit</a>
+                </div>
+                <div class="row expand-body" ng-class="{'closed': closePCA}">
+                    <div class="row tab-navigate tab-headers1" ng-init="pca.categoryType=lookups.categories[0].id">
+                        <a href="javascript:;" ng-repeat="category in lookups.categories" ng-class="{'active ctKPI': pca.categoryType==category.id}"
+                            ng-click="pca.categoryType=category.id">
+                            {{category.name}}</a>
+                    </div>
+                    <div class="tabpane">
+                        <div class="tab active">
+                            <div class="row">
+                                <table class="wrap-table custom-table" ng-show="pca.categoryType==config.KPISLA_ASSESSMENT_CATEGORY_ID">
+                                    <thead>
+                                        <tr>
+                                            <th custom-tool-tips ct-message="A specific classification of key performance indicators and service levels.">
+                                                Category
+                                            </th>
+                                            <th custom-tool-tips ct-message="A measurable value that demonstrates how effectively an activity is achieving key business objectives. Indication of success at meeting targets.">
+                                                Key Performance Indicators</th>
+                                            <th custom-tool-tips ct-message="A service level agreement is a contract between a service provider (either internal or external) and the end user that defines the level of service expected from the service provider. SLA’s are output-based and gauges how well a key performance indicator is performing.">Service Levels</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="ks in assessments.kPISLAAssessments" ng-class-even="'high-bg'" ng-class-odd="'high'" ng-init='rowIndex=$index'>
+                                            <!--Category-->
+                                            <td rowspan="{{(ks.KPIs| filter:onlyWithKPI).length}}" class="ct">
+                                                {{ks.KPICategory.name}}
+                                            </td>
+                                            <!--KPI-->
+                                            <td class="ct" ng-if="ks.KPIs[0].name.length>0">{{ks.KPIs[0].name}}</td>
+                                            <td class="ct" ng-if="ks.KPIs[0].name.length<=1" ng-class="{'error':!ks.KPIs[0].additionalKPI &amp;&amp; showIncompleted.Error}">
+                                                {{ks.KPIs[0].additionalKPI | isSelected}}
+                                            </td>
+                                            <!-- SLA -->
+                                            <td class="control-name ct" data-ng-if="checkControlTypeId(ks.KPIs[0].selectedSLA[0].id)">{{ks.KPIs[0].selectedSLA[0].name}}
+                                            </td>
+                                            <td class="control-name  ct" ng-class="{'error':!ks.KPIs[0].additionalSLA.length &amp;&amp; showIncompleted.Error}"
+                                             data-ng-if="!checkControlTypeId(ks.KPIs[0].selectedSLA[0].id)">
+                                                {{ks.KPIs[0].additionalSLA | isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end ng-repeat="kpi in ks.KPIs |filter:onlyWithKPI" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <!--KPI-->
+                                            <td class="ct" ng-if="kpi.name.length>0">{{kpi.name}}</td>
+                                            <td class="ct" ng-if="kpi.name.length<=1" ng-class="{'error':!kpi.additionalKPI &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.additionalKPI | isSelected}}
+                                            </td>
+                                            <!-- SLA -->
+                                            <td class="control-name ct" data-ng-if="checkControlTypeId(kpi.selectedSLA[0].id)">{{kpi.selectedSLA[0].name}}
+                                            </td>
+                                            <td class="control-name ct" ng-class="{'error':!kpi.additionalSLA.length &amp;&amp; showIncompleted.Error}"
+                                             data-ng-if="!checkControlTypeId(kpi.selectedSLA[0].id)">
+                                                {{kpi.additionalSLA | isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-start="ks in additional.kPISLAAssessments | filter:onlyWithAdditionalKPICategory" ng-init='rowIndex=(lookups.KPICategories.length + $index)'
+                                            ng-class="{'high': (lookups.KPICategories.length + $index) %2==0, 'high-bg':(lookups.KPICategories.length + $index) %2==1}">
+                                            <!--Category-->
+                                            <td class="ct" rowspan="{{(ks.KPIs| filter:onlyWithKPI).length}}">
+                                                {{ks.KPIs[0].additionalKPICategory}}
+                                            </td>
+                                            <!--KPI-->
+                                            <td class="ct" ng-class="{'error':!ks.KPIs[0].additionalKPI &amp;&amp; showIncompleted.Error}">
+                                                {{ks.KPIs[0].additionalKPI | isSelected}}
+                                            </td>
+                                            <!-- SLA -->
+                                            <td class="control-name ct" data-ng-if="checkControlTypeId(ks.KPIs[0].selectedSLA[0].id)">{{ks.KPIs[0].selectedSLA[0].name}}
+                                            </td>
+                                            <td class="control-name ct" ng-class="{'error':!ks.KPIs[0].additionalSLA.length &amp;&amp; showIncompleted.Error}"
+                                             data-ng-if="!checkControlTypeId(ks.KPIs[0].selectedSLA[0].id)">
+                                                {{ks.KPIs[0].additionalSLA | isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end ng-repeat="kpi in ks.KPIs |filter:onlyWithAdditionalKPI" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <!--KPI-->
+                                            <td class="ct" ng-class="{'error':!kpi.additionalKPI &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.additionalKPI | isSelected}}
+                                            </td>
+                                            <!-- SLA -->
+                                            <td class="ct" ng-class="{'error':!kpi.selectedSLA[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.selectedSLA[0].name | isSelected}}
+                                            </td>
+                                            <td class="control-name ct" data-ng-if="checkControlTypeId(kpi.selectedSLA[0].id)">{{kpi.selectedSLA[0].name}}
+                                            </td>
+                                            <td class="control-name ct" ng-class="{'error':!kpi.additionalSLA.length &amp;&amp; showIncompleted.Error}"
+                                             data-ng-if="!checkControlTypeId(kpi.selectedSLA[0].id)">
+                                                {{kpi.additionalSLA | isSelected}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class=" custom-table" ng-show="pca.categoryType==config.FUNCTIONAL_ASSESSMENT_CATEGORY_ID">
+                                    <thead>
+                                        <tr>
+                                            <th width="97px" custom-tool-tips ct-message="A general category of processes assigned to the function being assessed.  Functions are usually made of many processes that are rolled up to general categories (i.e. Disbursement of funds is a general process that has several sub-processes).">
+                                                Core Process</th>
+                                            <th width="97px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  One or multiple sub-processes are associated with one core process.  Sub-processes should be distinct enough to have attributable controls.">Sub-processes</th>
+                                            <th width="95px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">Risks</th>
+                                            <th width="66px" custom-tool-tips ct-message="The frequency of how often sub-process is performed such as a daily, weekly, monthly, quarterly or annual basis.  An example would disbursements/withdrawals are processed on a daily basis.">Likelihood
+                                                <br/>of Occurrence
+                                            </th>
+                                            <th width="66px" custom-tool-tips ct-message="Categorizing the type of risk(s) if a sub-process is not performed or performed incorrectly.  For example, a particular risk could be financial, operational, regulatory, reputational or any combination of these.">Risk
+                                                <br/>Impact
+                                            </th>
+                                            <th width="81px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">Risk Exposure</th>
+                                            <th width="66px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">Controls</th>
+                                            <th width="66px" custom-tool-tips ct-message="Provides the purpose of the control and/or specific target against which to evaluate the effectiveness of controls.  Within the tool, this is a free form field for the user to elaborate on why the control is in place.">Controls
+                                                <br/>Objective
+                                            </th>
+                                            <th width="66px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">Control Frequency</th>
+                                            <th width="66px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">Control Design</th>
+                                            <th width="66px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">Testing &amp; Frequency</th>
+                                            <th width="66px" custom-tool-tips ct-message="The cause or reason for the control.  Some reasons could be Performance, Process, Product, Regulatory, SOC 1, SOC 2, SOX/MAR, 38a-1, etc.  Many times there could be multiple reasons.">Control Trigger</th>
+                                            <th width="66px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">Key Controls
+                                                <br/>Maturity
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="fas in assessments.functionalAssessments" ng-class-even="'high-bg'" ng-class-odd="'high'" ng-init='rowIndex=$index'>
+                                            <!--coreProcess-->
+                                            <td rowspan="{{getCoreProcessRowSpanValue(fas, true)}}" class="tc">
+                                                {{fas.coreProcess.name}}
+                                            </td>
+                                            <!--sub Process-->
+                                            <td class="ct" rowspan="{{fas.subProcessRisks[0].controlTypes.length +1}}" ng-if="fas.subProcessRisks[0].name.length>0">{{fas.subProcessRisks[0].name}}
+                                            </td>
+                                            <td class="ct" rowspan="{{fas.subProcessRisks[0].controlTypes.length +1}}" ng-if="fas.subProcessRisks[0].name.length<=1"
+                                                ng-class="{'error':!fas.subProcessRisks[0].additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].additionalSubProcess | isSelected}}
+                                            </td>
+                                            <!--sub Risk-->
+                                            <td class="ct" ng-if="fas.subProcessRisks[0].name.length>0">
+                                                {{fas.subProcessRisks[0].risk}}
+                                            </td>
+                                            <td class="ct" ng-if="fas.subProcessRisks[0].name.length<=1" ng-class="{'error':!fas.subProcessRisks[0].additionalRisk &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].additionalRisk | isSelected}}
+                                            </td>
+                                            <!-- likelihood of occurrence -->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].likelihoodOfOccurrence[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0]| likelihoodOfOccurrence| isSelected}}
+                                            </td>
+
+                                            <!--Risk Impact-->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].riskImpacts &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].riskImpacts |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':fas.subProcessRisks[0].controlTypes.length==0 &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- other columns-->
+                                            <td colspan="6" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-start="subProcessRisk in fas.subProcessRisks|filter:onlyWithSubProcess" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <!--sub Process-->
+                                            <td class="ct" rowspan="{{subProcessRisk.controlTypes.length +1}}" ng-if="subProcessRisk.name.length>0">{{subProcessRisk.name}}
+                                            </td>
+                                            <td class="ct" rowspan="{{subProcessRisk.controlTypes.length +1}}" ng-if="subProcessRisk.name.length<=1" ng-class="{'error':!subProcessRisk.additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.additionalSubProcess | isSelected}}
+                                            </td>
+                                            <!--sub Risk-->
+                                            <td class="ct" ng-if="subProcessRisk.name.length>0">{{subProcessRisk.risk}}</td>
+                                            <td class="ct" ng-if="subProcessRisk.name.length<=1" ng-class="{'error':!subProcessRisk.additionalRisk &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.additionalRisk | isSelected}}
+                                            </td>
+                                            <!-- likelihood of occurrence -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.likelihoodOfOccurrence[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk | likelihoodOfOccurrence| isSelected}}
+                                            </td>
+
+                                            <!--Risk Impact-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.riskImpacts &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.riskImpacts |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':subProcessRisk.controlTypes.length==0 &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- other columns-->
+                                            <td colspan="6" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end ng-if="subProcessRisk.controlTypes.length>0" class="subrow" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}"
+                                            ng-repeat="controlType in subProcessRisk.controlTypes">
+                                            <td class="rt" colspan="5">
+                                                {{controlType.name}}
+                                            </td>
+                                            <!-- Controls objective-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlObjective &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlObjective| isSelected}}
+                                            </td>
+                                            <!-- Control Frequency-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlFrequency[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlFrequency[0].name | isSelected}}
+                                            </td>
+                                            <!-- Control Design -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlDesigns &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlDesigns |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- testing & frequancy -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].testingFrequencies &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index] |testingFrequencies| isSelected}}
+                                            </td>
+                                            <!-- Control Trigger -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlTriggers &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlTriggers |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- key controls -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].keyControlsMaturity[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index]| keyControlMaturity| isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end="" ng-hide="true"></tr>
+                                        <!--additional assessment-->
+                                        <tr ng-repeat-start="fas in additional.functionalAssessments | filter:onlyWithAdditionalCoreProcess" ng-init='rowIndex=(assessments.functionalAssessments.length + $index)'
+                                            ng-class="{'high': (assessments.functionalAssessments.length + $index) %2==0, 'high-bg':(lookups.coreProcesses.length + $index) %2==1}">
+                                            <!--coreProcess-->
+                                            <td rowspan="{{getCoreProcessRowSpanValue(fas, true)}}" class="tc">
+                                                {{fas.subProcessRisks[0].additionalCoreProcess}}
+                                            </td>
+                                            <!--sub Process-->
+                                            <td class="ct" rowspan="{{fas.subProcessRisks[0].controlTypes.length +1}}" ng-class="{'error':!fas.subProcessRisks[0].additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].additionalSubProcess | isSelected}}
+                                            </td>
+                                            <!--sub Risk-->
+
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].additionalRisk &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].additionalRisk | isSelected}}
+                                            </td>
+                                            <!-- likelihood of occurrence -->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].likelihoodOfOccurrence[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0] | likelihoodOfOccurrence| isSelected}}
+                                            </td>
+
+                                            <!--Risk Impact-->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].riskImpacts &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].riskImpacts |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!fas.subProcessRisks[0].riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':fas.subProcessRisks[0].controlTypes==0 &amp;&amp; showIncompleted.Error}">
+                                                {{fas.subProcessRisks[0].controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- other columns-->
+                                            <td colspan="6" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-start="subProcessRisk in fas.subProcessRisks |filter:onlyWithAdditionalSubProcess" ng-hide="$first" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <!--sub Process-->
+                                            <td class="ct" rowspan="{{subProcessRisk.controlTypes.length +1}}" ng-class="{'error':!subProcessRisk.additionalSubProcess &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.additionalSubProcess | isSelected}}
+                                            </td>
+                                            <!--sub Risk-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.additionalRisk &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.additionalRisk | isSelected}}
+                                            </td>
+                                            <!-- likelihood of occurrence -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.likelihoodOfOccurrence[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk | likelihoodOfOccurrence| isSelected}}
+                                            </td>
+
+                                            <!--Risk Impact-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.riskImpacts &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.riskImpacts |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':subProcessRisk.controlTypes==0 &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- other columns-->
+                                            <td colspan="6" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end ng-if="subProcessRisk.controlTypes.length>0" class="subrow" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}"
+                                            ng-repeat="controlType in subProcessRisk.controlTypes">
+                                            <td class="rt" colspan="5">
+                                                {{controlType.name}}
+                                            </td>
+                                            <!-- Controls objective-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlObjective &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlObjective| isSelected}}
+                                            </td>
+                                            <!-- Control Frequency-->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlFrequency[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlFrequency[0].name | isSelected}}
+                                            </td>
+                                            <!-- Control Design -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlDesigns &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlDesigns |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- testing & frequancy -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].testingFrequencies &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index] |testingFrequencies| isSelected}}
+                                            </td>
+                                            <!-- Control Trigger -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].controlTriggers &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index].controlTriggers |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- key controls -->
+                                            <td class="ct" ng-class="{'error':!subProcessRisk.inputs[$index].keyControlsMaturity[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{subProcessRisk.inputs[$index]| keyControlMaturity| isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end="" ng-hide="true"></tr>
+                                    </tbody>
+                                </table>
+                                <table class="custom-table" data-ng-repeat="category in lookups.categories | processCategories" ng-show="pca.categoryType==category.id">
+                                    <thead>
+                                        <tr>
+                                            <th width="160px" custom-tool-tips ct-message="The specific type of training or documentation that is often a requirement for all employees to complete.  These types of trainings are at the corporate and divisional levels. Curriculums should be distinct enough to have attributable controls."
+                                                ng-if="pca.categoryType==config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                                Curriculum
+                                            </th>
+                                            <th width="160px" custom-tool-tips ct-message="A series of specific actions needed in order to achieve a particular end or to fulfill a customer’s request.  Processes should be distinct enough to have attributable controls."
+                                                ng-if="pca.categoryType!=config.CORP_DIV_TRAINING_ASSESSMENT_CATEGORY_ID">
+                                                Processes
+                                            </th>
+                                            <th width="160px" custom-tool-tips ct-message="The impact of a process/sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to processes/sub-processes.">Risks</th>
+                                            <th width="97px" custom-tool-tips ct-message="The extent to which the company is affected or exposed to risk if a process/sub-process is not performed or performed incorrectly.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.">Risk Exposure</th>
+                                            <th width="106px" custom-tool-tips ct-message="Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to processes/sub-processes.">Controls</th>
+                                            <th width="106px" custom-tool-tips ct-message="The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.">Control Frequency</th>
+                                            <th width="106px" custom-tool-tips ct-message="The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.">Control Design</th>
+                                            <th width="106px" custom-tool-tips ct-message="This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by Internal Audit on an annual basis.  Controls could also not be tested as well.">Testing &amp;
+                                                <br/>Frequency
+                                            </th>
+                                            <th width="106px" custom-tool-tips ct-message="The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.">Key Controls
+                                                <br/>Maturity
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="kpi in assessments.processRiskAssessments[category.id].assessments" ng-class-even="'high-bg'" ng-class-odd="'high'"
+                                            ng-init='rowIndex=$index'>
+                                            <!--process name-->
+                                            <td>{{kpi.processRisk.name}}</td>
+                                            <!--risk-->
+                                            <td>{{kpi.processRisk.risk}}</td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!kpi.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':!kpi.controlTypes &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Controls objective-->
+                                            <td colspan="4" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="kpi.controlTypes.length>0" ng-repeat="controlType in kpi.controlTypes" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <td class="rt empty" colspan="2"></td>
+                                            <td class="rt" colspan="2">
+                                                {{controlType.name}}
+                                            </td>
+                                            <!-- Control Frequency-->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].controlFrequency[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index].controlFrequency[0].name | isSelected}}
+                                            </td>
+                                            <!-- Control Design -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].controlDesigns.length>0 &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index].controlDesigns |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- testing & frequancy -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].testingFrequencies.length>0 &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index] |testingFrequencies| isSelected}}
+                                            </td>
+                                            <!-- key controls -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].keyControlsMaturity[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index]| keyControlMaturity| isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end="" ng-hide="true"></tr>
+                                        <tr ng-repeat-start="kpi in additional.processRiskAssessments[category.id].assessments | filter:onlyWithAdditionalProcess"
+                                            ng-init='rowIndex=(lookups.processRisks.length + $index)' ng-class="{'high': (lookups.processRisks.length + $index) %2==0, 'high-bg':(lookups.processRisks.length + $index) %2==1}">
+                                            <!--Process-->
+                                            <td class="ct">{{kpi.additionalProcess}}</td>
+                                            <!--risk -->
+                                            <td class="ct" ng-class="{'error':!kpi.additionalRisk &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.additionalRisk | isSelected}}
+                                            </td>
+                                            <!-- Risk exposure -->
+                                            <td class="ct" ng-class="{'error':!kpi.riskExposure.name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.riskExposure.name | isSelected}}
+                                            </td>
+                                            <!-- controls -->
+                                            <td class="ct" ng-class="{'error':!kpi.controlTypes &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.controlTypes |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- Controls objective-->
+                                            <td colspan="4" />
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="kpi.controlTypes.length>0" ng-repeat="controlType in kpi.controlTypes" ng-class="{'high': rowIndex%2==0,'high-bg':rowIndex%2==1}">
+                                            <td class="rt empty" colspan="2"></td>
+                                            <td class="rt" colspan="2">
+                                                {{controlType.name}}
+                                            </td>
+                                            <!-- Control Frequency-->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].controlFrequency[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index].controlFrequency[0].name | isSelected}}
+                                            </td>
+                                            <!-- Control Design -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].controlDesigns &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index].controlDesigns |joinByComma| isSelected}}
+                                            </td>
+                                            <!-- testing & frequancy -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].testingFrequencies &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index] |testingFrequencies| isSelected}}
+                                            </td>
+                                            <!-- key controls -->
+                                            <td class="ct" ng-class="{'error':!kpi.inputs[$index].keyControlsMaturity[0].name &amp;&amp; showIncompleted.Error}">
+                                                {{kpi.inputs[$index]|keyControlMaturity | isSelected}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end="" ng-hide="true"></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Processes & Controls Assessment -->
+        </div>
+    </div>
+    <div class="section-footer row m-t-40">
+        <div class="left" ng-show="currentTab.id>1" ng-class="{'buttons':currentTab.id==4}">
+            <a href="javascript:;" ng-click="currentTab.id=currentTab.id-1" ng-hide="currentTab.id==4" class="btn btn-primary">Prev</a>
+            <a href="javascript:;" class="btn btn-primary" ng-show="currentTab.id.id==4" ng-click="saveAsDraft()">Save</a>
+            <a href="javascript:;" class="btn btn-primary" ng-show="currentTab.id.id==4" ng-click="export()">Export</a>
+            <a href="javascript:window.print();" class="btn btn-primary" ng-show="currentTab.id==4">Print</a>
+        </div>
+        <div class="right">
+            <a href="javascript:;" ng-click="nextTab()" class="btn btn-primary" ng-show="currentTab.id<4">Next</a>
+            <a href="javascript:;" ng-click="saveAsDraft()" ng-hide="currentTab.id.id==4">Save as Draft</a>
+            <a href="javascript:;" id="submit-for-review2" ng-show="currentTab.id==4" class="btn btn-purple btn-review" ng-click="submit()">Submit for Review</a>
+        </div>
+    </div>
+</div>
+</div>

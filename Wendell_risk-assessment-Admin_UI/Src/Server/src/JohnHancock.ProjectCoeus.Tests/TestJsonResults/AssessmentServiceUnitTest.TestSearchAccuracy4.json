@@ -1,0 +1,316 @@
+{
+  "TotalRecords": 5,
+  "TotalPages": 3,
+  "Items": [
+    {
+      "BusinessUnit": {
+        "Name": "Insurance",
+        "Id": 2
+      },
+      "Product": {
+        "BusinessUnitId": 1,
+        "Name": "Product1",
+        "Id": 1
+      },
+      "Department": {
+        "BusinessUnitId": 1,
+        "Name": "Department3",
+        "Id": 3
+      },
+      "DepartmentHead": {
+        "BusinessUnitId": 1,
+        "Name": "DepartmentHead1",
+        "Id": 1
+      },
+      "FunctionalAreaOwner": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalAreaOwner2",
+        "Id": 2
+      },
+      "FunctionalArea": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalArea3",
+        "Id": 3
+      },
+      "FunctionalAreaDescription": "FunctionalAreaDescription2",
+      "FunctionPerformedSites": [],
+      "AssessmentType": {
+        "Name": "AssessmentType1",
+        "Id": 1
+      },
+      "AssessmentStatus": {
+        "Name": "AssessmentStatus1",
+        "Id": 1
+      },
+      "AssessmentDueDate": "03/11/2016 00:00:00",
+      "PriorFunctionChanges": [],
+      "FutureFunctionChanges": [],
+      "KPISLAAssessments": [],
+      "FunctionalAreaProcessAssessments": [],
+      "ProcessRiskAssessments": [],
+      "OverallRiskRatingCommentary": "OverallRiskRatingCommentary2",
+      "ApprovalStatus": 3,
+      "BUFunctionalApproverUsername": "CoeusBUFunctionalApprover",
+      "BUFunctionalApprover": null,
+      "BUFunctionalApproveTime": "03/10/2016 00:00:00",
+      "BURiskManagementApproverUsername": "CoeusBURiskManagementApprover",
+      "BURiskManagementApprover": null,
+      "BURiskManagementApproveTime": "03/09/2016 00:00:00",
+      "DivisionalRiskManagementApproverUsername": null,
+      "DivisionalRiskManagementApprover": null,
+      "DivisionalRiskManagementApproveTime": null,
+      "RejecterUsername": null,
+      "Rejecter": null,
+      "RejectTime": null,
+      "RejectionReason": null,
+      "RejectPhase": 0,
+      "SubmitterUsername": "CoeusOwnerUser1",
+      "Submitter": {
+        "Username": "CoeusOwnerUser1",
+        "FirstName": "CoeusOwner",
+        "LastName": "User1",
+        "Role": 0,
+        "BusinessUnits": [
+          {
+            "Name": "Annuities",
+            "Id": 1
+          },
+          {
+            "Name": "Insurance",
+            "Id": 2
+          },
+          {
+            "Name": "Investments/JHSS",
+            "Id": 3
+          },
+          {
+            "Name": "RPS",
+            "Id": 4
+          },
+          {
+            "Name": "Shared Services",
+            "Id": 5
+          }
+        ]
+      },
+      "SubmitTime": "03/06/2016 00:00:00",
+      "Title": "Title15",
+      "CreatedBy": "CreatedBy5",
+      "CreatedTime": "03/05/2016 00:00:00",
+      "LastUpdatedBy": "LastUpdatedBy5",
+      "LastUpdatedTime": "03/04/2016 00:00:00",
+      "Id": 5
+    },
+    {
+      "BusinessUnit": {
+        "Name": "Annuities",
+        "Id": 1
+      },
+      "Product": {
+        "BusinessUnitId": 1,
+        "Name": "Product3",
+        "Id": 3
+      },
+      "Department": {
+        "BusinessUnitId": 1,
+        "Name": "Department2",
+        "Id": 2
+      },
+      "DepartmentHead": {
+        "BusinessUnitId": 1,
+        "Name": "DepartmentHead2",
+        "Id": 2
+      },
+      "FunctionalAreaOwner": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalAreaOwner4",
+        "Id": 4
+      },
+      "FunctionalArea": {
+        "BusinessUnitId": 1,
+        "Name": "FunctionalArea4",
+        "Id": 4
+      },
+      "FunctionalAreaDescription": "FunctionalAreaDescription2",
+      "FunctionPerformedSites": [
+        {
+          "Site": {
+            "Name": "Site10",
+            "Id": 10
+          },
+          "Percentage": {
+            "Value": 90.0,
+            "Name": "90%",
+            "Id": 10
+          },
+          "Id": 10
+        }
+      ],
+      "AssessmentType": {
+        "Name": "AssessmentType2",
+        "Id": 2
+      },
+      "AssessmentStatus": {
+        "Name": "AssessmentStatus1",
+        "Id": 1
+      },
+      "AssessmentDueDate": "03/21/2016 00:00:00",
+      "PriorFunctionChanges": [
+        {
+          "ChangeType": {
+            "Name": "ChangeType10",
+            "Id": 10
+          },
+          "ChangeTime": "01/21/2016 00:00:00",
+          "ChangeDescription": "ChangeDescription10",
+          "Id": 10
+        }
+      ],
+      "FutureFunctionChanges": [
+        {
+          "ChangeType": {
+            "Name": "ChangeType1",
+            "Id": 1
+          },
+          "ChangeTime": "04/20/2016 00:00:00",
+          "ChangeDescription": "ChangeDescription1",
+          "Id": 1
+        }
+      ],
+      "KPISLAAssessments": [
+        {
+          "Category": {
+            "Name": "KPI's / SLA's",
+            "Id": 1
+          },
+          "KPICategory": {
+            "KPIs": [
+              {
+                "Name": "KPISLA7",
+                "Id": 7
+              },
+              {
+                "Name": "KPISLA8",
+                "Id": 8
+              }
+            ],
+            "SLAs": [
+              {
+                "Name": "SLA8",
+                "Id": 8
+              },
+              {
+                "Name": "SLA9",
+                "Id": 9
+              }
+            ],
+            "Name": "KPICategory3",
+            "Id": 3
+          },
+          "KPI": {
+            "Name": "KPISLA10",
+            "Id": 10
+          },
+          "SelectedSLA": {
+            "Name": "SLA10",
+            "Id": 10
+          },
+          "AdditionalKPICategory": null,
+          "AdditionalKPI": "AdditionalKPI10",
+          "AdditionalSLA": "AdditionalSLA10",
+          "Id": 20
+        }
+      ],
+      "FunctionalAreaProcessAssessments": [],
+      "ProcessRiskAssessments": [
+        {
+          "ProcessRisk": {
+            "Category": {
+              "Name": "Business Continuity & Disaster Recovery",
+              "Id": 4
+            },
+            "ControlTypes": [
+              {
+                "Name": "ControlType10",
+                "Id": 10
+              }
+            ],
+            "Risk": "Risk10",
+            "Name": "ProcessRisk10",
+            "Id": 10
+          },
+          "AdditionalProcess": "AdditionalProcess10",
+          "AdditionalRisk": "AdditionalRisk10",
+          "LikelihoodOfOccurrence": {
+            "Name": "LikelihoodOfOccurrence2",
+            "Id": 2
+          },
+          "OtherLikelihoodOfOccurrence": null,
+          "RiskImpacts": [],
+          "RiskExposure": {
+            "Name": "RiskExposure3",
+            "Id": 3
+          },
+          "ControlAssessments": [],
+          "Category": {
+            "Name": "Records Management",
+            "Id": 5
+          },
+          "Id": 10
+        }
+      ],
+      "OverallRiskRatingCommentary": "OverallRiskRatingCommentary1",
+      "ApprovalStatus": 2,
+      "BUFunctionalApproverUsername": "CoeusBUFunctionalApprover",
+      "BUFunctionalApprover": null,
+      "BUFunctionalApproveTime": "03/20/2016 00:00:00",
+      "BURiskManagementApproverUsername": null,
+      "BURiskManagementApprover": null,
+      "BURiskManagementApproveTime": null,
+      "DivisionalRiskManagementApproverUsername": null,
+      "DivisionalRiskManagementApprover": null,
+      "DivisionalRiskManagementApproveTime": null,
+      "RejecterUsername": null,
+      "Rejecter": null,
+      "RejectTime": null,
+      "RejectionReason": null,
+      "RejectPhase": 2,
+      "SubmitterUsername": "CoeusOwnerUser1",
+      "Submitter": {
+        "Username": "CoeusOwnerUser1",
+        "FirstName": "CoeusOwner",
+        "LastName": "User1",
+        "Role": 0,
+        "BusinessUnits": [
+          {
+            "Name": "Annuities",
+            "Id": 1
+          },
+          {
+            "Name": "Insurance",
+            "Id": 2
+          },
+          {
+            "Name": "Investments/JHSS",
+            "Id": 3
+          },
+          {
+            "Name": "RPS",
+            "Id": 4
+          },
+          {
+            "Name": "Shared Services",
+            "Id": 5
+          }
+        ]
+      },
+      "SubmitTime": "03/16/2016 00:00:00",
+      "Title": "Title14",
+      "CreatedBy": "CreatedBy4",
+      "CreatedTime": "03/15/2016 00:00:00",
+      "LastUpdatedBy": "LastUpdatedBy4",
+      "LastUpdatedTime": "03/14/2016 00:00:00",
+      "Id": 4
+    }
+  ]
+}

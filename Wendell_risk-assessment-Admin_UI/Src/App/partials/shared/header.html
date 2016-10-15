@@ -1,0 +1,28 @@
+<!-- BEGIN header -->
+<a class="logo fl" href="#/home"><img src="i/logo2.png" alt=""/></a>
+<div class="right-nav">
+    <p>Welcome {{user.firstName}} {{user.lastName}}, <a href="javascript:;" ng-click="logout()"><strong>Logout</strong></a>
+    </p>
+    <nav>
+        <a href="#/home" ng-class="{active: currentMenu==config.MENUS.HOME}">Home</a>
+
+        <a href="#/addAssessment" ng-if="checkPermission('addAssessment')"
+           ng-class="{active: currentMenu==config.MENUS.ADD_ASSESSMENT}">Add a New Assessment</a>
+
+        <a href="#/assessments/{{config.ASSESSMENT_STATUS.DRAFT}}" ng-if="user.role==config.ROLES.OWNER_ROLE_NAME"
+           ng-class="{'active': currentMenu==config.MENUS.DRAFT_ASSESSMENT}">Draft Assessment ({{draftCount}})</a>
+
+        <a href="#/assessments/{{config.ASSESSMENT_STATUS.AWAITING}}"
+           ng-class="{active: currentMenu==config.MENUS.AWAITING_ASSESSMENT}">Awaiting Approval
+            ({{awaitingApprovalCount}})</a>
+
+        <a href="#/assessments/{{config.ASSESSMENT_STATUS.APPROVED}}"
+           ng-class="{active: currentMenu==config.MENUS.APPROVED_ASSESSMENT}">Approved
+            ({{approvedCount}})</a>
+
+        <a href="#/assessments/{{config.ASSESSMENT_STATUS.REJECTED}}"
+           ng-class="{active: currentMenu==config.MENUS.REJECTED_ASSESSMENT}"
+           ng-if="user.role==config.ROLES.OWNER_ROLE_NAME">Rejected ({{rejectedCount}})</a>
+    </nav>
+</div>
+<!-- END header -->

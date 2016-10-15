@@ -1,0 +1,198 @@
+<!-- BEGIN .banner -->
+<div class="banner row" ng-if="config.ROLES.OWNER_ROLE_NAME==user.role">
+    <div class="col-7 left">
+        <h1>Manage Risk Assessment</h1>
+        <p>Search for existing assessments or <br/>add new assessments</p>
+        <a href="#/addAssessment" class="btn btn-white m-t-25" ng-if="checkPermission('addAssessment')">Add New
+            Assessments</a>
+    </div>
+    <div class="col-5 right">
+        <ul class="listing tc row">
+            <li>
+                <a href="#/assessments/{{config.ASSESSMENT_STATUS.DRAFT}}">
+                    <span class="circle">{{draftCount}}</span>
+                    <span>Draft</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/assessments/{{config.ASSESSMENT_STATUS.AWAITING}}">
+                    <span class="circle">{{awaitingApprovalCount}}</span>
+                    <span>Awaiting</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/assessments/{{config.ASSESSMENT_STATUS.APPROVED}}">
+                    <span class="circle">{{approvedCount}}</span>
+                    <span>Approved</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="banner row approver-banner" ng-if="isApprover">
+    <div class="col-9">
+        <h1>Assessments Awaiting Approval</h1>
+    </div>
+    <div class="col-3">
+        <ul class="listing tc row">
+            <li>
+                <a href="#/assessments/{{config.ASSESSMENT_STATUS.AWAITING}}">
+                    <span class="circle">{{awaitingApprovalCount}}</span>
+                    <span>Awaiting</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END .banner -->
+<!-- BEGIN #main-content -->
+<div id="main-content" class="row home">
+    <div class="row search-panel">
+        <h2>Search for assessments</h2>
+        <div class="row">
+            <div class="left">
+                <div class="row">
+                    <label>Assessment Title</label>
+                    <input type="text" maxlength="200" ng-model="criteria.title" class="normal-input"/>
+                </div>
+                <div class="row">
+                    <label>Date Submitted</label>
+                    <div class="date-wrapper fl">
+                        <input type="text" readonly date-picker ng-model="criteria.submitDateStart" class="date-input"/>
+                        <i class="date-icon" datepicker-input></i>
+                    </div>
+                    <label class="short">to</label>
+                    <div class="date-wrapper fl">
+                        <input type="text" readonly date-picker ng-model="criteria.submitDateEnd" class="date-input"/>
+                        <i class="date-icon" datepicker-input></i>
+                    </div>
+                </div>
+                <div class="row" ng-if="config.ROLES.OWNER_ROLE_NAME==user.role">
+                    <label>Approver Name</label>
+                    <input type="text" maxlength="200" ng-model="criteria.approverRealName" class="normal-input"/>
+                </div>
+                <div class="row" ng-if="isApprover">
+                    <label>Submitter Name</label>
+                    <input type="text" class="normal-input" ng-model="criteria.submitterRealName" maxlength="200"/>
+                </div>
+                <div class="row" ng-if="isApprover">
+                    <label>&nbsp;</label>
+                    <a class="btn btn-primary btn-search" href="javascript:;"
+                       ng-click="searchAssessments(true)">Search</a>
+                </div>
+            </div>
+            <div class="right" ng-if="config.ROLES.OWNER_ROLE_NAME==user.role">
+                <h3 class="row">Status</h3>
+                <div class="col-l">
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.DRAFT.value}}"
+                               checklist-value="config.APPROVAL_STATUS.DRAFT.value"/>{{config.APPROVAL_STATUS.DRAFT.displayName}}
+                    </label>
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.APPROVED.value}}"
+                               checklist-value="config.APPROVAL_STATUS.APPROVED.value"/>{{config.APPROVAL_STATUS.APPROVED.displayName}}
+                    </label>
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.REJECTED.value}}"
+                               checklist-value="config.APPROVAL_STATUS.REJECTED.value"/>{{config.APPROVAL_STATUS.REJECTED.displayName}}
+                    </label>
+                </div>
+                <div class="col-r">
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.AWAITING_BU_FUNCTIONAL_APPROVAL.value}}"
+                               checklist-value="config.APPROVAL_STATUS.AWAITING_BU_FUNCTIONAL_APPROVAL.value"/>
+                        {{config.APPROVAL_STATUS.AWAITING_BU_FUNCTIONAL_APPROVAL.displayName}}
+                    </label>
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.AWAITING_BU_RISK_MANAGEMENT_APPROVAL.value}}"
+                               checklist-value="config.APPROVAL_STATUS.AWAITING_BU_RISK_MANAGEMENT_APPROVAL.value"/>
+                        {{config.APPROVAL_STATUS.AWAITING_BU_RISK_MANAGEMENT_APPROVAL.displayName}}
+                    </label>
+                    <label>
+                        <input type="checkbox" checklist-model="criteria.approvalStatuses"
+                               name="{{config.APPROVAL_STATUS.AWAITING_DIVISIONAL_RISK_MANAGEMENT_APPROVAL.value}}"
+                               checklist-value="config.APPROVAL_STATUS.AWAITING_DIVISIONAL_RISK_MANAGEMENT_APPROVAL.value"/>
+                        {{config.APPROVAL_STATUS.AWAITING_DIVISIONAL_RISK_MANAGEMENT_APPROVAL.displayName}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="buttons row" ng-if="config.ROLES.OWNER_ROLE_NAME==user.role">
+            <a class="btn btn-primary fr btn-search" href="javascript:;" ng-click="searchAssessments(true)">Search</a>
+        </div>
+    </div>
+    <div class="loading tc row " ng-show="isSearching"><img src="i/loading.gif" width="60" alt=""/></div>
+    <div class="row m-t-40 result-container" ng-show="isSearched">
+        <div class="result-head">
+            Results: {{searchResult.totalRecords}} {{searchResult.totalRecords==1?'Assessment':'Assessments'}} found
+        </div>
+        <table class="table wrap-table" ng-show="config.ROLES.OWNER_ROLE_NAME==user.role">
+            <thead>
+            <tr>
+                <th data-ng-click="sort_by('Title')" class="sortable"
+                    ng-class="{'sort':sortBy === 'Title','sort-asc':sortAscending, 'sort-desc':!sortAscending}">
+                    <strong><span>Assessment Title</span></strong></th>
+                <th data-ng-click="sort_by('SubmitTime')" class="sortable"
+                    ng-class="{'sort':sortBy === 'SubmitTime','sort-asc':sortAscending, 'sort-desc':!sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th data-ng-click="sort_by('ApprovalStatus')" class="sortable"
+                    ng-class="{'sort':sortBy === 'ApprovalStatus','sort-asc':sortAscending, 'sort-desc':!sortAscending}">
+                    <span>Status</span></th>
+                <th><span>Approver Name</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: pageSize' pagination-id="owner-result"
+                current-page="pageNumber" total-items="searchResult.totalRecords">
+                <td>
+                    <a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+                <!--<td ng-if="item.approvalStatus==config.APPROVAL_STATUS.DRAFT.value">-->
+                <!--<a href="#/editAssessment/{{item.id}}">{{item.title}}</a></td>-->
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.approvalStatus | approvalStatus}}</td>
+                <td>{{item | approverName}}</td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="4" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="owner-result" ng-show="config.ROLES.OWNER_ROLE_NAME==user.role"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+        <table class="table wrap-table" ng-show="isApprover">
+            <thead >
+            <tr>
+                <th data-ng-click="sort_by('SubmitTime')" class="sortable"
+                    ng-class="{'sort':sortBy === 'SubmitTime','sort-asc':sortAscending, 'sort-desc':!sortAscending}">
+                    <span>Date Submitted</span></th>
+                <th><span>Submitter Name</span></th>
+                <th data-ng-click="sort_by('Title')" class="sortable"
+                    ng-class="{'sort':sortBy === 'Title','sort-asc':sortAscending, 'sort-desc':!sortAscending}">
+                    <strong><span>Assessent Title</span></strong>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate='item in searchResult.items| itemsPerPage: pageSize' pagination-id="approver-result"
+                current-page="pageNumber" total-items="searchResult.totalRecords">
+                <td>{{item.submitTime | date:config.DATE_FORMAT}}</td>
+                <td>{{item.submitter |fullName}}</td>
+                <td><a href="#/assessmentDetails/{{item.id}}">{{item.title}}</a></td>
+            </tr>
+            <tr ng-if="searchResult.items.length<1">
+                <td colspan="3" class="tc">No Records Found</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls ng-show="isApprover" template-url="partials/shared/dirPagination.tpl.html" max-size="10"
+                                 pagination-id="approver-result"
+                                 on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+</div>
+<!-- END #main-content -->

@@ -1,0 +1,879 @@
+{
+  "BusinessUnit": {
+    "Name": "Annuities",
+    "Id": 1
+  },
+  "Product": {
+    "BusinessUnitId": 1,
+    "Name": "Product1",
+    "Id": 1
+  },
+  "Department": {
+    "BusinessUnitId": 1,
+    "Name": "Department1",
+    "Id": 1
+  },
+  "DepartmentHead": {
+    "BusinessUnitId": 1,
+    "Name": "DepartmentHead1",
+    "Id": 1
+  },
+  "FunctionalAreaOwner": {
+    "BusinessUnitId": 1,
+    "Name": "FunctionalAreaOwner1",
+    "Id": 1
+  },
+  "FunctionalArea": {
+    "BusinessUnitId": 1,
+    "Name": "FunctionalArea1",
+    "Id": 1
+  },
+  "FunctionalAreaDescription": "FunctionalAreaDescription_1",
+  "FunctionPerformedSites": [
+    {
+      "Site": {
+        "Name": "Site1",
+        "Id": 1
+      },
+      "Percentage": {
+        "Value": 0.0,
+        "Name": "0%",
+        "Id": 1
+      },
+      "Id": 0
+    },
+    {
+      "Site": {
+        "Name": "Site2",
+        "Id": 2
+      },
+      "Percentage": {
+        "Value": 10.0,
+        "Name": "10%",
+        "Id": 2
+      },
+      "Id": 0
+    }
+  ],
+  "AssessmentType": {
+    "Name": "AssessmentType1",
+    "Id": 1
+  },
+  "AssessmentStatus": {
+    "Name": "AssessmentStatus1",
+    "Id": 1
+  },
+  "AssessmentDueDate": "12/12/2011 00:00:00",
+  "PriorFunctionChanges": [
+    {
+      "ChangeType": {
+        "Name": "ChangeType1",
+        "Id": 1
+      },
+      "ChangeTime": "03/03/2002 00:00:00",
+      "ChangeDescription": "ChangeDescription_1",
+      "Id": 0
+    },
+    {
+      "ChangeType": {
+        "Name": "ChangeType2",
+        "Id": 2
+      },
+      "ChangeTime": "03/03/2002 00:00:00",
+      "ChangeDescription": "ChangeDescription_2",
+      "Id": 0
+    }
+  ],
+  "FutureFunctionChanges": [
+    {
+      "ChangeType": {
+        "Name": "ChangeType1",
+        "Id": 1
+      },
+      "ChangeTime": "03/03/2002 00:00:00",
+      "ChangeDescription": "ChangeDescription_1",
+      "Id": 0
+    },
+    {
+      "ChangeType": {
+        "Name": "ChangeType2",
+        "Id": 2
+      },
+      "ChangeTime": "03/03/2002 00:00:00",
+      "ChangeDescription": "ChangeDescription_2",
+      "Id": 0
+    }
+  ],
+  "KPISLAAssessments": [
+    {
+      "Category": {
+        "Name": "KPI's / SLA's",
+        "Id": 1
+      },
+      "KPICategory": {
+        "KPIs": [
+          {
+            "Name": "KPISLA1",
+            "Id": 1
+          },
+          {
+            "Name": "KPISLA2",
+            "Id": 2
+          },
+          {
+            "Name": "KPISLA3",
+            "Id": 3
+          }
+        ],
+        "SLAs": [
+          {
+            "Name": "SLA1",
+            "Id": 1
+          },
+          {
+            "Name": "SLA2",
+            "Id": 2
+          },
+          {
+            "Name": "SLA3",
+            "Id": 3
+          },
+          {
+            "Name": "SLA4",
+            "Id": 4
+          }
+        ],
+        "Name": "KPICategory1",
+        "Id": 1
+      },
+      "KPI": {
+        "Name": "KPISLA1",
+        "Id": 1
+      },
+      "SelectedSLA": {
+        "Name": "SLA1",
+        "Id": 1
+      },
+      "AdditionalKPICategory": "AdditionalKPICategory_1",
+      "AdditionalKPI": "AdditionalKPI_1",
+      "AdditionalSLA": "AdditionalSLA_1",
+      "Id": 0
+    },
+    {
+      "Category": {
+        "Name": "Functional Area Processes",
+        "Id": 2
+      },
+      "KPICategory": {
+        "KPIs": [
+          {
+            "Name": "KPISLA4",
+            "Id": 4
+          },
+          {
+            "Name": "KPISLA5",
+            "Id": 5
+          },
+          {
+            "Name": "KPISLA6",
+            "Id": 6
+          }
+        ],
+        "SLAs": [
+          {
+            "Name": "SLA5",
+            "Id": 5
+          },
+          {
+            "Name": "SLA6",
+            "Id": 6
+          },
+          {
+            "Name": "SLA7",
+            "Id": 7
+          }
+        ],
+        "Name": "KPICategory2",
+        "Id": 2
+      },
+      "KPI": {
+        "Name": "KPISLA2",
+        "Id": 2
+      },
+      "SelectedSLA": {
+        "Name": "SLA2",
+        "Id": 2
+      },
+      "AdditionalKPICategory": "AdditionalKPICategory_2",
+      "AdditionalKPI": "AdditionalKPI_2",
+      "AdditionalSLA": "AdditionalSLA_2",
+      "Id": 0
+    }
+  ],
+  "FunctionalAreaProcessAssessments": [
+    {
+      "CoreProcess": {
+        "SubProcessRisks": [
+          {
+            "Risk": "Risk1",
+            "Name": "SubProcessRisk1",
+            "Id": 1
+          },
+          {
+            "Risk": "Risk2",
+            "Name": "SubProcessRisk2",
+            "Id": 2
+          },
+          {
+            "Risk": "Risk3",
+            "Name": "SubProcessRisk3",
+            "Id": 3
+          }
+        ],
+        "Category": {
+          "Name": "Functional Area Processes",
+          "Id": 2
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType1",
+            "Id": 1
+          },
+          {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          {
+            "Name": "ControlType3",
+            "Id": 3
+          }
+        ],
+        "FunctionalAreaId": 1,
+        "Name": "ProcessRisk1",
+        "Id": 1
+      },
+      "AdditionalCoreProcess": "AdditionalCoreProcess_1",
+      "SubProcessRisk": {
+        "Risk": "Risk1",
+        "Name": "SubProcessRisk1",
+        "Id": 1
+      },
+      "AdditionalSubProcess": "AdditionalSubProcess_1",
+      "AdditionalRisk": "AdditionalRisk_1",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence1",
+        "Id": 1
+      },
+      "OtherLikelihoodOfOccurrence": "OtherLikelihoodOfOccurrence_1",
+      "RiskImpacts": [
+        {
+          "Name": "RiskImpact1",
+          "Id": 1
+        },
+        {
+          "Name": "RiskImpact2",
+          "Id": 2
+        }
+      ],
+      "RiskExposure": {
+        "Name": "RiskExposure1",
+        "Id": 1
+      },
+      "ControlAssessments": [
+        {
+          "ControlType": {
+            "Name": "ControlType1",
+            "Id": 1
+          },
+          "OtherControlType": "OtherControlType_1",
+          "ControlObjective": "ControlObjective_1",
+          "ControlFrequency": {
+            "Name": "ControlFrequency1",
+            "Id": 1
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign1",
+              "Id": 1
+            },
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency1",
+              "Id": 1
+            },
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_1",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger1",
+              "Id": 1
+            },
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity1",
+            "Id": 1
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_1",
+          "Id": 0
+        },
+        {
+          "ControlType": {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          "OtherControlType": "OtherControlType_2",
+          "ControlObjective": "ControlObjective_2",
+          "ControlFrequency": {
+            "Name": "ControlFrequency2",
+            "Id": 2
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            },
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_2",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity2",
+            "Id": 2
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_2",
+          "Id": 0
+        }
+      ],
+      "Category": {
+        "Name": "KPI's / SLA's",
+        "Id": 1
+      },
+      "Id": 0
+    },
+    {
+      "CoreProcess": {
+        "SubProcessRisks": [
+          {
+            "Risk": "Risk4",
+            "Name": "SubProcessRisk4",
+            "Id": 4
+          },
+          {
+            "Risk": "Risk5",
+            "Name": "SubProcessRisk5",
+            "Id": 5
+          }
+        ],
+        "Category": {
+          "Name": "Functional Area Processes",
+          "Id": 2
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          {
+            "Name": "ControlType3",
+            "Id": 3
+          }
+        ],
+        "FunctionalAreaId": 1,
+        "Name": "ProcessRisk2",
+        "Id": 2
+      },
+      "AdditionalCoreProcess": "AdditionalCoreProcess_2",
+      "SubProcessRisk": {
+        "Risk": "Risk2",
+        "Name": "SubProcessRisk2",
+        "Id": 2
+      },
+      "AdditionalSubProcess": "AdditionalSubProcess_2",
+      "AdditionalRisk": "AdditionalRisk_2",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence2",
+        "Id": 2
+      },
+      "OtherLikelihoodOfOccurrence": "OtherLikelihoodOfOccurrence_2",
+      "RiskImpacts": [
+        {
+          "Name": "RiskImpact2",
+          "Id": 2
+        },
+        {
+          "Name": "RiskImpact3",
+          "Id": 3
+        }
+      ],
+      "RiskExposure": {
+        "Name": "RiskExposure2",
+        "Id": 2
+      },
+      "ControlAssessments": [
+        {
+          "ControlType": {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          "OtherControlType": "OtherControlType_2",
+          "ControlObjective": "ControlObjective_2",
+          "ControlFrequency": {
+            "Name": "ControlFrequency2",
+            "Id": 2
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            },
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_2",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity2",
+            "Id": 2
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_2",
+          "Id": 0
+        },
+        {
+          "ControlType": {
+            "Name": "ControlType3",
+            "Id": 3
+          },
+          "OtherControlType": "OtherControlType_3",
+          "ControlObjective": "ControlObjective_3",
+          "ControlFrequency": {
+            "Name": "ControlFrequency3",
+            "Id": 3
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            },
+            {
+              "Name": "ControlDesign4",
+              "Id": 4
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            },
+            {
+              "Name": "TestingFrequency4",
+              "Id": 4
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_3",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            },
+            {
+              "Name": "ControlTrigger4",
+              "Id": 4
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity3",
+            "Id": 3
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_3",
+          "Id": 0
+        }
+      ],
+      "Category": {
+        "Name": "Functional Area Processes",
+        "Id": 2
+      },
+      "Id": 0
+    }
+  ],
+  "ProcessRiskAssessments": [
+    {
+      "ProcessRisk": {
+        "Category": {
+          "Name": "KPI's / SLA's",
+          "Id": 1
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType1",
+            "Id": 1
+          },
+          {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          {
+            "Name": "ControlType3",
+            "Id": 3
+          }
+        ],
+        "Risk": "Risk1",
+        "Name": "ProcessRisk1",
+        "Id": 1
+      },
+      "AdditionalProcess": "AdditionalProcess_1",
+      "AdditionalRisk": "AdditionalRisk_1",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence1",
+        "Id": 1
+      },
+      "OtherLikelihoodOfOccurrence": "OtherLikelihoodOfOccurrence_1",
+      "RiskImpacts": [
+        {
+          "Name": "RiskImpact1",
+          "Id": 1
+        },
+        {
+          "Name": "RiskImpact2",
+          "Id": 2
+        }
+      ],
+      "RiskExposure": {
+        "Name": "RiskExposure1",
+        "Id": 1
+      },
+      "ControlAssessments": [
+        {
+          "ControlType": {
+            "Name": "ControlType1",
+            "Id": 1
+          },
+          "OtherControlType": "OtherControlType_1",
+          "ControlObjective": "ControlObjective_1",
+          "ControlFrequency": {
+            "Name": "ControlFrequency1",
+            "Id": 1
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign1",
+              "Id": 1
+            },
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency1",
+              "Id": 1
+            },
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_1",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger1",
+              "Id": 1
+            },
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity1",
+            "Id": 1
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_1",
+          "Id": 0
+        },
+        {
+          "ControlType": {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          "OtherControlType": "OtherControlType_2",
+          "ControlObjective": "ControlObjective_2",
+          "ControlFrequency": {
+            "Name": "ControlFrequency2",
+            "Id": 2
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            },
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_2",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity2",
+            "Id": 2
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_2",
+          "Id": 0
+        }
+      ],
+      "Category": {
+        "Name": "KPI's / SLA's",
+        "Id": 1
+      },
+      "Id": 0
+    },
+    {
+      "ProcessRisk": {
+        "Category": {
+          "Name": "KPI's / SLA's",
+          "Id": 1
+        },
+        "ControlTypes": [
+          {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          {
+            "Name": "ControlType3",
+            "Id": 3
+          }
+        ],
+        "Risk": "Risk2",
+        "Name": "ProcessRisk2",
+        "Id": 2
+      },
+      "AdditionalProcess": "AdditionalProcess_2",
+      "AdditionalRisk": "AdditionalRisk_2",
+      "LikelihoodOfOccurrence": {
+        "Name": "LikelihoodOfOccurrence2",
+        "Id": 2
+      },
+      "OtherLikelihoodOfOccurrence": "OtherLikelihoodOfOccurrence_2",
+      "RiskImpacts": [
+        {
+          "Name": "RiskImpact2",
+          "Id": 2
+        },
+        {
+          "Name": "RiskImpact3",
+          "Id": 3
+        }
+      ],
+      "RiskExposure": {
+        "Name": "RiskExposure2",
+        "Id": 2
+      },
+      "ControlAssessments": [
+        {
+          "ControlType": {
+            "Name": "ControlType2",
+            "Id": 2
+          },
+          "OtherControlType": "OtherControlType_2",
+          "ControlObjective": "ControlObjective_2",
+          "ControlFrequency": {
+            "Name": "ControlFrequency2",
+            "Id": 2
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency2",
+              "Id": 2
+            },
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_2",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger2",
+              "Id": 2
+            },
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity2",
+            "Id": 2
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_2",
+          "Id": 0
+        },
+        {
+          "ControlType": {
+            "Name": "ControlType3",
+            "Id": 3
+          },
+          "OtherControlType": "OtherControlType_3",
+          "ControlObjective": "ControlObjective_3",
+          "ControlFrequency": {
+            "Name": "ControlFrequency3",
+            "Id": 3
+          },
+          "ControlDesigns": [
+            {
+              "Name": "ControlDesign3",
+              "Id": 3
+            },
+            {
+              "Name": "ControlDesign4",
+              "Id": 4
+            }
+          ],
+          "TestingFrequencies": [
+            {
+              "Name": "TestingFrequency3",
+              "Id": 3
+            },
+            {
+              "Name": "TestingFrequency4",
+              "Id": 4
+            }
+          ],
+          "OtherTestingFrequency": "OtherTestingFrequency_3",
+          "ControlTriggers": [
+            {
+              "Name": "ControlTrigger3",
+              "Id": 3
+            },
+            {
+              "Name": "ControlTrigger4",
+              "Id": 4
+            }
+          ],
+          "KeyControlsMaturity": {
+            "Name": "KeyControlsMaturity3",
+            "Id": 3
+          },
+          "OtherKeyControlMaturity": "OtherKeyControlMaturity_3",
+          "Id": 0
+        }
+      ],
+      "Category": {
+        "Name": "Functional Area Processes",
+        "Id": 2
+      },
+      "Id": 0
+    }
+  ],
+  "OverallRiskRatingCommentary": "OverallRiskRatingCommentary_1",
+  "ApprovalStatus": 0,
+  "BUFunctionalApproverUsername": "CoeusBUFunctionalApprover",
+  "BUFunctionalApprover": null,
+  "BUFunctionalApproveTime": "10/22/2021 00:00:00",
+  "BURiskManagementApproverUsername": "CoeusBURiskManagementApprover",
+  "BURiskManagementApprover": null,
+  "BURiskManagementApproveTime": "01/25/2024 00:00:00",
+  "DivisionalRiskManagementApproverUsername": "CoeusDivisionalRiskManagementApprover",
+  "DivisionalRiskManagementApprover": null,
+  "DivisionalRiskManagementApproveTime": "04/28/2027 00:00:00",
+  "RejecterUsername": "CoeusAdmin",
+  "Rejecter": null,
+  "RejectTime": "07/03/2030 00:00:00",
+  "RejectionReason": "RejectionReason_1",
+  "RejectPhase": 1,
+  "SubmitterUsername": "CoeusOwner",
+  "Submitter": null,
+  "SubmitTime": "12/08/2035 00:00:00",
+  "Title": "Title_1",
+  "CreatedBy": "CreatedBy_1",
+  "CreatedTime": "03/11/2038 00:00:00",
+  "LastUpdatedBy": "LastUpdatedBy_1",
+  "LastUpdatedTime": "05/13/2040 00:00:00",
+  "Id": 0
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "Username": "CoeusBUFuncApp1",
+    "FirstName": "CoeusBUFunctionalApprover",
+    "LastName": "User 1",
+    "Role": 1,
+    "BusinessUnits": [
+      {
+        "Name": "Annuities",
+        "Id": 1
+      },
+      {
+        "Name": "Insurance",
+        "Id": 2
+      },
+      {
+        "Name": "Investments/JHSS",
+        "Id": 3
+      },
+      {
+        "Name": "RPS",
+        "Id": 4
+      },
+      {
+        "Name": "Shared Services",
+        "Id": 5
+      }
+    ]
+  },
+  {
+    "Username": "CoeusDivManager",
+    "FirstName": "CoeusDivisionalManager",
+    "LastName": "Approver 1",
+    "Role": 3,
+    "BusinessUnits": [
+      {
+        "Name": "Annuities",
+        "Id": 1
+      },
+      {
+        "Name": "Insurance",
+        "Id": 2
+      },
+      {
+        "Name": "Investments/JHSS",
+        "Id": 3
+      },
+      {
+        "Name": "RPS",
+        "Id": 4
+      },
+      {
+        "Name": "Shared Services",
+        "Id": 5
+      }
+    ]
+  },
+  {
+    "Username": "CoeusRiskManager",
+    "FirstName": "CoeusRiskManager",
+    "LastName": "Approver",
+    "Role": 2,
+    "BusinessUnits": [
+      {
+        "Name": "Annuities",
+        "Id": 1
+      },
+      {
+        "Name": "Insurance",
+        "Id": 2
+      },
+      {
+        "Name": "Investments/JHSS",
+        "Id": 3
+      },
+      {
+        "Name": "RPS",
+        "Id": 4
+      },
+      {
+        "Name": "Shared Services",
+        "Id": 5
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Annuities",
+    "Id": 1
+  },
+  {
+    "Name": "Insurance",
+    "Id": 2
+  },
+  {
+    "Name": "Investments/JHSS",
+    "Id": 3
+  },
+  {
+    "Name": "RPS",
+    "Id": 4
+  },
+  {
+    "Name": "Shared Services",
+    "Id": 5
+  }
+]

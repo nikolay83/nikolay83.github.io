@@ -1,0 +1,13 @@
+<div class="pagination m-t-15 fr" ng-if="0 < pages.length">
+    <a href="javascript:;" data-ng-class="{hide: pagination.current ===1}" class="prev"
+       data-ng-click="setCurrent(pagination.current-1)"
+    >Prev Page</a>
+    <a href="javascript:;" class="item" data-ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)"
+       data-ng-click="setCurrent(pageNumber)" title=""
+       data-ng-class="{current: pagination.current == pageNumber}"
+       data-ng-class="{current: pagination.current == pageNumber, more : pageNumber == '...'}">
+        {{ pageNumber }}</a>
+    <a href="javascript:;" data-ng-class="{hide: pagination.current === pagination.last}" class="next"
+       data-ng-click="setCurrent(pagination.current + 1)"
+       tabindex="0">Next Page</a>
+</div>

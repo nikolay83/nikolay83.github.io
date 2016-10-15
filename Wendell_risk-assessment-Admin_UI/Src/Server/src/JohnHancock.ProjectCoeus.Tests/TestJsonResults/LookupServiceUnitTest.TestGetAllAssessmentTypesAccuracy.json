@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "AssessmentType1",
+    "Id": 1
+  },
+  {
+    "Name": "AssessmentType2",
+    "Id": 2
+  },
+  {
+    "Name": "AssessmentType3",
+    "Id": 3
+  },
+  {
+    "Name": "AssessmentType4",
+    "Id": 4
+  },
+  {
+    "Name": "AssessmentType5",
+    "Id": 5
+  },
+  {
+    "Name": "AssessmentType6",
+    "Id": 6
+  },
+  {
+    "Name": "AssessmentType7",
+    "Id": 7
+  },
+  {
+    "Name": "AssessmentType8",
+    "Id": 8
+  },
+  {
+    "Name": "AssessmentType9",
+    "Id": 9
+  },
+  {
+    "Name": "AssessmentType10",
+    "Id": 10
+  }
+]

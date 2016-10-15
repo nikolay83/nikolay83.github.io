@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Site1",
+    "Id": 1
+  },
+  {
+    "Name": "Site2",
+    "Id": 2
+  },
+  {
+    "Name": "Site3",
+    "Id": 3
+  },
+  {
+    "Name": "Site4",
+    "Id": 4
+  },
+  {
+    "Name": "Site5",
+    "Id": 5
+  },
+  {
+    "Name": "Site6",
+    "Id": 6
+  },
+  {
+    "Name": "Site7",
+    "Id": 7
+  },
+  {
+    "Name": "Site8",
+    "Id": 8
+  },
+  {
+    "Name": "Site9",
+    "Id": 9
+  },
+  {
+    "Name": "Site10",
+    "Id": 10
+  }
+]

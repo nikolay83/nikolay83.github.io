@@ -1,0 +1,22 @@
+[
+  {
+    "BusinessUnitId": 1,
+    "Name": "Department1",
+    "Id": 1
+  },
+  {
+    "BusinessUnitId": 1,
+    "Name": "Department2",
+    "Id": 2
+  },
+  {
+    "BusinessUnitId": 1,
+    "Name": "Department3",
+    "Id": 3
+  },
+  {
+    "BusinessUnitId": 1,
+    "Name": "Department4",
+    "Id": 4
+  }
+]
