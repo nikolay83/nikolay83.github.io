@@ -1,0 +1,67 @@
+<div class="login-page" id="login-page" data-ng-controller="Login as vm">
+  <!-- BEGIN #wrapper -->
+  <div id="wrapper">
+    <!-- BEGIN header -->
+    <header class="row">
+      <a class="logo fl" href="#/"><img src="i/logo.png" alt="" /></a>
+      <!-- END header -->
+    </header>
+    <!-- END header -->
+    <!-- BEGIN .banner -->
+    <div class="banner row">
+      <div class="col-6 left">
+        <h1>Welcome to<br/>John Hancock<br/>Operations Process &<br/>Controls Assessment Tool</h1>
+      </div>
+      <div class="col-6 right">
+        <div class="login-container">
+          <div class="login-content"  ng-hide="vm.isEnabledReset">
+            <h2>Please login</h2>
+            <div class="form-group error" ng-show="loginError">
+              <label>&nbsp;</label>
+              <p>Wrong username or password, please try again</p>
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" ng-model="vm.username" id="username"  ng-class="{'error':loginError}"/>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" ng-model="vm.password" id="password"  ng-class="{'error':loginError}"/>
+            </div>
+            <div class="form-group">
+              <label>&nbsp;</label>
+              <label class="has-check">
+                <input type="checkbox" name="rememberme" />Remember Me</label>
+            </div>
+            <div class="form-group m-t-30">
+              <label>&nbsp;</label>
+              <a ng-click="vm.login()" class="btn btn-primary" id="login-btn">Login</a>
+              <a ng-click="vm.isEnabledReset = !vm.isEnabledReset"  class="forgot-link" id="forgot-password-btn">Forgot Password</a>
+            </div>
+          </div>
+          <div class="forgot-password-content" ng-show="vm.isEnabledReset">
+            <h2>Reset Password</h2>
+            <div class="form-group">
+              To reset your password, please enter your email address which associate with your account
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div class="form-group m-t-30">
+              <label>&nbsp;</label>
+              <a  class="btn btn-primary">Send</a>
+              <a ng-click="vm.isEnabledReset=false" class="forgot-link" id="cancel-forgot-btn" >Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END .banner -->
+    <!-- BEGIN #main-content -->
+    <div id="main-content" class="row"></div>
+    <!-- END #main-content -->
+    <div class="clearfix"></div>
+  </div>
+  <!-- END #wrapper -->
+</div>

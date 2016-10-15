@@ -1,0 +1,27 @@
+<ul class="edit-list"  data-ng-model="list" data-ui-sortable="sortOptions">
+
+ <li class="li li-checkall" data-ng-if="checkall" >
+    <div class="edit-row">
+      <div class="chk-ctrl">
+        <label class="chk-lbl norm-lbl"><span class="tx hd" data-sglclick="select(record)">{{checkall}}</span></label>
+      </div>
+    </div>
+    <!-- /.edit-row -->
+  </li>
+  <li class="li" data-ng-repeat="record in list"  data-sglclick="select(record)" data-ng-class="{'active':selected.id===record.id, 'new':record.isNew}">
+    <div class="edit-row">
+      <a class="move-handel" data-ng-if="record.isNew"></a>
+      <div class="chk-ctrl">
+        <label class="norm-lbl"><span class="tx" data-ng-blur="onblur($event,record)" >{{record.name}}</span></label>
+      </div>
+    </div>
+    <!-- /.edit-row -->
+    <a class="remove" data-ng-if="record.isNew" data-ng-click="removeRecord($index, list)"></a>
+  </li>
+  <li class="li li-add">
+    <div class="add-group">
+      <input type="text" class="text-ctrl" data-ng-enter="addRecord()" data-ng-model="newRecord" />
+    </div>
+  </li>
+</ul>
+<!-- edit-list -->

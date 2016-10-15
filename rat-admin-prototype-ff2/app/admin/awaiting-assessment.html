@@ -1,0 +1,29 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <div class="container">
+      <h1 class="row title dr-title">Awaiting Approval Assessment ({{dbm.awatingCount}})</h1>
+      <table class="normal-table row">
+        <thead>
+          <tr>
+            <th>Assessment Title</th>
+            <th>Date Submitted</th>
+            <th>Status</th>
+            <th>Approver Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="record in dbm.awatingTableData">
+            <td><a href="#/admin/awaiting/details">{{record.title}}</a></td>
+            <td>{{record.dateSubmitted}}</td>
+            <td>{{record.statusLabel}}</td>
+            <td>{{record.approverName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

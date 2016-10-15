@@ -1,0 +1,50 @@
+<ul class="edit-list" data-ng-model="list" data-ui-sortable="sortOptions">
+
+  <li class="li li-checkall" data-ng-if="checkall">
+    <div class="edit-row">
+      <div class="chk-ctrl">
+        <input type="checkbox" data-ng-change="toggleAllChks(list, model)" data-ng-model="chkall" class="ck" />
+        <label class="chk-lbl"><span class="tx hd" data-sglclick="select(record)">{{checkall}}</span></label>
+      </div>
+    </div>
+    <!-- /.edit-row -->
+  </li>
+  <li class="li" data-ng-repeat="record in list" data-ng-class="{'active':selected===record.id}">
+    <div class="edit-row">
+      <a class="move-handel"></a>
+      <div class="chk-ctrl">
+        <input type="checkbox" data-ng-change="changeChk(model[record.id])" data-ng-model="model[record.id]" class="ck" />
+        <label class="chk-lbl"><span class="tx" data-sglclick="select(record)">{{record.name}}</span></label>
+      </div>
+    </div>
+    <!-- /.edit-row -->
+    <a class="remove" data-ng-click="removeRecord($index, list)"></a>
+  </li>
+  <li class="li li-add">
+    <div class="add-group">
+      <input type="text" class="text-ctrl" data-ng-enter="addRecord(newRecord)" data-ng-model="newRecord" />
+      <a class="add-link"  data-ng-click="addRecord(newRecord)"></a>
+    </div>
+  </li>
+</ul>
+<!-- edit-list -->
+
+<div class="pending-group" data-ng-if="pending" >
+  <h5 class="pending-h">Pending for approval</h5>
+  <ul>
+    <li class="li li-pending edit-list" data-ng-repeat="record in pending" data-ng-class="{'active':selected===record.id}">
+      <div class="edit-row">
+        <a class="move-handel"></a>
+        <div class="chk-ctrl">
+          <input type="checkbox" data-ng-if="!addOnBlur" data-ng-model="model[record.id]" class="ck" />
+          <input type="checkbox" data-ng-if="addOnBlur" data-ng-model="model[record.id]" class="ck" />
+          <label class="chk-lbl"><span class="tx" data-sglclick="select(record)">{{record.name}}</span></label>
+        </div>
+      </div>
+      <!-- /.edit-row -->
+      <a class="remove" data-ng-click="removeRecord($index, list)"></a>
+    </li>
+  </ul>
+  <!-- edit-list -->
+</div>
+<!-- pending-group -->

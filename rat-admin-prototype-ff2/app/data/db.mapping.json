@@ -1,0 +1,47 @@
+{
+    "fileData": [{
+        "name": "Business Unit",
+        "id": "business"
+    }, {
+        "name": "Product",
+        "id": "product"
+    }, {
+        "name": "Department",
+        "id": "department"
+    }, {
+        "name": "Assessment Type",
+        "id": "assessment"
+    }],
+    "buInfo": {
+        "unit": [{
+            "name": "Business Unit",
+            "id": "business"
+        }, {
+            "name": "Product",
+            "id": "product"
+        }, {
+            "name": "Department",
+            "id": "department"
+        }, {
+            "name": "Department Head / Business Lead",
+            "id": "departmentHead"
+        }],
+        "functionalArea": [{
+            "name": "Functional Area Owner",
+            "id": "functionalOwner"
+        }, {
+            "name": "Functional Area",
+            "id": "functional"
+        }, {
+            "name": "In what site(s) is the function performed? ",
+            "id": "in"
+        }],
+        "assessment": [{
+            "name": "Assessment Type",
+            "id": "assessment"
+        }, {
+            "name": "Assessment Status",
+            "id": "assessment"
+        }]
+    }
+}

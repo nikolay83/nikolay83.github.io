@@ -1,0 +1,124 @@
+<div data-page-script="">
+  <!-- BEGIN .banner -->
+  <div class="banner row">
+    <div class="col-7 left">
+      <h1>Manage Risk Assessment</h1>
+      <p>Search for existing assessments or
+        <br/>add a new assessments </p>
+      <a href="#/admin/add" class="btn btn-white m-t-25">Add New Assessments</a>
+    </div>
+    <div class="col-5 right">
+      <ul class="listing tc row">
+        <li>
+          <a href="#/admin/draft">
+            <span class="circle"> {{dbm.draftCount}}</span>
+            <span>Draft</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/admin/awaiting">
+            <span class="circle">{{dbm.awatingCount}}</span>
+            <span>Awaiting</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/admin/approved">
+            <span class="circle">{{dbm.approvedCount}}</span>
+            <span>Approved</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- END .banner -->
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <div class="row search-panel">
+      <h2>Search for assessments</h2>
+      <div class="row">
+        <div class="left">
+          <div class="row">
+            <label>Assessment Title</label>
+            <input type="text" value="Acme" class="normal-input" />
+          </div>
+          <div class="row">
+            <label>Date Submitted</label>
+            <div class="date-wrapper fl">
+              <input type="text" value="04-12-2015" class="date-input" />
+              <i class="date-icon"></i>
+            </div>
+            <label class="short">to</label>
+            <div class="date-wrapper fl">
+              <input type="text" value="04-12-2015" class="date-input" />
+              <i class="date-icon"></i>
+            </div>
+          </div>
+          <div class="row">
+            <label>Approver Name</label>
+            <input type="text" class="normal-input" />
+          </div>
+        </div>
+        <div class="right">
+          <h3 class="row">Status</h3>
+          <div class="col-l">
+            <label>
+              <input type="checkbox" name="draft" /> Draft</label>
+            <label>
+              <input type="checkbox" name="approved" /> Approved</label>
+            <label>
+              <input type="checkbox" name="disapproved" /> Disapproved</label>
+          </div>
+          <div class="col-r">
+            <label>
+              <input type="checkbox" name="awaiting" /> Awaiting Functional Modifications Approval</label>
+            <label>
+              <input type="checkbox" name="awaiting-bu" /> Awaiting BU Risk Management Approval</label>
+            <label>
+              <input type="checkbox" name="awaiting-dr" /> Awaiting the Divisional Risk Management Approval</label>
+          </div>
+        </div>
+      </div>
+      <div class="buttons row">
+        <a class="btn btn-primary fr btn-search" href="javascript:;">Search</a>
+      </div>
+    </div>
+    <div class="loading tc row hide"><img src="i/loading.gif" width="60" alt="" /></div>
+    <div class="row m-t-40 result-container hide">
+      <div class="result-head">
+        Results: {{dbm.assassmentData.length}} Assassments found
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="sort sort-desc"><strong><span>Assessment Title</span></strong></th>
+            <th class="sort"><span>Date Submitted</span></th>
+            <th class="sort"><span>Status</span></th>
+            <th class="sort"><span>Approver Name</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="record in dbm.assassmentData | limitTo:8">
+            <td><a href="#/admin/{{record.status}}">{{record.title}}</a></td>
+            <td>{{record.date}}</td>
+            <td>{{record.statusLabel}}</td>
+            <td>{{record.approverName}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination m-t-15 fr">
+        <a href="javascript:;" class="prev hide">Prev Page</a>
+        <a href="javascript:;" class="first item current">1</a>
+        <a href="javascript:;" class="item">2</a>
+        <a href="javascript:;" class="item">3</a>
+        <a href="javascript:;" class="item">4</a>
+        <a href="javascript:;" class="item">5</a>
+        <span class="more">...</span>
+        <a href="javascript:;" class="last item">8</a>
+        <a href="javascript:;" class="next">Next Page</a>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

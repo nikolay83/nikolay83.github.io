@@ -1,0 +1,97 @@
+{
+    "infoSecurity": [
+        {
+            "title":"Manage employee status (i.e. active/inactive, roles & responsibilities) within Workday and change system access  (i.e. Administration Systems) within Service Now",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Inappropriate or insufficient system access"
+                }
+            ]
+        },
+        {
+            "title":"Manage access to current Business Records inventory (i.e. Structured/Unstructured Critical Data on SharePoint, Shared Drives)",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Inappropriate access to company records"
+                }
+            ]
+        },
+        {
+            "title":"External electronic distribution or transmission of data (i.e. emails, faxes, data in motion, data at rest)",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Electronic files/emails are not protected"
+                }
+            ]
+        }
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterList",
+            "id": "masterList"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterList",
+        "kpi": [
+            {
+                "name": "masterList",
+                "id": "masterList"
+            }
+        ],
+        "slaVal": {
+            "masterList": {}
+        },
+        "sla": {
+            "masterList": [
+                {
+                    "name": "Review Role & Permission Profiles",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "System Access Reviews",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "System Access Reviews using Identity IQ",
+                    "id": "ctrl02"
+                },
+                {
+                    "name": "BURC Records Inventory Worksheet",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "Employee Badge Access",
+                    "id": "ctrl05"
+                },
+                {
+                    "name": "Access Control Lists (ACL) via Service Now",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Email Encryption",
+                    "id": "ctrl06"
+                },
+                {
+                    "name": "Password Protected Files",
+                    "id": "ctrl07"
+                },
+                {
+                    "name": "Secure File Transfer Protocol (SFTP)/Managed Transfer Protocol (MTP)",
+                    "id": "ctrl08"
+                },
+                {
+                    "name": "Other control",
+                    "id": "ctrl10"
+                }, 
+                {
+                    "name": "No controls are in place",
+                    "id": "ctrl11"
+                }
+            ]
+        }
+    }
+}

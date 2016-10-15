@@ -1,0 +1,279 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/owner/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="row tab-headers">
+        <a href="#/owner/add/processes">KPI's / SLA's</a>
+        <a href="#/owner/add/processes/functionalArea">Functional Area<br/>Processes</a>
+        <a href="#/owner/add/processes/corporate" class="active current">Corporate &amp;<br/>Divisional Training</a>
+        <a href="#/owner/add/processes/business">Business Continuity<br/>&amp; Disaster Recovery</a>
+        <a href="#/owner/add/processes/records">Records<br/>Management</a>
+        <a href="#/owner/add/processes/information">Information<br/>Security</a>
+        <a href="#/owner/add/processes/data">Data Privacy<br/>&amp; Protection</a>
+      </div>
+      <div class="row">
+        <table class="custom-table controlls-simple">
+          <thead>
+            <tr>
+              <th width="160px">Curriculum</th>
+              <th width="160px">Risks</th>
+              <th width="97px">Risk Exposure</th>
+              <th width="106px">Controls</th>
+              <th width="106px">Control Frequency</th>
+              <th width="106px">Control Design</th>
+              <th width="106px">Testing &amp;
+                <br/>Frequency</th>
+              <th width="106px">Key Controls
+                <br/>Maturity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!--KPI-->
+              <td>Anti-Money Laundering & Fraud training</td>
+              <!--SLA-->
+              <td>Training is not completed</td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-1" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-1" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-1" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <!-- Controls objective-->
+              <td colspan="4"></td>
+            </tr>
+            <tr class="striped">
+              <td>Privacy & Information Security training - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</td>
+              <td>Training is not completed - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-2" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-2" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-2" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td>U.S. Operations Risk Management training</td>
+              <td>Training is not completed.
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-3" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-3" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-3" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr class="striped">
+              <td>Records Management training</td>
+              <td>Training is not completed.
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-4" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-4" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-4" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td>Code of Conduct & Business Ethics training</td>
+              <td>Training is not completed.
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-5" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-5" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-5" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr class="striped">
+              <td>Employee Harrassment training</td>
+              <td>Training is not completed.
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-6" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-6" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-6" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td>Conflict of Interest training</td>
+              <td>Training is not completed.</td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-7" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-7" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-7" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr class="striped">
+              <td>FINRA Firm Element & Compliance training</td>
+              <td>Training is not completed.</td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-8" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-8" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-8" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr class="last">
+              <td>
+                <textarea class="short ext-textarea" maxlength="500" name="additional-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-9" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-9" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-9" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" id="additional-select-control-1" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/owner/add/function" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/owner/add/overall" class="btn btn-primary">Next</a>
+          <a href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

@@ -1,0 +1,40 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"> </div>
+    <div class="row m-t-25 global-field">      
+      <section data-toggle-view="" class="toggle-view-sn" data-ng-repeat="rootItem in vm.dbGlobalField.globalFields">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text" data-ng-class="{'have-icon':(rootItem.dataTooltip!=='')}">
+              {{rootItem.category[0].name}}
+              <span class="tooltip">
+                {{rootItem.dataTooltip}}
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+        </div>
+        <div class="norm-layout  view-content">
+          <div data-edit-block="rootItem.sla[rootItem.selectedKpi]" data-model="rootItem.slaVal[rootItem.selectedKpi]" class="toggle-view-con">
+          </div>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+    </div>
+    <!-- /.row -->
+
+    <div class="section-footer row m-t-40">
+      <div class="left">
+        <a href="#/admin/edit/processes/data" class="btn btn-primary">Prev</a>
+      </div>
+      <div class="right">
+        <a href="#/admin/edit/riskCalculation" class="btn btn-primary">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END #main-content -->
+
+<div class="clearfix"></div>

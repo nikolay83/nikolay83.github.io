@@ -1,0 +1,27 @@
+{
+    "optionVal":"",
+    "optionsList": [{
+            "name": "90%",
+            "id": "90"
+        }, {
+            "name": "85%",
+            "id": "85"
+        }, {
+            "name": "80%",
+            "id": "80"
+        }, {
+            "name": "30%",
+            "id": "30"
+        }, {
+            "name": "<3%",
+            "id": "<3"
+        }, {
+            "name": "Other SLA",
+            "id": "other"
+        }, {
+            "name": "Not applicable",
+            "id": "not"
+        }
+
+    ]
+}

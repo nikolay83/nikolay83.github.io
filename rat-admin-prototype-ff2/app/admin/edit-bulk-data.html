@@ -1,0 +1,44 @@
+<div data-page-script="">
+	<!-- popup for comments -->
+	<div id="comment-popup" class="row comment-popup hide" title="Comment">
+	<label>Comment for your choice</label>
+	<textarea id="comment-content"></textarea>
+	<center>
+		<a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+	</center>
+	</div>
+	<!-- BEGIN #main-content -->
+	<div id="main-content" class="row">
+		<h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+		<div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"></div>
+		
+		<div class="clearfix"></div>
+		<div class="edit-bulkdata-content">
+			<div class="top-title-content">
+				<span class="grey-title">Import a large amount of data from an .xls, .xlsx or .csv file.</span>
+				<a class="btn-upload" href="javascript:;" data-ng-click="showPopupUpload()">Upload File</a>
+				<div class="clearfix"></div>
+			</div>
+			<!-- /top-title-content -->
+			<div class="bottom-placeholder-content">
+				<img class="big-img" src="i/placeholder.png" alt="IMG" />
+				<a class="btn-download" href="javascript:;"><i class="sprites"></i> Download Template Sample</a>
+				<div class="clearfix"></div>
+			</div>
+			<!-- /bottom-placeholder-content -->
+		</div>
+		<!-- /edit-bulkdata-content -->
+
+		<div class="section-footer row m-t-40">
+			<div class="left">
+				<a href="#/admin/edit/addon" class="btn btn-primary">Prev</a>
+			</div>
+			<div class="right">
+				<a href="javascript:;" class="btn btn-primary">Next</a>
+				<a class="hide" href="javascript:;">Save as Draft</a>
+			</div>
+		</div>
+	</div>
+	<!-- END #main-content -->
+	<div class="clearfix"></div>
+</div>

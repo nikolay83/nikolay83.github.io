@@ -1,0 +1,140 @@
+{
+    "corporateDivisional": [
+        {
+            "title":"Documented policies, procedures, manuals, job-aids and training materials",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Procedures not followed according to current documentation"
+                },
+                {
+                    "name":"Documentation is not current"
+                }
+            ]
+        },
+        {
+            "title":"Corporate Training ",
+            "curriculums":[
+                {
+                    "name":"Anti-Money Laundering & Fraud"
+                },
+                {
+                    "name":"Privacy & Information Security"
+                },
+                {
+                    "name":"Code of Conduct & Business Ethics"
+                },
+                {
+                    "name":"Employee Harrassment"
+                },
+                {
+                    "name":"Conflict of Interest"
+                }
+            ],
+            "risks":[
+                {
+                    "name":"Incomplete training or knowledge of material"
+                }
+            ]
+        },
+        {
+            "title":"Divisional Training",
+            "curriculums":[
+                {
+                    "name":"U.S. Operations Risk Management"
+                },
+                {
+                    "name":"Records Management"
+                },
+                {
+                    "name":"Health Insurance Portability and Accountability Act (HIPAA)"
+                }
+            ],
+            "risks":[
+                {
+                    "name":"Incomplete training or knowledge of material"
+                }
+            ]
+        },
+        {
+            "title":"FINRA Training",
+            "curriculums":[
+                {
+                    "name":"Annual FINRA Firm Element Training"
+                },
+                {
+                    "name":"Continuing Education"
+                }
+            ],
+            "risks":[
+                
+            ]
+        }
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterListSla",
+            "id": "masterListSla"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterListSla",
+        "kpi": [
+            {
+                "name": "masterListSla",
+                "id": "masterListSla"
+            }
+        ],
+        "slaVal": {
+            "masterListSla": {}
+        },
+        "sla": {
+            "masterListSla": [
+                {
+                    "name": "Annual review of policies & procedures",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "Resides in centralized location with employee access",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "Change in policies & procedures are communicated",
+                    "id": "ctrl02"
+                },
+                {
+                    "name": "Master Production Calendar/Document Log Review",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Porject Management - Change Control",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "Compass Reporting",
+                    "id": "ctrl05"
+                }, 
+                {
+                    "name": "Employee Email Notification",
+                    "id": "ctrl06"
+                },
+                {
+                    "name": "Manager Email Notification",
+                    "id": "ctrl07"
+                },
+                {
+                    "name": "John Hancock Distributors LLC Email Notification",
+                    "id": "ctrl08"
+                },
+                {
+                    "name": "Other control",
+                    "id": "ctrl10"
+                }, 
+                {
+                    "name": "No controls are in place",
+                    "id": "ctrl11"
+                }
+            ]
+        }
+    }
+}

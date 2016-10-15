@@ -1,0 +1,112 @@
+<div data-page-script="">
+  <!-- popup for comments -->
+  <div id="comment-popup" class="row comment-popup hide" title="Comment">
+    <label>Comment for your choice</label>
+    <textarea id="comment-content"></textarea>
+    <center>
+      <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+    </center>
+  </div>
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/owner/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="row tab-headers">
+        <a href="#/owner/add/processes">KPI's / SLA's</a>
+        <a href="#/owner/add/processes/functionalArea">Functional Area<br/>Processes</a>
+        <a href="#/owner/add/processes/corporate">Corporate &amp;<br/>Divisional Training</a>
+        <a href="#/owner/add/processes/business" class="active current">Business Continuity<br/>&amp; Disaster Recovery</a>
+        <a href="#/owner/add/processes/records">Records<br/>Management</a>
+        <a href="#/owner/add/processes/information">Information<br/>Security</a>
+        <a href="#/owner/add/processes/data">Data Privacy<br/>&amp; Protection</a>
+      </div>
+      <div class="row">
+        <table class="custom-table controlls-simple">
+          <thead>
+            <tr>
+              <th width="160px">Processes</th>
+              <th width="160px">Risks</th>
+              <th width="97px">Risk Exposure</th>
+              <th width="106px">Controls</th>
+              <th width="106px">Control Frequency</th>
+              <th width="106px">Control Design</th>
+              <th width="106px">Testing &amp;
+                <br/>Frequency</th>
+              <th width="106px">Key Controls
+                <br/>Maturity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business continuity plans are updated on a regular basis</td>
+              <!--risk -->
+              <td>Business continuity plans are not current</td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-1" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-1" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-1" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr class="striped last">
+              <td>
+                <textarea class="short ext-textarea" maxlength="500" name="additional-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-2" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-2" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-2" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="4"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/owner/add/function" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/owner/add/overall" class="btn btn-primary">Next</a>
+          <a href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

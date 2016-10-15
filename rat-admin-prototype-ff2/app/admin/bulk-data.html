@@ -1,0 +1,57 @@
+<div data-page-script="" data-ng-controller="AddUser as vmAdd">
+
+  <!-- popup for comments -->
+  <div id="comment-popup" class="row comment-popup hide" title="Comment">
+    <label>Comment for your choice</label>
+    <textarea id="comment-content"></textarea>
+    <center>
+      <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+    </center>
+  </div>
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Bulk data Import</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="data-importer-group">
+        <section class="bulk-upload-sn">
+          <h2 class="h">Bulk data Import</h2>
+          <div class="caption">Import a large amount of data from an .xls, .xlsx or .csv file.</div>
+          <div class="actions"  data-go-nav="">
+            <a class="btn-empty">Upload your file</a>
+            <input type="file" name="" id="fileUpload" data-src="#/admin/add/bulkdataMapping" class="upload-btn" accept=".xls, .xlsx, .csv" />
+          </div>
+        </section>
+        <!-- /.bulk-upload-sn -->
+        <div class="step-indicator">
+          <ul class="steps">
+            <li>
+              <div class="litx on">Upload file</div>
+            </li>
+            <li>
+              <div class="litx">Field mapping</div>
+            </li>
+            <li>
+              <div class="litx">Confirm</div>
+            </li>
+          </ul>
+        </div>
+        <!-- /.step-indicator -->
+        <section class="works-group">
+          <h2 class="h">How It works</h2>
+          <figure class="fig">
+            <img src="i/works-placeholder.jpg" alt="" />
+          </figure>
+        </section>
+        <!-- /.works-group -->
+        <div class="step-nav">
+          <a href="#/admin/add/bulkdataMapping" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- /.data-importer-group -->
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

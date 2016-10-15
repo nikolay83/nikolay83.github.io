@@ -1,0 +1,295 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <!-- BEGIN Prior Changes section -->
+      <div class="toggle-container row prior-changes">
+        <div class="toggle-header row">
+          <span class="fl">Were there any changes since the prior assessment?</span>
+          <a href="javascript:;" class="btn btn-white m-l-20 fl add-btn">+ Add New</a>
+          <div class="switch fr">
+            <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked/>
+            <label for="cmn-toggle-1">
+              <span class="yes">Yes</span>
+              <span class="no">No</span>
+            </label>
+          </div>
+        </div>
+        <div class="toggle-content row">
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#1</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When did the change take place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#2</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When did the change take place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#3</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When did the change take place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#4</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When did the change take place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+        </div>
+      </div>
+      <!-- END Prior Changes section -->
+      <!-- BEGIN Anticipated Changes section -->
+      <div class="toggle-container row m-t-20 anticipated-changes">
+        <div class="toggle-header row">
+          <span class="fl">Do you anticipate any changes in the next 12 months?</span>
+          <a href="javascript:;" class="btn btn-white m-l-20 fl add-btn">+ Add New</a>
+          <div class="switch fr">
+            <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
+            <label for="cmn-toggle-2">
+              <span class="yes">Yes</span>
+              <span class="no">No</span>
+            </label>
+          </div>
+        </div>
+        <div class="toggle-content row hide">
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#1</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When do you anticipate the change taking place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#2</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When do you anticipate the change taking place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#3</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When do you anticipate the change taking place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+          <div class="element">
+            <div class="row m-t-20">
+              <span class="change-number">#4</span>
+            </div>
+            <div class="row m-t-20">
+              <label>Change Type</label>
+              <select class="multiple middle m-t-15" multiple="multiple" name="single">
+                <option value="process">Process</option>
+                <option value="compliance">Compliance Requirements</option>
+                <option value="controls">Controls</option>
+                <option value="systems">Systems</option>
+                <option value="outsourcing">Outsourcing</option>
+                <option value="organizational">Organizational Structure</option>
+                <option value="roles">Roles & Responsibilities</option>
+              </select>
+            </div>
+            <div class="m-t-30 row">
+              <label>When do you anticipate the change taking place?</label>
+              <div class="date-wrapper">
+                <input type="text" class="date-input" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+            <div class="m-t-30 row">
+              <label>Description of change</label>
+
+              <textarea class="description-change-textarea"></textarea>
+            </div>
+            <a href="javascript:;" class="remove-link"><span class="icon-remove"></span> Remove</a>
+          </div>
+        </div>
+      </div>
+      <!-- END Anticipated Changes section -->
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/admin/add" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/admin/add/processes" class="btn btn-primary">Next</a>
+          <a class="hide" href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

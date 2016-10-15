@@ -1,0 +1,12 @@
+<a class="logo fl" href="#/owner/home"><img src="i/logo2.png" alt="" /></a>
+<div class="right-nav">
+  <p>Welcome {{dbm.user.username}}, <a href="#/"><strong>Logout</strong></a></p>
+  <nav>
+    <a href="#/owner/home" ng-class="{'active':vmc.checkMenu('/home')}">Home</a>
+    <a href="#/owner/add" ng-class="{'active':vmc.checkMenu('/add')}">Add a New Assessment</a>
+    <a href="#/owner/draft" ng-class="{'active':vmc.checkMenu('/draft')}">Draft Assessment ({{dbm.draftCount}})</a>
+    <a href="#/owner/awaiting" ng-class="{'active':vmc.checkMenu('/awaiting')}">Awaiting Approval ({{dbm.awatingCount}})</a>
+    <a href="#/owner/approved" ng-class="{'active':vmc.checkMenu('/approved')}">Approved ({{dbm.approvedCount}})</a>
+    <a href="#/owner/rejected" ng-class="{'active':vmc.checkMenu('/rejected')}">Rejected ({{dbm.rejectedCount}})</a>
+  </nav>
+</div>

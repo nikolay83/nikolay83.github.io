@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "username": "Owner",
+            "password": "password",
+            "role": "owner"
+        }, {
+            "username": "Approver",
+            "password": "password",
+            "role": "approver"
+
+        }, {
+            "username": "Admin",
+            "password": "password",
+            "role": "admin"
+        }
+    ]
+}

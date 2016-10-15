@@ -1,0 +1,73 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"> </div>
+    <div class="row m-t-25">
+
+      <section data-toggle-view="" class="toggle-view-sn">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">Business unit</h2>
+
+        </div>
+        <div class="col-layout view-content">
+          <div class="col">
+            <section class="edit-block-sn">
+              <h2 class="hide"><span>businessUnit</span></h2>
+              <div data-edit-block="vm.dbCurrent.buInfo.businessUnit" data-model="vm.dbCurrent.buInfo.buVal" data-selected="vm.dbCurrent.buInfo.buSelected" class="toggle-view-con parent-block can-select">
+              </div>
+            </section>
+          </div>
+          <!-- /.col -->
+          <div class="col">
+            <section class="edit-block-sn">
+              <h2><span>Product</span></h2>
+              <div data-edit-block="vm.dbCurrentType.product" data-model="vm.dbCurrentType.productVal" class="toggle-view-con ">
+              </div>
+            </section>
+            <section class="edit-block-sn">
+              <h2><span>Department</span></h2>
+              <div data-edit-block="vm.dbCurrentType.department" data-model="vm.dbCurrentType.departmentVal" class="toggle-view-con ">
+              </div>
+            </section>
+            <section class="edit-block-sn">
+              <h2><span>Department Head/Business Lead</span></h2>
+              <div data-edit-block="vm.dbCurrentType.departmentHead" data-model="vm.dbCurrentType.departmentHeadVal" class="toggle-view-con ">
+              </div>
+            </section>
+            <section class="edit-block-sn">
+              <h2><span>Functional Area Owner</span></h2>
+              <div data-edit-block="vm.dbCurrentType.functionalAreaOwner" data-model="vm.dbCurrentType.functionalAreaOwnerVal" class="toggle-view-con ">
+              </div>
+            </section>
+          </div>
+          <!-- /.col -->
+          <div class="col">
+            <section class="edit-block-sn">
+              <h2><span>Functional Area </span></h2>
+              <div data-edit-block="vm.dbCurrentType.functionalArea" data-model="vm.dbCurrentType.functionalAreaVal" class="toggle-view-con">
+              </div>
+            </section>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.col-layout -->
+      </section>
+      <!-- /.toggle-view-sn -->
+    </div>
+    <!-- /.col-layout -->
+
+    <div class="section-footer row m-t-40">
+      <div class="left">
+        <a href="javascript:;" class="btn btn-primary">Prev</a>
+      </div>
+      <div class="right">
+        <a href="#/admin/edit/processes" class="btn btn-primary">Next</a>
+        <a class="hide" href="javascript:;">Save as Draft</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END #main-content -->
+
+<div class="clearfix"></div>

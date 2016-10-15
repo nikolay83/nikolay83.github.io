@@ -1,0 +1,183 @@
+{
+    "functionalArea": [
+        {
+            "title":"Death notification",
+            "curriculums":[],
+            "subProcess":[
+                {
+                    "desc":"Verification of internal UCI and Lexis Nexis death files prior to AWD RIP and notification to Business Unit",
+                    "risk":[
+                        {
+                            "name":"Improper filtering by roles, statuses,etc."
+                        },
+                        {
+                            "name":"Not identifying major outliers/volume discrepancies"
+                        },
+                        {
+                            "name":"Lack of Business Unit notification"
+                        },
+                        {
+                            "name":"Duplicate work types being ripped into AWD workflow"
+                        },
+                        {
+                            "name":"Key man risk"
+                        }
+                    ]
+                    
+                },
+                {
+                    "desc":"Validate the scrub and AWD RIP job performed by IT",
+                    "risk":[
+                        {
+                            "name":"Improper scrubbed files can lead to duplicate requests"
+                        },
+                        {
+                            "name":"Not all files or too many are ripped into AWD impacting ability to meet regulatory settlement requirements"
+                        }
+                    ]
+                    
+                }
+            ]
+        },
+        {
+            "title":"Death record validation",
+            "curriculums":[],
+            "subProcess":[
+                {
+                    "desc":"Check admin system and AWD to confirm if the deceased is a JH client, has an inactive account, and if there is a pending or complete claim",
+                    "risk":[
+                        {
+                            "name":"confirming death match that is not in fact deceased"
+                        },
+                        {
+                            "name":"Incorrect processing preventing record from going through Thorough Search process"
+                        },
+                        {
+                            "name":"Incorrect data in admin system (status, name, SSN, date of birth , etc.) impacting valudation"
+                        },
+                        {
+                            "name":"Inaccurate vendor and DMF data/match logic"
+                        }
+                    ]
+                    
+                },
+                {
+                    "desc":"Perform 2nd validation of death using an external resource(Obituary, Legacy, Accurint)",
+                    "risk":[
+                        {
+                            "name":"Unable to validate death from a secondary source and record still goes through Thorough Search"
+                        },
+                        {
+                            "name":"Not following order of validation check leading to increase costs"
+                        }
+                    ]
+                    
+                }
+            ]
+        },
+        {
+            "title":"BU Confirmed Death Matches(Eligible for Thorough Search)",
+            "curriculums":[],
+            "subProcess":[
+                {
+                    "desc":"Check admin system and AWD to confirm if the deceased is a JH client, has an inactive account, and if there is a pending or complete claim",
+                    "risk":[
+                        {
+                            "name":"Work routed to the wrong workflow queue"
+                        }
+                    ]
+                    
+                }
+            ]
+        },
+        {
+            "title":"BU Confirmed Death Matches(Ineligible for Thorough Search)",
+            "curriculums":[],
+            "subProcess":[
+                {
+                    "desc":"Confirmed LTC death matches are sent to LTC Operation for processing",
+                    "risk":[
+                        {
+                            "name":"Inaccurate processing"
+                        },
+                        {
+                            "name":"Not reporting deaths in a timely manner"
+                        }
+                    ]
+                    
+                },
+                {
+                    "desc":"Confirmed Fixed Products death matches (PAR & Structured Settlements) are sent to Fixed - Death Benefit Administration for Processing",
+                    "risk":[
+                        {
+                            "name":"Inaccurate processing"
+                        },
+                        {
+                            "name":"Not reporting deaths in a timely manner"
+                        }
+                    ]
+                    
+                }
+            ]
+        }
+        
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterList",
+            "id": "masterList"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterList",
+        "kpi": [
+            {
+                "name": "masterList",
+                "id": "masterList"
+            }
+        ],
+        "slaVal": {
+            "masterList": {}
+        },
+        "sla": {
+            "masterList": [
+                {
+                    "name": "Extract Reconciliation",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "Manager Sign-off/Email notification triggering next step",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "Monthly Death File Validation (AWD BI - Outstanding Inventory Report)",
+                    "id": "ctrl02"
+                }, 
+                {
+                    "name": "Quanlity review based on user experience",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Unconfirmed Death Letters",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "Shared Service functions (Data Integrity, Returned Mail, TIN Matching)",
+                    "id": "ctrl05"
+                },
+                {
+                    "name": "Interal review of Vendor Death Match Logic",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Death Match Results Congo's report",
+                    "id": "ctrl06"
+                },
+                {
+                    "name": "Auto Worktype Creation(AWD)",
+                    "id": "ctrl10"
+                }
+            ]
+        }
+    }
+}

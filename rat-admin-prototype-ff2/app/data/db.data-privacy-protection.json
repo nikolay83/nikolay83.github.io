@@ -1,0 +1,102 @@
+{
+    "privacyProtection": [
+        {
+            "title":"Report Privacy incidents (complete Privacy Incident Reporting Form)",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Incidents involving PII/PHI going undetected"
+                }
+            ]
+        },
+        {
+            "title":"Handling and destruction of privacy data including information with PII/PHI data",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"PII/PHI is easily accessible"
+                }
+            ]
+        },
+        {
+            "title":"Customer Identification/Authentication (i.e. Inbound/Outbound callers and correspondence)",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Inappropriate dissemination of information"
+                }
+            ]
+        },
+        {
+            "title":"Handling of Privacy (Do Not Solicit/Do Not Contact) opt-out requests",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Customers continue to receive unwanted marketing information or materials from the Company"
+                }
+            ]
+        }
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterList",
+            "id": "masterList"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterList",
+        "kpi": [
+            {
+                "name": "masterList",
+                "id": "masterList"
+            }
+        ],
+        "slaVal": {
+            "masterList": {}
+        },
+        "sla": {
+            "masterList": [
+                {
+                    "name": "Complete Privacy Incident Reporting Form & notify Privacy Coordinator",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "Perform clean desk audit reviews",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "Email Encryption",
+                    "id": "ctrl02"
+                }, 
+                {
+                    "name": "System Access Reviews",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Call Recording",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "Call Monitoring",
+                    "id": "ctrl05"
+                },
+                {
+                    "name": "Gryphon site",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Internal Privacy Opt Out Database",
+                    "id": "ctrl06"
+                },
+                {
+                    "name": "Other control",
+                    "id": "ctrl10"
+                }, 
+                {
+                    "name": "No controls are in place",
+                    "id": "ctrl11"
+                }
+            ]
+        }
+    }
+}

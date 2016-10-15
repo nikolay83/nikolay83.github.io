@@ -1,0 +1,260 @@
+<div data-page-script="">
+	<!-- BEGIN #main-content -->
+	<div id="main-content" class="row" data-position-area>
+		<h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+		<div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"> </div>
+		<div class="row m-t-25">
+			<div class="row tab-headers ctKPI-static" data-ng-include="'app/admin/tab-header-nav.html'"> </div>
+			<!-- /.tab-headers -->
+			<div class="clear"></div>
+			<div class="row tab-bu-new-d m-t-25" data-ng-class="{active:shadowAll}">
+				<section class="toggle-view-sn" data-toggle-view="">
+					<div class="title-wrap">
+						<div class="toggle-group-title">
+							<span>Business Unit</span>
+							
+						</div>
+						<div class="cover-on-off">
+						   <a href="javascript:;" class="on-off-swift" data-ng-click="shadowAll=!shadowAll" data-ng-class="{active:shadowAll}">
+						      <span class="text">Global option</span>
+						   </a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="col-layout view-content">
+						<div class="col">
+							<section class="edit-block-sn">
+								<div data-edit-no-check-box-block="vm.dbCurrent.buInfo.businessUnit" data-model="vm.dbCurrent.buInfo.buVal" data-selected="vm.dbCurrent.buInfo.buSelected" class="toggle-view-con parent-block can-select">
+								</div>
+							</section>
+						</div>
+						<!-- COl ONE -->
+						<div class="col col-new-d" data-ng-class="{active:shadowCol}">
+							<section class="edit-block-sn fix-z-index">
+								<div class="toggle-view-con">
+									<div class="title">
+										<h2>
+											Functional Area 
+										</h2>
+										<div class="cover-on-off">
+										   <a href="javascript:;" class="on-off-swift" data-ng-click="shadowCol=!shadowCol" data-ng-class="{active:shadowCol}">
+										      <span class="text">Global option</span>
+										   </a>
+										</div>
+									</div>
+									<div data-edit-no-drag-block="vm.dbCurrentType.functionalArea" data-model="vm.dbCurrentType.functionalAreaVal" data-selected="vm.dbCurrentType.functionalAreaSelected" class="toggle-view-con can-select">
+									</div>
+								</div>
+							</section>
+							<div class="white-overlay">	</div>
+							</div>
+							<!-- COl ONE -->
+						</div>
+				</section>
+				<div class="white-over"></div>
+			</div>
+
+			<div class="tab-content row style-new-d style-under">
+				<ul class="tabular-view" data-ui-sortable="rowSortOptions" data-ng-model="vm.dbBusinessContinuity.businessRecovery">
+					<li class="li th">
+						<div class="col-layout">
+							<div class="col h hint">
+								<div class="new-title-d">
+									<div class="cover-all-icon-d">
+										<span>Process</span> 
+										<p class="icon-hint">
+											<span class="tooltip hide">
+												A general category of processes assigned to the function being assessed.  Functions are usually made of many processes that are rolled up to general categories (i.e. Disbursement of funds is a general process that has several sub-processes).  A core process would most likely have a KPI and SLA associated with it. 
+												<i class="arrow"></i>
+											</span>
+										</p>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="col h hint">
+								<div class="new-title-d">
+									<div class="cover-all-icon-d">
+										<span>Risks</span> 
+										<p class="icon-hint">
+											<span class="tooltip hide">
+												The impact of a sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to sub-processes.
+												<i class="arrow"></i>
+											</span>
+										</p>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</li>
+					<!-- Li Thead -->
+					<li class="li" data-ng-repeat="rootItem in vm.dbBusinessContinuity.businessRecovery" data-ng-class="{'non-data':rootItem.curriculums.length > 0}">
+						<div class="col-layout col-kips" data-ng-mouseover="showDragInfo($index,$event,rootItem,vm.dbCorporateDivisionalDragData)">
+							<div class="col static-col" >
+								<div class="edit-block-sn">
+									<a class="move-handel-row ui-sortable-handle"></a>
+									<div class="toggle-view-con ng-isolate-scope">
+										<ul class="edit-list">
+											<li class="li">
+												<div class="edit-row">
+													<a class="move-handel ui-sortable-handle"></a>
+													<div class="chk-ctrl">
+														<input  class="ck " type="checkbox">
+														<label class="chk-lbl"><span class="tx ng-binding">{{rootItem.title}}</span></label>
+													</div>
+													<ul class="list-traning" data-ng-show="rootItem.curriculums.length > 0">
+														<li data-ng-repeat="item in rootItem.curriculums">
+															<span>{{item.name}}</span>
+														</li>
+														
+													</ul>
+												</div>
+												<!-- /.edit-row -->
+												<a class="remove"></a>
+											</li>
+											<li class="li li-add">
+												<div class="add-group">
+													<input class="text-ctrl ng-pristine ng-untouched ng-valid ng-empty" data-ng-enter="addRecord(newRecord)" data-ng-model="newRecord" type="text">
+													<a class="add-link" data-ng-click="addRecord(newRecord)"></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="when-drop-d">
+										<p class="title">Controls</p>
+										<a href="javascript:;" class="close-icon close-icon-drag" data-ng-click="closeDragBox(index, $event)"></a>
+										<div class="clearfix"></div>
+										<ul class="list-drap">
+											<li data-ng-repeat="itemDrag in rootItem.arrayDrag">
+												<span>{{itemDrag.name}}</span>
+											</li>
+										</ul>
+								</div>
+							</div>
+							<!-- /.col -->
+							<div class="col">
+								<div class="edit-block-sn">
+									<div  class="toggle-view-con can-select">
+										<ul class="list-d-col-2" >
+											<li data-ng-repeat="item in rootItem.risks">
+												<span class="text">
+													{{item.name}}
+												</span>
+											</li>
+										</ul>
+										<!-- list-d-col-2 -->
+									</div>
+								</div>
+							</div>
+							<!-- /.col -->
+						</div>
+						<!-- /.col-layout -->
+						<div class="clearfix"></div>
+					</li>
+					<!-- Li Thead -->
+					
+					<li class="li">
+						<div class="col-layout col-kips">
+							<div class="col static-col">
+								<div class="edit-block-sn">
+									<div class="toggle-view-con ng-isolate-scope">
+										<ul class="edit-list">
+											<li class="li li-add">
+												<div class="add-group">
+													<input class="text-ctrl ng-pristine ng-untouched ng-valid ng-empty" data-ng-enter="addProcessBu()" data-ng-model="vm.curriculumTitle" type="text">
+													<a class="add-link" data-ng-click="addProcessBu()"></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- /.col -->
+							<div class="col">
+								<div class="edit-block-sn">
+									<div  class="toggle-view-con can-select">
+										<ul class="edit-list">
+											<li class="li li-add">
+												<div class="add-group">
+													<input class="text-ctrl ng-pristine ng-untouched ng-valid ng-empty" data-ng-enter="addRiskBu()" data-ng-model="vm.riskCorTitle" type="text">
+													<a class="add-link" data-ng-click="addRiskBu()"></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- /.col -->
+						</div>
+						<!-- /.col-layout -->
+						<div class="clearfix"></div>
+					</li>
+					<!-- Li ADD -->
+				</ul>
+				<!-- /.row-view -->
+				
+				<div class="master-col">
+					<div class="cover-master">
+						<div class="col h hint">
+								<div class="new-title-d">
+									<div class="cover-all-icon-d">
+										<span>Controls (master list)</span> 
+										<p class="icon-hint">
+											<span class="tooltip hide">
+												Activities that can direct or influence a process to achieve the most desired result and decrease the exposure to risk in that process.  These are safeguards to ensure you’re successfully and efficiently completing your processes and achieving your service levels.  For example, quality review of work is done to ensure people are processing their work accurately.  Controls are attributed to sub-processes.
+												<i class="arrow"></i>
+											</span>
+										</p>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<div class="main-check">
+							<a href="javascript:;" class="handel-d  hold-tap-section"></a>
+							<div class="col">
+								<div class="edit-block-sn">
+									<div data-master-list-block="vm.dbBusinessContinuity.masterList.sla[vm.dbBusinessContinuity.masterList['selectedKpi']]" data-model="vm.dbBusinessContinuity.masterList.slaVal[vm.dbBusinessContinuity.masterList['selectedKpi']]" data-pending="vm.dbBusinessContinuity.masterList.slaPending" data-dragdata="vm.dbBusinessDragData" class="toggle-view-con">
+									</div>
+								</div>
+							</div>
+							<!-- Col data  -->
+							<div class="white-overlay"></div>
+						</div>
+
+						
+					</div>
+					<div class="when-drop-drap" >
+						<a href="javascript:;" class="move-hand"></a>
+						<ul class="edit-list">
+							<li class="li" data-ng-repeat="item in vm.dbBusinessDragData">
+								<div class="edit-row">
+									<div class="chk-ctrl">
+										<input class="ck ng-pristine " type="checkbox" checked>
+										<label class="chk-lbl"><span class="tx ">{{item.name}}</span></label>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+	
+				</div>
+				<!-- Master Col -->
+			</div>
+			<!-- /.tab-container -->
+		</div>
+		<!-- /.row -->
+		<div class="section-footer row m-t-40">
+			<div class="left">
+				<a href="#/admin/edit/processes/corporate" class="btn btn-primary">Prev</a>
+			</div>
+			<div class="right">
+				<a href="#/admin/edit/processes/records" class="btn btn-primary">Next</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END #main-content -->
+<div class="clearfix"></div>

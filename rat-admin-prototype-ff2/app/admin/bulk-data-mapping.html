@@ -1,0 +1,199 @@
+<div data-page-script="" data-ng-controller="AddUser as vmAdd">
+
+  <!-- popup for comments -->
+  <div id="comment-popup" class="row comment-popup hide" title="Comment">
+    <label>Comment for your choice</label>
+    <textarea id="comment-content"></textarea>
+    <center>
+      <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+    </center>
+  </div>
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Bulk data Import</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="data-importer-group">
+        <section class="bulk-upload-sn">
+          <h2 class="h">Field mapping</h2>
+          <div class="caption">Drag the columns of your document to match the elements of the app.</div>
+
+        </section>
+        <!-- /.bulk-upload-sn -->
+        <div class="step-indicator">
+          <ul class="steps">
+            <li class="on">
+              <div class="litx on">Upload file</div>
+            </li>
+            <li class="on">
+              <div class="litx on bd">Field mapping</div>
+            </li>
+            <li>
+              <div class="litx">Confirm</div>
+            </li>
+          </ul>
+        </div>
+        <!-- /.step-indicator -->
+        <div class="mapping-section" data-ng-controller="Mapper as vmMap">
+          <section class="col col-file-info">
+            <h2 class="h xls">BU info.xls</h2>
+            <h3 class="sub-h"><span class="hide">BU info</span></h3>
+            <div class="dropable-section-wrap">
+              <ul class="dropable-section placeholder-list">
+                <li data-ng-repeat="fileInfo in vmMap.dbMap.fileData| filter:vmMapfl " class="drop-area da-placeholder"></li>
+              </ul>
+              <ul class="dropable-section connect-list">
+                <li data-drag="fileInfo.name" data-ng-if="fileInfo.name" data-ng-class="{'da-placeholder':!fileInfo.name}" data-ng-repeat="fileInfo in vmMap.dbMap.fileData" data-ng-model="vmMap.dbMap.fileData" data-jqyoui-draggable="{index: {{$index}}, placeholder:true,animate:true}" data-jqyoui-options="{revert: 'invalid'}">
+
+                  <div class="drop-area">
+                    <a class="info-lk data-ng-binding">{{fileInfo.name}}</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </section>
+          <!-- /.col-file-info -->
+          <section class="col col-bu-info">
+            <h2 class="h">Business unit info</h2>
+
+            <div class="map-unit-group">
+              <h3 class="sub-h  bdr">Unit</h3>
+              <div class="dropable-section-wrap">
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.unit.list1.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.unit.list1">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Business Unit</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.unit.list1" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.unit.list1)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.unit.list2.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.unit.list2">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Product</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.unit.list2" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.unit.list2)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.unit.list3.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.unit.list3">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Department</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.unit.list3" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.unit.list3)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.unit.list4.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.unit.list4">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Department Head / Business Lead</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.unit.list4" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.unit.list4)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+              </div>
+              <!-- /.dropable-section-wrap" -->
+            </div>
+
+            <div class="map-unit-group">
+              <h3 class="sub-h">Functional Area</h3>
+              <div class="dropable-section-wrap">
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.fnArea.list1.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.fnArea.list1">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Functional Area Owner</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.fnArea.list1" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.fnArea.list1)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.fnArea.list2.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.fnArea.list2">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Functional Area</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.fnArea.list2" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.fnArea.list2)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.fnArea.list3.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.fnArea.list3">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">In what site(s) is the function performed? </div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.fnArea.list3" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.fnArea.list3)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+              </div>
+              <!-- /.dropable-section-wrap" -->
+            </div>
+
+            <div class="map-unit-group">
+              <h3 class="sub-h">Assessment</h3>
+              <div class="dropable-section-wrap">
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.assessment.list1.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.assessment.list1">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Assessment Type</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.assessment.list1" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.assessment.list1)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+
+                <div class="dropable-section placeholder-list" data-drop="vmMap.drop.assessment.list2.length<1" data-jqyoui-droppable="" data-jqyoui-options="vmMap.dropOpt" data-ng-model="vmMap.drop.assessment.list2">
+                  <div class="placeholder-bx"></div>
+                  <div class="lbl-map">Assessment Status</div>
+                  <div data-ng-repeat="buInfo in vmMap.drop.assessment.list2" class="li dropped-el">
+                    <div class="drop-area">
+                      <a class="info-lk">{{buInfo.name}}</a>
+                      <a data-ng-click="vmMap.remove($index, vmMap.drop.assessment.list2)" class="remove-lk"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.dropable-section -->
+              </div>
+              <!-- /.dropable-section-wrap" -->
+            </div>
+          </section>
+          <!-- /.col col-bu-info -->
+        </div>
+        <!-- /.mapping-section -->
+        <div class="step-nav">
+          <a href="#/admin/add/function" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- /.data-importer-group -->
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

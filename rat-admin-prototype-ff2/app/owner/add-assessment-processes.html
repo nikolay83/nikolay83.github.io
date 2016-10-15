@@ -1,0 +1,260 @@
+<div data-page-script="">
+
+  <!-- popup for comments -->
+  <div id="comment-popup" class="row comment-popup hide" title="Comment">
+    <label>Comment for your choice</label>
+    <textarea id="comment-content"></textarea>
+    <center>
+      <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+    </center>
+  </div>
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/owner/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="row tab-headers ctKPI-static">
+        <a href="#/owner/add/processes" class="active current"></a><span>KPI's / SLA's</span>
+        <a href="#/owner/add/processes/functionalArea">Functional Area<br/>Processes</a>
+        <a href="#/owner/add/processes/corporate">Corporate &amp;<br/>Divisional Training</a>
+        <a href="#/owner/add/processes/business">Business Continuity<br/>&amp; Disaster Recovery</a>
+        <a href="#/owner/add/processes/records">Records<br/>Management</a>
+        <a href="#/owner/add/processes/information">Information<br/>Security</a>
+        <a href="#/owner/add/processes/data">Data Privacy<br/>&amp; Protection</a>
+      </div>
+      <div class="row">
+        <table class="custom-table core-kpi-sla">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Key Performance Indicators</th>
+              <th>Service Levels</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!--Category-->
+              <td rowspan="4" class="tc">Telephony</td>
+              <!--KPI-->
+              <td class="tc">Answer Rate</td>
+              <!--SLA-->
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="90%/20 sec">90%/20 sec</option>
+                  <option value="80%/20 sec">80%/20 sec</option>
+                  <option value="80%/30 sec">80%/30 sec</option>
+                  <option value="80%/60 sec">80%/60 sec</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="subrow">
+              <td class="tc">Abandoned Rate</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="< 3%">&lt; 3%</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="subrow">
+              <td class="tc">IVR Containment Rate</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="30 %">30 %</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="subrow last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+            <tr class="striped">
+              <td rowspan="4" class="tc">Transactional Timeliness</td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="Same day">Same day</option>
+                  <option value="1-2 days">1-2 days</option>
+                  <option value="3-5 days">3-5 days</option>
+                  <option value="30 days">30 days</option>
+                  <option value="90% in 2 days">90% in 2 days</option>
+                  <option value="90% in 5 days">90% in 5 days</option>
+                  <option value="90% in X days based on transaction type">90% in X days based on transaction type</option>
+                  <option value="80% in X days based on transaction type">80% in X days based on transaction type</option>
+                  <option value="90% in 6 hours">90% in 6 hours</option>
+                  <option value="90% in 60 minutes">90% in 60 minutes</option>
+                  <option value="% of payments in inventory by days (15/30 days)">% of payments in inventory by days (15/30 days)</option>
+                  <option value="Letters every 30 days">Letters every 30 days</option>
+                  <option value="Phone/emails every 15 days">Phone/emails every 15 days</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="striped subrow">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="Same day">Same day</option>
+                  <option value="1-2 days">1-2 days</option>
+                  <option value="3-5 days">3-5 days</option>
+                  <option value="30 days">30 days</option>
+                  <option value="90% in 2 days">90% in 2 days</option>
+                  <option value="90% in 5 days">90% in 5 days</option>
+                  <option value="90% in X days based on transaction type">90% in X days based on transaction type</option>
+                  <option value="80% in X days based on transaction type">80% in X days based on transaction type</option>
+                  <option value="90% in 6 hours">90% in 6 hours</option>
+                  <option value="90% in 60 minutes">90% in 60 minutes</option>
+                  <option value="% of payments in inventory by days (15/30 days)">% of payments in inventory by days (15/30 days)</option>
+                  <option value="Letters every 30 days">Letters every 30 days</option>
+                  <option value="Phone/emails every 15 days">Phone/emails every 15 days</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="striped subrow">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="Same day">Same day</option>
+                  <option value="1-2 days">1-2 days</option>
+                  <option value="3-5 days">3-5 days</option>
+                  <option value="30 days">30 days</option>
+                  <option value="90% in 2 days">90% in 2 days</option>
+                  <option value="90% in 5 days">90% in 5 days</option>
+                  <option value="90% in X days based on transaction type">90% in X days based on transaction type</option>
+                  <option value="80% in X days based on transaction type">80% in X days based on transaction type</option>
+                  <option value="90% in 6 hours">90% in 6 hours</option>
+                  <option value="90% in 60 minutes">90% in 60 minutes</option>
+                  <option value="% of payments in inventory by days (15/30 days)">% of payments in inventory by days (15/30 days)</option>
+                  <option value="Letters every 30 days">Letters every 30 days</option>
+                  <option value="Phone/emails every 15 days">Phone/emails every 15 days</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="striped subrow last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="tc">Utilization</td>
+              <td class="tc">Individual Productivity</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="95%">95%</option>
+                  <option value="90%">90%</option>
+                  <option value="180 plans to one representative">180 plans to one representative</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="subrow last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+            <tr class="striped">
+              <td rowspan="3" class="tc">Quality</td>
+              <td class="tc">Individual Accuracy</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="99%">99%</option>
+                  <option value="98%">98%</option>
+                  <option value="95%">95%</option>
+                  <option value="90%">90%</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="striped subrow">
+              <td class="tc">Call Monitoring Scores</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="95%">95%</option>
+                  <option value="90%">90%</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="striped subrow last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="tc">Customer Centricity</td>
+              <td class="tc">Call Surveys (CSAT)</td>
+              <td class="tc">
+                <select class="short multiple" multiple="multiple" name="single">
+                  <option value="XX% Satisfied">XX% Satisfied</option>
+                  <option value="Net Promoter Score of X">Net Promoter Score of X</option>
+                  <option value="">Not Applicable</option>
+                  <option value="other">Other SLA</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="subrow last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+            <tr class="striped last">
+              <td class="tc">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-category" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc add">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-KPI" placeholder="Additional"></textarea>
+              </td>
+              <td class="tc add">
+                <textarea class="short ext-textarea" maxlength="500" name="additional-SLA" placeholder="Additional"></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/owner/add/function" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/owner/add/overall" class="btn btn-primary">Next</a>
+          <a href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

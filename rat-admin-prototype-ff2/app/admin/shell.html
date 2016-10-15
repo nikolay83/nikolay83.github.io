@@ -1,0 +1,127 @@
+<div id="manage-page" data-ng-controller="Admin as vm" >
+	<!-- BEGIN #wrapper -->
+
+	<div id="wrapper">
+		<!-- BEGIN header -->
+		<header class="row" data-ng-include="'app/admin/header.html'"></header>
+		<!-- END header -->
+		<div data-ui-view="view"></div>
+	</div>
+
+	<!-- END #wrapper -->
+
+	<!-- BEGIN  #popup-->
+
+	<div class="dark-overlay" data-ng-show="uploadFileShow || isShowApproveAddOn" data-ng-click="uploadFileShow=false ;isShowApproveAddOn = false; vm.titlePopupNonGlobal=''"></div>
+	<div class="upload-file-popup ng-hide" data-ng-show="uploadFileShow">
+		<div class="top-title">
+			<span class="blue-title">Upload File</span>
+			<a class="icon-close sprites" href="javascript:;" data-ng-click="hidePopupUpload()"></a>
+		</div>
+		<!-- /top-title-content -->
+		<div class="bottom-details">
+			<div class="first-step-content" data-ng-show="stepFirstUpload">
+				<span class="blue-title" data-nv-file-drop="" data-uploader="uploader">Drag File Here</span>
+				<span class="grey-title">--<i>OR</i>--</span>
+				<div class="box-upload-test">
+					<input class="input-upload-file" type="file" name="upload" data-ng-mouseover ="uploadShowActive=true" data-ng-mouseleave = "uploadShowActive=false" data-nv-file-select data-uploader="uploader" multiple accept=".xls, .xlsx, .csv"/>
+					<a class="btn-upload" data-ng-class="{active: uploadShowActive}" href="javascript:;">Choose File</a>
+				</div>
+				
+			</div>
+			<!-- /first-step-content -->
+			<div class="second-step-content" data-ng-show="stepSecondUpload">
+				<span class="status">Uploading...</span>
+				<div class="blue-progress">
+					<span class="inline-progress"></span>	
+				</div>
+				<span class="percentage">{{loadingPercent}}</span>
+			</div>
+			<!-- /second-step-content -->
+			<div class="third-step-content" data-ng-show="stepThirdUpload">
+				<span class="sprites"></span>
+				<span class="status">Upload Complete</span>
+			</div>
+			<!-- /third-step-content -->
+			<div class="fourth-step-content" data-ng-show="stepFourthUpload">
+				<span class="sprites"></span>
+				<span class="status">Upload Failed</span>
+				<div class="read-rules">
+					<span class="line">The file you uploaded have the filed(s) with characters which exceeding maximum limit.</span>
+					<span class="line last">The tool only allow 25 characters max per field.</span>
+				</div>
+				<!-- /read-rules -->
+				<a class="btn-retry" href="javascript:;" data-ng-click="retryUpload()"><i class="sprites" ></i> Retry</a>
+			</div>
+			<!-- /fourth-step-content -->
+		</div>
+		<!-- /bottom-details -->
+	</div>
+	<!-- /upload-file-popup -->
+	<div class="approve-addon-popup ng-hide" data-ng-show="isShowApproveAddOn" data-ng-class="{active:vm.titlePopupNonGlobal==='nonglobal'}">
+		<div class="top-title">
+			<span class="blue-title">Approve Add-on</span>
+			<a class="icon-close sprites" href="javascript:;" data-ng-click="isShowApproveAddOn=false;vm.titlePopupNonGlobal=''"></a>
+		</div>
+		<!-- /top-title-content -->
+		<div class="bottom-details">
+			<div class="survey-form">
+				<span class="title">Please select if this Add-on is "Global" or "Non-Global" :</span>
+				<div class="about-addon">
+					<a class="tick-me" href="javascript:;" data-ng-click="vm.titlePopupNonGlobal='global'" data-ng-class="{active:vm.titlePopupNonGlobal==='global'}"><i class="sprites"></i>Global</a>
+					<a class="tick-me last" href="javascript:;" data-ng-click="vm.titlePopupNonGlobal='nonglobal'" data-ng-class="{active:vm.titlePopupNonGlobal==='nonglobal'}"><i class="sprites"></i>Non-Global</a>
+				</div>
+				<!-- /about-addon -->
+				<div class="about-type" data-ng-show="vm.titlePopupNonGlobal==='nonglobal'">
+					<span class="title">Please select what Business Unit and Functional Area it belongs/applies to :</span>
+					<div class="wrap-all">
+						<div class="dropdown-here">
+							<select id="select-annuities-input" name="single" class="multiple ultra-short full-w-show" multiple="multiple">
+							  <option value="Insurance" selected>Annuities</option>
+							  <option value="Annuities">Insurance</option>
+							  <option value="Shared Services">Shared Services</option>
+							  <option value="RPS">RPS</option>
+							  <option value="JHSS">JHSS</option>
+							  <option value="JHFN">JHFN</option>
+							</select>
+						</div>
+						<div class="dropdown-here last">
+							<select id="select-account-input" name="single" class="multiple ultra-short full-w-show" multiple="multiple">
+							  <option value="Acount Maintenace" selected>Acount Maintenace</option>
+							  <option value="Annuitizations">Annuitizations</option>
+							  <option value="Annuity Business Automation">Annuity Business Automation</option>
+							  <option value="Benefits">Benefits</option>
+							  <option value="Client Output Services">Client Output Services</option>
+							  <option value="Commissions">Commissions</option>
+							  <option value="Contract Administration">Contract Administration</option>
+							  <option value="Contract Financial Reporting">Contract Financial Reporting</option>
+							  <option value="Contract Research & Accounting">Contract Research &amp; Accounting</option>
+							  <option value="Death Benefit Administration (Fixed)">Death Benefit Administration (Fixed)</option>
+							  <option value="Death Benefit Administration (Retail)">Death Benefit Administration (Retail)</option>
+							  <option value="Disbursements">Disbursements</option>
+							  <option value="Inforce">Inforce</option>
+							  <option value="Licensing">Licensing</option>
+							  <option value="Reclaim & Cash Control">Reclaim &amp; Cash Control</option>
+							  <option value="Reconciliation">Reconciliation</option>
+							  <option value="Structured Settlements">Structured Settlements</option>
+							  <option value="Tax & Adjustment">Tax &amp; Adjustment</option>
+							</select>
+						</div>
+					</div>
+					<!-- /wrap-all -->
+				</div>
+				<!-- /about-type -->
+			</div>
+			<!-- /survey-form -->
+		</div>
+		<!-- /bottom-details -->
+		<div class="button-func">
+			<a class="btn-cancel" href="javascript:;" data-ng-click="isShowApproveAddOn=false; vm.titlePopupNonGlobal=''">Cancel</a>
+			<a class="btn btn-primary btn-approve" href="javascript:;" data-ng-click="clickBtnApprove();" data-ng-class="{'btn-disable':vm.titlePopupNonGlobal===''}">Approve</a>
+		</div>
+		<!-- /button-func -->
+	</div>
+	<!-- /approve-addon-popup -->
+
+	<!-- END  #popup--> 
+</div>

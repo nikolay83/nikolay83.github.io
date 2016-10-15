@@ -1,0 +1,108 @@
+{
+    "riskCategory": [
+        {
+            "title":"Functional Area Processes",
+            "value":65
+        },
+        {
+            "title":"Corporate & Divisional Training",
+            "value":5
+        },
+        {
+            "title":"Business Continuity Planning & Disaster Recovery",
+            "value":5
+        },
+        {
+            "title":"Records Management",
+            "value":5
+        },
+        {
+            "title":"Information Security",
+            "value":10
+        },
+        {
+            "title":"Data Privacy & Protection",
+            "value":10
+        }
+    ],
+    "occurrence":[
+        {
+            "title":"Daily",
+            "value":6
+        },
+        {
+            "title":"Weekly",
+            "value":5
+        },
+        {
+            "title":"Monthly",
+            "value":4
+        },
+        {
+            "title":"Quarterly",
+            "value":3
+        },
+        {
+            "title":"Semi-Annual",
+            "value":2
+        },
+        {
+            "title":"Annual",
+            "value":1
+        },
+        {
+            "title":"Process is no longer applicable",
+            "value":1
+        }
+    ],
+    "riskExposure":[
+        {
+            "title":"Low",
+            "value":1
+        },
+        {
+            "title":"Medium",
+            "value":3
+        },
+        {
+            "title":"High",
+            "value":9
+        }
+    ],
+    "keyMaturity":[
+        {
+            "title":"Well Developed",
+            "value":0.1
+        },
+        {
+            "title":"Partially Developed/Requires Improvement",
+            "value":0.6
+        },
+        {
+            "title":"Under Developed/Weak",
+            "value":1
+        }
+    ],
+    "riskScoreRanges":[
+        {
+            "title":"Low",
+            "min":0,
+            "max":5.4
+        },
+        {
+            "title":"Minor",
+            "min":5.5,
+            "max":16.2
+        },
+        {
+            "title":"Moderate",
+            "min":16.3,
+            "max":32.4
+        },
+        {
+            "title":"High",
+            "min":32.5,
+            "max":0
+        }
+    ]
+}

@@ -1,0 +1,669 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/owner/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="row tab-headers">
+        <a href="#/owner/add/processes">KPI's / SLA's</a>
+        <a href="#/owner/add/processes/functionalArea" class="active current">Functional Area<br/>Processes</a>
+        <a href="#/owner/add/processes/corporate">Corporate &amp;<br/>Divisional Training</a>
+        <a href="#/owner/add/processes/business">Business Continuity<br/>&amp; Disaster Recovery</a>
+        <a href="#/owner/add/processes/records">Records<br/>Management</a>
+        <a href="#/owner/add/processes/information">Information<br/>Security</a>
+        <a href="#/owner/add/processes/data">Data Privacy<br/>&amp; Protection</a>
+      </div>
+      <div class="row">
+        <table class="custom-table controls-advanced">
+          <thead>
+            <tr>
+              <th width="97px">Core Process</th>
+              <th width="97px">Sub-processes</th>
+              <th width="95px">Risks</th>
+              <th width="66px">Likelihood
+                <br/>of Occurrence</th>
+              <th width="66px">Risk
+                <br/>Impact</th>
+              <th width="66px">Risk Exposure</th>
+              <th width="66px">Controls</th>
+              <th width="66px">Controls
+                <br/>Objective</th>
+              <th width="66px">Control Frequency</th>
+              <th width="66px">Control Design</th>
+              <th width="66px">Testing &amp; Frequency</th>
+              <th width="66px">Control Trigger</th>
+              <th width="66px">Key Controls
+                <br/>Maturity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!--Core process-->
+              <td rowspan="2">Policies and procedures</td>
+              <!--Sub-Process-->
+              <td>Document policies and procedures</td>
+              <!--Risk-->
+              <td>Out of date or lack of policies and procedures</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-1" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-1" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-1" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Certification of policies and procedures document">Certification of policies and procedures document</option>
+                  <option value="Manual / Job aids">Manual / Job aids</option>
+                  <option value="Training">Training</option>
+                  <option value="Management Communications / Staff Meetings">Management Communications / Staff Meetings</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <!-- Controls objective-->
+              <td colspan="6"></td>
+            </tr>
+            <tr class="subrow additional last">
+              <td class="sub-process">
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-sub-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-2" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-2" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-2" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="striped">
+              <td rowspan="5">Death notification and validation</td>
+              <td>Verification of internal UCI and Lexis Nexis death files prior to AWD RIP job for processing</td>
+              <td>Old or inaccurate files in the workflow</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-3" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-3" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-3" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Extracts with matched date are are verified and reconciled to previous month file">Extracts with matched date are are verified and reconciled to previous month file</option>
+                  <option value="Sign-off is captured in folder (\\B04dmfp01\d$\DMF_VITAL_FILES)">Sign-off is captured in folder (\\B04dmfp01\d$\DMF_VITAL_FILES)</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="striped subrow">
+              <td>Scrub internal UCI and Lexis Nexis death files and create AWD RIP job for processing</td>
+              <td>Previously reported deaths added to the workflow causing confusion and unnecessary work</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-4" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-4" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-4" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Service Central ticket to schedule informatica job to remove previously created DBINQUIRY work items and create new BU reports">Service Central ticket to schedule informatica job to remove previously created DBINQUIRY work items and create new BU reports</option>
+                  <option value="AWD RIP files are placed in folder to be batched into AWD">AWD RIP files are placed in folder to be batched into AWD</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="striped subrow">
+              <td>Check admin system and AWD to confirm if the deceased is a JH client, has inactive account, and if there is a pending or completed claim</td>
+              <td>Wrongful terminations, customer service issues and financial impacts to company</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-5" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-5" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-5" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Quality Review 25-100% of work based on user experience">Quality Review 25-100% of work based on user experience</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="striped subrow">
+              <td>Perfom 2nd validation of death using an external resource</td>
+              <td>Increase in false positive death matches</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-6" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-6" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-6" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Quality Review 25-100% of work based on user experience">Quality Review 25-100% of work based on user experience</option>
+                  <option value="Perform an Accuprint Search">Perform an Accuprint Search</option>
+                  <option value="Online obituary sites (legacy.com, obituriates.com, genealogybank.com)">Online obituary sites (legacy.com, obituriates.com, genealogybank.com)</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="subrow striped additional last">
+              <td class="sub-process">
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-sub-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-7" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-7" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-7" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr>
+              <td rowspan="3">BU notification od death</td>
+              <td>If death is confirmed, suspend systematic payments in admin systems and place contracts in a non-paying status</td>
+              <td>Client could still be receiving payments after death</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-8" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-8" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-8" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Quality Review 25-100% of work based on user experience">Quality Review 25-100% of work based on user experience</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="subrow">
+              <td>Update the AWD work item status based on reasearch and work is forwarded to Operations for processing</td>
+              <td>Work routed to the wrong workflow queue</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-9" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-9" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-9" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Quality Review 25-100% of work based on user experience">Quality Review 25-100% of work based on user experience</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="subrow additional last">
+              <td class="sub-process">
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-sub-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-10" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-10" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-10" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="striped">
+              <td rowspan="2">Death logic verification</td>
+              <td>Test the accuracy of Lexis Nexis death match logic</td>
+              <td>Incarease in false positives death matches</td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-11" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-11" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-11" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="Review sample of 50 death matches and discuss results with Lexis Nexis">Review sample of 50 death matches and discuss results with Lexis Nexis</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="subrow striped additional last">
+              <td class="sub-process">
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-sub-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-12" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-12" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-12" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+            <tr class="additional last">
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-core-process" placeholder="Additional"></textarea>
+              </td>
+              <td class="sub-process">
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-sub-process" placeholder="Additional"></textarea>
+              </td>
+              <!--risk -->
+              <td>
+                <textarea class="alittle-short ext-textarea" maxlength="500" name="additional-risk" placeholder="Additional"></textarea>
+              </td>
+              <!-- likelihood of occurrence -->
+              <td>
+                <select class="ultra-short multiple likelihood-of-occurrence" multiple="multiple" name="single">
+                  <option value="Daily">Daily</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annual">Semi-Annual</option>
+                  <option value="Annual">Annual</option>
+                  <option value="notapplicable">Process is no longer applicable</option>
+                </select>
+              </td>
+              <!--Risk Impact-->
+              <td>
+                <select class="ultra-short multiple risk-impact" multiple="multiple">
+                  <option value="Financial">Financial</option>
+                  <option value="Operational">Operational</option>
+                  <option value="Regulatory">Regulatory</option>
+                  <option value="Reputational">Reputational</option>
+                  <option value="NA">NA</option>
+                </select>
+              </td>
+              <!-- Risk exposure -->
+              <td class="align-at-center risk-answer">
+                <label title="Low">
+                  <input type="radio" name="risk-answer-13" /> L</label>
+                <label title="Medium">
+                  <input type="radio" name="risk-answer-13" /> M</label>
+                <label title="High">
+                  <input type="radio" name="risk-answer-13" /> H</label>
+              </td>
+              <!-- controls -->
+              <td>
+                <select name="controls" class="ultra-short multiple" multiple="multiple">
+                  <option value="IEX">IEX (Avaya Workforce Management)</option>
+                  <option value="AIQ">AIQ (Avaya Reporting)</option>
+                  <option value="Sales">Sales Force Reporting</option>
+                  <option value="notplace">Not in place</option>
+                  <option value="other">Other</option>
+                </select>
+              </td>
+              <td colspan="6"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/owner/add/function" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/owner/add/overall" class="btn btn-primary">Next</a>
+          <a href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

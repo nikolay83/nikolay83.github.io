@@ -1,0 +1,67 @@
+{
+    "businessRecovery": [
+        {
+            "title":"Business Continuity Plan administration",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Business continuity plans are insufficient or not current"
+                }
+            ]
+        }
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterList",
+            "id": "masterList"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterList",
+        "kpi": [
+            {
+                "name": "masterList",
+                "id": "masterList"
+            }
+        ],
+        "slaVal": {
+            "masterList": {}
+        },
+        "sla": {
+            "masterList": [
+                {
+                    "name": "Annual review of BCP",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "Quarterly review of staffing (names/phone #'s) in BCP",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "Achieve of onshore/offshore staffing targets",
+                    "id": "ctrl02"
+                },
+                {
+                    "name": "Achieve Workplace Flexibility targets",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "Annual Altemate Site tests",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "Perform Periodic Table Top Exercises (i.e. Disaster Scenario and stress testing)",
+                    "id": "ctrl05"
+                }, 
+                {
+                    "name": "Other control",
+                    "id": "ctrl06"
+                }, 
+                {
+                    "name": "No controls are in place",
+                    "id": "ctrl07"
+                }
+            ]
+        }
+    }
+}

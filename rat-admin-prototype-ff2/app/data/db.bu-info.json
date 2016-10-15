@@ -1,0 +1,1870 @@
+{  
+    "buInfo":{  
+        "businessUnit":[  
+            {  
+                "name":"Annuities",
+                "id":"annuities"
+            },
+            {  
+                "name":"Insurance",
+                "id":"insurance"
+            },
+            {  
+                "name":"Investments/JHSS",
+                "id":"investments"
+            },
+            {  
+                "name":"RPS",
+                "id":"rps"
+            },
+            {  
+                "name":"Shared Services",
+                "id":"sharedServices"
+            }
+        ],
+        "buVal":{  
+
+        },
+        "buSelected":"annuities",
+        "fnPerformedSite":[  
+            {  
+                "name":"Boston",
+                "id":"boston"
+            },
+            {  
+                "name":"Cebu",
+                "id":"cebu"
+            },
+            {  
+                "name":"Manila",
+                "id":"manila"
+            },
+            {  
+                "name":"Parsippany",
+                "id":"parsippany"
+            },
+            {  
+                "name":"Portsmouth",
+                "id":"portsmouth"
+            },
+            {  
+                "name":"Toronto",
+                "id":"toronto"
+            },
+            {  
+                "name":"Westwood",
+                "id":"westwood"
+            }
+        ],
+        "assessmentType":[  
+            {  
+                "name":"Boston",
+                "id":"boston"
+            },
+            {  
+                "name":"Boston",
+                "id":"boston"
+            },
+            {  
+                "name":"Boston",
+                "id":"boston"
+            },
+            {  
+                "name":"Boston",
+                "id":"boston"
+            }
+        ],
+        "assessmentStatus":[  
+            {  
+                "name":"Not Started",
+                "id":"Not Started"
+            },
+            {  
+                "name":"In Progress",
+                "id":"In Progress"
+            },
+            {  
+                "name":"Complete",
+                "id":"Complete"
+            }
+        ]
+    },
+    "annuities":{  
+        "product":[  
+            {  
+                "name":"Fixed Annuity",
+                "id":"fixedAnnuity"
+            },
+            {  
+                "name":"PAR",
+                "id":"par"
+            },
+            {  
+                "name":"Structured Settlements",
+                "id":"structured"
+            },
+            {  
+                "name":"Variable Annuity",
+                "id":"variable"
+            }
+        ],
+        "productVal":{  
+
+        },
+        "department":[  
+            {  
+                "name":"Annuities Administration",
+                "id":"annuitiesAdmin"
+            },
+            {  
+                "name":"Client Output Services, eDelivery & Vendor Management",
+                "id":"client"
+            },
+            {  
+                "name":"Dealer & Institutional Services",
+                "id":"dealer"
+            },
+            {  
+                "name":"Institutional Contract Services",
+                "id":"institutional"
+            },
+            {  
+                "name":"Intake Operatioins & Business Solutions",
+                "id":"intake"
+            }
+        ],
+        "departmentVal":{  
+
+        },
+        "departmentHead":[  
+            {  
+                "name":"Terri Hayes, AVP",
+                "id":"terri"
+            },
+            {  
+                "name":"Brian MacPhee, AVP",
+                "id":"brian"
+            },
+            {  
+                "name":"Amy Miskavitch, AVP",
+                "id":"amy"
+            },
+            {  
+                "name":"Cheryl Sobolewski, AVP",
+                "id":"cheryl"
+            },
+            {  
+                "name":"Chuck Wiegersma, AVP",
+                "id":"chuck"
+            }
+        ],
+        "departmentHeadVal":{  
+
+        },
+        "functionalAreaOwner":[  
+            {  
+                "name":"Jason Caisse, Operations Manager",
+                "id":"jason"
+            },
+            {  
+                "name":"Jennifer Currie, Sr Manager",
+                "id":"jennifer"
+            },
+            {  
+                "name":"Matthew Donlan, General Director",
+                "id":"matthew"
+            },
+            {  
+                "name":"Chad Edwards, Director",
+                "id":"chad"
+            },
+            {  
+                "name":"Kristin Flaherty, Sr Operations Manager",
+                "id":"kristin"
+            },
+            {  
+                "name":"David Gwozdz, General Director",
+                "id":"david"
+            },
+            {  
+                "name":"Tom Hennigan, Director",
+                "id":"tom"
+            },
+            {  
+                "name":"Debbie Kelly, Sr Director",
+                "id":"debbie"
+            },
+            {  
+                "name":"Anthony Matarazzo, Sr. Director",
+                "id":"anthony"
+            },
+            {  
+                "name":"Anthony Monroe, Sr Operations Manager",
+                "id":"anthony2"
+            },
+            {  
+                "name":"Zack Roof, Sr Operations Manager",
+                "id":"zack"
+            },
+            {  
+                "name":"Brian Wood, Sr Director",
+                "id":"brian"
+            },
+            {  
+                "name":"Kevin Zinka, Operations Manager",
+                "id":"kevin"
+            }
+        ],
+        "functionalAreaOwnerVal":{  
+
+        },
+        "functionalArea":[  
+            {  
+                "name":"Account Maintenance",
+                "id":"account"
+            },
+            {  
+                "name":"Annuitizations",
+                "id":"annuitizations"
+            },
+            {  
+                "name":"Annuity Business Automation",
+                "id":"annuityb"
+            },
+            {  
+                "name":"Benefits",
+                "id":"benefits"
+            },
+            {  
+                "name":"Client Output Services",
+                "id":"client"
+            },
+            {  
+                "name":"Commissions",
+                "id":"commissions"
+            },
+            {  
+                "name":"Contract Administration",
+                "id":"contractAd"
+            },
+            {  
+                "name":"Contract Financial Reporting",
+                "id":"contractFin"
+            },
+            {  
+                "name":"Contract Research & Accounting",
+                "id":"contractReSr"
+            },
+            {  
+                "name":"Death Benefit Administration (Fixed)",
+                "id":"deathFix"
+            },
+            {  
+                "name":"Death Benefit Administration (Retail)",
+                "id":"deathRetail"
+            },
+            {  
+                "name":"Disbursements",
+                "id":"disbursements"
+            },
+            {  
+                "name":"Inforce",
+                "id":"inforce"
+            },
+            {  
+                "name":"Licensing",
+                "id":"licensing"
+            },
+            {  
+                "name":"Reclaim & Cash Control",
+                "id":"reclaim"
+            },
+            {  
+                "name":"Reconciliation",
+                "id":"reconciliation"
+            },
+            {  
+                "name":"Structured Settlements",
+                "id":"structured"
+            },
+            {  
+                "name":"Tax & Adjustment",
+                "id":"tax"
+            }
+        ],
+        "functionalAreaSelected":"account",
+        "functionalAreaVal":{  
+
+        }
+    },
+    "insurance":{  
+        "product":[  
+            {  
+                "name":"Life",
+                "id":"life"
+            },
+            {  
+                "name":"LTC",
+                "id":"ltc"
+            },
+            {  
+                "name":"Life w/LTC rider",
+                "id":"lifew"
+            }
+        ],
+        "productVal":{  
+
+        },
+        "department":[  
+            {  
+                "name":"Financial Control",
+                "id":"financial"
+            },
+            {  
+                "name":"Claims",
+                "id":"claims"
+            },
+            {  
+                "name":"New Business Operations",
+                "id":"newBO"
+            },
+            {  
+                "name":"Policy Holder Services",
+                "id":"policy"
+            },
+            {  
+                "name":"Operational Risk Management",
+                "id":"operational"
+            }
+        ],
+        "departmentVal":{  
+
+        },
+        "departmentHead":[  
+            {  
+                "name":"Peter Burke, AVP",
+                "id":"peter"
+            },
+            {  
+                "name":"Keith Gendron, AVP",
+                "id":"keith"
+            },
+            {  
+                "name":"Cathy Hanrahan, General Director",
+                "id":"cathy"
+            },
+            {  
+                "name":"Sarah Young, AVP",
+                "id":"sarah"
+            },
+            {  
+                "name":"Kathy MacDonald, Director",
+                "id":"kathy"
+            }
+        ],
+        "departmentHeadVal":{  
+
+        },
+        "functionalAreaOwner":[  
+            {  
+                "name":"Beth Abbot, Director",
+                "id":"bethA"
+            },
+            {  
+                "name":"Lisa Boehner, Director",
+                "id":"lisaB"
+            },
+            {  
+                "name":"Eric Bremberg, Director",
+                "id":"eric"
+            },
+            {  
+                "name":"Melissa Bush, Sr Manager",
+                "id":"melissaBush"
+            },
+            {  
+                "name":"Patricia Carli, Director",
+                "id":"patricia"
+            },
+            {  
+                "name":"Donald Delaney, Director",
+                "id":"donald"
+            },
+            {  
+                "name":"Robin Doobay, Director",
+                "id":"robin"
+            },
+            {  
+                "name":"Staci Ferrazzani, Director",
+                "id":"staci"
+            },
+            {  
+                "name":"Sue Gaffney, Director",
+                "id":"sue"
+            },
+            {  
+                "name":"Seth Kilgore, Director",
+                "id":"seth"
+            },
+            {  
+                "name":"Greg King, Director",
+                "id":"greg"
+            },
+            {  
+                "name":"Kerri Milton, Director",
+                "id":"kerri"
+            },
+            {  
+                "name":"Johnny O'Mahony, General Director",
+                "id":"johnny"
+            },
+            {  
+                "name":"Anna Pellegrino, Director",
+                "id":"anna"
+            },
+            {  
+                "name":"Nazim Shaw, Sr. Manager",
+                "id":"nazim"
+            },
+            {  
+                "name":"Gina Stewart, Director",
+                "id":"gina"
+            },
+            {  
+                "name":"Jennifer Svensson, Director",
+                "id":"jennifer"
+            },
+            {  
+                "name":"Matthew Waters, Director",
+                "id":"matthew"
+            },
+            {  
+                "name":"Ken Yamaguchi, Sr Manager",
+                "id":"ken"
+            }
+        ],
+        "functionalAreaOwnerVal":{  
+
+        },
+        "functionalArea":[  
+            {  
+                "name":"Accounts Payable  and Control, Debt Management",
+                "id":"accounts"
+            },
+            {  
+                "name":"Care Management",
+                "id":"care"
+            },
+            {  
+                "name":"Collections - Life Renewal & Group LTC",
+                "id":"collectionsLife"
+            },
+            {  
+                "name":"Collections - Retail LTC",
+                "id":"collectionsRe"
+            },
+            {  
+                "name":"Compensation",
+                "id":"compensation"
+            },
+            {  
+                "name":"Complex LTC",
+                "id":"complex"
+            },
+            {  
+                "name":"Control",
+                "id":"control"
+            },
+            {  
+                "name":"Core LTC",
+                "id":"core"
+            },
+            {  
+                "name":"Disbursements & Distribution",
+                "id":"disbursements"
+            },
+            {  
+                "name":"Front End",
+                "id":"front"
+            },
+            {  
+                "name":"GLTC Account",
+                "id":"gltc"
+            },
+            {  
+                "name":"Group Trust Admin",
+                "id":"group"
+            },
+            {  
+                "name":"Illustrations",
+                "id":"illustrations"
+            },
+            {  
+                "name":"Initial Payments",
+                "id":"initial"
+            },
+            {  
+                "name":"Issue",
+                "id":"issue"
+            },
+            {  
+                "name":"Licensing",
+                "id":"licensing"
+            },
+            {  
+                "name":"Life Claims",
+                "id":"life"
+            },
+            {  
+                "name":"Life Product Support",
+                "id":"lifeS"
+            },
+            {  
+                "name":"Life Special Billing",
+                "id":"lifeB"
+            },
+            {  
+                "name":"LTC Claims - Adjudication",
+                "id":"ltcAd"
+            },
+            {  
+                "name":"LTC Claims - Appeals",
+                "id":"ltcApp"
+            },
+            {  
+                "name":"LTC Claims - Benefit Eligibility",
+                "id":"ltcBe"
+            },
+            {  
+                "name":"LTC Claims - Benefit Eligibility QA",
+                "id":"ltcBeQa"
+            },
+            {  
+                "name":"LTC Claims - Boston Payment",
+                "id":"ltcbos"
+            },
+            {  
+                "name":"LTC Claims - Business Integrity Unit",
+                "id":"ltcbu"
+            },
+            {  
+                "name":"LTC Claims - Claim Initiation Unit",
+                "id":"ltcclaim"
+            },
+            {  
+                "name":"LTC Claims - Clinical Thought Leadership",
+                "id":"ltcclin"
+            },
+            {  
+                "name":"LTC Claims - Complaints, Internal Audit, Market Conduct",
+                "id":"ltccomp"
+            },
+            {  
+                "name":"LTC Claims - Payment Quality Assurance",
+                "id":"ltcpay"
+            },
+            {  
+                "name":"LTC Claims - Policy Oversight",
+                "id":"ltcpo"
+            },
+            {  
+                "name":"LTC Claims - Provider Eligibility",
+                "id":"ltcprov"
+            },
+            {  
+                "name":"LTC Claims - Service Process Improvement",
+                "id":"ltcserv"
+            },
+            {  
+                "name":"LTC Claims - Training & Change Readiness",
+                "id":"ltctrain"
+            },
+            {  
+                "name":"NBCC",
+                "id":"nbcc"
+            },
+            {  
+                "name":"Policy Change",
+                "id":"policy"
+            },
+            {  
+                "name":"Product Consultation",
+                "id":"product"
+            },
+            {  
+                "name":"Registry",
+                "id":"registry"
+            },
+            {  
+                "name":"Replacements",
+                "id":"replacements"
+            },
+            {  
+                "name":"Re-Rate Program",
+                "id":"re"
+            },
+            {  
+                "name":"Risk Management",
+                "id":"risk"
+            },
+            {  
+                "name":"Specialty Products & Distribution",
+                "id":"specialty"
+            },
+            {  
+                "name":"System Consultation",
+                "id":"system"
+            },
+            {  
+                "name":"Tax Production",
+                "id":"tax"
+            },
+            {  
+                "name":"Titles",
+                "id":"titles"
+            }
+        ],
+        "functionalAreaVal":{  
+
+        },
+        "functionalAreaSelected":"accounts"
+    },
+    "investments":{  
+        "product":[  
+            {  
+                "name":"Mutual Funds",
+                "id":"mutualFunds"
+            }
+        ],
+        "productVal":{  
+
+        },
+        "department":[  
+            {  
+                "name":"Compliance",
+                "id":"Cmpl"
+            },
+            {  
+                "name":"Product Support",
+                "id":"PdSp"
+            },
+            {  
+                "name":"Adjustments",
+                "id":"Adj"
+            },
+            {  
+                "name":"Service Operations",
+                "id":"SvOp"
+            },
+            {  
+                "name":"Correspondence",
+                "id":"Corr"
+            },
+            {  
+                "name":"Client Output Services",
+                "id":"COS"
+            },
+            {  
+                "name":"Control",
+                "id":"Cntl"
+            },
+            {  
+                "name":"Business Support Services",
+                "id":"BSS"
+            },
+            {  
+                "name":"Finance",
+                "id":"Fin"
+            },
+            {  
+                "name":"Control",
+                "id":"Cntl"
+            },
+            {  
+                "name":"Vendor Management",
+                "id":"VdMg"
+            }
+        ],
+        "departmentVal":{  
+
+        },
+        "departmentHead":[  
+            {  
+                "name":"Austin Doherty, General Director",
+                "id":"austin"
+            },
+            {  
+                "name":"Matthew Donlan, General Director",
+                "id":"matthew"
+            },
+            {  
+                "name":"David Gwozdz, General Director",
+                "id":"david"
+            },
+            {  
+                "name":"Michael Heffernan, General Director",
+                "id":"michael"
+            },
+            {  
+                "name":"Brian MacPhee, AVP ",
+                "id":"brian"
+            },
+            {  
+                "name":"Cheryl Sobolewski-Reeves, AVP",
+                "id":"cheryl"
+            }
+        ],
+        "departmentHeadVal":{  
+
+        },
+        "functionalAreaOwner":[  
+            {  
+                "name":"Austin Doherty, General Director",
+                "id":"austin"
+            },
+            {  
+                "name":"Brigette Flynn-Boyle, Director",
+                "id":"brigette"
+            },
+            {  
+                "name":"Darlene Bemis, Sr. Operations Manager",
+                "id":"darlene"
+            },
+            {  
+                "name":"Steven Bailey, Director",
+                "id":"steven"
+            },
+            {  
+                "name":"Nathan Rowe, Manager",
+                "id":"nathan"
+            },
+            {  
+                "name":"Robert Morton, Director",
+                "id":"robert"
+            },
+            {  
+                "name":"Matthew Donlan, General Director",
+                "id":"matthew"
+            },
+            {  
+                "name":"Maggee Hobbie, Sr. Operations Manager",
+                "id":"maggee"
+            },
+            {  
+                "name":"Kimberly Alpuerto, Director",
+                "id":"kimberly"
+            },
+            {  
+                "name":"David Gwozdz, General Director",
+                "id":"david"
+            },
+            {  
+                "name":"Michael Heffernan, General Director",
+                "id":"michael"
+            },
+            {  
+                "name":"Gregory Potter, Operations Manager",
+                "id":"gregory"
+            },
+            {  
+                "name":"Michael Riley, Sr. Operations Manager",
+                "id":"michaelRi"
+            },
+            {  
+                "name":"Carla Romano-Clarke, Sr. Project Manager",
+                "id":"carla"
+            },
+            {  
+                "name":"Sean Daly, Sr. Director",
+                "id":"sean"
+            }
+        ],
+        "functionalAreaOwnerVal":{  
+
+        },
+        "functionalArea":[  
+            {  
+                "name":"Cmpl - Administrative Matters",
+                "id":"Administrative"
+            },
+            {  
+                "name":"Cmpl - AML/ATF",
+                "id":"AML"
+            },
+            {  
+                "name":"Cmpl - Fingerprinting",
+                "id":"Fingerprinting"
+            },
+            {  
+                "name":"Cmpl - Fraud",
+                "id":"Fraud"
+            },
+            {  
+                "name":"Cmpl - Frequent Trading",
+                "id":"Frequent"
+            },
+            {  
+                "name":"Cmpl - ID Administration",
+                "id":"IDAd"
+            },
+            {  
+                "name":"Cmpl - Lost Shareholder Searches",
+                "id":"LostShare"
+            },
+            {  
+                "name":"Cmpl - Escheatment",
+                "id":"Escheatment"
+            },
+            {  
+                "name":"Cmpl - Withholding Filings",
+                "id":"WithholdingFilings"
+            },
+            {  
+                "name":"Cmpl - Retirement Plan Documents",
+                "id":"Retirement"
+            },
+            {  
+                "name":"Cmpl - Information Reporting",
+                "id":"Information"
+            },
+            {  
+                "name":"Cntl - Blue Sky",
+                "id":"Blue"
+            },
+            {  
+                "name":"Cntl - Dividend Processing",
+                "id":"Dividend"
+            },
+            {  
+                "name":"Cntl - Half Penny Breakage",
+                "id":"Half"
+            },
+            {  
+                "name":"Cntl - Commission",
+                "id":"Commission"
+            },
+            {  
+                "name":"Cntl - Trail Commission",
+                "id":"Trail"
+            },
+            {  
+                "name":"Cntl - Withholding Remittance",
+                "id":"Withholding"
+            },
+            {  
+                "name":"Cntl - Pricing",
+                "id":"Pricing"
+            },
+            {  
+                "name":"Cntl - Cap Stock ",
+                "id":"Cap"
+            },
+            {  
+                "name":"Cntl - Wires and Manual Checks",
+                "id":"Wires"
+            },
+            {  
+                "name":"Cntl - DDA Reconciliation",
+                "id":"DDA"
+            },
+            {  
+                "name":"DlSv - Financial Transactions",
+                "id":"Financial"
+            },
+            {  
+                "name":"DlSv - Non-Financial Transactions",
+                "id":"NonFinancial"
+            },
+            {  
+                "name":"DlSv - DTCC Cusip Setup",
+                "id":"DTCC"
+            },
+            {  
+                "name":"DlSv - MF Profile II",
+                "id":"MF"
+            },
+            {  
+                "name":"DlSv - UFID Settings",
+                "id":"UFID"
+            },
+            {  
+                "name":"DlSv - Omnibus Firms",
+                "id":"Omnibus"
+            },
+            {  
+                "name":"DlSv - CIP",
+                "id":"dlsvCIP"
+            },
+            {  
+                "name":"DlSv - Late Trading",
+                "id":"dlsvLateTrading"
+            },
+            {  
+                "name":"DlSv - Social Code Review",
+                "id":"dlsvSocial"
+            },
+            {  
+                "name":"SvOp - Financial & Non-Financial Transactions",
+                "id":"svoptransaction"
+            },
+            {  
+                "name":"SvOps - Contact Center",
+                "id":"svopsContact"
+            },
+            {  
+                "name":"COS - Prospectus Refresh",
+                "id":"cosRefresh"
+            },
+            {  
+                "name":"COS - Prospectus PSI",
+                "id":"cosPSI"
+            },
+            {  
+                "name":"COS - Confirms/Statements/Checks",
+                "id":"cosConfirms"
+            },
+            {  
+                "name":"COS - Regulatory Mailings",
+                "id":"cosRegulatory"
+            },
+            {  
+                "name":"PdSp - System Updates",
+                "id":"pdspSys"
+            },
+            {  
+                "name":"Fin - Invoice Processing",
+                "id":"finInvoice"
+            },
+            {  
+                "name":"Fin - TA Monthly Invoice",
+                "id":"finTA"
+            },
+            {  
+                "name":"Fin - Expense Accrual",
+                "id":"finExpense"
+            },
+            {  
+                "name":"Adj - Financial Transactions",
+                "id":"adjFinancial"
+            },
+            {  
+                "name":"Adj - Non-Financial Transactions",
+                "id":"adjNonFinacial"
+            },
+            {  
+                "name":"Adj - Adtrans",
+                "id":"adjAdtrans"
+            },
+            {  
+                "name":"Adj - LOI Recalculations",
+                "id":"adjLOI"
+            },
+            {  
+                "name":"Adj - B to A Roll Kickers",
+                "id":"adjKickers"
+            },
+            {  
+                "name":"Adj - Bad Price Processing",
+                "id":"adjBad"
+            },
+            {  
+                "name":"Adj - Tax Lot Maintenance",
+                "id":"adjTax"
+            },
+            {  
+                "name":"BSS - ID Administration",
+                "id":"bssID"
+            },
+            {  
+                "name":"BSS - FI Data Match",
+                "id":"bssFI"
+            }
+        ],
+        "functionalAreaVal":{  
+
+        },
+        "functionalAreaSelected":"Administrative"
+    },
+    "rps":{  
+        "product":[  
+            {  
+                "name":"Signature",
+                "id":"signature"
+            },
+            {  
+                "name":"TRS/Enterprise",
+                "id":"trs"
+            }
+        ],
+        "productVal":{  
+
+        },
+        "department":[  
+            {  
+                "name":"Business Administration Group",
+                "id":"business"
+            },
+            {  
+                "name":"Defined Benefit Operations, Trading Operations, Technical Support and Ops Mgmt Information",
+                "id":"defined"
+            },
+            {  
+                "name":"Implementations and Enterprise/TRS Client Services",
+                "id":"implementations"
+            },
+            {  
+                "name":"Operations Risk Management",
+                "id":"operations"
+            },
+            {  
+                "name":"Process Improvement",
+                "id":"process"
+            },
+            {  
+                "name":"Signature Client Services, Participant Services and Ops Learning & Comm",
+                "id":"signature"
+            },
+            {  
+                "name":"Strategic Planning & Projects",
+                "id":"strategic"
+            }
+        ],
+        "departmentVal":{  
+
+        },
+        "departmentHead":[  
+            {  
+                "name":"Joe Almada, AVP",
+                "id":"joe"
+            },
+            {  
+                "name":"Mike Cooney, AVP",
+                "id":"mike"
+            },
+            {  
+                "name":"Blake Koehler, AVP",
+                "id":"blake"
+            },
+            {  
+                "name":"Ray Lohrenz, AVP",
+                "id":"ray"
+            },
+            {  
+                "name":"Hilary Quosai, AVP",
+                "id":"hilary"
+            },
+            {  
+                "name":"Debbie Stickland, AVP",
+                "id":"debbie"
+            }
+        ],
+        "departmentHeadVal":{  
+
+        },
+        "functionalAreaOwner":[  
+            {  
+                "name":"Elissa Podolsky, Director",
+                "id":"elissa"
+            },
+            {  
+                "name":"Dale Spence, Manager",
+                "id":"dale"
+            },
+            {  
+                "name":"Abha Mall, Manager",
+                "id":"abha"
+            },
+            {  
+                "name":"Ravi Tikaprasad, Director",
+                "id":"ravi"
+            },
+            {  
+                "name":"Kim Boulter, Director",
+                "id":"kim"
+            },
+            {  
+                "name":"Richard Murdock, Manager",
+                "id":"richard"
+            },
+            {  
+                "name":"Liz Seeley, Manager",
+                "id":"liz"
+            },
+            {  
+                "name":"Hilary Quosai, AVP",
+                "id":"hilary"
+            },
+            {  
+                "name":"Tony Kwan, Manager",
+                "id":"tony"
+            },
+            {  
+                "name":"Ann Radford, Director",
+                "id":"ann"
+            }
+        ],
+        "functionalAreaOwnerVal":{  
+
+        },
+        "functionalArea":[  
+            {  
+                "name":"New Business/New Contract Set-up",
+                "id":"new"
+            },
+            {  
+                "name":"Contract Data Changes Managed by Operations",
+                "id":"contractOpera"
+            },
+            {  
+                "name":"Broker Set-up and Maintenance",
+                "id":"broker"
+            },
+            {  
+                "name":"RIA Set-up and Maintenance",
+                "id":"ria"
+            },
+            {  
+                "name":"Contract Data Changes - Managed by Pricing",
+                "id":"contractManage"
+            },
+            {  
+                "name":"Cash Receipts",
+                "id":"cash"
+            },
+            {  
+                "name":"Participant Account Set-up and Maintenance",
+                "id":"participantAccount"
+            },
+            {  
+                "name":"Disbursements",
+                "id":"disbursements"
+            },
+            {  
+                "name":"PERA administration",
+                "id":"pera"
+            },
+            {  
+                "name":"Participant Services",
+                "id":"participantServices"
+            },
+            {  
+                "name":"Corrections",
+                "id":"corrections"
+            },
+            {  
+                "name":"Valuation of Sub-account units",
+                "id":"valuation"
+            },
+            {  
+                "name":"Purchases and Sales of Investments",
+                "id":"purchases"
+            },
+            {  
+                "name":"Contract Reporting - Error Handling",
+                "id":"contractError"
+            },
+            {  
+                "name":"Participant Reporting - Production ",
+                "id":"participantReport"
+            },
+            {  
+                "name":"Loans",
+                "id":"loans"
+            },
+            {  
+                "name":"Trustee Fees",
+                "id":"trustee"
+            },
+            {  
+                "name":"Contact Management",
+                "id":"contact"
+            },
+            {  
+                "name":"Allocation Processing",
+                "id":"allocation"
+            },
+            {  
+                "name":"Contract Discontinuance/Termination",
+                "id":"contractDis"
+            },
+            {  
+                "name":"Operations Compliance",
+                "id":"operations"
+            },
+            {  
+                "name":"Plan Data",
+                "id":"plan"
+            },
+            {  
+                "name":"Participant Census Data",
+                "id":"participantCen"
+            },
+            {  
+                "name":"US WA Business Procedures",
+                "id":"us"
+            },
+            {  
+                "name":"Tax form production (1099R, etc)",
+                "id":"tax"
+            },
+            {  
+                "name":"Payroll Services",
+                "id":"payroll"
+            }
+        ],
+        "functionalAreaVal":{  
+
+        },
+        "functionalAreaSelected":"new"
+    },
+    "sharedServices":{  
+        "product":[  
+            {  
+                "name":"Annuities",
+                "id":"annuities"
+            },
+            {  
+                "name":"Insurance",
+                "id":"insurance"
+            },
+            {  
+                "name":"Signator",
+                "id":"signator"
+            },
+            {  
+                "name":"Safe Access Account",
+                "id":"safe"
+            }
+        ],
+        "productVal":{  
+
+        },
+        "department":[  
+            {  
+                "name":"Intake Operatioins & Business Solutions",
+                "id":"intake"
+            },
+            {  
+                "name":"Shared Services Administration",
+                "id":"shared"
+            },
+            {  
+                "name":"Shared Services Contact Center",
+                "id":"shared"
+            },
+            {  
+                "name":"Signator Shared Services",
+                "id":"signator"
+            }
+        ],
+        "departmentVal":{  
+
+        },
+        "departmentHead":[  
+            {  
+                "name":"Bill Frazee, AVP",
+                "id":"bill"
+            },
+            {  
+                "name":"Veena Handa, AVP",
+                "id":"veena"
+            },
+            {  
+                "name":"Tracy Kelly, AVP",
+                "id":"tracy"
+            },
+            {  
+                "name":"Chuck Wiegersma, AVP",
+                "id":"chuck"
+            }
+        ],
+        "departmentHeadVal":{  
+
+        },
+        "functionalAreaOwner":[  
+            {  
+                "name":"Kimberly Bellanti, Director",
+                "id":"kimberly"
+            },
+            {  
+                "name":"Jennifer Currie, Sr Manager",
+                "id":"jennifer"
+            },
+            {  
+                "name":"Ryan Dowd, Sr Director",
+                "id":"ryan"
+            },
+            {  
+                "name":"Geoff Duval, Director",
+                "id":"geoff"
+            },
+            {  
+                "name":"Chad Edwards, Director",
+                "id":"chad"
+            },
+            {  
+                "name":"Albert Gluck, Director",
+                "id":"albert"
+            },
+            {  
+                "name":"Julie Kirby, Director",
+                "id":"julie"
+            },
+            {  
+                "name":"Rick Lanigan, Director",
+                "id":"rick"
+            },
+            {  
+                "name":"Chris Miller, Director",
+                "id":"chris"
+            },
+            {  
+                "name":"Jon Roy, Director",
+                "id":"jon"
+            },
+            {  
+                "name":"David Saxton, Sr Director",
+                "id":"david"
+            },
+            {  
+                "name":"Silvana White, Operations Manager",
+                "id":"silvana"
+            }
+        ],
+        "functionalAreaOwnerVal":{  
+
+        },
+        "functionalArea":[  
+            {  
+                "name":"Abandoned Property",
+                "id":"abandoned"
+            },
+            {  
+                "name":"Annuities & Fixed Products Contact Center",
+                "id":"annuities"
+            },
+            {  
+                "name":"BD Operations & MBPS Governance",
+                "id":"bd"
+            },
+            {  
+                "name":"Data Integrity",
+                "id":"data"
+            },
+            {  
+                "name":"Death Match",
+                "id":"death"
+            },
+            {  
+                "name":"Indexing",
+                "id":"indexing"
+            },
+            {  
+                "name":"Licensing, Contracting & Compensation",
+                "id":"licensing"
+            },
+            {  
+                "name":"Life Insurance Contact Center",
+                "id":"life"
+            },
+            {  
+                "name":"LTC Contact Center",
+                "id":"ltc"
+            },
+            {  
+                "name":"Metrics Reporting & Risk Management",
+                "id":"metrics"
+            },
+            {  
+                "name":"Records Management & Imaging Services",
+                "id":"records"
+            },
+            {  
+                "name":"Returned Mail (RPO)",
+                "id":"returned"
+            },
+            {  
+                "name":"JH Commitment",
+                "id":"jh"
+            },
+            {  
+                "name":"Safe Access Account",
+                "id":"safe"
+            },
+            {  
+                "name":"Shared Services Control",
+                "id":"shared"
+            },
+            {  
+                "name":"Thorough Search",
+                "id":"thorough"
+            },
+            {  
+                "name":"TIN Match",
+                "id":"tin"
+            },
+            {  
+                "name":"Unclaimed Property Remittance",
+                "id":"unclaimed"
+            }
+        ],
+        "functionalAreaVal":{  
+
+        },
+        "functionalAreaSelected":"abandoned"
+    },
+    "assessmentType":[  
+        {  
+            "name":"Annual Analysis",
+            "id":"annual"
+        },
+        {  
+            "name":"New Function Analysis",
+            "id":"new"
+        },
+        {  
+            "name":"New Policy/Process Analysis",
+            "id":"new"
+        },
+        {  
+            "name":"Management Change Review",
+            "id":"management"
+        }
+    ],
+    "assessmentTypeVal":{},
+    "assessmentStatus":[  
+        {  
+            "name":"Not Started",
+            "id":"not"
+        },
+        {  
+            "name":"In Progress",
+            "id":"in"
+        },
+        {  
+            "name":"Complete",
+            "id":"complete"
+        }
+    ],
+    "assessmentStatusVal":{},
+    "functionModifications":[  
+        {  
+            "name":"Process",
+            "id":"process"
+        },
+        {  
+            "name":"Compliance Requirements",
+            "id":"complianceRequirements"
+        },
+        {  
+            "name":"Controls",
+            "id":"controls"
+        },
+        {  
+            "name":"Systems",
+            "id":"systems"
+        },
+        {  
+            "name":"Outsourcing",
+            "id":"outsourcing"
+        },
+        {  
+            "name":"Organizational Structure",
+            "id":"organizationalStructure"
+        },
+        {  
+            "name":"Roles & Responsibilities",
+            "id":"rolesResponsibilities"
+        }
+    ],
+    "functionModificationsVal":{  
+
+    },
+    "functionArea":{  
+        "likelihoodVal":{  
+
+        },
+        "likelihood":[  
+            {  
+                "name":"Likelihood of Occurrence Daily",
+                "id":"likelihood"
+            },
+            {  
+                "name":"Weekly",
+                "id":"weekly"
+            },
+            {  
+                "name":"Monthly",
+                "id":"monthly"
+            },
+            {  
+                "name":"Quarterly",
+                "id":"quarterly"
+            },
+            {  
+                "name":"Semi - Annual",
+                "id":"semi"
+            },
+            {  
+                "name":"Annual",
+                "id":"annual"
+            },
+            {  
+                "name":"Process is no longer applicable",
+                "id":"process"
+            }
+        ],
+        "riskImpactVal":{  
+
+        },
+        "riskImpact":[  
+            {  
+                "name":"Financial",
+                "id":"financial"
+            },
+            {  
+                "name":"Operational",
+                "id":"operational"
+            },
+            {  
+                "name":"Regulatory",
+                "id":"regulatory"
+            },
+            {  
+                "name":"Reputational",
+                "id":"reputational"
+            },
+            {  
+                "name":"Not applicable",
+                "id":"not"
+            }
+        ],
+        "controlFreqVal":{  
+
+        },
+        "controlFreq":[  
+            {  
+                "name":"Adhoc",
+                "id":"adhoc"
+            },
+            {  
+                "name":"Daily",
+                "id":"daily"
+            },
+            {  
+                "name":"Weekly",
+                "id":"weekly"
+            },
+            {  
+                "name":"Monthly",
+                "id":"monthly"
+            },
+            {  
+                "name":"Quarterly",
+                "id":"quarterly"
+            },
+            {  
+                "name":"Semi-Annual",
+                "id":"semi"
+            },
+            {  
+                "name":"Annual",
+                "id":"annual"
+            }
+        ],
+        "controlDesignVal":{  
+
+        },
+        "controlDesign":[  
+            {  
+                "name":"Automated",
+                "id":"automated"
+            },
+            {  
+                "name":"IT Dependent",
+                "id":"it"
+            },
+            {  
+                "name":"Manual Prevention",
+                "id":"manual"
+            },
+            {  
+                "name":"Manual Detect",
+                "id":"manual"
+            }
+        ],
+        "testingVal":{  
+
+        },
+        "testing":[  
+            {  
+                "name":"Within BU - Daily",
+                "id":"within"
+            },
+            {  
+                "name":"Within BU - Monthly",
+                "id":"within"
+            },
+            {  
+                "name":"Within BU - Quarterly",
+                "id":"within"
+            },
+            {  
+                "name":"Within BU - Semi-Annual",
+                "id":"within"
+            },
+            {  
+                "name":"Within BU - Annual",
+                "id":"within"
+            },
+            {  
+                "name":"Outside of BU - Monthly",
+                "id":"outside"
+            },
+            {  
+                "name":"Outside of BU - Quarterly",
+                "id":"outside"
+            },
+            {  
+                "name":"Outside of BU - Semi-Annual",
+                "id":"outside"
+            },
+            {  
+                "name":"Outside of BU - Annual",
+                "id":"outside"
+            },
+            {  
+                "name":"Outside of BU - Greater than Annual",
+                "id":"outside"
+            },
+            {  
+                "name":"Third Party - Annual",
+                "id":"third"
+            },
+            {  
+                "name":"Third Party - Greater than Annual",
+                "id":"third"
+            },
+            {  
+                "name":"Not Tested",
+                "id":"not"
+            }
+        ],
+        "controlTriggerVal":{  
+
+        },
+        "controlTrigger":[  
+            {  
+                "name":"Performance",
+                "id":"performance"
+            },
+            {  
+                "name":"Process",
+                "id":"process"
+            },
+            {  
+                "name":"Product",
+                "id":"product"
+            },
+            {  
+                "name":"Regulatory/Compliance",
+                "id":"regulatory"
+            },
+            {  
+                "name":"SOC 1",
+                "id":"soc1"
+            },
+            {  
+                "name":"SOC 2",
+                "id":"soc2"
+            },
+            {  
+                "name":"SOX/MAR",
+                "id":"sox"
+            },
+            {  
+                "name":"38a-1",
+                "id":"38a"
+            },
+            {  
+                "name":"Other",
+                "id":"other"
+            }
+        ],
+        "maturityVal":{  
+
+        },
+        "maturity":[  
+            {  
+                "name":"Optimized",
+                "id":"optimized"
+            },
+            {  
+                "name":"Satisfactory",
+                "id":"satisfactory"
+            },
+            {  
+                "name":"Needs Improvement/Acceptable Risk",
+                "id":"needsAcceptable"
+            },
+            {  
+                "name":"Needs Improvement/Unacceptable Risk",
+                "id":"needsUnacceptable"
+            },
+            {  
+                "name":"Unsatisfactory",
+                "id":"unsatisfactory"
+            }
+        ],
+        "liklihoodPendingVal":{  
+
+        },
+        "liklihoodPending":[  
+            {  
+                "name":"55%",
+                "id":"n55"
+            }
+        ]
+    },
+    "commonVal":{  
+
+    },
+    "commonArea":{  
+        "freqVal":{  
+
+        },
+        "freq":[  
+            {  
+                "name":"Adhoc",
+                "id":"adhoc"
+            },
+            {  
+                "name":"Daily",
+                "id":"daily"
+            },
+            {  
+                "name":"Weekly",
+                "id":"weekly"
+            },
+            {  
+                "name":"Monthly",
+                "id":"monthly"
+            },
+            {  
+                "name":"Quarterly",
+                "id":"quarterly"
+            },
+            {  
+                "name":"Semi-Annual",
+                "id":"semi"
+            },
+            {  
+                "name":"Annual",
+                "id":"annual"
+            }
+        ],
+        "designVal":{  
+
+        },
+        "design":[  
+            {  
+                "name":"Automated",
+                "id":"automated"
+            },
+            {  
+                "name":"IT Dependent",
+                "id":"it"
+            },
+            {  
+                "name":"Manual Prevention",
+                "id":"manual"
+            },
+            {  
+                "name":"Manual Detect",
+                "id":"manual"
+            }
+        ],
+        "testingVal":{  
+
+        },
+        "testing":[  
+            {  
+                "name":"Within BU - Daily",
+                "id":"withinDaily"
+            },
+            {  
+                "name":"Within BU - Monthly",
+                "id":"withinMonthly"
+            },
+            {  
+                "name":"Within BU - Quarterly",
+                "id":"withinQuarterly"
+            },
+            {  
+                "name":"Within BU - Semi-Annual",
+                "id":"withinSemiAnnual"
+            },
+            {  
+                "name":"Within BU - Annual",
+                "id":"withinAnnual"
+            },
+            {  
+                "name":"Outside of BU - Monthly",
+                "id":"outsideMonthly"
+            },
+            {  
+                "name":"Outside of BU - Quarterly",
+                "id":"outsideQuarterly"
+            },
+            {  
+                "name":"Outside of BU - Semi-Annual",
+                "id":"outsideAnnual"
+            },
+            {  
+                "name":"Outside of BU - Annual",
+                "id":"outsideAnnual"
+            },
+            {  
+                "name":"Outside of BU - Greater than Annual",
+                "id":"outsideAnnual"
+            },
+            {  
+                "name":"Third Party - Annual",
+                "id":"thirdAnnual"
+            },
+            {  
+                "name":"Third Party - Greater than Annual",
+                "id":"thirdAnnual"
+            },
+            {  
+                "name":"Not Tested",
+                "id":"not"
+            }
+        ],
+        "keyMaturityVal":{  
+
+        },
+        "keyMaturity":[  
+            {  
+                "name":"Optimized",
+                "id":"optimized"
+            },
+            {  
+                "name":"Satisfactory",
+                "id":"satisfactory"
+            },
+            {  
+                "name":"Needs Improvement/Acceptable Risk",
+                "id":"needsAcceptable"
+            },
+            {  
+                "name":"Needs Improvement/Unacceptable Risk",
+                "id":"needsUnacceptable"
+            },
+            {  
+                "name":"Unsatisfactory",
+                "id":"unsatisfactory"
+            }
+        ]
+    }
+}

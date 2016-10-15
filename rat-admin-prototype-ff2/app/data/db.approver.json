@@ -1,0 +1,131 @@
+{
+    "user": {
+        "username": "Approver",
+        "role": "approver"
+    },
+    "awatingCount": 65,
+    "approvedCount": 1,
+   "assassmentData": [
+
+        {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Draft",
+            "status": "draft",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Approved",
+            "status": "approved",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Draft",
+            "status": "draft",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Approved",
+            "status": "approved",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Draft",
+            "status": "draft",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Approved",
+            "status": "approved",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Draft",
+            "status": "draft",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Approved",
+            "status": "approved",
+            "approverName": "First Name Last Name"
+        }, {
+            "title": "Acme assessment name",
+            "date": "00-MM-0000",
+            "statusLabel": "Awaiting Approval",
+            "status": "awaiting",
+            "approverName": "First Name Last Name"
+        }
+
+    ],
+    "awatingTableData": [{
+        "title": "Acme assessment name",
+        "dateSubmitted": "00-MM-0000",
+        "statusLabel": "Awaiting Approval",
+        "status": "awaiting",
+        "approverName": "First Name Last Name"
+
+    }, {
+        "title": "Acme assessment name",
+        "dateSubmitted": "00-MM-0000",
+        "statusLabel": "Awaiting Approval",
+        "status": "awaiting",
+        "approverName": "First Name Last Name"
+
+    }, {
+        "title": "Acme assessment name",
+        "dateSubmitted": "00-MM-0000",
+        "statusLabel": "Awaiting Approval",
+        "status": "awaiting",
+        "approverName": "First Name Last Name"
+
+    }]
+}

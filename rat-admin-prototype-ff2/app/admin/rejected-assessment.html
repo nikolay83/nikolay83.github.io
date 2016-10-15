@@ -1,0 +1,29 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <div class="container">
+      <h1 class="row title dr-title">Rejected Assessment ({{dbm.rejectedCount}})</h1>
+      <table class="normal-table row">
+        <thead>
+          <tr>
+            <th>Assessment Title</th>
+            <th>Date Submitted</th>
+            <th>Submitter Name</th>
+            <th>Reason for rejection</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="record in dbm.rejectedTableData">
+            <td><a href="#/admin/rejected/details">{{record.title}}</a></td>
+            <td>{{record.dateSubmitted}}</td>
+            <td>{{record.submitterName}}</td>
+            <td>{{record.rejectReason}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

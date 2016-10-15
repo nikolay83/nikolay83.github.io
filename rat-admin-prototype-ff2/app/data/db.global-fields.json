@@ -1,0 +1,746 @@
+{
+    "globalFields": [
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "Business Unit",
+                "id": "businessUnit"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "businessUnit",
+            "kpi": [
+                {
+                    "name": "businessUnit",
+                    "id": "businessUnit"
+                }
+            ],
+            "slaVal": {
+                "businessUnit": {}
+            },
+            "sla": {
+                "businessUnit": [
+                    {
+                        "name": "Annuities",
+                        "id": "annuities"
+                    }, 
+                    {
+                        "name": "Insurance",
+                        "id": "Insurance"
+                    }, 
+                    {
+                        "name": "Investments/JHSS",
+                        "id": "Investments/JHSS"
+                    }, 
+                    {
+                        "name": "RPS",
+                        "id": "RPS"
+                    }, 
+                    {
+                        "name": "Shared Services",
+                        "id": "Shared Services"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "businessUnit": {}
+            },
+            "slaPending": [{
+                "name": "businessUnit",
+                "id": "businessUnit"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "What % of the function is processed in each site?",
+                "id": "funcProcessed"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "funcProcessed",
+            "kpi": [
+                {
+                    "name": "funcProcessed",
+                    "id": "funcProcessed"
+                }
+            ],
+            "slaVal": {
+                "funcProcessed": {}
+            },
+            "sla": {
+                "funcProcessed": [
+                    {
+                        "name": "10%",
+                        "id": "10p"
+                    }, 
+                    {
+                        "name": "20%",
+                        "id": "20p"
+                    }, 
+                    {
+                        "name": "30%",
+                        "id": "10%"
+                    }, 
+                    {
+                        "name": "40%",
+                        "id": "40%"
+                    }, 
+                    {
+                        "name": "50%",
+                        "id": "50p"
+                    }, 
+                    {
+                        "name": "60%",
+                        "id": "60p"
+                    }, 
+                    {
+                        "name": "70%",
+                        "id": "70p"
+                    }, 
+                    {
+                        "name": "80%",
+                        "id": "80p"
+                    }, 
+                    {
+                        "name": "90%",
+                        "id": "90p"
+                    }, 
+                    {
+                        "name": "100%",
+                        "id": "100p"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "funcProcessed": {}
+            },
+            "slaPending": [{
+                "name": "funcProcessed",
+                "id": "funcProcessed"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "In what site(s) is the function performed?",
+                "id": "funcPerformed"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "funcPerformed",
+            "kpi": [
+                {
+                    "name": "funcPerformed",
+                    "id": "funcPerformed"
+                }
+            ],
+            "slaVal": {
+                "funcPerformed": {}
+            },
+            "sla": {
+                "funcPerformed": [
+                    {
+                        "name": "Boston",
+                        "id": "Boston"
+                    }, 
+                    {
+                        "name": "Cebu",
+                        "id": "Cebu"
+                    }, 
+                    {
+                        "name": "Manila",
+                        "id": "Manila"
+                    }, 
+                    {
+                        "name": "Parsippany",
+                        "id": "Parsippany"
+                    }, 
+                    {
+                        "name": "Portsmouth",
+                        "id": "Portsmouth"
+                    }, 
+                    {
+                        "name": "Toronto",
+                        "id": "Toronto"
+                    }, 
+                    {
+                        "name": "Westwood",
+                        "id": "Westwood"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "funcPerformed": {}
+            },
+            "slaPending": [{
+                "name": "funcPerformed",
+                "id": "funcPerformed"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "Assessment Type",
+                "id": "assessmentType"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "assessmentType",
+            "kpi": [
+                {
+                    "name": "assessmentType",
+                    "id": "assessmentType"
+                }
+            ],
+            "slaVal": {
+                "assessmentType": {}
+            },
+            "sla": {
+                "assessmentType": [
+                    {
+                        "name": "Annual Analysis",
+                        "id": "Annual Analysis"
+                    }, 
+                    {
+                        "name": "New Function Analysis",
+                        "id": "New Function Analysis"
+                    }, 
+                    {
+                        "name": "New Policy/Process Analysis",
+                        "id": "New Policy/Process Analysis"
+                    }, 
+                    {
+                        "name": "Management Change Review",
+                        "id": "Management Change Review"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "assessmentType": {}
+            },
+            "slaPending": [{
+                "name": "assessmentType",
+                "id": "assessmentType"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "Assessment Status",
+                "id": "assessmentStatus"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "assessmentStatus",
+            "kpi": [
+                {
+                    "name": "assessmentStatus",
+                    "id": "assessmentStatus"
+                }
+            ],
+            "slaVal": {
+                "assessmentStatus": {}
+            },
+            "sla": {
+                "assessmentStatus": [
+                    {
+                        "name": "Not Started",
+                        "id": "Not Started"
+                    }, 
+                    {
+                        "name": "In Progress",
+                        "id": "In Progress"
+                    }, 
+                    {
+                        "name": "Complete",
+                        "id": "Complete"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "assessmentStatus": {}
+            },
+            "slaPending": [{
+                "name": "assessmentStatus",
+                "id": "assessmentStatus"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"",
+            "category": [{
+                "name": "Change Type",
+                "id": "changeType"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "changeType",
+            "kpi": [
+                {
+                    "name": "changeType",
+                    "id": "changeType"
+                }
+            ],
+            "slaVal": {
+                "changeType": {}
+            },
+            "sla": {
+                "changeType": [
+                    {
+                        "name": "Process",
+                        "id": "Process"
+                    }, 
+                    {
+                        "name": "Compliance Requirements",
+                        "id": "Compliance Requirements"
+                    }, 
+                    {
+                        "name": "Controls",
+                        "id": "Controls"
+                    }, 
+                    {
+                        "name": "Systems",
+                        "id": "Systems"
+                    }, 
+                    {
+                        "name": "Outsourcing",
+                        "id": "Outsourcing"
+                    }, 
+                    {
+                        "name": "Organizational Structure",
+                        "id": "Organizational Structure"
+                    }, 
+                    {
+                        "name": "Roles & Responsibilities",
+                        "id": "Roles & Responsibilities"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "changeType": {}
+            },
+            "slaPending": [{
+                "name": "changeType",
+                "id": "changeType"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"The frequency of how often a function is performed such as a daily, weekly, monthly, quarterly or annual basis.  An example would",
+            "category": [{
+                "name": "Likelihood of Occurrence",
+                "id": "occurrence"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "occurrence",
+            "kpi": [
+                {
+                    "name": "occurrence",
+                    "id": "occurrence"
+                }
+            ],
+            "slaVal": {
+                "occurrence": {}
+            },
+            "sla": {
+                "occurrence": [
+                    {
+                        "name": "Daily",
+                        "id": "Daily"
+                    }, 
+                    {
+                        "name": "Weekly",
+                        "id": "Weekly"
+                    }, 
+                    {
+                        "name": "Monthly",
+                        "id": "Monthly"
+                    }, 
+                    {
+                        "name": "Quarterly",
+                        "id": "Quarterly"
+                    }, 
+                    {
+                        "name": "Semi-Annual",
+                        "id": "Semi-Annual"
+                    }, 
+                    {
+                        "name": "Annual",
+                        "id": "Annual"
+                    }, 
+                    {
+                        "name": "Process is no longer applicable",
+                        "id": "Process is no longer applicable"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "occurrence": {}
+            },
+            "slaPending": [{
+                "name": "occurrence",
+                "id": "occurrence"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"Categorizing the type of risk(s).  For example, a particular risk could be financial, operational, regulatory, reputational or any combination of these.",
+            "category": [{
+                "name": "Risk Impact",
+                "id": "riskImpact"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "riskImpact",
+            "kpi": [
+                {
+                    "name": "riskImpact",
+                    "id": "riskImpact"
+                }
+            ],
+            "slaVal": {
+                "riskImpact": {}
+            },
+            "sla": {
+                "riskImpact": [
+                    {
+                        "name": "Financial",
+                        "id": "Financial"
+                    }, 
+                    {
+                        "name": "Operational",
+                        "id": "Operational"
+                    }, 
+                    {
+                        "name": "Regulatory",
+                        "id": "Regulatory"
+                    }, 
+                    {
+                        "name": "Reputational",
+                        "id": "Reputational"
+                    }, 
+                    {
+                        "name": "Not applicable",
+                        "id": "Not applicable"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "riskImpact": {}
+            },
+            "slaPending": [{
+                "name": "riskImpact",
+                "id": "riskImpact"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"The frequency of how often a control is performed such as adhoc, daily, weekly, monthly, quarterly or annual.",
+            "category": [{
+                "name": "Control Frequency",
+                "id": "controlFrequency"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "controlFrequency",
+            "kpi": [
+                {
+                    "name": "controlFrequency",
+                    "id": "controlFrequency"
+                }
+            ],
+            "slaVal": {
+                "controlFrequency": {}
+            },
+            "sla": {
+                "controlFrequency": [
+                    {
+                        "name": "AdHoc",
+                        "id": "fAdHoc"
+                    }, 
+                    {
+                        "name": "Daily",
+                        "id": "fDaily"
+                    }, 
+                    {
+                        "name": "Weekly",
+                        "id": "fWeekly"
+                    }, 
+                    {
+                        "name": "Monthly",
+                        "id": "fMonthly"
+                    }, 
+                    {
+                        "name": "Quarterly",
+                        "id": "fQuarterly"
+                    }, 
+                    {
+                        "name": "Semi-Annual",
+                        "id": "fSemiAnnual"
+                    }, 
+                    {
+                        "name": "Annual",
+                        "id": "fAnnual"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "controlFrequency": {}
+            },
+            "slaPending": [{
+                "name": "controlFrequency",
+                "id": "controlFrequency"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"The function or method that triggers the application of the control.  An example would be whether the control is manual or automated.",
+            "category": [{
+                "name": "Control Design",
+                "id": "controlDesign"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "controlDesign",
+            "kpi": [
+                {
+                    "name": "controlDesign",
+                    "id": "controlDesign"
+                }
+            ],
+            "slaVal": {
+                "controlDesign": {}
+            },
+            "sla": {
+                "controlDesign": [
+                    {
+                        "name": "Automated",
+                        "id": "Automated"
+                    }, 
+                    {
+                        "name": "IT Dependent",
+                        "id": "ITDependent"
+                    }, 
+                    {
+                        "name": "Manual Prevention (Same Day)",
+                        "id": "ManualPrevention"
+                    }, 
+                    {
+                        "name": "Manual Detect (Day 2 plus)",
+                        "id": "ManualDetect"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "controlDesign": {}
+            },
+            "slaPending": [{
+                "name": "controlDesign",
+                "id": "controlDesign"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"This captures whether a control is tested, how often it is tested and by whom it is tested.  For example, a control might be tested within the business area on a quarterly basis and by internal Audit on an annual basis.  Controls could also not be tested as well.",
+            "category": [{
+                "name": "Testing & Frequency",
+                "id": "testingFrequency"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "testingFrequency",
+            "kpi": [
+                {
+                    "name": "testingFrequency",
+                    "id": "testingFrequency"
+                }
+            ],
+            "slaVal": {
+                "testingFrequency": {}
+            },
+            "sla": {
+                "testingFrequency": [
+                    {
+                        "name": "Business Area – Ad Hoc",
+                        "id": "BusinessAdHoc"
+                    }, 
+                    {
+                        "name": "Business Area – Daily",
+                        "id": "BusinessDaily"
+                    }, 
+                    {
+                        "name": "Business Area – Weekly",
+                        "id": "BusinessWeekly"
+                    }, 
+                    {
+                        "name": "Business Area – Monthly",
+                        "id": "BusinessMonthly"
+                    }, 
+                    {
+                        "name": "Business Area – Quarterly",
+                        "id": "BusinessQuarterly"
+                    }, 
+                    {
+                        "name": "Business Area – Semi-Annual",
+                        "id": "BusinessSemiAnnual"
+                    }, 
+                    {
+                        "name": "Business Area – Annual or Greater",
+                        "id": "BusinessAnnual"
+                    },
+                    {
+                        "name": "Compliance – Monthly",
+                        "id": "ComplianceMonthly"
+                    }, 
+                    {
+                        "name": "Compliance – Quarterly",
+                        "id": "ComplianceQuarterly"
+                    }, 
+                    {
+                        "name": "Compliance – Semi-Annual",
+                        "id": "ComplianceSemiAnnual"
+                    }, 
+                    {
+                        "name": "Compliance – Annual or Greater",
+                        "id": "ComplianceAnnual"
+                    }, 
+                    {
+                        "name": "Internal Audit – Annual or Greater",
+                        "id": "InternalAnnual"
+                    },
+                    {
+                        "name": "External – Monthly",
+                        "id": "ExternalMonthly"
+                    }, 
+                    {
+                        "name": "External – Quarterly",
+                        "id": "ExternalQuarterly"
+                    }, 
+                    {
+                        "name": "External – Semi-Annual",
+                        "id": "ExternalSemiAnnual"
+                    }, 
+                    {
+                        "name": "External – Annual or Greater",
+                        "id": "ExternalAnnual"
+                    }, 
+                    {
+                        "name": "Not Tested",
+                        "id": "NotTested"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "testingFrequency": {}
+            },
+            "slaPending": [{
+                "name": "testingFrequency",
+                "id": "testingFrequency"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":"The cause or reason for the control.  Some reasons could be Performance, Process, Product, Regulatory, SOC 1, SOC 2, SOX/MAR, 38a-1, etc.  Many times there could be multiple reasons.",
+            "category": [{
+                "name": "Control Trigger",
+                "id": "controlTrigger"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "controlTrigger",
+            "kpi": [
+                {
+                    "name": "controlTrigger",
+                    "id": "controlTrigger"
+                }
+            ],
+            "slaVal": {
+                "controlTrigger": {}
+            },
+            "sla": {
+                "controlTrigger": [
+                    {
+                        "name": "Performance",
+                        "id": "Performance"
+                    }, 
+                    {
+                        "name": "Process",
+                        "id": "Process"
+                    }, 
+                    {
+                        "name": "Product",
+                        "id": "Product"
+                    }, 
+                    {
+                        "name": "Regulatory/Compliance",
+                        "id": "RegulatoryCompliance"
+                    }, 
+                    {
+                        "name": "SOC 1",
+                        "id": "SOC1"
+                    }, 
+                    {
+                        "name": "SOC 2",
+                        "id": "SOC2"
+                    }, 
+                    {
+                        "name": "SOX/MAR",
+                        "id": "SOXMAR"
+                    }, 
+                    {
+                        "name": "38a-1",
+                        "id": "38a1"
+                    }, 
+                    {
+                        "name": "Other",
+                        "id": "Other"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "controlTrigger": {}
+            },
+            "slaPending": [{
+                "name": "controlTrigger",
+                "id": "controlTrigger"
+            }]
+        },
+        {
+            "categoryVal": {},
+            "dataTooltip":" The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.",
+            "category": [{
+                "name": "Key Controls Maturity",
+                "id": "keyControlsMaturity"
+            }],
+            "kpiVal": {},
+            "selectedKpi": "keyControlsMaturity",
+            "kpi": [
+                {
+                    "name": "keyControlsMaturity",
+                    "id": "keyControlsMaturity"
+                }
+            ],
+            "slaVal": {
+                "keyControlsMaturity": {}
+            },
+            "sla": {
+                "keyControlsMaturity": [
+                    {
+                        "name": "Well Developed",
+                        "id": "WellDeveloped"
+                    }, 
+                    {
+                        "name": "Partially Developed/Requires Improvement",
+                        "id": "PartiallyImprovement"
+                    }, 
+                    {
+                        "name": "Under Developed/Weak",
+                        "id": "UnderDeveloped"
+                    }
+                ]
+            },
+            "slaPendingVal": {
+                "keyControlsMaturity": {}
+            },
+            "slaPending": [{
+                "name": "keyControlsMaturity",
+                "id": "keyControlsMaturity"
+            }]
+        }
+    ]
+}

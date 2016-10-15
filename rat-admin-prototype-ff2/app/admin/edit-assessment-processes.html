@@ -1,0 +1,214 @@
+<div data-page-script="">
+   <!-- popup for comments -->
+   <div id="comment-popup" class="row comment-popup hide" title="Comment">
+      <label>Comment for your choice</label>
+      <textarea id="comment-content"></textarea>
+      <center>
+         <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+      </center>
+   </div>
+   <!-- BEGIN #main-content -->
+   <div id="main-content" class="row" data-position-area>
+      <h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+      <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"> </div>
+      <div class="row m-t-25">
+         <div class="row tab-headers ctKPI-static" data-ng-include="'app/admin/tab-header-nav.html'"> </div>
+         <!-- /.tab-headers -->
+         <div class="row tab-bu-new-d m-t-25" data-ng-class="{active:shadowAll}">
+            <section class="toggle-view-sn" data-toggle-view="">
+               <div class="title-wrap">
+                  <div class="toggle-group-title">
+                     <span>Business Unitt</span>
+                  </div>
+                  <div class="cover-on-off">
+                     <a href="javascript:;" class="on-off-swift" data-ng-click="shadowAll=!shadowAll" data-ng-class="{active:shadowAll}">
+                        <span class="text">Global option</span>
+                     </a>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+               <div class="col-layout view-content">
+                  <div class="col">
+                     <section class="edit-block-sn">
+                        <div data-edit-no-check-box-block="vm.dbCurrent.buInfo.businessUnit" data-model="vm.dbCurrent.buInfo.buVal" data-selected="vm.dbCurrent.buInfo.buSelected" class="toggle-view-con parent-block can-select">
+                        </div>
+                     </section>
+                  </div>
+                  <!-- COl ONE -->
+                  <div class="col col-new-d" data-ng-class="{active:shadowCol}">
+                     <section class="edit-block-sn fix-z-index">
+                        <div class="toggle-view-con">
+                           <div class="title">
+                              <h2>
+                                 Functional Area 
+                              </h2>
+                              <div class="cover-on-off">
+                                 <a href="javascript:;" class="on-off-swift" data-ng-click="shadowCol=!shadowCol" data-ng-class="{active:shadowCol}">
+                                    <span class="text">Global option</span>
+                                 </a>
+                              </div>
+                           </div>
+                           <div data-edit-no-drag-block="vm.dbCurrentType.functionalArea" data-model="vm.dbCurrentType.functionalAreaVal" data-selected="vm.dbCurrentType.functionalAreaSelected" class="toggle-view-con can-select">
+                           </div>
+                        </div>
+                     </section>
+                     <div class="white-overlay"></div>
+                     <!-- COl ONE -->
+                  </div>
+               </div>
+            </section>
+            <div class="white-over"></div>
+            </div>
+            <!-- /Update Code -->
+            <div class="tab-content row style-new-d">
+               <ul class="tabular-view" data-ui-sortable="rowSortOptions" data-ng-model="vm.dbProCurrent.kpiList">
+                  <li class="li th">
+                     <div class="col-layout">
+                        <!-- Update Code HTML -->
+                        <div class="col h hint">
+                           <div class="new-title-d">
+                              <div class="cover-all-icon-d">
+                                 <span>Category</span> 
+                                 <p class="icon-hint">
+                                    <span class="tooltip hide">
+                                    A specific classification of key performance indicators and service levels.
+                                    <i class="arrow"></i>
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col h hint">
+                           <div class="new-title-d">
+                              <div class="cover-all-icon-d">
+                                 <span>KPI</span> 
+                                 <p class="icon-hint">
+                                    <span class="tooltip hide">
+                                    The key performance indicator is a measurable value that demonstrates how effectively an activity is achieving key business objectives.  Success is gauged by achieving determined thresholds.  This is where you would capture key KPI’s (i.e. answer rate, call monitoring, transaction timeliness, productivity, etc.) for your function.
+                                    <i class="arrow"></i>
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- /Update Code HTML -->
+                     </div>
+                  </li>
+                  <!-- Li Head -->
+                  <li class="li local-tab" data-ng-repeat="rootItem in vm.dbProCurrent.kpiList" >
+                     <div class="col-layout col-kips">
+                        <div class="col static-col" data-ng-mouseover="showDragInfo($index,$event,rootItem,vm.dbProCurrentdragData)">
+                           <div class="edit-block-sn">
+                              <a class="move-handel-row"></a>
+                              <div data-edit-block="rootItem.category" data-model="rootItem.categoryVal" class="toggle-view-con">
+                              </div>
+                           </div>
+                           <div class="when-drop-d">
+                              <p class="title">SLA</p>
+                              <a href="javascript:;" class="close-icon close-icon-drag" data-ng-click="closeDragBox(index, $event,rootItem)"></a>
+                              <div class="clearfix"></div>
+                              <ul class="list-drap">
+                                 <li data-ng-repeat="itemDrag in rootItem.arrayDrag">
+                                    <span>{{itemDrag.name}}</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col">
+                           <div class="edit-block-sn">
+                              <div data-edit-block="rootItem.kpi" data-model="rootItem.kpiVal" data-synched="rootItem.sla" class="toggle-view-con can-select">
+                              </div>
+                           </div>
+                        </div>
+                        <!-- /.col -->
+                     </div>
+                     <!-- /.col-layout -->
+                  </li>
+                  <!-- Li item -->
+                  <li class="li last-input">
+                     <div class="col-layout">
+                        <div class="col static-col">
+                           <ul class="edit-list">
+                              <li class="li li-add" >
+                                 <div class="add-group">
+                                    <input class="text-ctrl"  type="text" data-ng-model="vm.categoryTitle" data-ng-enter="addCategory()">
+                                    <a class="add-link" data-ng-click="addCategory()"></a>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="col">
+                           <ul class="edit-list">
+                              <li class="li li-add" >
+                                 <div class="add-group">
+                                    <input class="text-ctrl"  type="text" data-ng-model="vm.titleKPI" data-ng-enter="addKPI()">
+                                    <a class="add-link" data-ng-click="addKPI()"></a>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+               <div class="master-col">
+                  <div class="cover-master">
+                     <div class="col h hint">
+                        <div class="new-title-d">
+                           <div class="cover-all-icon-d">
+                              <span>SLA (master list)</span> 
+                              <p class="icon-hint">
+                                 <span class="tooltip hide">
+                                 The service level agreement is a contract between a service provider (either internal or external) and the end user that defines the level of service expected from the service provider. SLA’s are output-based in that their purpose is specifically to define the expectations of the customer.  This is where you determine the service levels/thresholds (i.e. 80% of calls answered within 20 seconds, 1-2 days processing turnaround, avg. call monitoring score of 95, etc.) for your KPI’s. SLA’s are attributed to Category.
+                                 <i class="arrow"></i>
+                                 </span>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="clearfix"></div>
+                     </div>
+                     <!-- Heading -->
+                     <div class="main-check area-drag">
+                        <a href="javascript:;" class="handel-d  hold-tap-section"></a>
+                        <div class="col">
+                           <div class="edit-block-sn">
+                              <div data-master-list-block="vm.dbProCurrent.masterList.sla[vm.dbProCurrent.masterList['selectedKpi']]" data-model="vm.dbProCurrent.masterList.slaVal[vm.dbProCurrent.masterList['selectedKpi']]" data-pending="vm.dbProCurrent.masterList.slaPending" data-dragdata="vm.dbProCurrentdragData" class="toggle-view-con">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Col data  -->
+                     <div class="white-overlay"></div>
+                  </div>
+                  <!-- CheckBox -->
+                  <div class="when-drop-drap" >
+                     <a href="javascript:;" class="move-hand"></a>
+                     <ul class="edit-list">
+                        <li class="li" data-ng-repeat="item in vm.dbProCurrentdragData">
+                           <div class="edit-row">
+                              <div class="chk-ctrl">
+                                 <input class="ck ng-pristine " type="checkbox" checked>
+                                 <label class="chk-lbl"><span class="tx ">{{item.name}}</span></label>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /.tab-container -->
+         <div class="section-footer row m-t-40">
+            <div class="left">
+               <a href="#/admin/edit" class="btn btn-primary">Prev</a>
+            </div>
+            <div class="right">
+               <a href="#/admin/edit/processes/functionalArea" class="btn btn-primary">Next</a>
+               <a class="hide" href="javascript:;">Save as Draft</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END #main-content -->
+   <div class="clearfix"></div>
+

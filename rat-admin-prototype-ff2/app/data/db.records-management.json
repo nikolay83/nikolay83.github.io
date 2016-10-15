@@ -1,0 +1,163 @@
+{
+    "recodsManagement": [
+        {
+            "title":"Business Management has designated a BURC to set goals and performance related to the RM role for the BU",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"RM Polocies and Procedures are not communicated to BU employees resulting in ineffective handling of records"
+                }
+            ]
+        },
+        {
+            "title":"Maintain a current Business Unit Records Mangement  inventory (Identify records, description, retention, location, security classification and disposition) for both paper and electronic records",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Loss of critical Company Records; Retention Requirements not understood or adhered to; improper disposal of expired records; disorganization of company records"
+                }
+            ]
+        },
+        {
+            "title":"Maintain and communicate Business Unit Records Management Procedures Manual and Records Retention and Destruction Guidelines",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Appropriate RM Procedures are unknown to employees resulting in ineffective handling of records"
+                }
+            ]
+        },
+        {
+            "title":"Annually communicate a copy of the RM Inventory and RM Procedures Manual to all BU employees, including status as BURC/RC SME",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"BURC Support, Inventories and Procedures unknown to BU employees resulting in effective handling of records."
+                }
+            ]
+        },
+        {
+            "title":"Quality of Image as Official Record (IAOR) Policy",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Electronic copies of records do not comply with regulatory and company record keeping standards, leaving the company open to litigation and regulatory repercusions"
+                }
+            ]
+        },
+        {
+            "title":"Manage critical and often time-sensitive information requests for document holds or preservation as directed by Legal/Compliance/Tax",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Legal/ Regulatory / Tax liabilities"
+                }
+            ]
+        },
+        {
+            "title":"Business Units have controls in place to address records access for both paper and electronic records",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Risk of unauthorized access and possible loss of critical company data"
+                }
+            ]
+        },
+        {
+            "title":"Record retention and destruction guidelines are actively manged for both physical and electronic records",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"Not satisfying regulatory/ Legal and Operational requirements"
+                }
+            ]
+        },
+        {
+            "title":"Annual Global RM Self Assessment is completed by BU BURC and/or RMPO",
+            "curriculums":[],
+            "risks":[
+                {
+                    "name":"RM Program requirements are not met"
+                }
+            ]
+        }
+    ],
+    "masterList":{
+        "categoryVal": {},
+        "category": [{
+            "name": "masterList",
+            "id": "masterList"
+        }],
+        "kpiVal": {},
+        "selectedKpi": "masterList",
+        "kpi": [
+            {
+                "name": "masterList",
+                "id": "masterList"
+            }
+        ],
+        "slaVal": {
+            "masterList": {}
+        },
+        "sla": {
+            "masterList": [
+                {
+                    "name": "Adherence to the JH Record Retention Schedule via regular review of physical and electronic records",
+                    "id": "ctrl00"
+                },
+                {
+                    "name": "Annual/Bi-Annual Divisional RM Training Modules and Annual BU RM Training Class",
+                    "id": "ctrl01"
+                },
+                {
+                    "name": "Annual review of BU RM Inventory by RMPO",
+                    "id": "ctrl02"
+                },
+                {
+                    "name": "BURC Coordination of listing of appropriate records",
+                    "id": "ctrl03"
+                },
+                {
+                    "name": "BURC Records Inventory Worksheet",
+                    "id": "ctrl04"
+                },
+                {
+                    "name": "BURC Records Destruction Approval Forms",
+                    "id": "ctrl05"
+                }, 
+                {
+                    "name": "Divisional Attestation by the Divisiona RM Coordinator and Divisional Chief Compliance Officer",
+                    "id": "ctrl06"
+                }, 
+                {
+                    "name": "Future controls in process via the Unstructed Data Management Program",
+                    "id": "ctrl07"
+                }, 
+                {
+                    "name": "Image Completeness Controls (batch and document counts)",
+                    "id": "ctrl08"
+                }, 
+                {
+                    "name": "Image Replica Controls (Original paper record compared to image record)",
+                    "id": "ctrl09"
+                }, 
+                {
+                    "name": "P-Drive storage levels (<25GB)",
+                    "id": "ctrl10"
+                }, 
+                {
+                    "name": "Stop document Destruction",
+                    "id": "ctrl11"
+                }, 
+                {
+                    "name": "Other control",
+                    "id": "ctrl12"
+                }, 
+                {
+                    "name": "No controls are in place",
+                    "id": "ctrl13"
+                }
+            ]
+        }
+    }
+}

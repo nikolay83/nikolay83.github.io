@@ -1,0 +1,767 @@
+{  
+    "kpiList":[  
+        {  
+            "categoryVal":{  
+
+            },
+            "category":[  
+                {  
+                    "name":"Telephony",
+                    "id":"telephony"
+                }
+            ],
+            "kpiVal":{  
+
+            },
+            "selectedKpi":"ivr",
+            "kpi":[  
+                {  
+                    "name":"Answer Rate",
+                    "id":"answer"
+                },
+                {  
+                    "name":"Abandoned Rate",
+                    "id":"abandoned"
+                },
+                {  
+                    "name":"IVR Containment Rate",
+                    "id":"ivr"
+                },
+                {  
+                    "name":"Occupancy Rate",
+                    "id":"occupancy"
+                }
+            ],
+            "slaVal":{  
+                "answer":{  
+
+                },
+                "abandoned":{  
+
+                },
+                "ivr":{  
+
+                },
+                "occupancy":{  
+
+                },
+                "additional":{  
+
+                }
+            },
+            "sla":{  
+                "answer":[  
+                    {  
+                        "name":"90%",
+                        "id":"n90"
+                    },
+                    {  
+                        "name":"85%",
+                        "id":"n85"
+                    },
+                    {  
+                        "name":"80%",
+                        "id":"n80"
+                    },
+                    {  
+                        "name":"30%",
+                        "id":"n30"
+                    },
+                    {  
+                        "name":"<3%",
+                        "id":"lt3"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ],
+                "abandoned":[  
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"85%",
+                        "id":"85"
+                    },
+                    {  
+                        "name":"80%",
+                        "id":"80"
+                    },
+                    {  
+                        "name":"30%",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"<3%",
+                        "id":"<3"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ],
+                "ivr":[  
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"85%",
+                        "id":"85"
+                    },
+                    {  
+                        "name":"80%",
+                        "id":"80"
+                    },
+                    {  
+                        "name":"30%",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"<3%",
+                        "id":"<3"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ],
+                "occupancy":[  
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"85%",
+                        "id":"85"
+                    },
+                    {  
+                        "name":"80%",
+                        "id":"80"
+                    },
+                    {  
+                        "name":"30%",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"<3%",
+                        "id":"<3"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ],
+                "additional":[  
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"85%",
+                        "id":"85"
+                    },
+                    {  
+                        "name":"80%",
+                        "id":"80"
+                    },
+                    {  
+                        "name":"30%",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"<3%",
+                        "id":"<3"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ]
+            },
+            "slaPendingVal":{  
+                "answer":{  
+
+                },
+                "abandoned":{  
+
+                },
+                "ivr":{  
+
+                },
+                "occupancy":{  
+
+                },
+                "additional":{  
+
+                }
+            },
+            "slaPending":[  
+                {  
+                    "name":"25%",
+                    "id":"n25"
+                }
+            ]
+        },
+        {  
+            "categoryVal":{  
+
+            },
+            "category":[  
+                {  
+                    "name":"Transactional Timeliness",
+                    "id":"transactional"
+                }
+            ],
+            "kpiVal":{  
+
+            },
+            "selectedKpi":"additionalKPI",
+            "kpi":[  
+                {  
+                    "name":"Add KPI (Free Form)",
+                    "id":"additionalKPI"
+                },
+                {  
+                    "name":"Add KPI (Free Form)",
+                    "id":"additionalKPI1"
+                }
+            ],
+            "slaVal":{  
+                "additionalKPI":{  
+
+                },
+                "additionalKPI1":{  
+
+                }
+            },
+            "sla":{  
+                "additionalKPI":[  
+                    {  
+                        "name":"Same day",
+                        "id":"same"
+                    },
+                    {  
+                        "name":"1-2 days",
+                        "id":"1"
+                    },
+                    {  
+                        "name":"3-5 days",
+                        "id":"3"
+                    },
+                    {  
+                        "name":"30 days",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"90% in 5 days",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"90% in 6 hours",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"90% in 60 minutes",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"% of payments in inventory by days (15/30 days)",
+                        "id":"%"
+                    },
+                    {  
+                        "name":"Letters every 30 days",
+                        "id":"letters"
+                    },
+                    {  
+                        "name":"Phone/emails every 15 days",
+                        "id":"phone"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ],
+                "additionalKPI1":[  
+                    {  
+                        "name":"Same day",
+                        "id":"same"
+                    },
+                    {  
+                        "name":"1-2 days",
+                        "id":"1"
+                    },
+                    {  
+                        "name":"3-5 days",
+                        "id":"3"
+                    },
+                    {  
+                        "name":"30 days",
+                        "id":"30"
+                    },
+                    {  
+                        "name":"90% in 5 days",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"90% in 6 hours",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"90% in 60 minutes",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"% of payments in inventory by days (15/30 days)",
+                        "id":"%"
+                    },
+                    {  
+                        "name":"Letters every 30 days",
+                        "id":"letters"
+                    },
+                    {  
+                        "name":"Phone/emails every 15 days",
+                        "id":"phone"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not applicable",
+                        "id":"not"
+                    }
+                ]
+            }
+        },
+        {  
+            "categoryVal":{  
+
+            },
+            "category":[  
+                {  
+                    "name":"Utilization",
+                    "id":"utilization"
+                }
+            ],
+            "kpiVal":{  
+
+            },
+            "selectedKpi":"individual",
+            "kpi":[  
+                {  
+                    "name":"Individual Productivity",
+                    "id":"individual"
+                }
+            ],
+            "slaVal":{  
+                "individual":{  
+
+                },
+                "additional":{  
+
+                }
+            },
+            "sla":{  
+                "individual":[  
+                    {  
+                        "name":"95%",
+                        "id":"95"
+                    },
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"180 plans to one representative",
+                        "id":"180"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ],
+                "additional":[  
+                    {  
+                        "name":"95%",
+                        "id":"95"
+                    },
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"180 plans to one representative",
+                        "id":"180"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ]
+            }
+        },
+        {  
+            "categoryVal":{  
+
+            },
+            "category":[  
+                {  
+                    "name":"Quality",
+                    "id":"quality"
+                }
+            ],
+            "kpiVal":{  
+
+            },
+            "selectedKpi":"individual",
+            "kpi":[  
+                {  
+                    "name":"Individual Accuracy",
+                    "id":"individual",
+                    "slaVal":{  
+
+                    }
+                }
+            ],
+            "slaVal":{  
+                "individual":{  
+
+                },
+                "call":{  
+
+                },
+                "additional":{  
+
+                }
+            },
+            "sla":{  
+                "individual":[  
+                    {  
+                        "name":"99%",
+                        "id":"99"
+                    },
+                    {  
+                        "name":"98%",
+                        "id":"98"
+                    },
+                    {  
+                        "name":"95%",
+                        "id":"95"
+                    },
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ],
+                "call":[  
+                    {  
+                        "name":"99%",
+                        "id":"99"
+                    },
+                    {  
+                        "name":"98%",
+                        "id":"98"
+                    },
+                    {  
+                        "name":"95%",
+                        "id":"95"
+                    },
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ],
+                "additional":[  
+                    {  
+                        "name":"99%",
+                        "id":"99"
+                    },
+                    {  
+                        "name":"98%",
+                        "id":"98"
+                    },
+                    {  
+                        "name":"95%",
+                        "id":"95"
+                    },
+                    {  
+                        "name":"90%",
+                        "id":"90"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ]
+            }
+        },
+        {  
+            "categoryVal":{  
+
+            },
+            "category":[  
+                {  
+                    "name":"Customer Centricity",
+                    "id":"customerCentricity"
+                }
+            ],
+            "kpiVal":{  
+
+            },
+            "selectedKpi":"customer",
+            "kpi":[  
+                {  
+                    "name":"Call Surveys (CSAT)",
+                    "id":"customer"
+                }
+            ],
+            "slaVal":{  
+                "customer":{  
+
+                },
+                "additional":{  
+
+                }
+            },
+            "sla":{  
+                "customer":[  
+                    {  
+                        "name":"XX% Satisfied",
+                        "id":"xx"
+                    },
+                    {  
+                        "name":"Net Promoter Score of X",
+                        "id":"net"
+                    },
+                    {  
+                        "name":"Customer Effort Score of X",
+                        "id":"cus"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ],
+                "additional":[  
+                    {  
+                        "name":"XX% Satisfied",
+                        "id":"xx"
+                    },
+                    {  
+                        "name":"Net Promoter Score of X",
+                        "id":"net"
+                    },
+                    {  
+                        "name":"Customer Effort Score of X",
+                        "id":"cus"
+                    },
+                    {  
+                        "name":"Other SLA",
+                        "id":"other"
+                    },
+                    {  
+                        "name":"Not Applicable",
+                        "id":"not"
+                    }
+                ]
+            }
+        }
+    ],
+    "masterList":{  
+        "categoryVal":{  
+
+        },
+        "category":[  
+            {  
+                "name":"masterListSla",
+                "id":"masterListSla"
+            }
+        ],
+        "kpiVal":{  
+
+        },
+        "selectedKpi":"masterListSla",
+        "kpi":[  
+            {  
+                "name":"masterListSla",
+                "id":"masterListSla"
+            }
+        ],
+        "slaVal":{  
+            "masterListSla":{  
+
+            }
+        },
+        "sla":{  
+            "masterListSla":[  
+                {  
+                    "name":"90%",
+                    "id":"n90"
+                },
+                {  
+                    "name":"85%",
+                    "id":"n85"
+                },
+                {  
+                    "name":"80%",
+                    "id":"n80"
+                },
+                {  
+                    "name":"30%",
+                    "id":"n30"
+                },
+                {  
+                    "name":"<3%",
+                    "id":"lt3"
+                },
+                {  
+                    "name":"Same day",
+                    "id":"same"
+                },
+                {  
+                    "name":"1-2 days",
+                    "id":"1"
+                },
+                {  
+                    "name":"3-5 days",
+                    "id":"3"
+                },
+                {  
+                    "name":"30 days",
+                    "id":"30"
+                },
+                {  
+                    "name":"90% in 5 days",
+                    "id":"90"
+                },
+                {  
+                    "name":"90% in 6 hours",
+                    "id":"90"
+                },
+                {  
+                    "name":"90% in 60 minutes",
+                    "id":"90"
+                },
+                {  
+                    "name":"% of payments in inventory by days (15/30 days)",
+                    "id":"%"
+                },
+                {  
+                    "name":"Letters every 30 days",
+                    "id":"letters"
+                },
+                {  
+                    "name":"Phone/emails every 15 days",
+                    "id":"phone"
+                },
+                {  
+                    "name":"95%",
+                    "id":"95"
+                },
+                {  
+                    "name":"90%",
+                    "id":"90"
+                },
+                {  
+                    "name":"180 plans to one representative",
+                    "id":"180"
+                },
+                {  
+                    "name":"99%",
+                    "id":"99"
+                },
+                {  
+                    "name":"98%",
+                    "id":"98"
+                },
+                {  
+                    "name":"95%",
+                    "id":"95"
+                },
+                {  
+                    "name":"90%",
+                    "id":"90"
+                },
+                {  
+                    "name":"XX% Satisfied",
+                    "id":"xx"
+                },
+                {  
+                    "name":"Net Promoter Score of X",
+                    "id":"net"
+                },
+                {  
+                    "name":"Customer Effort Score of X",
+                    "id":"cus"
+                },
+                {  
+                    "name":"Other SLA",
+                    "id":"other"
+                },
+                {  
+                    "name":"Not applicable",
+                    "id":"not"
+                }
+            ]
+        }
+    }
+}

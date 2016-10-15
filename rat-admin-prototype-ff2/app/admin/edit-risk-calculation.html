@@ -1,0 +1,161 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Edit Risk Assessment fields</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.edit.html'"> </div>
+    <div class="row m-t-25 global-field rick-calc">      
+      <section class="toggle-view-sn">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text have-icon">
+              Risk Category
+              
+              <span class="tooltip">
+               The extent to which the company is affected if a particular risk were to surface.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.   
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+          <span class="text-new">Value (%)</span>
+        </div>
+        <div class="cover-all-list-calc">
+          <ul class="list-calc">
+            <li data-ng-repeat="item in vm.dbRiskCalculation.riskCategory">
+              <span class="text">{{item.title}}</span>
+              <div class="input">
+                <input type="text" data-ng-model="item.value" data-valid-number>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+      <!-- /.toggle-view-sn --> 
+      <section class="toggle-view-sn">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text have-icon">
+              Likelihood of Occurrence
+              <span class="tooltip">
+               The frequency of how often a function is performed such as a daily, weekly, monthly, quarterly or annual basis.  An example would disbursements/withdrawals are processed on a daily basis.   
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+          <span class="text-new">Value (integer)</span>
+        </div>
+        <div class="cover-all-list-calc">
+          <ul class="list-calc">
+            <li data-ng-repeat="item in vm.dbRiskCalculation.occurrence">
+              <span class="text">{{item.title}}</span>
+              <div class="input">
+                <input type="text" data-ng-model="item.value" data-valid-number>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+      <!-- /.toggle-view-sn --> 
+      <section class="toggle-view-sn">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text have-icon">
+              Risk Exposure
+              <span class="tooltip">
+               The extent to which the company is affected if a particular risk were to surface.  The exposure is normally gauged as High, Medium or Low.  For example, if a company is fined for not meeting regulatory requirements this would be “High” exposure to the company’s reputation.   
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+          <span class="text-new">Value (decimal)</span>
+        </div>
+        <div class="cover-all-list-calc">
+          <ul class="list-calc">
+            <li data-ng-repeat="item in vm.dbRiskCalculation.riskExposure">
+              <span class="text">{{item.title}}</span>
+              <div class="input">
+                <input type="text" data-ng-model="item.value" data-valid-number>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+      <!-- /.toggle-view-sn -->
+      <section class="toggle-view-sn">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text have-icon">
+              Key Controls Maturity
+              <span class="tooltip">
+               The level of optimization achieved with the Control.  The propensity of the control to increase efficiency and add value to the company.  Options would include Well Developed, Partially Developed/Requires Improvement, and Under Developed/Weak.   
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+          <span class="text-new">Value (decimal)</span>
+        </div>
+        <div class="cover-all-list-calc">
+          <ul class="list-calc">
+            <li data-ng-repeat="item in vm.dbRiskCalculation.keyMaturity">
+              <span class="text">{{item.title}}</span>
+              <div class="input">
+                <input type="text" data-ng-model="item.value" data-valid-number>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+      <!-- /.toggle-view-sn -->  
+      <section class="toggle-view-sn fix-bottom">
+        <div class="title-wrap">
+          <h2 class="toggle-group-title">
+            <span class="text have-icon">
+              Risk Score Ranges
+              <span class="tooltip">
+                The impact of a sub-process not being achieved.  There are many risks but some include inappropriate system access and not meeting regulatory requirements, training requirements, or customer expectations.  Risks are attributed to sub-processes.     
+                <span class="arrow"></span>
+              </span>
+            </span>
+          </h2>
+          <span class="text-new">Value (decimal)</span>
+        </div>
+        <div class="cover-all-list-calc">
+          <ul class="list-calc last">
+            <li data-ng-repeat="item in vm.dbRiskCalculation.riskScoreRanges">
+              <span class="text">{{item.title}}</span>
+              <div class="input">
+                <i class="arrow-text" data-ng-show="item.title==='High'">=></i>
+                <input type="text" data-ng-model="item.min" data-valid-number>
+                <span data-ng-show="item.title!=='High'"></span>
+                <input type="text" data-ng-show="item.title!=='High'" data-ng-model="item.max" data-valid-number>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- /norm-layout -->
+      </section>
+      <!-- /.toggle-view-sn --> 
+    </div>
+    <!-- /.row -->
+
+    <div class="section-footer row m-t-40">
+      <div class="left">
+        <a href="#/admin/edit/globalFields" class="btn btn-primary">Prev</a>
+      </div>
+      <div class="right">
+        <a href="#/admin/edit/addon" class="btn btn-primary">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END #main-content -->
+
+<div class="clearfix"></div>

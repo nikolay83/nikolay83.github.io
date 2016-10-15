@@ -1,0 +1,9 @@
+<a class="logo fl" href="#/approver/home"><img src="i/logo2.png" alt="" /></a>
+<div class="right-nav">
+  <p>Welcome {{dbm.user.username}}, <a href="#/"><strong>Logout</strong></a></p>
+  <nav>
+    <a href="#/approver/home" ng-class="{'active':vmc.checkMenu('/home')}">Home</a>
+    <a href="#/approver/awaiting" ng-class="{'active':vmc.checkMenu('/awaiting')}">Awaiting Approval ({{dbm.awatingCount}})</a>
+    <a href="#/approver/approved" ng-class="{'active':vmc.checkMenu('/approved')}">Approved ({{dbm.approvedCount}})</a>
+  </nav>
+</div>

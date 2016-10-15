@@ -1,0 +1,63 @@
+<div data-page-script="" data-ng-controller="AddUser as vmAdd">
+
+  <!-- popup for comments -->
+  <div id="comment-popup" class="row comment-popup hide" title="Comment">
+    <label>Comment for your choice</label>
+    <textarea id="comment-content"></textarea>
+    <center>
+      <a id="comment-submit" href="javascript:;" class="btn btn-primary">OK</a>
+    </center>
+  </div>
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/admin/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <div class="row tab-headers ctKPI-static">
+        <a href="#/admin/add/processes" class="active current"></a><span>KPI's / SLA's</span>
+        <a href="#/admin/add/processes/functionalArea">Functional Area<br/>Processes</a>
+        <a href="#/admin/add/processes/corporate">Corporate &amp;<br/>Divisional Training</a>
+        <a href="#/admin/add/processes/business">Business Continuity<br/>&amp; Disaster Recovery</a>
+        <a href="#/admin/add/processes/records">Records<br/>Management</a>
+        <a href="#/admin/add/processes/information">Information<br/>Security</a>
+        <a href="#/admin/add/processes/data">Data Privacy<br/>&amp; Protection</a>
+      </div>
+      <div class="row">
+        <table class="custom-table core-kpi-sla">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Key Performance Indicators</th>
+              <th>Service Levels</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="clear"></div>
+        <div class="add-user-conatiner">
+          <div class="row-user">
+            <div class="select-group" data-custom-select="">
+              <div class="select-val" data-ng-class="{'placeholder': !vmAdd.dbAdd.optionVal}">{{vmAdd.dbAdd.optionVal.name || 'Select'}}</div>
+              <div class="select-list edit-block-sn">
+                <div data-select-block="vmAdd.dbAdd.optionsList" data-model="vmAdd.dbAdd.productVal" data-selected="vmAdd.dbAdd.optionVal" class="toggle-view-con can-select">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.add-user-conatiner -->
+      </div>
+      <div class="section-footer row m-t-40">
+        <div class="left">
+          <a href="#/admin/add/function" class="btn btn-primary">Prev</a>
+        </div>
+        <div class="right">
+          <a href="#/admin/add/overall" class="btn btn-primary">Next</a>
+          <a class="hide" href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>

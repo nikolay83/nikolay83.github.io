@@ -1,0 +1,343 @@
+<div data-page-script="">
+  <!-- BEGIN #main-content -->
+  <div id="main-content" class="row">
+    <h1 class="row m-t-20 title">Add a New Risk Assessment</h1>
+    <div class="nav-tabs m-t-20 row" data-ng-include="'app/owner/tabnav.add.html'"> </div>
+    <div class="row m-t-25">
+      <!-- BEGIN  Unit section -->
+      <div class="row section">
+        <div class="section-head">Unit</div>
+        <div class="section-content row">
+          <div class="row">
+            <label class="label">Business Unit</label>
+            <div class="inputs">
+              <select id="select-business-input" name="single" class="multiple ultra-short" multiple="multiple">
+                <option value="Insurance">Insurance</option>
+                <option value="Annuities">Annuities</option>
+                <option value="Shared Services">Shared Services</option>
+                <option value="RPS">RPS</option>
+                <option value="JHSS">JHSS</option>
+                <option value="JHFN">JHFN</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Product</label>
+            <div class="inputs">
+              <select class="multiple ultra-short" multiple="multiple" id="select-product">
+                <option value="Life">Life</option>
+                <option value="LTC">LTC</option>
+                <option value="Life w/LTC rider">Life w/LTC rider</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Department</label>
+            <div class="inputs">
+              <select id="select-department" name="single" class="multiple ultra-short" multiple="multiple">
+                <option value="Control, Risk &amp; Financial Reporting">Control, Risk &amp; Financial Reporting</option>
+                <option value="Implementation Office">Implementation Office</option>
+                <option value="LTC Claims">LTC Claims</option>
+                <option value="New Business Operations">New Business Operations</option>
+                <option value="Operations Finance">Operations Finance</option>
+                <option value="Policyholder Services">Policyholder Services</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Department Head/Business Lead</label>
+            <div class="inputs">
+              <select id="select-department-lead" name="single" class="multiple ultra-short" multiple="multiple">
+                <option value="Peter Burke">Peter Burke</option>
+                <option value="Karen Foney">Karen Foney</option>
+                <option value="David Gagne">David Gagne</option>
+                <option value="Keith Gendron">Keith Gendron</option>
+                <option value="Kathy Hanrahan">Kathy Hanrahan</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Unit section -->
+      <!-- BEGIN Functional Modifications section -->
+      <div class="row section m-t-20">
+        <div class="section-head">Functional Area</div>
+        <div class="section-content row">
+          <div class="row">
+            <label class="label">Functional Area Owner</label>
+            <div class="inputs">
+              <select name="single" class="multiple ultra-short" multiple="multiple">
+                <option value="Beth Abbott">Beth Abbott</option>
+                <option value="Rania Ayoub ">Rania Ayoub </option>
+                <option value="Christopher Barbagallo">Christopher Barbagallo</option>
+                <option value="Robert Belmonte">Robert Belmonte</option>
+                <option value="Jenn Boyce">Jenn Boyce</option>
+                <option value="Eric Bremberg">Eric Bremberg</option>
+                <option value="Melissa Bush">Melissa Bush</option>
+                <option value="Patricia Carli">Patricia Carli</option>
+                <option value="Kristen Coveney">Kristen Coveney</option>
+                <option value="Scott Delaney">Scott Delaney</option>
+                <option value="Sacha Dona">Sacha Dona</option>
+                <option value="Robin Doobay">Robin Doobay</option>
+                <option value="Staci Ferrazzani">Staci Ferrazzani</option>
+                <option value="Bill Francis">Bill Francis</option>
+                <option value="Shawn Fryer">Shawn Fryer</option>
+                <option value="Sue Gaffney">Sue Gaffney</option>
+                <option value="Bernadette Greene">Bernadette Greene</option>
+                <option value="Rob Hicks">Rob Hicks</option>
+                <option value="Nicole Holmes">Nicole Holmes</option>
+                <option value="Lisa Ienna">Lisa Ienna</option>
+                <option value="Seth Kilgore">Seth Kilgore</option>
+                <option value="Greg King">Greg King</option>
+                <option value="Kathy MacDonald">Kathy MacDonald</option>
+                <option value="Tina Maxwell">Tina Maxwell</option>
+                <option value="Ken McLaughlin">Ken McLaughlin</option>
+                <option value="Kerri Milton">Kerri Milton</option>
+                <option value="Jason Moore">Jason Moore</option>
+                <option value="Michael Naumko">Michael Naumko</option>
+                <option value="Paul Pacheco">Paul Pacheco</option>
+                <option value="Anna Pellegrino">Anna Pellegrino</option>
+                <option value="Doug Plaisted">Doug Plaisted</option>
+                <option value="Greg Polite">Greg Polite</option>
+                <option value="Matthew Powers">Matthew Powers</option>
+                <option value="Bobby Randhawa">Bobby Randhawa</option>
+                <option value="Nzaim Shaw">Nzaim Shaw</option>
+                <option value="Gina Stewart">Gina Stewart</option>
+                <option value="Jennifer Svensson">Jennifer Svensson</option>
+                <option value="Quan Tran">Quan Tran</option>
+                <option value="Paul Wainwright">Paul Wainwright</option>
+                <option value="Richardo Walters">Richardo Walters</option>
+                <option value="Matthew Waters">Matthew Waters</option>
+                <option value="Susan Williams">Susan Williams</option>
+                <option value="Ken Yamaguchi">Ken Yamaguchi</option>
+                <option value="Sarah Young">Sarah Young</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Functional Area</label>
+            <div class="inputs">
+              <select name="single" class="multiple" multiple="multiple">
+                <option value="Billings &amp; Collections">Billings &amp; Collections</option>
+                <option value="Case Management">Case Management</option>
+                <option value="COLI/BOLI">COLI/BOLI</option>
+                <option value="Commissions">Commissions</option>
+                <option value="Complex LTC">Complex LTC</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Control &amp; Expensement">Control &amp; Expensement</option>
+                <option value="Core LTC">Core LTC</option>
+                <option value="Disbursements &amp; Distribution">Disbursements &amp; Distribution</option>
+                <option value="Front End">Front End</option>
+                <option value="GLTC Account">GLTC Account</option>
+                <option value="Group Trust Admin">Group Trust Admin</option>
+                <option value="Illustrations">Illustrations</option>
+                <option value="Implementation Team">Implementation Team</option>
+                <option value="Issue">Issue</option>
+                <option value="Licensing">Licensing</option>
+                <option value="Life Claims">Life Claims</option>
+                <option value="LTC Claims">LTC Claims</option>
+                <option value="NBCC">NBCC</option>
+                <option value="Policy Change">Policy Change</option>
+                <option value="Registry">Registry</option>
+                <option value="Replacements">Replacements</option>
+                <option value="Re-Rate">Re-Rate</option>
+                <option value="Risk Management">Risk Management</option>
+                <option value="Specialty Products &amp; Distribution">Specialty Products
+                  <!--&amp; Distribution-->
+                </option>
+                <option value="Tax Production">Tax Production</option>
+                <option value="Titles">Titles</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Functional Area Description</label>
+            <div class="inputs">
+              <textarea rows="5" cols="29"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">In what site(s) is the function performed</label>
+            <div class="inputs">
+              <select class="ultra-short multiple" multiple="multiple" id="sites-select">
+                <option value="boston">Boston</option>
+                <option value="toronto">Toronto</option>
+                <option value="portsmouth">Portsmouth</option>
+                <option value="westwood">Westwood</option>
+                <option value="mbps">MBPS</option>
+                <option value="cebu">Cebu</option>
+              </select>
+            </div>
+          </div>
+          <div id="sites-info" class="hide">
+            <div class="row">
+              <label class="label">What % of the function is processed in each site?</label>
+
+            </div>
+            <div class="row sites-element" id="boston">
+              <label class="label">Boston</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row sites-element" id="toronto">
+              <label class="label">Toronto</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row sites-element" id="portsmouth">
+              <label class="label">Portsmouth</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row sites-element" id="westwood">
+              <label class="label">Westwood</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row sites-element" id="mbps">
+              <label class="label">MBPS</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row sites-element" id="cebu">
+              <label class="label">Cebu</label>
+              <div class="inputs">
+                <select class="ex-short">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <label class="label total"><strong>Total</strong></label>
+              <div class="inputs">
+                <div id="total">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BEGIN Function Area section -->
+      <!-- BEGIN Assessment section -->
+      <div class="section row m-t-15">
+        <div class="section-head">Assessment</div>
+        <div class="section-content row">
+          <div class="row">
+            <label class="label">Assessment Type</label>
+            <div class="inputs">
+              <select name="single" class="multiple" multiple="multiple">
+                <option value="Annual Analysis">Annual Analysis</option>
+                <option value="New Function Analysis">New Function Analysis</option>
+                <option value="New Policy/Process Analysis">New Policy/Process Analysis</option>
+                <option value="Management Change Review">Management Change Review</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Assessment Status</label>
+            <div class="inputs">
+              <select name="single" class="multiple" multiple="multiple">
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Complete">Complete</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="label">Assessment Due Date</label>
+            <div class="inputs">
+              <div class="date-wrapper">
+                <input type="text" class="date-input" placeholder="Select" />
+                <i class="date-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Assessment section -->
+      <div class="section-footer row m-t-40">
+        <div class="right">
+          <a href="#/owner/add/function" class="btn btn-primary">Next</a>
+          <a href="javascript:;">Save as Draft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END #main-content -->
+
+  <div class="clearfix"></div>
+</div>
